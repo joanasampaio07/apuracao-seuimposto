@@ -3,7 +3,7 @@ const fs = require('fs');
 const path = require('path');
 const https = require('https');
 
-const PORT = 5175;
+const PORT = process.env.PORT || 5175;
 const BASE_DIR = __dirname;
 
 // URLs Oficiais TSE 2026

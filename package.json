@@ -1,0 +1,13 @@
+{
+  "name": "apuracao-seuimposto",
+  "version": "1.0.0",
+  "description": "Sistema de Apuração Eleições 2026 com Dossiê Marcela Passamani e 18ª Zona Eleitoral",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {}
+}
