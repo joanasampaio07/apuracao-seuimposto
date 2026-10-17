@@ -321,31 +321,64 @@ const server = http.createServer(async (req, res) => {
       max-height: 100dvh !important;
       border-radius: 0 !important;
       border: none !important;
+      overflow-y: auto !important;
+      -webkit-overflow-scrolling: touch !important;
+      display: block !important;
+    }
+    #df-mobile-sticky-bar {
+      display: flex !important;
+      position: sticky !important;
+      top: 0 !important;
+      z-index: 1000 !important;
+    }
+    .mobile-only-subir-bar {
+      display: block !important;
+    }
+    .desktop-only-btn {
+      display: none !important;
     }
     #df-modal-header {
-      padding: max(14px, env(safe-area-inset-top)) 16px 12px 16px !important;
+      padding: max(10px, env(safe-area-inset-top)) 14px 10px 14px !important;
     }
     #df-modal-header h2 {
-      font-size: 1.05rem !important;
+      font-size: 0.95rem !important;
       line-height: 1.25 !important;
+    }
+    #df-modal-header p {
+      font-size: 0.72rem !important;
     }
     #df-modal-body-grid {
       grid-template-columns: 1fr !important;
-      padding: 10px 14px 40px 14px !important;
-      gap: 14px !important;
+      padding: 10px 12px 90px 12px !important;
+      gap: 12px !important;
+      overflow-y: visible !important;
+      height: auto !important;
     }
     #df-left-pane, #df-right-pane {
       max-height: none !important;
       overflow-y: visible !important;
-      padding: 12px !important;
+      padding: 10px !important;
     }
-    .mobile-nav-tabs-bar {
-      display: flex !important;
+    #df-secoes-list {
+      max-height: none !important;
+      overflow-y: visible !important;
+    }
+    #df-top-collapsible.is-collapsed {
+      display: none !important;
     }
   }
   @media (min-width: 901px) {
-    .mobile-nav-tabs-bar {
+    #df-mobile-sticky-bar {
       display: none !important;
+    }
+    .mobile-only-subir-bar {
+      display: none !important;
+    }
+    .desktop-only-btn {
+      display: inline-flex !important;
+    }
+    #df-top-collapsible {
+      display: block !important;
     }
     #df-left-pane {
       display: block !important;
@@ -382,97 +415,113 @@ const server = http.createServer(async (req, res) => {
 <div id="df-distritais-modal" style="display:none; position:fixed; inset:0; z-index:10000; background:rgba(0,0,0,0.85); backdrop-filter:blur(22px); -webkit-backdrop-filter:blur(22px); align-items:center; justify-content:center; padding:16px; font-family:var(--sans, system-ui); color:#FAFAF9;">
   <div id="df-modal-container" style="background:#151412; border:1px solid rgba(255,255,255,0.18); border-radius:20px; width:100%; max-width:1200px; height:92vh; display:flex; flex-direction:column; box-shadow:0 30px 70px rgba(0,0,0,0.95); overflow:hidden;">
     
-    <!-- HEADER -->
-    <div id="df-modal-header" style="padding:16px 24px; border-bottom:1px solid rgba(255,255,255,0.1); display:flex; align-items:center; justify-content:space-between; background:rgba(255,255,255,0.02);">
-      <div>
-        <div style="display:flex; align-items:center; gap:10px;">
-          <h2 style="margin:0; font-size:1.25rem; font-weight:700; display:flex; align-items:center; gap:8px;">
-            <span>🏛️</span><span>Distrito Federal — Apuração Oficial por Regiões Administrativas, Zonas e Colégios Eleitorais</span>
-          </h2>
-          <span style="font-size:0.75rem; background:#22c55e22; color:#22c55e; border:1px solid #22c55e44; padding:2px 8px; border-radius:100px; font-weight:600;">100,00% Apurado</span>
-        </div>
-        <p style="margin:4px 0 0; font-size:0.8rem; color:#A6A39C;">
-          Dados Oficiais do TRE-DF / TSE (Eleição 6259) · 35 RAs · 19 Zonas Eleitorais · Seções Rurais e Urbanas Mapeadas
-        </p>
-      </div>
-      <div style="display:flex; align-items:center; gap:10px;">
-        <button onclick="window.print()" title="Imprimir Relatório ou Salvar em PDF" style="all:unset; cursor:pointer; padding:6px 12px; border-radius:8px; font-size:0.8rem; font-weight:600; background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.16); color:#fff; display:inline-flex; align-items:center; gap:5px;">
-          🖨️ Imprimir / PDF
-        </button>
-        <button onclick="closeDfModal()" style="all:unset; cursor:pointer; width:38px; height:38px; border-radius:50%; display:grid; place-items:center; background:rgba(255,255,255,0.12); color:#FAFAF9; font-size:1.2rem; font-weight:bold; transition:background .15s;">✕</button>
-      </div>
-    </div>
-
-    <!-- TABS DE MODO DE VISUALIZAÇÃO -->
-    <div style="padding:10px 24px; border-bottom:1px solid rgba(255,255,255,0.08); display:flex; gap:10px; align-items:center; background:rgba(0,0,0,0.3);">
-      <button id="tab-marcela" onclick="setDfTab('marcela')" style="all:unset; cursor:pointer; padding:6px 16px; border-radius:100px; font-weight:700; font-size:0.85rem; background:linear-gradient(135deg, #f59e0b, #d97706); color:#fff; display:inline-flex; align-items:center; gap:6px; transition:all .15s;">
-        ⭐ Dossiê Eleitoral: Marcela Passamani (15555 · MDB)
-      </button>
-      <button id="tab-geral" onclick="setDfTab('geral')" style="all:unset; cursor:pointer; padding:6px 14px; border-radius:100px; font-weight:600; font-size:0.85rem; background:transparent; color:rgba(255,255,255,0.6); transition:all .15s;">
-        📊 Quadro Geral das 35 RAs (Todos os Distritais)
-      </button>
-    </div>
-
-    <!-- BARRA DE NAVEGAÇÃO MOBILE (RESUMO VS COLÉGIOS) -->
-    <div class="mobile-nav-tabs-bar" style="padding:8px 14px; border-bottom:1px solid rgba(255,255,255,0.1); background:rgba(0,0,0,0.4); display:none; gap:8px;">
-      <button id="btn-mobile-tab-dossie" onclick="setMobileSubTab('dossie')" style="all:unset; flex:1; text-align:center; padding:8px 10px; border-radius:10px; font-size:0.82rem; font-weight:700; background:linear-gradient(135deg, #f59e0b, #d97706); color:#fff; cursor:pointer;">
+    <!-- BARRA STICKY MOBILE (SUB-ABAS + BOTÃO SUBIR/EXPANDIR + FECHAR) -->
+    <div id="df-mobile-sticky-bar" style="position:sticky; top:0; z-index:100; padding:8px 12px; border-bottom:1px solid rgba(255,255,255,0.14); background:rgba(21,20,18,0.98); backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px); display:none; gap:6px; align-items:center;">
+      <button id="btn-mobile-tab-dossie" onclick="setMobileSubTab('dossie')" style="all:unset; flex:1; text-align:center; padding:7px 8px; border-radius:8px; font-size:0.78rem; font-weight:700; background:linear-gradient(135deg, #f59e0b, #d97706); color:#fff; cursor:pointer;">
         ⭐ Dossiê & RAs
       </button>
-      <button id="btn-mobile-tab-colegios" onclick="setMobileSubTab('colegios')" style="all:unset; flex:1; text-align:center; padding:8px 10px; border-radius:10px; font-size:0.82rem; font-weight:600; background:rgba(255,255,255,0.08); color:#D6D4CF; cursor:pointer;">
+      <button id="btn-mobile-tab-colegios" onclick="setMobileSubTab('colegios')" style="all:unset; flex:1; text-align:center; padding:7px 8px; border-radius:8px; font-size:0.78rem; font-weight:600; background:rgba(255,255,255,0.08); color:#D6D4CF; cursor:pointer;">
         🏫 37 Colégios / Seções
       </button>
+      <!-- BOTÃO PARA SUBIR / RECOLHER FILTROS E EXPANDIR TELA -->
+      <button id="btn-toggle-top-mobile" onclick="toggleTopSection()" title="Subir cabeçalho e ver dados em tela cheia" style="all:unset; cursor:pointer; padding:7px 10px; border-radius:8px; font-size:0.78rem; font-weight:700; background:rgba(245,158,11,0.2); border:1px solid rgba(245,158,11,0.5); color:#f59e0b; display:inline-flex; align-items:center; gap:4px; white-space:nowrap;">
+        <span id="btn-toggle-top-icon">🔼</span> <span id="btn-toggle-top-text">Subir</span>
+      </button>
+      <!-- BOTÃO FECHAR MODAL MOBILE -->
+      <button onclick="closeDfModal()" title="Fechar" style="all:unset; cursor:pointer; width:34px; height:34px; border-radius:50%; display:grid; place-items:center; background:rgba(255,255,255,0.12); color:#fff; font-size:1.1rem; font-weight:bold;">✕</button>
     </div>
 
-    <!-- BOTÕES DE FILTRO RÁPIDO -->
-    <div id="df-modal-quick-filters" style="padding:8px 24px; border-bottom:1px solid rgba(255,255,255,0.06); display:flex; gap:8px; align-items:center; flex-wrap:wrap; background:rgba(255,255,255,0.015);">
-      <span style="font-size:0.75rem; color:#A6A39C; font-weight:600; text-transform:uppercase; letter-spacing:0.04em;">Filtros:</span>
-      <button onclick="quickFilterZona18()" id="btn-quick-z18" style="all:unset; cursor:pointer; font-size:0.8rem; font-weight:700; padding:4px 12px; border-radius:100px; background:rgba(16,185,129,0.2); border:1px solid rgba(16,185,129,0.45); color:#34d399; display:inline-flex; align-items:center; gap:5px;">
-        ⭐ 18ª ZE (São Sebastião 518 · JB 162 · Lago Sul 161)
-      </button>
-      <button onclick="quickFilterTipo('Rural')" id="btn-quick-rural" style="all:unset; cursor:pointer; font-size:0.8rem; font-weight:700; padding:4px 12px; border-radius:100px; background:rgba(34,197,94,0.15); border:1px solid rgba(34,197,94,0.35); color:#4ade80; display:inline-flex; align-items:center; gap:5px;">
-        🌾 Zona Rural
-      </button>
-      <button onclick="quickFilterTipo('Urbano')" id="btn-quick-urbano" style="all:unset; cursor:pointer; font-size:0.8rem; font-weight:600; padding:4px 12px; border-radius:100px; background:rgba(59,130,246,0.15); border:1px solid rgba(59,130,246,0.35); color:#60a5fa; display:inline-flex; align-items:center; gap:5px;">
-        🏙️ Zona Urbana
-      </button>
-      <button onclick="resetAllFilters()" style="all:unset; cursor:pointer; font-size:0.8rem; font-weight:600; padding:4px 10px; border-radius:100px; background:rgba(255,255,255,0.08); color:#FAFAF9;">
-        🔄 Ver Todas
-      </button>
-    </div>
-
-    <!-- CONTROLS & DROPDOWN FILTERS -->
-    <div id="df-modal-controls" style="padding:10px 24px; border-bottom:1px solid rgba(255,255,255,0.08); display:flex; gap:12px; align-items:center; flex-wrap:wrap; background:rgba(0,0,0,0.2);">
-      <!-- BUSCA LIVRE -->
-      <div style="flex:1; min-width:200px; position:relative;">
-        <input id="df-search-input" type="text" placeholder="🔍 Buscar por Colégio, Seção, RA..." oninput="filterDfData()"
-          style="width:100%; box-sizing:border-box; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.14); border-radius:100px; padding:7px 14px; color:#fff; font-size:0.85rem; outline:none;" />
+    <!-- BLOCO SUPERIOR COLAPSÁVEL (CABEÇALHO, DOSSIÊ/QUADRO, FILTROS RÁPIDOS E DROPDOWNS) -->
+    <div id="df-top-collapsible" style="transition: all 0.25s ease;">
+      <!-- HEADER -->
+      <div id="df-modal-header" style="padding:16px 24px; border-bottom:1px solid rgba(255,255,255,0.1); display:flex; align-items:center; justify-content:space-between; background:rgba(255,255,255,0.02);">
+        <div>
+          <div style="display:flex; align-items:center; gap:10px;">
+            <h2 style="margin:0; font-size:1.25rem; font-weight:700; display:flex; align-items:center; gap:8px;">
+              <span>🏛️</span><span>Distrito Federal — Apuração Oficial por Regiões Administrativas, Zonas e Colégios Eleitorais</span>
+            </h2>
+            <span style="font-size:0.75rem; background:#22c55e22; color:#22c55e; border:1px solid #22c55e44; padding:2px 8px; border-radius:100px; font-weight:600;">100,00% Apurado</span>
+          </div>
+          <p style="margin:4px 0 0; font-size:0.8rem; color:#A6A39C;">
+            Dados Oficiais do TRE-DF / TSE (Eleição 6259) · 35 RAs · 19 Zonas Eleitorais · Seções Rurais e Urbanas Mapeadas
+          </p>
+        </div>
+        <div style="display:flex; align-items:center; gap:10px;">
+          <button onclick="window.print()" class="desktop-only-btn" title="Imprimir Relatório ou Salvar em PDF" style="all:unset; cursor:pointer; padding:6px 12px; border-radius:8px; font-size:0.8rem; font-weight:600; background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.16); color:#fff; display:inline-flex; align-items:center; gap:5px;">
+            🖨️ Imprimir / PDF
+          </button>
+          <button onclick="closeDfModal()" class="desktop-only-btn" style="all:unset; cursor:pointer; width:38px; height:38px; border-radius:50%; display:grid; place-items:center; background:rgba(255,255,255,0.12); color:#FAFAF9; font-size:1.2rem; font-weight:bold; transition:background .15s;">✕</button>
+        </div>
       </div>
 
-      <!-- SELECT RA -->
-      <div style="display:flex; align-items:center; gap:6px;">
-        <span style="font-size:0.75rem; color:#A6A39C;">RA:</span>
-        <select id="df-ra-select" onchange="selectDfRa(this.value)" style="background:#22201D; border:1px solid rgba(255,255,255,0.2); border-radius:8px; padding:6px 10px; color:#FAFAF9; font-size:0.82rem; outline:none; cursor:pointer; max-width:180px;">
-          <option value="all">Todas as 35 RAs (DF Completo)</option>
-        </select>
+      <!-- TABS DE MODO DE VISUALIZAÇÃO -->
+      <div id="df-desktop-tabs" style="padding:10px 24px; border-bottom:1px solid rgba(255,255,255,0.08); display:flex; gap:10px; align-items:center; background:rgba(0,0,0,0.3);">
+        <button id="tab-marcela" onclick="setDfTab('marcela')" style="all:unset; cursor:pointer; padding:6px 16px; border-radius:100px; font-weight:700; font-size:0.85rem; background:linear-gradient(135deg, #f59e0b, #d97706); color:#fff; display:inline-flex; align-items:center; gap:6px; transition:all .15s;">
+          ⭐ Dossiê Eleitoral: Marcela Passamani (15555 · MDB)
+        </button>
+        <button id="tab-geral" onclick="setDfTab('geral')" style="all:unset; cursor:pointer; padding:6px 14px; border-radius:100px; font-weight:600; font-size:0.85rem; background:transparent; color:rgba(255,255,255,0.6); transition:all .15s;">
+          📊 Quadro Geral das 35 RAs (Todos os Distritais)
+        </button>
       </div>
 
-      <!-- SELECT ZONA -->
-      <div style="display:flex; align-items:center; gap:6px;">
-        <span style="font-size:0.75rem; color:#A6A39C;">Zona:</span>
-        <select id="df-zona-select" onchange="selectDfZona(this.value)" style="background:#22201D; border:1px solid rgba(255,255,255,0.2); border-radius:8px; padding:6px 10px; color:#FAFAF9; font-size:0.82rem; outline:none; cursor:pointer; max-width:160px;">
-          <option value="all">Todas as 19 Zonas</option>
-          <option value="18" style="font-weight:bold; color:#34d399;">⭐ 18ª ZE (São Sebastião & JB - 841 votos)</option>
-        </select>
+      <!-- BOTÕES DE FILTRO RÁPIDO -->
+      <div id="df-modal-quick-filters" style="padding:8px 24px; border-bottom:1px solid rgba(255,255,255,0.06); display:flex; gap:8px; align-items:center; flex-wrap:wrap; background:rgba(255,255,255,0.015);">
+        <span style="font-size:0.75rem; color:#A6A39C; font-weight:600; text-transform:uppercase; letter-spacing:0.04em;">Filtros:</span>
+        <button onclick="quickFilterZona18()" id="btn-quick-z18" style="all:unset; cursor:pointer; font-size:0.8rem; font-weight:700; padding:4px 12px; border-radius:100px; background:rgba(16,185,129,0.2); border:1px solid rgba(16,185,129,0.45); color:#34d399; display:inline-flex; align-items:center; gap:5px;">
+          ⭐ 18ª ZE (São Sebastião 518 · JB 162 · Lago Sul 161)
+        </button>
+        <button onclick="quickFilterTipo('Rural')" id="btn-quick-rural" style="all:unset; cursor:pointer; font-size:0.8rem; font-weight:700; padding:4px 12px; border-radius:100px; background:rgba(34,197,94,0.15); border:1px solid rgba(34,197,94,0.35); color:#4ade80; display:inline-flex; align-items:center; gap:5px;">
+          🌾 Zona Rural
+        </button>
+        <button onclick="quickFilterTipo('Urbano')" id="btn-quick-urbano" style="all:unset; cursor:pointer; font-size:0.8rem; font-weight:600; padding:4px 12px; border-radius:100px; background:rgba(59,130,246,0.15); border:1px solid rgba(59,130,246,0.35); color:#60a5fa; display:inline-flex; align-items:center; gap:5px;">
+          🏙️ Zona Urbana
+        </button>
+        <button onclick="resetAllFilters()" style="all:unset; cursor:pointer; font-size:0.8rem; font-weight:600; padding:4px 10px; border-radius:100px; background:rgba(255,255,255,0.08); color:#FAFAF9;">
+          🔄 Ver Todas
+        </button>
       </div>
 
-      <!-- SELECT TIPO ÁREA -->
-      <div style="display:flex; align-items:center; gap:6px;">
-        <span style="font-size:0.75rem; color:#A6A39C;">Área:</span>
-        <select id="df-tipo-select" onchange="selectDfTipo(this.value)" style="background:#22201D; border:1px solid rgba(255,255,255,0.2); border-radius:8px; padding:6px 10px; color:#FAFAF9; font-size:0.82rem; outline:none; cursor:pointer;">
-          <option value="all">Todas</option>
-          <option value="Rural">🌾 Rural</option>
-          <option value="Urbano">🏙️ Urbana</option>
-        </select>
+      <!-- CONTROLS & DROPDOWN FILTERS -->
+      <div id="df-modal-controls" style="padding:10px 24px; border-bottom:1px solid rgba(255,255,255,0.08); display:flex; gap:12px; align-items:center; flex-wrap:wrap; background:rgba(0,0,0,0.2);">
+        <!-- BUSCA LIVRE -->
+        <div style="flex:1; min-width:200px; position:relative;">
+          <input id="df-search-input" type="text" placeholder="🔍 Buscar por Colégio, Seção, RA..." oninput="filterDfData()"
+            style="width:100%; box-sizing:border-box; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.14); border-radius:100px; padding:7px 14px; color:#fff; font-size:0.85rem; outline:none;" />
+        </div>
+
+        <!-- SELECT RA -->
+        <div style="display:flex; align-items:center; gap:6px;">
+          <span style="font-size:0.75rem; color:#A6A39C;">RA:</span>
+          <select id="df-ra-select" onchange="selectDfRa(this.value)" style="background:#22201D; border:1px solid rgba(255,255,255,0.2); border-radius:8px; padding:6px 10px; color:#FAFAF9; font-size:0.82rem; outline:none; cursor:pointer; max-width:180px;">
+            <option value="all">Todas as 35 RAs (DF Completo)</option>
+          </select>
+        </div>
+
+        <!-- SELECT ZONA -->
+        <div style="display:flex; align-items:center; gap:6px;">
+          <span style="font-size:0.75rem; color:#A6A39C;">Zona:</span>
+          <select id="df-zona-select" onchange="selectDfZona(this.value)" style="background:#22201D; border:1px solid rgba(255,255,255,0.2); border-radius:8px; padding:6px 10px; color:#FAFAF9; font-size:0.82rem; outline:none; cursor:pointer; max-width:160px;">
+            <option value="all">Todas as 19 Zonas</option>
+            <option value="18" style="font-weight:bold; color:#34d399;">⭐ 18ª ZE (São Sebastião & JB - 841 votos)</option>
+          </select>
+        </div>
+
+        <!-- SELECT TIPO ÁREA -->
+        <div style="display:flex; align-items:center; gap:6px;">
+          <span style="font-size:0.75rem; color:#A6A39C;">Área:</span>
+          <select id="df-tipo-select" onchange="selectDfTipo(this.value)" style="background:#22201D; border:1px solid rgba(255,255,255,0.2); border-radius:8px; padding:6px 10px; color:#FAFAF9; font-size:0.82rem; outline:none; cursor:pointer;">
+            <option value="all">Todas</option>
+            <option value="Rural">🌾 Rural</option>
+            <option value="Urbano">🏙️ Urbana</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- BOTÃO INLINE VISÍVEL NO MOBILE PARA SUBIR PARTE SUPERIOR -->
+      <div class="mobile-only-subir-bar" style="display:none; padding:8px 12px; background:rgba(245,158,11,0.12); border-bottom:1px solid rgba(245,158,11,0.3); text-align:center;">
+        <button onclick="toggleTopSection()" style="all:unset; cursor:pointer; font-size:0.8rem; font-weight:700; color:#f59e0b; display:inline-flex; align-items:center; gap:6px;">
+          <span>🔼</span><span>Subir esta parte e ver informações em tela cheia</span><span>🔼</span>
+        </button>
       </div>
     </div>
 

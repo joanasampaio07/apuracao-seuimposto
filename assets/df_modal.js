@@ -87,6 +87,7 @@ function selectDfRa(id) {
   renderDfView();
   if (window.innerWidth <= 900) {
     setMobileSubTab('colegios');
+    toggleTopSection(true);
   }
 }
 
@@ -114,6 +115,10 @@ function quickFilterZona18() {
   const selT = document.getElementById('df-tipo-select');
   if (selT) selT.value = 'all';
   renderDfView();
+  if (window.innerWidth <= 900) {
+    setMobileSubTab('colegios');
+    toggleTopSection(true);
+  }
 }
 
 function quickFilterTipo(tipo) {
@@ -189,11 +194,34 @@ function setMobileSubTab(tab) {
   }
 }
 
+function toggleTopSection(forceState) {
+  const topSec = document.getElementById('df-top-collapsible');
+  const btnIcon = document.getElementById('btn-toggle-top-icon');
+  const btnText = document.getElementById('btn-toggle-top-text');
+  const container = document.getElementById('df-modal-container');
+  if (!topSec) return;
+
+  const isCurrentlyCollapsed = topSec.classList.contains('is-collapsed');
+  const willCollapse = (forceState !== undefined) ? forceState : !isCurrentlyCollapsed;
+
+  if (willCollapse) {
+    topSec.classList.add('is-collapsed');
+    if (btnIcon) btnIcon.textContent = '🔽';
+    if (btnText) btnText.textContent = 'Filtros';
+    if (container) container.scrollTop = 0;
+  } else {
+    topSec.classList.remove('is-collapsed');
+    if (btnIcon) btnIcon.textContent = '🔼';
+    if (btnText) btnText.textContent = 'Subir';
+  }
+}
+
 function openMarcelaDossie() {
   openDfModal('all');
   setDfTab('marcela');
   if (window.innerWidth <= 900) {
     setMobileSubTab('dossie');
+    toggleTopSection(false);
   }
 }
 
@@ -206,6 +234,7 @@ function openDfModal(raId = 'all') {
     if (sel) sel.value = raId;
     if (window.innerWidth <= 900) {
       setMobileSubTab('dossie');
+      toggleTopSection(false);
     }
     if (!window.dfGlobalData) initDfData();
     else renderDfView();
