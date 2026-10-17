@@ -1,0 +1,541 @@
+{
+  "totalSecoes": 1351,
+  "secoesApuradas": 1351,
+  "percentualApurado": "100,00%",
+  "totalEleitorado": 916534,
+  "comparecimento": 341766,
+  "percentualComparecimento": "37,31%",
+  "abstencao": 574345,
+  "percentualAbstencao": "62,69%",
+  "votosValidos": 330882,
+  "votosBrancos": 5816,
+  "votosNulos": 5068,
+  "competencia": "1ª Zona Eleitoral do Exterior (ZZ) · Jurisdição do TRE-DF (Brasília)",
+  "candidatos": [
+    {
+      "numero": "13",
+      "nome": "Lula",
+      "partido": "PT",
+      "votos": 157387,
+      "percentual": "47,57%",
+      "cor": "#ef4444"
+    },
+    {
+      "numero": "22",
+      "nome": "Flávio Bolsonaro",
+      "partido": "PL",
+      "votos": 143900,
+      "percentual": "43,49%",
+      "cor": "#3b82f6"
+    },
+    {
+      "numero": "70",
+      "nome": "Escritor Augusto Cury",
+      "partido": "AVANTE",
+      "votos": 9734,
+      "percentual": "2,94%",
+      "cor": "#10b981"
+    },
+    {
+      "numero": "14",
+      "nome": "Renan Santos",
+      "partido": "MISSÃO",
+      "votos": 8580,
+      "percentual": "2,59%",
+      "cor": "#8b5cf6"
+    },
+    {
+      "numero": "55",
+      "nome": "Ronaldo Caiado",
+      "partido": "PSD",
+      "votos": 4708,
+      "percentual": "1,42%",
+      "cor": "#f59e0b"
+    },
+    {
+      "numero": "30",
+      "nome": "Romeu Zema",
+      "partido": "NOVO",
+      "votos": 3329,
+      "percentual": "1,01%",
+      "cor": "#ec4899"
+    },
+    {
+      "numero": "80",
+      "nome": "Samara",
+      "partido": "UP",
+      "votos": 1053,
+      "percentual": "0,32%",
+      "cor": "#dc2626"
+    },
+    {
+      "numero": "27",
+      "nome": "Clariana Barão",
+      "partido": "DC",
+      "votos": 825,
+      "percentual": "0,25%",
+      "cor": "#0284c7"
+    },
+    {
+      "numero": "21",
+      "nome": "Edmilson Costa",
+      "partido": "PCB",
+      "votos": 421,
+      "percentual": "0,13%",
+      "cor": "#b91c1c"
+    },
+    {
+      "numero": "16",
+      "nome": "Hertz Dias",
+      "partido": "PSTU",
+      "votos": 373,
+      "percentual": "0,11%",
+      "cor": "#991b1b"
+    },
+    {
+      "numero": "35",
+      "nome": "Wilson Grassi",
+      "partido": "DEMOCRATA",
+      "votos": 373,
+      "percentual": "0,11%",
+      "cor": "#0d9488"
+    },
+    {
+      "numero": "29",
+      "nome": "Rui Costa Pimenta",
+      "partido": "PCO",
+      "votos": 199,
+      "percentual": "0,06%",
+      "cor": "#7f1d1d"
+    }
+  ],
+  "paises": [
+    [
+      "US",
+      "Estados Unidos",
+      11,
+      265437
+    ],
+    [
+      "PT",
+      "Portugal",
+      3,
+      134797
+    ],
+    [
+      "JP",
+      "Japão",
+      3,
+      88366
+    ],
+    [
+      "CA",
+      "Canadá",
+      4,
+      46488
+    ],
+    [
+      "GB",
+      "Reino Unido",
+      2,
+      42023
+    ],
+    [
+      "DE",
+      "Alemanha",
+      3,
+      41551
+    ],
+    [
+      "ES",
+      "Espanha",
+      2,
+      40817
+    ],
+    [
+      "IT",
+      "Itália",
+      2,
+      38829
+    ],
+    [
+      "FR",
+      "França",
+      2,
+      29730
+    ],
+    [
+      "CH",
+      "Suíça",
+      2,
+      27036
+    ],
+    [
+      "AU",
+      "Austrália",
+      2,
+      20331
+    ],
+    [
+      "IE",
+      "Irlanda",
+      1,
+      16794
+    ],
+    [
+      "AR",
+      "Argentina",
+      5,
+      13138
+    ],
+    [
+      "NL",
+      "Países Baixos",
+      1,
+      12806
+    ],
+    [
+      "BE",
+      "Bélgica",
+      1,
+      10094
+    ],
+    [
+      "PY",
+      "Paraguai",
+      6,
+      9225
+    ],
+    [
+      "LB",
+      "Líbano",
+      1,
+      8927
+    ],
+    [
+      "SE",
+      "Suécia",
+      1,
+      4894
+    ],
+    [
+      "MX",
+      "México",
+      1,
+      3975
+    ],
+    [
+      "BO",
+      "Bolívia",
+      5,
+      3627
+    ],
+    [
+      "CL",
+      "Chile",
+      1,
+      3569
+    ],
+    [
+      "IL",
+      "Israel",
+      1,
+      3452
+    ],
+    [
+      "UY",
+      "Uruguai",
+      5,
+      3175
+    ],
+    [
+      "AT",
+      "Áustria",
+      1,
+      3147
+    ],
+    [
+      "NZ",
+      "Nova Zelândia",
+      1,
+      3130
+    ],
+    [
+      "GF",
+      "Guiana Francesa",
+      2,
+      3127
+    ],
+    [
+      "AE",
+      "Emirados Árabes Unidos",
+      1,
+      2995
+    ],
+    [
+      "DK",
+      "Dinamarca",
+      1,
+      2863
+    ],
+    [
+      "NO",
+      "Noruega",
+      1,
+      2197
+    ],
+    [
+      "PS",
+      "Palestina",
+      1,
+      2140
+    ]
+  ],
+  "cidadesTop": [
+    {
+      "codigo": "29955",
+      "cidade": "Lisboa",
+      "pais": "Portugal",
+      "eleitorado": 78833,
+      "secoes": 58
+    },
+    {
+      "codigo": "29416",
+      "cidade": "Boston",
+      "pais": "Estados Unidos",
+      "eleitorado": 53406,
+      "secoes": 51
+    },
+    {
+      "codigo": "30341",
+      "cidade": "Porto",
+      "pais": "Portugal",
+      "eleitorado": 47676,
+      "secoes": 39
+    },
+    {
+      "codigo": "30198",
+      "cidade": "Nagoia",
+      "pais": "Japão",
+      "eleitorado": 44570,
+      "secoes": 48
+    },
+    {
+      "codigo": "30112",
+      "cidade": "Miami",
+      "pais": "Estados Unidos",
+      "eleitorado": 40104,
+      "secoes": 56
+    },
+    {
+      "codigo": "30228",
+      "cidade": "Nova York",
+      "pais": "Estados Unidos",
+      "eleitorado": 39026,
+      "secoes": 39
+    },
+    {
+      "codigo": "29971",
+      "cidade": "Londres",
+      "pais": "Reino Unido",
+      "eleitorado": 37564,
+      "secoes": 44
+    },
+    {
+      "codigo": "30627",
+      "cidade": "Tóquio",
+      "pais": "Japão",
+      "eleitorado": 30062,
+      "secoes": 40
+    },
+    {
+      "codigo": "30287",
+      "cidade": "Paris",
+      "pais": "França",
+      "eleitorado": 27062,
+      "secoes": 29
+    },
+    {
+      "codigo": "99490",
+      "cidade": "Orlando",
+      "pais": "Estados Unidos",
+      "eleitorado": 26411,
+      "secoes": 0
+    },
+    {
+      "codigo": "30120",
+      "cidade": "Milão",
+      "pais": "Itália",
+      "eleitorado": 24632,
+      "secoes": 31
+    },
+    {
+      "codigo": "30066",
+      "cidade": "Madri",
+      "pais": "Espanha",
+      "eleitorado": 23519,
+      "secoes": 26
+    },
+    {
+      "codigo": "30635",
+      "cidade": "Toronto",
+      "pais": "Canadá",
+      "eleitorado": 21005,
+      "secoes": 23
+    },
+    {
+      "codigo": "29980",
+      "cidade": "Los Angeles",
+      "pais": "Estados Unidos",
+      "eleitorado": 18311,
+      "secoes": 18
+    },
+    {
+      "codigo": "30783",
+      "cidade": "Washington",
+      "pais": "Estados Unidos",
+      "eleitorado": 18193,
+      "secoes": 20
+    },
+    {
+      "codigo": "29351",
+      "cidade": "Barcelona",
+      "pais": "Espanha",
+      "eleitorado": 17298,
+      "secoes": 14
+    },
+    {
+      "codigo": "29661",
+      "cidade": "Dublin",
+      "pais": "Irlanda",
+      "eleitorado": 16794,
+      "secoes": 16
+    },
+    {
+      "codigo": "29807",
+      "cidade": "Houston",
+      "pais": "Estados Unidos",
+      "eleitorado": 16465,
+      "secoes": 21
+    },
+    {
+      "codigo": "39080",
+      "cidade": "Atlanta",
+      "pais": "Estados Unidos",
+      "eleitorado": 16321,
+      "secoes": 18
+    },
+    {
+      "codigo": "30503",
+      "cidade": "São Francisco",
+      "pais": "Estados Unidos",
+      "eleitorado": 15530,
+      "secoes": 17
+    },
+    {
+      "codigo": "29386",
+      "cidade": "Berlim",
+      "pais": "Alemanha",
+      "eleitorado": 15141,
+      "secoes": 17
+    },
+    {
+      "codigo": "30864",
+      "cidade": "Zurique",
+      "pais": "Suíça",
+      "eleitorado": 15122,
+      "secoes": 19
+    },
+    {
+      "codigo": "30449",
+      "cidade": "Roma",
+      "pais": "Itália",
+      "eleitorado": 14197,
+      "secoes": 20
+    },
+    {
+      "codigo": "30562",
+      "cidade": "Sydney",
+      "pais": "Austrália",
+      "eleitorado": 14070,
+      "secoes": 15
+    },
+    {
+      "codigo": "29742",
+      "cidade": "Hamamatsu",
+      "pais": "Japão",
+      "eleitorado": 13734,
+      "secoes": 16
+    },
+    {
+      "codigo": "30180",
+      "cidade": "Munique",
+      "pais": "Alemanha",
+      "eleitorado": 13411,
+      "secoes": 17
+    },
+    {
+      "codigo": "29696",
+      "cidade": "Frankfurt",
+      "pais": "Alemanha",
+      "eleitorado": 12999,
+      "secoes": 18
+    },
+    {
+      "codigo": "30457",
+      "cidade": "Amsterdã",
+      "pais": "Países Baixos",
+      "eleitorado": 12806,
+      "secoes": 13
+    },
+    {
+      "codigo": "29513",
+      "cidade": "Chicago",
+      "pais": "Estados Unidos",
+      "eleitorado": 12480,
+      "secoes": 14
+    },
+    {
+      "codigo": "39063",
+      "cidade": "Vancouver",
+      "pais": "Canadá",
+      "eleitorado": 12113,
+      "secoes": 14
+    },
+    {
+      "codigo": "29700",
+      "cidade": "Genebra",
+      "pais": "Suíça",
+      "eleitorado": 11914,
+      "secoes": 14
+    },
+    {
+      "codigo": "29467",
+      "cidade": "Buenos Aires",
+      "pais": "Argentina",
+      "eleitorado": 11873,
+      "secoes": 15
+    },
+    {
+      "codigo": "30155",
+      "cidade": "Montreal",
+      "pais": "Canadá",
+      "eleitorado": 11004,
+      "secoes": 13
+    },
+    {
+      "codigo": "29432",
+      "cidade": "Bruxelas",
+      "pais": "Bélgica",
+      "eleitorado": 10094,
+      "secoes": 9
+    },
+    {
+      "codigo": "30902",
+      "cidade": "Hartford",
+      "pais": "Estados Unidos",
+      "eleitorado": 9190,
+      "secoes": 6
+    }
+  ]
+}

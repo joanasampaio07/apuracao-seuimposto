@@ -2,11 +2,26 @@
 // Integrado com a Abrangência Territorial Oficial da 18ª Zona Eleitoral e os 37 Colégios Eleitorais
 
 window.dfGlobalData = null;
+window.exteriorGlobalData = null;
 window.selectedRaId = 'all';
 window.selectedZona = 'all';
 window.selectedTipo = 'all';
 window.currentTab = 'marcela';
 window.viewModeZ18 = 'locais'; // 'locais' ou 'secoes'
+window.exteriorViewMode = 'paises'; // 'paises' ou 'cidades'
+
+function getCountryFlag(sigla) {
+  if (!sigla || sigla.length !== 2) return '🌐';
+  try {
+    const codePoints = sigla
+      .toUpperCase()
+      .split('')
+      .map(char => 127397 + char.charCodeAt(0));
+    return String.fromCodePoint(...codePoints);
+  } catch(e) {
+    return '🌐';
+  }
+}
 
 // Abrangência Territorial Oficial da 18ª Zona Eleitoral (Decreto TRE-DF)
 window.ZONA_18_ABRANGENCIA = {
@@ -49,6 +64,15 @@ async function initDfData() {
     renderDfView();
   } catch(e) {
     console.warn('[DF Distritais] Erro ao carregar dados:', e);
+  }
+  try {
+    const resExt = await fetch('/api/tse/exterior');
+    window.exteriorGlobalData = await resExt.json();
+    if (window.currentTab === 'exterior') {
+      renderDfView();
+    }
+  } catch(e) {
+    console.warn('[Exterior] Erro ao carregar dados do exterior:', e);
   }
 }
 
@@ -145,21 +169,108 @@ function setDfTab(tab) {
   window.currentTab = tab;
   const bGeral = document.getElementById('tab-geral');
   const bMarcela = document.getElementById('tab-marcela');
-  if (bGeral && bMarcela) {
+  const bExterior = document.getElementById('tab-exterior');
+
+  if (bMarcela) {
     if (tab === 'marcela') {
       bMarcela.style.background = 'linear-gradient(135deg, #f59e0b, #d97706)';
       bMarcela.style.color = '#fff';
       bMarcela.style.border = 'none';
-      bGeral.style.background = 'transparent';
-      bGeral.style.color = 'rgba(255,255,255,0.6)';
     } else {
-      bGeral.style.background = 'rgba(255,255,255,0.15)';
-      bGeral.style.color = '#fff';
       bMarcela.style.background = 'transparent';
       bMarcela.style.color = '#f59e0b';
       bMarcela.style.border = '1px solid rgba(245,158,11,0.5)';
     }
   }
+
+  if (bGeral) {
+    if (tab === 'geral') {
+      bGeral.style.background = 'rgba(255,255,255,0.15)';
+      bGeral.style.color = '#fff';
+      bGeral.style.border = 'none';
+    } else {
+      bGeral.style.background = 'transparent';
+      bGeral.style.color = 'rgba(255,255,255,0.6)';
+      bGeral.style.border = 'none';
+    }
+  }
+
+  if (bExterior) {
+    if (tab === 'exterior') {
+      bExterior.style.background = 'linear-gradient(135deg, #3b82f6, #1d4ed8)';
+      bExterior.style.color = '#fff';
+      bExterior.style.border = 'none';
+    } else {
+      bExterior.style.background = 'transparent';
+      bExterior.style.color = '#60a5fa';
+      bExterior.style.border = '1px solid rgba(59,130,246,0.4)';
+    }
+  }
+
+  // Ajusta controles e filtros específicos conforme a aba
+  const quickFilters = document.getElementById('df-modal-quick-filters');
+  const raSel = document.getElementById('df-ra-select');
+  const zonaSel = document.getElementById('df-zona-select');
+  const tipoSel = document.getElementById('df-tipo-select');
+  const searchInp = document.getElementById('df-search-input');
+
+  if (tab === 'exterior') {
+    if (raSel && raSel.parentElement) raSel.parentElement.style.display = 'none';
+    if (zonaSel && zonaSel.parentElement) zonaSel.parentElement.style.display = 'none';
+    if (tipoSel && tipoSel.parentElement) tipoSel.parentElement.style.display = 'none';
+    if (searchInp) searchInp.placeholder = '🔍 Buscar País ou Cidade no Exterior (ex: Portugal, Boston, Japão)...';
+    
+    if (quickFilters) {
+      quickFilters.innerHTML = `
+        <span style="font-size:0.75rem; color:#A6A39C; font-weight:600; text-transform:uppercase; letter-spacing:0.04em;">Países em destaque:</span>
+        <button onclick="filterExteriorCountry('Estados Unidos')" style="all:unset; cursor:pointer; font-size:0.78rem; font-weight:700; padding:4px 10px; border-radius:100px; background:rgba(59,130,246,0.2); border:1px solid rgba(59,130,246,0.4); color:#93c5fd; display:inline-flex; align-items:center; gap:4px;">
+          🇺🇸 EUA (265k)
+        </button>
+        <button onclick="filterExteriorCountry('Portugal')" style="all:unset; cursor:pointer; font-size:0.78rem; font-weight:700; padding:4px 10px; border-radius:100px; background:rgba(16,185,129,0.2); border:1px solid rgba(16,185,129,0.4); color:#6ee7b7; display:inline-flex; align-items:center; gap:4px;">
+          🇵🇹 Portugal (134k)
+        </button>
+        <button onclick="filterExteriorCountry('Japão')" style="all:unset; cursor:pointer; font-size:0.78rem; font-weight:700; padding:4px 10px; border-radius:100px; background:rgba(239,68,68,0.2); border:1px solid rgba(239,68,68,0.4); color:#fca5a5; display:inline-flex; align-items:center; gap:4px;">
+          🇯🇵 Japão (88k)
+        </button>
+        <button onclick="filterExteriorCountry('Reino Unido')" style="all:unset; cursor:pointer; font-size:0.78rem; font-weight:600; padding:4px 10px; border-radius:100px; background:rgba(255,255,255,0.08); color:#FAFAF9;">
+          🇬🇧 Reino Unido (44k)
+        </button>
+        <button onclick="filterExteriorCountry('Alemanha')" style="all:unset; cursor:pointer; font-size:0.78rem; font-weight:600; padding:4px 10px; border-radius:100px; background:rgba(255,255,255,0.08); color:#FAFAF9;">
+          🇩🇪 Alemanha (39k)
+        </button>
+        <button onclick="filterExteriorCountry('Itália')" style="all:unset; cursor:pointer; font-size:0.78rem; font-weight:600; padding:4px 10px; border-radius:100px; background:rgba(255,255,255,0.08); color:#FAFAF9;">
+          🇮🇹 Itália (37k)
+        </button>
+        <button onclick="filterExteriorCountry('')" style="all:unset; cursor:pointer; font-size:0.78rem; font-weight:600; padding:4px 10px; border-radius:100px; background:rgba(255,255,255,0.12); color:#fff;">
+          🔄 Todos os Países
+        </button>
+      `;
+    }
+  } else {
+    if (raSel && raSel.parentElement) raSel.parentElement.style.display = 'flex';
+    if (zonaSel && zonaSel.parentElement) zonaSel.parentElement.style.display = 'flex';
+    if (tipoSel && tipoSel.parentElement) tipoSel.parentElement.style.display = 'flex';
+    if (searchInp) searchInp.placeholder = '🔍 Buscar por Colégio, Seção, RA...';
+    
+    if (quickFilters) {
+      quickFilters.innerHTML = `
+        <span style="font-size:0.75rem; color:#A6A39C; font-weight:600; text-transform:uppercase; letter-spacing:0.04em;">Filtros:</span>
+        <button onclick="quickFilterZona18()" id="btn-quick-z18" style="all:unset; cursor:pointer; font-size:0.8rem; font-weight:700; padding:4px 12px; border-radius:100px; background:rgba(16,185,129,0.2); border:1px solid rgba(16,185,129,0.45); color:#34d399; display:inline-flex; align-items:center; gap:5px;">
+          ⭐ 18ª ZE (São Sebastião 518 · JB 162 · Lago Sul 161)
+        </button>
+        <button onclick="quickFilterTipo('Rural')" id="btn-quick-rural" style="all:unset; cursor:pointer; font-size:0.8rem; font-weight:700; padding:4px 12px; border-radius:100px; background:rgba(34,197,94,0.15); border:1px solid rgba(34,197,94,0.35); color:#4ade80; display:inline-flex; align-items:center; gap:5px;">
+          🌾 Zona Rural
+        </button>
+        <button onclick="quickFilterTipo('Urbano')" id="btn-quick-urbano" style="all:unset; cursor:pointer; font-size:0.8rem; font-weight:600; padding:4px 12px; border-radius:100px; background:rgba(59,130,246,0.15); border:1px solid rgba(59,130,246,0.35); color:#60a5fa; display:inline-flex; align-items:center; gap:5px;">
+          🏙️ Zona Urbana
+        </button>
+        <button onclick="resetAllFilters()" style="all:unset; cursor:pointer; font-size:0.8rem; font-weight:600; padding:4px 10px; border-radius:100px; background:rgba(255,255,255,0.08); color:#FAFAF9;">
+          🔄 Ver Todas
+        </button>
+      `;
+    }
+  }
+
   renderDfView();
 }
 
@@ -168,8 +279,11 @@ function setMobileSubTab(tab) {
   const right = document.getElementById('df-right-pane');
   const bDossie = document.getElementById('btn-mobile-tab-dossie');
   const bColegios = document.getElementById('btn-mobile-tab-colegios');
+  const bExterior = document.getElementById('btn-mobile-tab-exterior');
   if (!left || !right) return;
+
   if (tab === 'dossie') {
+    if (window.currentTab === 'exterior') setDfTab('marcela');
     left.style.display = 'block';
     right.style.display = 'none';
     if (bDossie) {
@@ -180,7 +294,12 @@ function setMobileSubTab(tab) {
       bColegios.style.background = 'rgba(255,255,255,0.08)';
       bColegios.style.color = '#D6D4CF';
     }
-  } else {
+    if (bExterior) {
+      bExterior.style.background = 'rgba(59,130,246,0.15)';
+      bExterior.style.color = '#93c5fd';
+    }
+  } else if (tab === 'colegios') {
+    if (window.currentTab === 'exterior') setDfTab('marcela');
     left.style.display = 'none';
     right.style.display = 'block';
     if (bColegios) {
@@ -191,6 +310,46 @@ function setMobileSubTab(tab) {
       bDossie.style.background = 'rgba(255,255,255,0.08)';
       bDossie.style.color = '#D6D4CF';
     }
+    if (bExterior) {
+      bExterior.style.background = 'rgba(59,130,246,0.15)';
+      bExterior.style.color = '#93c5fd';
+    }
+  } else if (tab === 'exterior') {
+    setDfTab('exterior');
+    left.style.display = 'block';
+    right.style.display = 'block';
+    if (bExterior) {
+      bExterior.style.background = 'linear-gradient(135deg, #3b82f6, #1d4ed8)';
+      bExterior.style.color = '#fff';
+    }
+    if (bDossie) {
+      bDossie.style.background = 'rgba(255,255,255,0.08)';
+      bDossie.style.color = '#D6D4CF';
+    }
+    if (bColegios) {
+      bColegios.style.background = 'rgba(255,255,255,0.08)';
+      bColegios.style.color = '#D6D4CF';
+    }
+  }
+}
+
+function filterExteriorCountry(countryName) {
+  const si = document.getElementById('df-search-input');
+  if (si) si.value = countryName;
+  renderDfView(countryName);
+}
+
+function setExteriorViewMode(mode) {
+  window.exteriorViewMode = mode;
+  renderDfView(document.getElementById('df-search-input')?.value || '');
+}
+
+function openExteriorView() {
+  openDfModal('all');
+  setDfTab('exterior');
+  if (window.innerWidth <= 900) {
+    setMobileSubTab('exterior');
+    toggleTopSection(true);
   }
 }
 
@@ -250,6 +409,8 @@ function filterDfData() {
   const q = (document.getElementById('df-search-input').value || '').toLowerCase().trim();
   if (q.includes('marcela') || q.includes('15555')) {
     setDfTab('marcela');
+  } else if (q.includes('exterior') || q.includes('zz')) {
+    setDfTab('exterior');
   }
   renderDfView(q);
 }
@@ -260,12 +421,188 @@ function setZ18ViewMode(mode) {
 }
 
 function renderDfView(filterQuery = '') {
-  if (!window.dfGlobalData) return;
+  if (!window.dfGlobalData && window.currentTab !== 'exterior') return;
   const leftCol = document.getElementById('df-left-content');
   const rightCol = document.getElementById('df-secoes-list');
   const secoesTitle = document.getElementById('df-secoes-title');
   const secoesSubtitle = document.getElementById('df-secoes-subtitle');
   const secoesCount = document.getElementById('df-secoes-count');
+  if (!leftCol || !rightCol) return;
+
+  // --- RENDER EXTERIOR VIEW (1ª ZONA ELEITORAL ZZ · TRE-DF) ---
+  if (window.currentTab === 'exterior') {
+    const ext = window.exteriorGlobalData;
+    if (!ext) {
+      leftCol.innerHTML = '<div style="padding:24px; text-align:center; color:#A6A39C;">Carregando dados oficiais do exterior...</div>';
+      return;
+    }
+
+    // --- LEFT COLUMN: ESTATÍSTICAS E VOTAÇÃO PRESIDENCIAL NO EXTERIOR ---
+    let candsHtml = '';
+    (ext.candidatos || []).forEach((c, idx) => {
+      const isWinner = idx === 0;
+      const isTop2 = idx <= 1;
+      candsHtml += `
+        <div style="background:${isTop2 ? 'rgba(255,255,255,0.04)' : 'rgba(255,255,255,0.015)'}; border:1px solid ${isWinner ? 'rgba(239,68,68,0.4)' : (idx === 1 ? 'rgba(59,130,246,0.4)' : 'rgba(255,255,255,0.06)')}; border-left:3px solid ${c.cor}; border-radius:8px; padding:8px 10px; margin-bottom:6px;">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:4px;">
+            <div style="display:flex; align-items:center; gap:6px;">
+              <span style="font-size:0.75rem; font-weight:700; color:#A6A39C;">${idx + 1}º</span>
+              <span style="font-size:0.85rem; font-weight:700; color:#fff;">${c.nome}</span>
+              <span style="font-size:0.7rem; background:rgba(255,255,255,0.08); padding:1px 6px; border-radius:4px; color:#D6D4CF;">${c.partido} ${c.numero}</span>
+            </div>
+            <div style="text-align:right;">
+              <b style="font-size:0.9rem; color:${c.cor};">${c.votos.toLocaleString('pt-BR')}</b>
+              <span style="font-size:0.75rem; color:#22c55e; font-weight:700; margin-left:4px;">${c.percentual}</span>
+            </div>
+          </div>
+          <!-- Barra de progresso do candidato -->
+          <div style="width:100%; height:4px; background:rgba(255,255,255,0.08); border-radius:100px; overflow:hidden;">
+            <div style="width:${c.percentual.replace(',', '.')}; height:100%; background:${c.cor}; border-radius:100px;"></div>
+          </div>
+        </div>`;
+    });
+
+    leftCol.innerHTML = `
+      <!-- BANNER 1ª ZONA ELEITORAL DO EXTERIOR (ZZ) -->
+      <div style="background:linear-gradient(135deg, rgba(59,130,246,0.18), rgba(29,78,216,0.08)); border:1px solid rgba(59,130,246,0.45); border-radius:12px; padding:14px; margin-bottom:14px;">
+        <div style="display:flex; align-items:center; gap:12px; margin-bottom:10px;">
+          <div style="width:46px; height:46px; border-radius:50%; background:linear-gradient(135deg, #3b82f6, #1d4ed8); display:grid; place-items:center; font-weight:700; font-size:1.4rem; color:#fff; box-shadow:0 0 14px rgba(59,130,246,0.5);">
+            🌍
+          </div>
+          <div>
+            <div style="font-size:1.1rem; font-weight:700; color:#fff;">Zona Eleitoral do Exterior (ZZ)</div>
+            <div style="font-size:0.75rem; color:#93c5fd; font-weight:600;">1ª ZE do Exterior · Sob Jurisdição do TRE-DF</div>
+          </div>
+        </div>
+        
+        <p style="margin:0 0 10px; font-size:0.72rem; color:#D6D4CF; line-height:1.4;">
+          Pela legislação eleitoral brasileira (Art. 225 do Código Eleitoral), eleitores no exterior votam <b>exclusivamente para Presidente e Vice-Presidente da República</b>. A 1ª Zona Eleitoral do Exterior funciona administrativamente vinculada ao <b>TRE-DF em Brasília</b>.
+        </p>
+
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-bottom:10px;">
+          <div style="background:rgba(0,0,0,0.3); padding:8px 10px; border-radius:8px;">
+            <div style="font-size:0.68rem; color:#A6A39C;">Total Eleitorado Exterior</div>
+            <div style="font-size:1.15rem; font-weight:700; color:#fff;">${ext.totalEleitorado.toLocaleString('pt-BR')}</div>
+            <div style="font-size:0.65rem; color:#60a5fa;">186 cidades em 140+ países</div>
+          </div>
+          <div style="background:rgba(0,0,0,0.3); padding:8px 10px; border-radius:8px;">
+            <div style="font-size:0.68rem; color:#A6A39C;">Seções Apuradas</div>
+            <div style="font-size:1.15rem; font-weight:700; color:#22c55e;">${ext.secoesApuradas.toLocaleString('pt-BR')} <span style="font-size:0.75rem;">(100%)</span></div>
+            <div style="font-size:0.65rem; color:#22c55e;">Totalização concluída</div>
+          </div>
+        </div>
+
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-bottom:8px;">
+          <div style="background:rgba(16,185,129,0.12); border:1px solid rgba(16,185,129,0.3); padding:8px 10px; border-radius:8px;">
+            <div style="font-size:0.68rem; color:#34d399;">Comparecimento</div>
+            <div style="font-size:1.05rem; font-weight:700; color:#4ade80;">${ext.comparecimento.toLocaleString('pt-BR')}</div>
+            <div style="font-size:0.65rem; color:#A6A39C;">${ext.percentualComparecimento} dos eleitores</div>
+          </div>
+          <div style="background:rgba(239,68,68,0.12); border:1px solid rgba(239,68,68,0.3); padding:8px 10px; border-radius:8px;">
+            <div style="font-size:0.68rem; color:#f87171;">Abstenção</div>
+            <div style="font-size:1.05rem; font-weight:700; color:#fca5a5;">${ext.abstencao.toLocaleString('pt-BR')}</div>
+            <div style="font-size:0.65rem; color:#A6A39C;">${ext.percentualAbstencao} de abstenção</div>
+          </div>
+        </div>
+
+        <div style="display:flex; justify-content:space-between; font-size:0.7rem; color:#A6A39C; padding:6px 8px; background:rgba(0,0,0,0.25); border-radius:6px;">
+          <span>Votos Válidos: <b style="color:#fff;">${ext.votosValidos.toLocaleString('pt-BR')} (96,82%)</b></span>
+          <span>Brancos: <b style="color:#fff;">${ext.votosBrancos.toLocaleString('pt-BR')} (1,70%)</b></span>
+          <span>Nulos: <b style="color:#fff;">${ext.votosNulos.toLocaleString('pt-BR')} (1,48%)</b></span>
+        </div>
+      </div>
+
+      <!-- VOTAÇÃO OFICIAL DOS CANDIDATOS -->
+      <div>
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+          <b style="font-size:0.85rem; color:#FAFAF9;">Votação Presidencial no Exterior:</b>
+          <span style="font-size:0.7rem; color:#22c55e;">12 Candidatos</span>
+        </div>
+        <div style="display:flex; flex-direction:column;">
+          ${candsHtml}
+        </div>
+      </div>
+    `;
+
+    // --- RIGHT COLUMN: TOP PAÍSES E CIDADES DO EXTERIOR ---
+    secoesTitle.textContent = '🌍 Presença Global dos Eleitores Brasileiros no Exterior (Zona ZZ)';
+    secoesSubtitle.textContent = 'Eleitorado distribuído em 186 cidades consulares em mais de 140 países sob o TRE-DF';
+
+    const mode = window.exteriorViewMode || 'paises';
+    let q = (filterQuery || '').toLowerCase().trim();
+
+    let toggleBtnsHtml = `
+      <div style="display:flex; gap:10px; margin-bottom:12px; align-items:center; flex-wrap:wrap;">
+        <button onclick="setExteriorViewMode('paises')" style="all:unset; cursor:pointer; font-size:0.78rem; font-weight:${mode === 'paises' ? '700' : '500'}; padding:5px 14px; border-radius:100px; background:${mode === 'paises' ? '#3b82f6' : 'rgba(255,255,255,0.08)'}; color:#fff; transition:all .15s;">
+          🌍 Ranking de Países (${(ext.paises || []).length} países)
+        </button>
+        <button onclick="setExteriorViewMode('cidades')" style="all:unset; cursor:pointer; font-size:0.78rem; font-weight:${mode === 'cidades' ? '700' : '500'}; padding:5px 14px; border-radius:100px; background:${mode === 'cidades' ? '#3b82f6' : 'rgba(255,255,255,0.08)'}; color:#fff; transition:all .15s;">
+          🏙️ Cidades & Consulados (${(ext.cidadesTop || []).length} cidades)
+        </button>
+      </div>
+    `;
+
+    if (mode === 'paises') {
+      let filteredPaises = ext.paises || [];
+      if (q) {
+        filteredPaises = filteredPaises.filter(p => p[1].toLowerCase().includes(q) || p[0].toLowerCase().includes(q));
+      }
+      secoesCount.textContent = `${filteredPaises.length} países`;
+
+      let paisesHtml = toggleBtnsHtml + '<div style="display:flex; flex-direction:column; gap:8px;">';
+      filteredPaises.forEach((p, idx) => {
+        const [sigla, nome, numCidades, eleitores] = p;
+        const flag = getCountryFlag(sigla);
+        const share = ((eleitores / ext.totalEleitorado) * 100).toFixed(2);
+        paisesHtml += `
+          <div onclick="filterExteriorCountry('${nome}')" style="cursor:pointer; background:rgba(255,255,255,0.02); border:1px solid rgba(255,255,255,0.06); border-radius:10px; padding:10px 14px; display:flex; justify-content:space-between; align-items:center; transition:background .15s;" onmouseover="this.style.background='rgba(59,130,246,0.1)'" onmouseout="this.style.background='rgba(255,255,255,0.02)'">
+            <div style="display:flex; align-items:center; gap:12px;">
+              <span style="font-size:1.6rem; line-height:1;">${flag}</span>
+              <div>
+                <div style="font-weight:700; font-size:0.9rem; color:#fff;">${idx + 1}º ${nome} <span style="font-size:0.72rem; color:#93c5fd; background:rgba(59,130,246,0.15); padding:2px 6px; border-radius:4px; margin-left:6px;">${sigla}</span></div>
+                <div style="font-size:0.75rem; color:#A6A39C; margin-top:2px;">${numCidades} ${numCidades > 1 ? 'cidades de votação' : 'cidade de votação'} · Seções Eleitorais ZZ</div>
+              </div>
+            </div>
+            <div style="text-align:right;">
+              <b style="font-size:1rem; color:#60a5fa;">${eleitores.toLocaleString('pt-BR')}</b>
+              <div style="font-size:0.72rem; color:#22c55e; font-weight:600;">${share}% do exterior</div>
+            </div>
+          </div>
+        `;
+      });
+      paisesHtml += '</div>';
+      rightCol.innerHTML = paisesHtml;
+    } else {
+      let filteredCidades = ext.cidadesTop || [];
+      if (q) {
+        filteredCidades = filteredCidades.filter(c => c.cidade.toLowerCase().includes(q) || c.pais.toLowerCase().includes(q));
+      }
+      secoesCount.textContent = `${filteredCidades.length} cidades`;
+
+      let cidadesHtml = toggleBtnsHtml + '<div style="display:flex; flex-direction:column; gap:8px;">';
+      filteredCidades.forEach((c, idx) => {
+        const share = ((c.eleitorado / ext.totalEleitorado) * 100).toFixed(2);
+        cidadesHtml += `
+          <div style="background:rgba(255,255,255,0.02); border:1px solid rgba(255,255,255,0.06); border-radius:10px; padding:10px 14px; display:flex; justify-content:space-between; align-items:center;">
+            <div>
+              <div style="font-weight:700; font-size:0.9rem; color:#fff;">${idx + 1}º ${c.cidade}</div>
+              <div style="font-size:0.75rem; color:#A6A39C; margin-top:2px;">
+                🏛️ ${c.pais} · <span style="color:#60a5fa;">${c.secoes} seções eleitorais</span> · Cód. TSE: ${c.codigo}
+              </div>
+            </div>
+            <div style="text-align:right;">
+              <b style="font-size:1rem; color:#fff;">${c.eleitorado.toLocaleString('pt-BR')} eleitores</b>
+              <div style="font-size:0.72rem; color:#22c55e; font-weight:600;">${share}% do exterior</div>
+            </div>
+          </div>
+        `;
+      });
+      cidadesHtml += '</div>';
+      rightCol.innerHTML = cidadesHtml;
+    }
+
+    return;
+  }
 
   let activeRas = window.dfGlobalData.regioesAdministrativas;
   if (window.selectedRaId !== 'all') {
@@ -632,3 +969,23 @@ async function switchTseTurno(id) {
   const data = await res.json();
   console.log('[TSE Oficial ' + id + ' Recebido]:', data);
 }
+
+// Exportações globais para compatibilidade total
+window.openExteriorView = openExteriorView;
+window.filterExteriorCountry = filterExteriorCountry;
+window.setExteriorViewMode = setExteriorViewMode;
+window.getCountryFlag = getCountryFlag;
+window.openMarcelaDossie = openMarcelaDossie;
+window.openDfModal = openDfModal;
+window.closeDfModal = closeDfModal;
+window.setDfTab = setDfTab;
+window.setMobileSubTab = setMobileSubTab;
+window.toggleTopSection = toggleTopSection;
+window.quickFilterZona18 = quickFilterZona18;
+window.quickFilterTipo = quickFilterTipo;
+window.resetAllFilters = resetAllFilters;
+window.selectDfRa = selectDfRa;
+window.selectDfZona = selectDfZona;
+window.selectDfTipo = selectDfTipo;
+window.switchTseTurno = switchTseTurno;
+

@@ -211,10 +211,27 @@ const server = http.createServer(async (req, res) => {
     }
   }
 
+  // Endpoint oficial com dados consolidados do Exterior (Zona ZZ - TSE)
+  if (pathname === '/api/tse/exterior') {
+    try {
+      const data = fs.readFileSync(path.join(BASE_DIR, 'exterior_data.json'), 'utf8');
+      res.writeHead(200, {
+        'Content-Type': 'application/json; charset=utf-8',
+        'Access-Control-Allow-Origin': '*'
+      });
+      return res.end(data);
+    } catch (err) {
+      res.writeHead(500, { 'Content-Type': 'text/plain; charset=utf-8' });
+      return res.end('Erro lendo dados do exterior');
+    }
+  }
+
   // Suporte a arquivos de feed oficial TSE 2026
   if (pathname === '/agora.json') pathname = '/feed/agora.json';
   if (pathname === '/municipios.json') pathname = '/feed/municipios.json';
+  if (pathname === '/uf/zz.json') pathname = '/feed/uf/zz.json';
   if (pathname.startsWith('/deputados/')) pathname = '/feed' + pathname;
+  if (pathname.startsWith('/uf/')) pathname = '/feed' + pathname;
 
   // Aliases para assets
   if (pathname === '/assets/zonas.e52b15ca56.js' || pathname === '/assets/zonas.js') {
@@ -409,22 +426,30 @@ const server = http.createServer(async (req, res) => {
   <button id="btn-open-marcela" onclick="openMarcelaDossie()" style="all:unset; cursor:pointer; padding:7px 18px; border-radius:100px; font-weight:800; font-size:13px; background:linear-gradient(135deg, #f59e0b, #d97706); color:#fff; box-shadow:0 0 20px rgba(245,158,11,0.6); transition:transform .12s, box-shadow .12s; display:inline-flex; align-items:center; gap:7px;" onmousedown="this.style.transform='scale(0.96)'" onmouseup="this.style.transform='scale(1)'">
     ⭐ Marcela Passamani (15555) · 16.622 votos
   </button>
+  <span style="color:rgba(250,250,249,0.3);">|</span>
+  <!-- BOTÃO VOTOS DO EXTERIOR (ZZ) -->
+  <button id="btn-open-exterior" onclick="openExteriorView()" style="all:unset; cursor:pointer; padding:7px 15px; border-radius:100px; font-weight:700; font-size:12px; background:rgba(59,130,246,0.18); border:1px solid rgba(59,130,246,0.45); color:#60a5fa; display:inline-flex; align-items:center; gap:6px; transition:transform .12s, background .12s;" onmousedown="this.style.transform='scale(0.96)'" onmouseup="this.style.transform='scale(1)'">
+    🌍 Exterior (ZZ) · 916k votos
+  </button>
 </div>
 
-<!-- MODAL COMPLETO DE RAs E SEÇÕES DO DISTRITO FEDERAL COM DOSSIÊ MARCELA PASSAMANI -->
+<!-- MODAL COMPLETO DE RAs E SEÇÕES DO DISTRITO FEDERAL COM DOSSIÊ MARCELA PASSAMANI E EXTERIOR (ZZ) -->
 <div id="df-distritais-modal" style="display:none; position:fixed; inset:0; z-index:10000; background:rgba(0,0,0,0.85); backdrop-filter:blur(22px); -webkit-backdrop-filter:blur(22px); align-items:center; justify-content:center; padding:16px; font-family:var(--sans, system-ui); color:#FAFAF9;">
   <div id="df-modal-container" style="background:#151412; border:1px solid rgba(255,255,255,0.18); border-radius:20px; width:100%; max-width:1200px; height:92vh; display:flex; flex-direction:column; box-shadow:0 30px 70px rgba(0,0,0,0.95); overflow:hidden;">
     
     <!-- BARRA STICKY MOBILE (SUB-ABAS + BOTÃO SUBIR/EXPANDIR + FECHAR) -->
     <div id="df-mobile-sticky-bar" style="position:sticky; top:0; z-index:100; padding:8px 12px; border-bottom:1px solid rgba(255,255,255,0.14); background:rgba(21,20,18,0.98); backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px); display:none; gap:6px; align-items:center;">
-      <button id="btn-mobile-tab-dossie" onclick="setMobileSubTab('dossie')" style="all:unset; flex:1; text-align:center; padding:7px 8px; border-radius:8px; font-size:0.78rem; font-weight:700; background:linear-gradient(135deg, #f59e0b, #d97706); color:#fff; cursor:pointer;">
-        ⭐ Dossiê & RAs
+      <button id="btn-mobile-tab-dossie" onclick="setMobileSubTab('dossie')" style="all:unset; flex:1; text-align:center; padding:7px 6px; border-radius:8px; font-size:0.75rem; font-weight:700; background:linear-gradient(135deg, #f59e0b, #d97706); color:#fff; cursor:pointer; white-space:nowrap;">
+        ⭐ Dossiê
       </button>
-      <button id="btn-mobile-tab-colegios" onclick="setMobileSubTab('colegios')" style="all:unset; flex:1; text-align:center; padding:7px 8px; border-radius:8px; font-size:0.78rem; font-weight:600; background:rgba(255,255,255,0.08); color:#D6D4CF; cursor:pointer;">
-        🏫 37 Colégios / Seções
+      <button id="btn-mobile-tab-colegios" onclick="setMobileSubTab('colegios')" style="all:unset; flex:1; text-align:center; padding:7px 6px; border-radius:8px; font-size:0.75rem; font-weight:600; background:rgba(255,255,255,0.08); color:#D6D4CF; cursor:pointer; white-space:nowrap;">
+        🏫 37 Colégios
+      </button>
+      <button id="btn-mobile-tab-exterior" onclick="setMobileSubTab('exterior')" style="all:unset; flex:1; text-align:center; padding:7px 6px; border-radius:8px; font-size:0.75rem; font-weight:600; background:rgba(59,130,246,0.15); border:1px solid rgba(59,130,246,0.3); color:#93c5fd; cursor:pointer; white-space:nowrap;">
+        🌍 Exterior
       </button>
       <!-- BOTÃO PARA SUBIR / RECOLHER FILTROS E EXPANDIR TELA -->
-      <button id="btn-toggle-top-mobile" onclick="toggleTopSection()" title="Subir cabeçalho e ver dados em tela cheia" style="all:unset; cursor:pointer; padding:7px 10px; border-radius:8px; font-size:0.78rem; font-weight:700; background:rgba(245,158,11,0.2); border:1px solid rgba(245,158,11,0.5); color:#f59e0b; display:inline-flex; align-items:center; gap:4px; white-space:nowrap;">
+      <button id="btn-toggle-top-mobile" onclick="toggleTopSection()" title="Subir cabeçalho e ver dados em tela cheia" style="all:unset; cursor:pointer; padding:7px 8px; border-radius:8px; font-size:0.75rem; font-weight:700; background:rgba(245,158,11,0.2); border:1px solid rgba(245,158,11,0.5); color:#f59e0b; display:inline-flex; align-items:center; gap:2px; white-space:nowrap;">
         <span id="btn-toggle-top-icon">🔼</span> <span id="btn-toggle-top-text">Subir</span>
       </button>
       <!-- BOTÃO FECHAR MODAL MOBILE -->
@@ -438,12 +463,12 @@ const server = http.createServer(async (req, res) => {
         <div>
           <div style="display:flex; align-items:center; gap:10px;">
             <h2 style="margin:0; font-size:1.25rem; font-weight:700; display:flex; align-items:center; gap:8px;">
-              <span>🏛️</span><span>Distrito Federal — Apuração Oficial por Regiões Administrativas, Zonas e Colégios Eleitorais</span>
+              <span>🏛️</span><span>Distrito Federal & Exterior (ZZ) — Apuração Oficial por RAs, Zonas e Países</span>
             </h2>
             <span style="font-size:0.75rem; background:#22c55e22; color:#22c55e; border:1px solid #22c55e44; padding:2px 8px; border-radius:100px; font-weight:600;">100,00% Apurado</span>
           </div>
           <p style="margin:4px 0 0; font-size:0.8rem; color:#A6A39C;">
-            Dados Oficiais do TRE-DF / TSE (Eleição 6259) · 35 RAs · 19 Zonas Eleitorais · Seções Rurais e Urbanas Mapeadas
+            Dados Oficiais do TRE-DF / TSE (Eleição 6259 & 6257) · 35 RAs · 19 Zonas do DF · Zona Eleitoral do Exterior (ZZ)
           </p>
         </div>
         <div style="display:flex; align-items:center; gap:10px;">
@@ -455,12 +480,15 @@ const server = http.createServer(async (req, res) => {
       </div>
 
       <!-- TABS DE MODO DE VISUALIZAÇÃO -->
-      <div id="df-desktop-tabs" style="padding:10px 24px; border-bottom:1px solid rgba(255,255,255,0.08); display:flex; gap:10px; align-items:center; background:rgba(0,0,0,0.3);">
+      <div id="df-desktop-tabs" style="padding:10px 24px; border-bottom:1px solid rgba(255,255,255,0.08); display:flex; gap:10px; align-items:center; flex-wrap:wrap; background:rgba(0,0,0,0.3);">
         <button id="tab-marcela" onclick="setDfTab('marcela')" style="all:unset; cursor:pointer; padding:6px 16px; border-radius:100px; font-weight:700; font-size:0.85rem; background:linear-gradient(135deg, #f59e0b, #d97706); color:#fff; display:inline-flex; align-items:center; gap:6px; transition:all .15s;">
           ⭐ Dossiê Eleitoral: Marcela Passamani (15555 · MDB)
         </button>
         <button id="tab-geral" onclick="setDfTab('geral')" style="all:unset; cursor:pointer; padding:6px 14px; border-radius:100px; font-weight:600; font-size:0.85rem; background:transparent; color:rgba(255,255,255,0.6); transition:all .15s;">
           📊 Quadro Geral das 35 RAs (Todos os Distritais)
+        </button>
+        <button id="tab-exterior" onclick="setDfTab('exterior')" style="all:unset; cursor:pointer; padding:6px 14px; border-radius:100px; font-weight:600; font-size:0.85rem; background:transparent; color:rgba(255,255,255,0.6); border:1px solid rgba(59,130,246,0.4); transition:all .15s; display:inline-flex; align-items:center; gap:6px;">
+          🌍 Votos do Exterior (Zona ZZ · TRE-DF / TSE)
         </button>
       </div>
 
