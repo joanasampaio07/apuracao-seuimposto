@@ -345,12 +345,8 @@ function setExteriorViewMode(mode) {
 }
 
 function openExteriorView() {
-  openDfModal('all');
-  setDfTab('exterior');
-  if (window.innerWidth <= 900) {
-    setMobileSubTab('exterior');
-    toggleTopSection(true);
-  }
+  closeDfModal();
+  location.hash = '#presidente-zz';
 }
 
 function toggleTopSection(forceState) {
