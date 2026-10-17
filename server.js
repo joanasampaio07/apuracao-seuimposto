@@ -213,6 +213,7 @@ const server = http.createServer(async (req, res) => {
 
   // Suporte a arquivos de feed oficial TSE 2026
   if (pathname === '/agora.json') pathname = '/feed/agora.json';
+  if (pathname === '/municipios.json') pathname = '/feed/municipios.json';
   if (pathname.startsWith('/deputados/')) pathname = '/feed' + pathname;
 
   // Aliases para assets
