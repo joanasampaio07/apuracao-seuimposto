@@ -85,6 +85,9 @@ function selectDfRa(id) {
   const sel = document.getElementById('df-ra-select');
   if (sel) sel.value = id;
   renderDfView();
+  if (window.innerWidth <= 900) {
+    setMobileSubTab('colegios');
+  }
 }
 
 function selectDfZona(z) {
@@ -155,9 +158,43 @@ function setDfTab(tab) {
   renderDfView();
 }
 
+function setMobileSubTab(tab) {
+  const left = document.getElementById('df-left-pane');
+  const right = document.getElementById('df-right-pane');
+  const bDossie = document.getElementById('btn-mobile-tab-dossie');
+  const bColegios = document.getElementById('btn-mobile-tab-colegios');
+  if (!left || !right) return;
+  if (tab === 'dossie') {
+    left.style.display = 'block';
+    right.style.display = 'none';
+    if (bDossie) {
+      bDossie.style.background = 'linear-gradient(135deg, #f59e0b, #d97706)';
+      bDossie.style.color = '#fff';
+    }
+    if (bColegios) {
+      bColegios.style.background = 'rgba(255,255,255,0.08)';
+      bColegios.style.color = '#D6D4CF';
+    }
+  } else {
+    left.style.display = 'none';
+    right.style.display = 'block';
+    if (bColegios) {
+      bColegios.style.background = '#10b981';
+      bColegios.style.color = '#fff';
+    }
+    if (bDossie) {
+      bDossie.style.background = 'rgba(255,255,255,0.08)';
+      bDossie.style.color = '#D6D4CF';
+    }
+  }
+}
+
 function openMarcelaDossie() {
   openDfModal('all');
   setDfTab('marcela');
+  if (window.innerWidth <= 900) {
+    setMobileSubTab('dossie');
+  }
 }
 
 function openDfModal(raId = 'all') {
@@ -167,6 +204,9 @@ function openDfModal(raId = 'all') {
     window.selectedRaId = raId;
     const sel = document.getElementById('df-ra-select');
     if (sel) sel.value = raId;
+    if (window.innerWidth <= 900) {
+      setMobileSubTab('dossie');
+    }
     if (!window.dfGlobalData) initDfData();
     else renderDfView();
   }
@@ -241,16 +281,16 @@ function renderDfView(filterQuery = '') {
           <b style="font-size:0.82rem; color:#34d399; display:flex; align-items:center; gap:5px;">
             <span>📍</span><span>Abrangência Territorial Oficial · 18ª Zona (TRE-DF)</span>
           </b>
-          <span style="font-size:0.7rem; background:#10b98125; color:#34d399; border:1px solid #10b98144; padding:2px 8px; border-radius:100px; font-weight:700;">841 votos</span>
+          <span style="font-size:0.7rem; background:#10b98125; color:#34d399; border:1px solid #10b98144; padding:2px 8px; border-radius:100px; font-weight:700;">841 votos oficiais</span>
         </div>
         <p style="margin:0 0 6px; font-size:0.72rem; color:#D6D4CF; line-height:1.4;">
-          <b>São Sebastião (RA XIV):</b> Bela Vista, Bom Sucesso, Central, João Cândido, Residencial do Bosque, Residencial Oeste, São Bartolomeu, São Francisco, São José, Tradicional, Vila Nova, Chácaras Barreiros I e II, Mont Alverne, Morro Azul, Núcleo Rural Jardim II, Café sem Troco, Morro da Cruz, Privê Residencial Mônaco, Residencial Vitória, Jardins Mangueiral, Mansões Itaipu, Fazenda Taboquinha, Núcleo Rural Barreiros.
+          <b>São Sebastião (RA XIV - 518 votos reais em 28 colégios):</b> Bela Vista, Bom Sucesso, Central, João Cândido, Residencial do Bosque, Residencial Oeste, São Bartolomeu, São Francisco, São José, Tradicional, Vila Nova, Chácaras Barreiros I e II, Mont Alverne, Morro Azul, Núcleo Rural Jardim II, Café sem Troco, Morro da Cruz, Privê Residencial Mônaco, Residencial Vitória, Jardins Mangueiral, Mansões Itaipu, Fazenda Taboquinha, Núcleo Rural Barreiros, Cerâmica São Paulo, Cerâmica da Bênção, Vila do Boa, Nova Betânia, PAD-DF, Agrovila e Papuda.
         </p>
         <p style="margin:0 0 6px; font-size:0.72rem; color:#D6D4CF; line-height:1.4;">
-          <b>Jardim Botânico (RA XXVII):</b> Vila do Boa, Carlos Teóphilo de Souza, Chácaras Lago Sul, Ecológico Village III, Estância Jardim Botânico, Estância Quintas da Alvorada, Jardim Botânico I, V e VI, Jardim do Lago, Lago Sul I, Mansões Belvedere Green, Mansões Brauna, Mansões Califórnia, Mansões Itapú, Mansões Lago Sul II, Mansões Serrana-Chácaras, Mirantes das Paineiras, Morada de Deus, Ouro Vermelho I e II, Parque dos Pinheiros, Parque Jardim das Paineiras, Portal do Lago Sul, Privê Morada Sul (A, B, C), Quinta dos Ipês, Quintas Bela Vista, Quintas da Alvorada, Quintas das Colinas, Quintas do Sol, Quintas Interlagos, Jardim dos Eucaliptos, Rural Itaipu, San Diego, São Mateus, Solar da Serra, Solar de Brasília, Verde, Via Gênova, Vila da Mata, Vila Vitória, Village da Alvorada, Ville de Montagne, Vivendas Del Rey.
+          <b>Jardim Botânico (RA XXVII - 162 votos em 4 colégios):</b> Colégio Presbiteriano Mackenzie (73), Centro Educacional Jardins Mangueiral (48), Heavenly International School (31), Kingdom School (10). Condomínios: Estância Jardim Botânico, Quintas da Alvorada, Jardim Botânico I, V e VI, Jardim do Lago, Ouro Vermelho, Solar da Serra, Solar de Brasília e Ville de Montagne.
         </p>
         <p style="margin:0; font-size:0.72rem; color:#D6D4CF; line-height:1.4;">
-          <b>Lago Sul (RA XVI) & Núcleos Rurais:</b> QIs, QLs, Setor de Chácaras, Mansões Dom Bosco, Mini Chácaras, Núcleo Rural PADF, Pousada das Andorinhas, Villages Alvorada, Parque do Mirante, Del Rey, Santa Bárbara, Santa Mônica, Residencial Mônaco.
+          <b>Lago Sul (RA XVI na 18ª ZE - 161 votos em 5 colégios):</b> Escola das Nações (82), Centro Educacional Lago Sul - CEL (31), Escola Francesa François Mitterrand (28), Escola Classe 01 SHI Sul (10) e Colégio Maria Imaculada (10).
         </p>
       </div>
     `;
