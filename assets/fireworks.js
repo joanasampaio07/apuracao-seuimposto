@@ -366,7 +366,7 @@
 
           <!-- BADGE DE 2º TURNO DEFINIDO -->
           <div style="display:inline-flex; align-items:center; gap:8px; padding:6px 16px; border-radius:100px; background:rgba(245,158,11,0.18); border:1px solid rgba(245,158,11,0.5); color:#fbbf24; font-weight:800; font-size:0.82rem; letter-spacing:0.04em; text-transform:uppercase; margin-bottom:14px; box-shadow:0 0 15px rgba(245,158,11,0.3);">
-            <span>🏆</span> 2º Turno Oficial · Vitória Definida
+            <span>🏆</span> 2º Turno · Eleição em 25/10/2026
           </div>
 
           <!-- FOTO / AVATAR DO ELEITO COM COROA DE LOUROS -->
@@ -379,7 +379,7 @@
           <!-- NOME E CARGO -->
           <h2 id="vic-name" style="margin:0 0 4px; font-size:1.85rem; font-weight:900; color:#fff; letter-spacing:-0.02em; font-family:var(--serif, Georgia);">CELINA LEÃO</h2>
           <div id="vic-subtitle" style="font-size:1rem; font-weight:700; color:#38bdf8; margin-bottom:14px;">
-            Eleita Governadora do Distrito Federal
+            Disputa o 2º Turno para o Governo do DF
           </div>
 
           <!-- CAIXA DE NÚMEROS E VOTAÇÃO -->
@@ -395,7 +395,7 @@
           </div>
 
           <div id="vic-desc" style="font-size:0.85rem; color:#D6D4CF; line-height:1.45; margin-bottom:22px;">
-            Apuração concluída pelo Tribunal Superior Eleitoral. Vitória consagrada no 2º Turno das Eleições 2026.
+            Estrutura de comemoração e fogos pronta para a apuração oficial do 2º Turno em 25 de Outubro de 2026.
           </div>
 
           <!-- AÇÕES COMEMORATIVAS -->
