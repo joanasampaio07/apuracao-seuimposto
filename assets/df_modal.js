@@ -1,27 +1,14 @@
-// Dossiê Eleitoral Oficial TRE-DF / TSE - Marcela Passamani (15555) & 35 RAs do DF
-// Integrado com a Abrangência Territorial Oficial da 18ª Zona Eleitoral e os 37 Colégios Eleitorais
+// Dossiê Eleitoral Oficial TRE-DF / TSE 2026
+// Painel Integrado: Governador do DF (Votação nas 35 RAs), Marcela Passamani (15555) e Distritais
 
 window.dfGlobalData = null;
-window.exteriorGlobalData = null;
 window.selectedRaId = 'all';
 window.selectedZona = 'all';
 window.selectedTipo = 'all';
-window.currentTab = 'marcela';
+window.currentTab = 'governo'; // 'governo', 'marcela', 'geral'
 window.viewModeZ18 = 'locais'; // 'locais' ou 'secoes'
-window.exteriorViewMode = 'paises'; // 'paises' ou 'cidades'
-
-function getCountryFlag(sigla) {
-  if (!sigla || sigla.length !== 2) return '🌐';
-  try {
-    const codePoints = sigla
-      .toUpperCase()
-      .split('')
-      .map(char => 127397 + char.charCodeAt(0));
-    return String.fromCodePoint(...codePoints);
-  } catch(e) {
-    return '🌐';
-  }
-}
+window.governoSortMode = 'vencedor'; // 'vencedor', 'celina', 'grass', 'paula', 'eleitorado', 'nome'
+window.governoFilter = 'all'; // 'all', 'celina', 'grass', 'top10', 'rural'
 
 // Abrangência Territorial Oficial da 18ª Zona Eleitoral (Decreto TRE-DF)
 window.ZONA_18_ABRANGENCIA = {
@@ -65,15 +52,6 @@ async function initDfData() {
   } catch(e) {
     console.warn('[DF Distritais] Erro ao carregar dados:', e);
   }
-  try {
-    const resExt = await fetch('/api/tse/exterior');
-    window.exteriorGlobalData = await resExt.json();
-    if (window.currentTab === 'exterior') {
-      renderDfView();
-    }
-  } catch(e) {
-    console.warn('[Exterior] Erro ao carregar dados do exterior:', e);
-  }
 }
 
 function populateDfSelectors() {
@@ -81,26 +59,39 @@ function populateDfSelectors() {
   const selRa = document.getElementById('df-ra-select');
   if (selRa) {
     selRa.innerHTML = '<option value="all">Todas as 35 RAs (DF Completo)</option>';
-    window.dfGlobalData.regioesAdministrativas.forEach(ra => {
-      const opt = document.createElement('option');
-      opt.value = String(ra.id);
-      opt.textContent = ra.codigo + ' - ' + ra.nome + ' (' + (ra.votosMarcelaPassamani ? ra.votosMarcelaPassamani.toLocaleString('pt-BR') + ' votos Marcela' : '') + ')';
-      selRa.appendChild(opt);
-    });
+    if (window.currentTab === 'governo' && window.dfGlobalData.governoDf?.regioesAdministrativas) {
+      window.dfGlobalData.governoDf.regioesAdministrativas.forEach(ra => {
+        const opt = document.createElement('option');
+        opt.value = String(ra.id);
+        const winInfo = ra.vencedor ? ` (${ra.vencedor.nome.split(' ')[0]} ${ra.vencedor.percentual})` : '';
+        opt.textContent = `${ra.codigo} - ${ra.nome}${winInfo}`;
+        selRa.appendChild(opt);
+      });
+    } else {
+      (window.dfGlobalData.regioesAdministrativas || []).forEach(ra => {
+        const opt = document.createElement('option');
+        opt.value = String(ra.id);
+        const marcInfo = ra.votosMarcelaPassamani ? ` (${ra.votosMarcelaPassamani.toLocaleString('pt-BR')} votos Marcela)` : '';
+        opt.textContent = `${ra.codigo} - ${ra.nome}${marcInfo}`;
+        selRa.appendChild(opt);
+      });
+    }
   }
 
   const selZona = document.getElementById('df-zona-select');
   if (selZona) {
     selZona.innerHTML = '<option value="all">Todas as 19 Zonas Eleitorais</option>';
-    selZona.innerHTML += '<option value="18" style="font-weight:bold; color:#34d399;">⭐ 18ª ZE (São Sebastião, Jardim Botânico & Lago Sul - 841 votos)</option>';
-    window.dfGlobalData.marcelaPassamaniDossie.votosPorZona.forEach(z => {
-      if (z.zona !== 18) {
-        const opt = document.createElement('option');
-        opt.value = String(z.zona);
-        opt.textContent = 'Zona ' + z.zona + ' (' + z.nome + ') · ' + z.votos.toLocaleString('pt-BR') + ' votos';
-        selZona.appendChild(opt);
-      }
-    });
+    selZona.innerHTML += '<option value="18" style="font-weight:bold; color:#34d399;">⭐ 18ª ZE (São Sebastião, Jardim Botânico & Lago Sul)</option>';
+    if (window.dfGlobalData.marcelaPassamaniDossie?.votosPorZona) {
+      window.dfGlobalData.marcelaPassamaniDossie.votosPorZona.forEach(z => {
+        if (z.zona !== 18) {
+          const opt = document.createElement('option');
+          opt.value = String(z.zona);
+          opt.textContent = `Zona ${z.zona} (${z.nome}) · ${z.votos.toLocaleString('pt-BR')} votos`;
+          selZona.appendChild(opt);
+        }
+      });
+    }
   }
 }
 
@@ -110,7 +101,9 @@ function selectDfRa(id) {
   if (sel) sel.value = id;
   renderDfView();
   if (window.innerWidth <= 900) {
-    setMobileSubTab('colegios');
+    if (window.currentTab === 'marcela') {
+      setMobileSubTab('colegios');
+    }
     toggleTopSection(true);
   }
 }
@@ -158,6 +151,7 @@ function resetAllFilters() {
   window.selectedRaId = 'all';
   window.selectedZona = 'all';
   window.selectedTipo = 'all';
+  window.governoFilter = 'all';
   const s1 = document.getElementById('df-ra-select'); if (s1) s1.value = 'all';
   const s2 = document.getElementById('df-zona-select'); if (s2) s2.value = 'all';
   const s3 = document.getElementById('df-tipo-select'); if (s3) s3.value = 'all';
@@ -165,21 +159,49 @@ function resetAllFilters() {
   renderDfView();
 }
 
+function quickFilterGov(type) {
+  window.governoFilter = type;
+  window.selectedRaId = 'all';
+  const s1 = document.getElementById('df-ra-select'); if (s1) s1.value = 'all';
+  renderDfView();
+}
+
+function setGovernoSort(mode) {
+  window.governoSortMode = mode;
+  renderDfView(document.getElementById('df-search-input')?.value || '');
+}
+
 function setDfTab(tab) {
   window.currentTab = tab;
-  const bGeral = document.getElementById('tab-geral');
+  const bGov = document.getElementById('tab-governo');
   const bMarcela = document.getElementById('tab-marcela');
-  const bExterior = document.getElementById('tab-exterior');
+  const bGeral = document.getElementById('tab-geral');
+
+  if (bGov) {
+    if (tab === 'governo') {
+      bGov.style.background = 'linear-gradient(135deg, #0284c7, #0369a1)';
+      bGov.style.color = '#fff';
+      bGov.style.border = 'none';
+      bGov.style.boxShadow = '0 0 14px rgba(2,132,199,0.5)';
+    } else {
+      bGov.style.background = 'transparent';
+      bGov.style.color = '#38bdf8';
+      bGov.style.border = '1px solid rgba(2,132,199,0.4)';
+      bGov.style.boxShadow = 'none';
+    }
+  }
 
   if (bMarcela) {
     if (tab === 'marcela') {
       bMarcela.style.background = 'linear-gradient(135deg, #f59e0b, #d97706)';
       bMarcela.style.color = '#fff';
       bMarcela.style.border = 'none';
+      bMarcela.style.boxShadow = '0 0 14px rgba(245,158,11,0.5)';
     } else {
       bMarcela.style.background = 'transparent';
       bMarcela.style.color = '#f59e0b';
-      bMarcela.style.border = '1px solid rgba(245,158,11,0.5)';
+      bMarcela.style.border = '1px solid rgba(245,158,11,0.4)';
+      bMarcela.style.boxShadow = 'none';
     }
   }
 
@@ -195,66 +217,48 @@ function setDfTab(tab) {
     }
   }
 
-  if (bExterior) {
-    if (tab === 'exterior') {
-      bExterior.style.background = 'linear-gradient(135deg, #3b82f6, #1d4ed8)';
-      bExterior.style.color = '#fff';
-      bExterior.style.border = 'none';
-    } else {
-      bExterior.style.background = 'transparent';
-      bExterior.style.color = '#60a5fa';
-      bExterior.style.border = '1px solid rgba(59,130,246,0.4)';
-    }
-  }
-
-  // Ajusta controles e filtros específicos conforme a aba
+  // Atualiza botões de filtro rápido e campos de seleção
   const quickFilters = document.getElementById('df-modal-quick-filters');
   const raSel = document.getElementById('df-ra-select');
   const zonaSel = document.getElementById('df-zona-select');
   const tipoSel = document.getElementById('df-tipo-select');
   const searchInp = document.getElementById('df-search-input');
 
-  if (tab === 'exterior') {
-    if (raSel && raSel.parentElement) raSel.parentElement.style.display = 'none';
+  if (tab === 'governo') {
+    if (raSel && raSel.parentElement) raSel.parentElement.style.display = 'flex';
     if (zonaSel && zonaSel.parentElement) zonaSel.parentElement.style.display = 'none';
     if (tipoSel && tipoSel.parentElement) tipoSel.parentElement.style.display = 'none';
-    if (searchInp) searchInp.placeholder = '🔍 Buscar País ou Cidade no Exterior (ex: Portugal, Boston, Japão)...';
-    
+    if (searchInp) searchInp.placeholder = '🔍 Buscar RA do DF (ex: Ceilândia, Plano Piloto, Taguatinga)...';
+
     if (quickFilters) {
       quickFilters.innerHTML = `
-        <span style="font-size:0.75rem; color:#A6A39C; font-weight:600; text-transform:uppercase; letter-spacing:0.04em;">Países em destaque:</span>
-        <button onclick="filterExteriorCountry('Estados Unidos')" style="all:unset; cursor:pointer; font-size:0.78rem; font-weight:700; padding:4px 10px; border-radius:100px; background:rgba(59,130,246,0.2); border:1px solid rgba(59,130,246,0.4); color:#93c5fd; display:inline-flex; align-items:center; gap:4px;">
-          🇺🇸 EUA (265k)
+        <span style="font-size:0.75rem; color:#A6A39C; font-weight:600; text-transform:uppercase; letter-spacing:0.04em;">Filtros de Votação:</span>
+        <button onclick="quickFilterGov('all')" style="all:unset; cursor:pointer; font-size:0.8rem; font-weight:700; padding:4px 12px; border-radius:100px; background:${window.governoFilter === 'all' ? '#0284c7' : 'rgba(2,132,199,0.2)'}; border:1px solid rgba(2,132,199,0.5); color:#fff; display:inline-flex; align-items:center; gap:5px;">
+          🏆 Todas as 35 RAs
         </button>
-        <button onclick="filterExteriorCountry('Portugal')" style="all:unset; cursor:pointer; font-size:0.78rem; font-weight:700; padding:4px 10px; border-radius:100px; background:rgba(16,185,129,0.2); border:1px solid rgba(16,185,129,0.4); color:#6ee7b7; display:inline-flex; align-items:center; gap:4px;">
-          🇵🇹 Portugal (134k)
+        <button onclick="quickFilterGov('celina')" style="all:unset; cursor:pointer; font-size:0.8rem; font-weight:700; padding:4px 12px; border-radius:100px; background:${window.governoFilter === 'celina' ? '#0083ca' : 'rgba(0,131,202,0.18)'}; border:1px solid rgba(0,131,202,0.45); color:#38bdf8; display:inline-flex; align-items:center; gap:5px;">
+          🔵 Onde Celina Venceu (31 RAs)
         </button>
-        <button onclick="filterExteriorCountry('Japão')" style="all:unset; cursor:pointer; font-size:0.78rem; font-weight:700; padding:4px 10px; border-radius:100px; background:rgba(239,68,68,0.2); border:1px solid rgba(239,68,68,0.4); color:#fca5a5; display:inline-flex; align-items:center; gap:4px;">
-          🇯🇵 Japão (88k)
+        <button onclick="quickFilterGov('grass')" style="all:unset; cursor:pointer; font-size:0.8rem; font-weight:700; padding:4px 12px; border-radius:100px; background:${window.governoFilter === 'grass' ? '#ee2d35' : 'rgba(238,45,53,0.18)'}; border:1px solid rgba(238,45,53,0.45); color:#fca5a5; display:inline-flex; align-items:center; gap:5px;">
+          🔴 Onde Grass Venceu (4 RAs)
         </button>
-        <button onclick="filterExteriorCountry('Reino Unido')" style="all:unset; cursor:pointer; font-size:0.78rem; font-weight:600; padding:4px 10px; border-radius:100px; background:rgba(255,255,255,0.08); color:#FAFAF9;">
-          🇬🇧 Reino Unido (44k)
+        <button onclick="quickFilterGov('top10')" style="all:unset; cursor:pointer; font-size:0.8rem; font-weight:600; padding:4px 12px; border-radius:100px; background:rgba(255,255,255,0.08); color:#FAFAF9; display:inline-flex; align-items:center; gap:5px;">
+          🏙️ Top 10 Maiores RAs
         </button>
-        <button onclick="filterExteriorCountry('Alemanha')" style="all:unset; cursor:pointer; font-size:0.78rem; font-weight:600; padding:4px 10px; border-radius:100px; background:rgba(255,255,255,0.08); color:#FAFAF9;">
-          🇩🇪 Alemanha (39k)
-        </button>
-        <button onclick="filterExteriorCountry('Itália')" style="all:unset; cursor:pointer; font-size:0.78rem; font-weight:600; padding:4px 10px; border-radius:100px; background:rgba(255,255,255,0.08); color:#FAFAF9;">
-          🇮🇹 Itália (37k)
-        </button>
-        <button onclick="filterExteriorCountry('')" style="all:unset; cursor:pointer; font-size:0.78rem; font-weight:600; padding:4px 10px; border-radius:100px; background:rgba(255,255,255,0.12); color:#fff;">
-          🔄 Todos os Países
+        <button onclick="resetAllFilters()" style="all:unset; cursor:pointer; font-size:0.8rem; font-weight:600; padding:4px 10px; border-radius:100px; background:rgba(255,255,255,0.08); color:#FAFAF9;">
+          🔄 Limpar Filtros
         </button>
       `;
     }
-  } else {
+  } else if (tab === 'marcela') {
     if (raSel && raSel.parentElement) raSel.parentElement.style.display = 'flex';
     if (zonaSel && zonaSel.parentElement) zonaSel.parentElement.style.display = 'flex';
     if (tipoSel && tipoSel.parentElement) tipoSel.parentElement.style.display = 'flex';
     if (searchInp) searchInp.placeholder = '🔍 Buscar por Colégio, Seção, RA...';
-    
+
     if (quickFilters) {
       quickFilters.innerHTML = `
-        <span style="font-size:0.75rem; color:#A6A39C; font-weight:600; text-transform:uppercase; letter-spacing:0.04em;">Filtros:</span>
+        <span style="font-size:0.75rem; color:#A6A39C; font-weight:600; text-transform:uppercase; letter-spacing:0.04em;">Filtros Marcela:</span>
         <button onclick="quickFilterZona18()" id="btn-quick-z18" style="all:unset; cursor:pointer; font-size:0.8rem; font-weight:700; padding:4px 12px; border-radius:100px; background:rgba(16,185,129,0.2); border:1px solid rgba(16,185,129,0.45); color:#34d399; display:inline-flex; align-items:center; gap:5px;">
           ⭐ 18ª ZE (São Sebastião 518 · JB 162 · Lago Sul 161)
         </button>
@@ -269,84 +273,79 @@ function setDfTab(tab) {
         </button>
       `;
     }
+  } else {
+    if (raSel && raSel.parentElement) raSel.parentElement.style.display = 'flex';
+    if (zonaSel && zonaSel.parentElement) zonaSel.parentElement.style.display = 'flex';
+    if (tipoSel && tipoSel.parentElement) tipoSel.parentElement.style.display = 'flex';
+    if (searchInp) searchInp.placeholder = '🔍 Buscar candidatos distritais...';
+    if (quickFilters) {
+      quickFilters.innerHTML = `
+        <span style="font-size:0.75rem; color:#A6A39C; font-weight:600;">Deputados Distritais (DF): 24 Vagas Disputadas</span>
+      `;
+    }
   }
 
+  populateDfSelectors();
   renderDfView();
 }
 
 function setMobileSubTab(tab) {
   const left = document.getElementById('df-left-pane');
   const right = document.getElementById('df-right-pane');
+  const bGov = document.getElementById('btn-mobile-tab-governo');
   const bDossie = document.getElementById('btn-mobile-tab-dossie');
   const bColegios = document.getElementById('btn-mobile-tab-colegios');
-  const bExterior = document.getElementById('btn-mobile-tab-exterior');
   if (!left || !right) return;
 
-  if (tab === 'dossie') {
-    if (window.currentTab === 'exterior') setDfTab('marcela');
+  if (tab === 'governo') {
+    setDfTab('governo');
+    left.style.display = 'block';
+    right.style.display = 'block';
+    if (bGov) {
+      bGov.style.background = 'linear-gradient(135deg, #0284c7, #0369a1)';
+      bGov.style.color = '#fff';
+    }
+    if (bDossie) {
+      bDossie.style.background = 'rgba(255,255,255,0.08)';
+      bDossie.style.color = '#D6D4CF';
+    }
+    if (bColegios) {
+      bColegios.style.background = 'rgba(255,255,255,0.08)';
+      bColegios.style.color = '#D6D4CF';
+    }
+  } else if (tab === 'dossie') {
+    setDfTab('marcela');
     left.style.display = 'block';
     right.style.display = 'none';
     if (bDossie) {
       bDossie.style.background = 'linear-gradient(135deg, #f59e0b, #d97706)';
       bDossie.style.color = '#fff';
     }
+    if (bGov) {
+      bGov.style.background = 'rgba(255,255,255,0.08)';
+      bGov.style.color = '#D6D4CF';
+    }
     if (bColegios) {
       bColegios.style.background = 'rgba(255,255,255,0.08)';
       bColegios.style.color = '#D6D4CF';
     }
-    if (bExterior) {
-      bExterior.style.background = 'rgba(59,130,246,0.15)';
-      bExterior.style.color = '#93c5fd';
-    }
   } else if (tab === 'colegios') {
-    if (window.currentTab === 'exterior') setDfTab('marcela');
+    setDfTab('marcela');
     left.style.display = 'none';
     right.style.display = 'block';
     if (bColegios) {
       bColegios.style.background = '#10b981';
       bColegios.style.color = '#fff';
     }
-    if (bDossie) {
-      bDossie.style.background = 'rgba(255,255,255,0.08)';
-      bDossie.style.color = '#D6D4CF';
-    }
-    if (bExterior) {
-      bExterior.style.background = 'rgba(59,130,246,0.15)';
-      bExterior.style.color = '#93c5fd';
-    }
-  } else if (tab === 'exterior') {
-    setDfTab('exterior');
-    left.style.display = 'block';
-    right.style.display = 'block';
-    if (bExterior) {
-      bExterior.style.background = 'linear-gradient(135deg, #3b82f6, #1d4ed8)';
-      bExterior.style.color = '#fff';
+    if (bGov) {
+      bGov.style.background = 'rgba(255,255,255,0.08)';
+      bGov.style.color = '#D6D4CF';
     }
     if (bDossie) {
       bDossie.style.background = 'rgba(255,255,255,0.08)';
       bDossie.style.color = '#D6D4CF';
-    }
-    if (bColegios) {
-      bColegios.style.background = 'rgba(255,255,255,0.08)';
-      bColegios.style.color = '#D6D4CF';
     }
   }
-}
-
-function filterExteriorCountry(countryName) {
-  const si = document.getElementById('df-search-input');
-  if (si) si.value = countryName;
-  renderDfView(countryName);
-}
-
-function setExteriorViewMode(mode) {
-  window.exteriorViewMode = mode;
-  renderDfView(document.getElementById('df-search-input')?.value || '');
-}
-
-function openExteriorView() {
-  closeDfModal();
-  location.hash = '#presidente-zz';
 }
 
 function toggleTopSection(forceState) {
@@ -371,6 +370,15 @@ function toggleTopSection(forceState) {
   }
 }
 
+function openGovernoDfModal(raId = 'all') {
+  openDfModal(raId);
+  setDfTab('governo');
+  if (window.innerWidth <= 900) {
+    setMobileSubTab('governo');
+    toggleTopSection(false);
+  }
+}
+
 function openMarcelaDossie() {
   openDfModal('all');
   setDfTab('marcela');
@@ -388,7 +396,7 @@ function openDfModal(raId = 'all') {
     const sel = document.getElementById('df-ra-select');
     if (sel) sel.value = raId;
     if (window.innerWidth <= 900) {
-      setMobileSubTab('dossie');
+      setMobileSubTab(window.currentTab === 'governo' ? 'governo' : 'dossie');
       toggleTopSection(false);
     }
     if (!window.dfGlobalData) initDfData();
@@ -405,8 +413,8 @@ function filterDfData() {
   const q = (document.getElementById('df-search-input').value || '').toLowerCase().trim();
   if (q.includes('marcela') || q.includes('15555')) {
     setDfTab('marcela');
-  } else if (q.includes('exterior') || q.includes('zz')) {
-    setDfTab('exterior');
+  } else if (q.includes('celina') || q.includes('grass') || q.includes('governo') || q.includes('governador')) {
+    setDfTab('governo');
   }
   renderDfView(q);
 }
@@ -417,7 +425,7 @@ function setZ18ViewMode(mode) {
 }
 
 function renderDfView(filterQuery = '') {
-  if (!window.dfGlobalData && window.currentTab !== 'exterior') return;
+  if (!window.dfGlobalData) return;
   const leftCol = document.getElementById('df-left-content');
   const rightCol = document.getElementById('df-secoes-list');
   const secoesTitle = document.getElementById('df-secoes-title');
@@ -425,33 +433,31 @@ function renderDfView(filterQuery = '') {
   const secoesCount = document.getElementById('df-secoes-count');
   if (!leftCol || !rightCol) return;
 
-  // --- RENDER EXTERIOR VIEW (1ª ZONA ELEITORAL ZZ · TRE-DF) ---
-  if (window.currentTab === 'exterior') {
-    const ext = window.exteriorGlobalData;
-    if (!ext) {
-      leftCol.innerHTML = '<div style="padding:24px; text-align:center; color:#A6A39C;">Carregando dados oficiais do exterior...</div>';
-      return;
-    }
+  const gov = window.dfGlobalData.governoDf;
 
-    // --- LEFT COLUMN: ESTATÍSTICAS E VOTAÇÃO PRESIDENCIAL NO EXTERIOR ---
+  // =========================================================================
+  // ABA 1: GOVERNADOR DO DF (VOTAÇÃO COMPLETA NAS 35 RAs DO DISTRITO FEDERAL)
+  // =========================================================================
+  if (window.currentTab === 'governo' && gov) {
+    // --- COLUNA DA ESQUERDA: QUADRO GERAL DO GOVERNO DO DF ---
     let candsHtml = '';
-    (ext.candidatos || []).forEach((c, idx) => {
-      const isWinner = idx === 0;
+    (gov.candidatos || []).forEach((c, idx) => {
       const isTop2 = idx <= 1;
+      const isWinner = idx === 0;
       candsHtml += `
-        <div style="background:${isTop2 ? 'rgba(255,255,255,0.04)' : 'rgba(255,255,255,0.015)'}; border:1px solid ${isWinner ? 'rgba(239,68,68,0.4)' : (idx === 1 ? 'rgba(59,130,246,0.4)' : 'rgba(255,255,255,0.06)')}; border-left:3px solid ${c.cor}; border-radius:8px; padding:8px 10px; margin-bottom:6px;">
+        <div style="background:${isTop2 ? 'rgba(255,255,255,0.04)' : 'rgba(255,255,255,0.015)'}; border:1px solid ${isWinner ? 'rgba(0,131,202,0.45)' : (idx === 1 ? 'rgba(238,45,53,0.45)' : 'rgba(255,255,255,0.06)')}; border-left:3px solid ${c.cor}; border-radius:8px; padding:9px 11px; margin-bottom:6px;">
           <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:4px;">
             <div style="display:flex; align-items:center; gap:6px;">
               <span style="font-size:0.75rem; font-weight:700; color:#A6A39C;">${idx + 1}º</span>
-              <span style="font-size:0.85rem; font-weight:700; color:#fff;">${c.nome}</span>
+              <span style="font-size:0.88rem; font-weight:700; color:#fff;">${c.nome}</span>
               <span style="font-size:0.7rem; background:rgba(255,255,255,0.08); padding:1px 6px; border-radius:4px; color:#D6D4CF;">${c.partido} ${c.numero}</span>
+              ${isTop2 ? '<span style="font-size:0.65rem; background:#38bdf822; color:#38bdf8; border:1px solid #38bdf844; padding:1px 5px; border-radius:4px; font-weight:700;">2º Turno</span>' : ''}
             </div>
             <div style="text-align:right;">
-              <b style="font-size:0.9rem; color:${c.cor};">${c.votos.toLocaleString('pt-BR')}</b>
+              <b style="font-size:0.95rem; color:${c.cor};">${c.votos.toLocaleString('pt-BR')}</b>
               <span style="font-size:0.75rem; color:#22c55e; font-weight:700; margin-left:4px;">${c.percentual}</span>
             </div>
           </div>
-          <!-- Barra de progresso do candidato -->
           <div style="width:100%; height:4px; background:rgba(255,255,255,0.08); border-radius:100px; overflow:hidden;">
             <div style="width:${c.percentual.replace(',', '.')}; height:100%; background:${c.cor}; border-radius:100px;"></div>
           </div>
@@ -459,60 +465,67 @@ function renderDfView(filterQuery = '') {
     });
 
     leftCol.innerHTML = `
-      <!-- BANNER 1ª ZONA ELEITORAL DO EXTERIOR (ZZ) -->
-      <div style="background:linear-gradient(135deg, rgba(59,130,246,0.18), rgba(29,78,216,0.08)); border:1px solid rgba(59,130,246,0.45); border-radius:12px; padding:14px; margin-bottom:14px;">
+      <!-- CARD RESUMO GOVERNO DF -->
+      <div style="background:linear-gradient(135deg, rgba(2,132,199,0.18), rgba(3,105,161,0.08)); border:1px solid rgba(2,132,199,0.45); border-radius:12px; padding:14px; margin-bottom:14px;">
         <div style="display:flex; align-items:center; gap:12px; margin-bottom:10px;">
-          <div style="width:46px; height:46px; border-radius:50%; background:linear-gradient(135deg, #3b82f6, #1d4ed8); display:grid; place-items:center; font-weight:700; font-size:1.4rem; color:#fff; box-shadow:0 0 14px rgba(59,130,246,0.5);">
-            🌍
+          <div style="width:46px; height:46px; border-radius:50%; background:linear-gradient(135deg, #0284c7, #0369a1); display:grid; place-items:center; font-weight:700; font-size:1.3rem; color:#fff; box-shadow:0 0 14px rgba(2,132,199,0.5);">
+            🏛️
           </div>
           <div>
-            <div style="font-size:1.1rem; font-weight:700; color:#fff;">Zona Eleitoral do Exterior (ZZ)</div>
-            <div style="font-size:0.75rem; color:#93c5fd; font-weight:600;">1ª ZE do Exterior · Sob Jurisdição do TRE-DF</div>
+            <div style="font-size:1.15rem; font-weight:700; color:#fff;">Governo do Distrito Federal</div>
+            <div style="font-size:0.75rem; color:#38bdf8; font-weight:600;">1º Turno Oficial TSE (Eleição 6259) · 2º Turno Definido</div>
           </div>
         </div>
-        
-        <p style="margin:0 0 10px; font-size:0.72rem; color:#D6D4CF; line-height:1.4;">
-          Pela legislação eleitoral brasileira (Art. 225 do Código Eleitoral), eleitores no exterior votam <b>exclusivamente para Presidente e Vice-Presidente da República</b>. A 1ª Zona Eleitoral do Exterior funciona administrativamente vinculada ao <b>TRE-DF em Brasília</b>.
+
+        <p style="margin:0 0 10px; font-size:0.74rem; color:#D6D4CF; line-height:1.4;">
+          Totalização concluída com <b>100,00% das seções apuradas</b> pelo TRE-DF. <b>Celina Leão (PP)</b> e <b>Leandro Grass (PT)</b> disputam o segundo turno para o Palácio do Buriti.
         </p>
 
         <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-bottom:10px;">
           <div style="background:rgba(0,0,0,0.3); padding:8px 10px; border-radius:8px;">
-            <div style="font-size:0.68rem; color:#A6A39C;">Total Eleitorado Exterior</div>
-            <div style="font-size:1.15rem; font-weight:700; color:#fff;">${ext.totalEleitorado.toLocaleString('pt-BR')}</div>
-            <div style="font-size:0.65rem; color:#60a5fa;">186 cidades em 140+ países</div>
+            <div style="font-size:0.68rem; color:#A6A39C;">Total Válidos DF</div>
+            <div style="font-size:1.15rem; font-weight:700; color:#fff;">${gov.votosValidos.toLocaleString('pt-BR')}</div>
+            <div style="font-size:0.65rem; color:#22c55e;">${gov.percentualValidos} dos votos totais</div>
           </div>
           <div style="background:rgba(0,0,0,0.3); padding:8px 10px; border-radius:8px;">
-            <div style="font-size:0.68rem; color:#A6A39C;">Seções Apuradas</div>
-            <div style="font-size:1.15rem; font-weight:700; color:#22c55e;">${ext.secoesApuradas.toLocaleString('pt-BR')} <span style="font-size:0.75rem;">(100%)</span></div>
-            <div style="font-size:0.65rem; color:#22c55e;">Totalização concluída</div>
-          </div>
-        </div>
-
-        <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-bottom:8px;">
-          <div style="background:rgba(16,185,129,0.12); border:1px solid rgba(16,185,129,0.3); padding:8px 10px; border-radius:8px;">
-            <div style="font-size:0.68rem; color:#34d399;">Comparecimento</div>
-            <div style="font-size:1.05rem; font-weight:700; color:#4ade80;">${ext.comparecimento.toLocaleString('pt-BR')}</div>
-            <div style="font-size:0.65rem; color:#A6A39C;">${ext.percentualComparecimento} dos eleitores</div>
-          </div>
-          <div style="background:rgba(239,68,68,0.12); border:1px solid rgba(239,68,68,0.3); padding:8px 10px; border-radius:8px;">
-            <div style="font-size:0.68rem; color:#f87171;">Abstenção</div>
-            <div style="font-size:1.05rem; font-weight:700; color:#fca5a5;">${ext.abstencao.toLocaleString('pt-BR')}</div>
-            <div style="font-size:0.65rem; color:#A6A39C;">${ext.percentualAbstencao} de abstenção</div>
+            <div style="font-size:0.68rem; color:#A6A39C;">Comparecimento</div>
+            <div style="font-size:1.15rem; font-weight:700; color:#38bdf8;">${gov.comparecimento.toLocaleString('pt-BR')}</div>
+            <div style="font-size:0.65rem; color:#A6A39C;">${gov.percentualComparecimento} de 2,24M aptos</div>
           </div>
         </div>
 
         <div style="display:flex; justify-content:space-between; font-size:0.7rem; color:#A6A39C; padding:6px 8px; background:rgba(0,0,0,0.25); border-radius:6px;">
-          <span>Votos Válidos: <b style="color:#fff;">${ext.votosValidos.toLocaleString('pt-BR')} (96,82%)</b></span>
-          <span>Brancos: <b style="color:#fff;">${ext.votosBrancos.toLocaleString('pt-BR')} (1,70%)</b></span>
-          <span>Nulos: <b style="color:#fff;">${ext.votosNulos.toLocaleString('pt-BR')} (1,48%)</b></span>
+          <span>Abstenção: <b style="color:#fca5a5;">${gov.abstencao.toLocaleString('pt-BR')} (${gov.percentualAbstencao})</b></span>
+          <span>Brancos: <b style="color:#fff;">${gov.votosBrancos.toLocaleString('pt-BR')} (${gov.percentualBrancos})</b></span>
+          <span>Nulos: <b style="color:#fff;">${gov.votosNulos.toLocaleString('pt-BR')} (${gov.percentualNulos})</b></span>
         </div>
       </div>
 
-      <!-- VOTAÇÃO OFICIAL DOS CANDIDATOS -->
+      <!-- MAPA POLÍTICO DE VITÓRIAS NAS 35 RAs -->
+      <div style="background:rgba(255,255,255,0.02); border:1px solid rgba(255,255,255,0.08); border-radius:10px; padding:12px; margin-bottom:14px;">
+        <div style="font-size:0.8rem; font-weight:700; color:#fff; margin-bottom:8px; display:flex; justify-content:space-between;">
+          <span>Território Eleitoral das 35 RAs:</span>
+          <span style="color:#22c55e;">100% Apurado</span>
+        </div>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px;">
+          <div style="background:rgba(0,131,202,0.12); border:1px solid rgba(0,131,202,0.3); padding:8px 10px; border-radius:8px;">
+            <div style="font-size:0.7rem; color:#38bdf8; font-weight:600;">Vitórias Celina Leão</div>
+            <div style="font-size:1.15rem; font-weight:700; color:#0083ca;">31 RAs</div>
+            <div style="font-size:0.65rem; color:#A6A39C;">Ceilândia, Taguatinga, Samambaia, Gama...</div>
+          </div>
+          <div style="background:rgba(238,45,53,0.12); border:1px solid rgba(238,45,53,0.3); padding:8px 10px; border-radius:8px;">
+            <div style="font-size:0.7rem; color:#fca5a5; font-weight:600;">Vitórias Leandro Grass</div>
+            <div style="font-size:1.15rem; font-weight:700; color:#ee2d35;">4 RAs</div>
+            <div style="font-size:0.65rem; color:#A6A39C;">Plano Piloto, Guará, Cruzeiro, Varjão</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- RANKING DOS 10 CANDIDATOS -->
       <div>
         <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
-          <b style="font-size:0.85rem; color:#FAFAF9;">Votação Presidencial no Exterior:</b>
-          <span style="font-size:0.7rem; color:#22c55e;">12 Candidatos</span>
+          <b style="font-size:0.85rem; color:#FAFAF9;">Votação dos Candidatos a Governador:</b>
+          <span style="font-size:0.7rem; color:#38bdf8;">10 Candidatos TSE</span>
         </div>
         <div style="display:flex; flex-direction:column;">
           ${candsHtml}
@@ -520,92 +533,161 @@ function renderDfView(filterQuery = '') {
       </div>
     `;
 
-    // --- RIGHT COLUMN: TOP PAÍSES E CIDADES DO EXTERIOR ---
-    secoesTitle.textContent = '🌍 Presença Global dos Eleitores Brasileiros no Exterior (Zona ZZ)';
-    secoesSubtitle.textContent = 'Eleitorado distribuído em 186 cidades consulares em mais de 140 países sob o TRE-DF';
+    // --- COLUNA DA DIREITA: LISTAGEM E VOTAÇÃO DETALHADA DAS 35 RAs ---
+    secoesTitle.textContent = '🏛️ Votação para Governador nas 35 Regiões Administrativas do DF';
+    secoesSubtitle.textContent = 'Quantos votos cada candidato recebeu por RA · Oficial TRE-DF / TSE 2026';
 
-    const mode = window.exteriorViewMode || 'paises';
-    let q = (filterQuery || '').toLowerCase().trim();
+    let ras = [...(gov.regioesAdministrativas || [])];
 
-    let toggleBtnsHtml = `
-      <div style="display:flex; gap:10px; margin-bottom:12px; align-items:center; flex-wrap:wrap;">
-        <button onclick="setExteriorViewMode('paises')" style="all:unset; cursor:pointer; font-size:0.78rem; font-weight:${mode === 'paises' ? '700' : '500'}; padding:5px 14px; border-radius:100px; background:${mode === 'paises' ? '#3b82f6' : 'rgba(255,255,255,0.08)'}; color:#fff; transition:all .15s;">
-          🌍 Ranking de Países (${(ext.paises || []).length} países)
+    // Filtros rápidos de Governo
+    if (window.governoFilter === 'celina') {
+      ras = ras.filter(r => r.vencedor && r.vencedor.numero === '11');
+    } else if (window.governoFilter === 'grass') {
+      ras = ras.filter(r => r.vencedor && r.vencedor.numero === '13');
+    } else if (window.governoFilter === 'top10') {
+      ras = [...ras].sort((a, b) => b.eleitorado - a.eleitorado).slice(0, 10);
+    }
+
+    // Filtro por seleção direta de RA
+    if (window.selectedRaId !== 'all') {
+      ras = ras.filter(r => String(r.id) === String(window.selectedRaId));
+    }
+
+    // Busca textual
+    const q = (filterQuery || '').toLowerCase().trim();
+    if (q) {
+      ras = ras.filter(r => {
+        return r.nome.toLowerCase().includes(q) ||
+               r.codigo.toLowerCase().includes(q) ||
+               r.zonas.toLowerCase().includes(q) ||
+               (r.vencedor && r.vencedor.nome.toLowerCase().includes(q));
+      });
+    }
+
+    // Ordenação
+    const sort = window.governoSortMode || 'vencedor';
+    if (sort === 'celina') {
+      ras.sort((a, b) => b.votosCelina - a.votosCelina);
+    } else if (sort === 'grass') {
+      ras.sort((a, b) => b.votosGrass - a.votosGrass);
+    } else if (sort === 'paula') {
+      ras.sort((a, b) => b.votosPaula - a.votosPaula);
+    } else if (sort === 'eleitorado') {
+      ras.sort((a, b) => b.eleitorado - a.eleitorado);
+    } else if (sort === 'nome') {
+      ras.sort((a, b) => a.nome.localeCompare(b.nome));
+    }
+
+    secoesCount.textContent = `${ras.length} de 35 RAs`;
+
+    // Barra de ordenação no topo da coluna direita
+    let toolbarHtml = `
+      <div style="display:flex; gap:8px; margin-bottom:12px; align-items:center; flex-wrap:wrap;">
+        <span style="font-size:0.75rem; color:#A6A39C; font-weight:600;">Ordenar por:</span>
+        <button onclick="setGovernoSort('celina')" style="all:unset; cursor:pointer; font-size:0.78rem; font-weight:${sort === 'celina' ? '700' : '500'}; padding:4px 10px; border-radius:100px; background:${sort === 'celina' ? '#0083ca' : 'rgba(255,255,255,0.06)'}; color:#fff; transition:all .15s;">
+          🔵 Votos Celina
         </button>
-        <button onclick="setExteriorViewMode('cidades')" style="all:unset; cursor:pointer; font-size:0.78rem; font-weight:${mode === 'cidades' ? '700' : '500'}; padding:5px 14px; border-radius:100px; background:${mode === 'cidades' ? '#3b82f6' : 'rgba(255,255,255,0.08)'}; color:#fff; transition:all .15s;">
-          🏙️ Cidades & Consulados (${(ext.cidadesTop || []).length} cidades)
+        <button onclick="setGovernoSort('grass')" style="all:unset; cursor:pointer; font-size:0.78rem; font-weight:${sort === 'grass' ? '700' : '500'}; padding:4px 10px; border-radius:100px; background:${sort === 'grass' ? '#ee2d35' : 'rgba(255,255,255,0.06)'}; color:#fff; transition:all .15s;">
+          🔴 Votos Grass
+        </button>
+        <button onclick="setGovernoSort('eleitorado')" style="all:unset; cursor:pointer; font-size:0.78rem; font-weight:${sort === 'eleitorado' ? '700' : '500'}; padding:4px 10px; border-radius:100px; background:${sort === 'eleitorado' ? '#38bdf8' : 'rgba(255,255,255,0.06)'}; color:#fff; transition:all .15s;">
+          👥 Eleitorado
+        </button>
+        <button onclick="setGovernoSort('vencedor')" style="all:unset; cursor:pointer; font-size:0.78rem; font-weight:${sort === 'vencedor' ? '700' : '500'}; padding:4px 10px; border-radius:100px; background:${sort === 'vencedor' ? '#10b981' : 'rgba(255,255,255,0.06)'}; color:#fff; transition:all .15s;">
+          🏆 Vencedor
+        </button>
+        <button onclick="setGovernoSort('nome')" style="all:unset; cursor:pointer; font-size:0.78rem; font-weight:${sort === 'nome' ? '700' : '500'}; padding:4px 10px; border-radius:100px; background:${sort === 'nome' ? 'rgba(255,255,255,0.2)' : 'rgba(255,255,255,0.06)'}; color:#fff; transition:all .15s;">
+          🔤 Nome A-Z
         </button>
       </div>
     `;
 
-    if (mode === 'paises') {
-      let filteredPaises = ext.paises || [];
-      if (q) {
-        filteredPaises = filteredPaises.filter(p => p[1].toLowerCase().includes(q) || p[0].toLowerCase().includes(q));
-      }
-      secoesCount.textContent = `${filteredPaises.length} países`;
+    let cardsHtml = toolbarHtml + '<div style="display:flex; flex-direction:column; gap:10px;">';
 
-      let paisesHtml = toggleBtnsHtml + '<div style="display:flex; flex-direction:column; gap:8px;">';
-      filteredPaises.forEach((p, idx) => {
-        const [sigla, nome, numCidades, eleitores] = p;
-        const flag = getCountryFlag(sigla);
-        const share = ((eleitores / ext.totalEleitorado) * 100).toFixed(2);
-        paisesHtml += `
-          <div onclick="filterExteriorCountry('${nome}')" style="cursor:pointer; background:rgba(255,255,255,0.02); border:1px solid rgba(255,255,255,0.06); border-radius:10px; padding:10px 14px; display:flex; justify-content:space-between; align-items:center; transition:background .15s;" onmouseover="this.style.background='rgba(59,130,246,0.1)'" onmouseout="this.style.background='rgba(255,255,255,0.02)'">
-            <div style="display:flex; align-items:center; gap:12px;">
-              <span style="font-size:1.6rem; line-height:1;">${flag}</span>
-              <div>
-                <div style="font-weight:700; font-size:0.9rem; color:#fff;">${idx + 1}º ${nome} <span style="font-size:0.72rem; color:#93c5fd; background:rgba(59,130,246,0.15); padding:2px 6px; border-radius:4px; margin-left:6px;">${sigla}</span></div>
-                <div style="font-size:0.75rem; color:#A6A39C; margin-top:2px;">${numCidades} ${numCidades > 1 ? 'cidades de votação' : 'cidade de votação'} · Seções Eleitorais ZZ</div>
-              </div>
-            </div>
-            <div style="text-align:right;">
-              <b style="font-size:1rem; color:#60a5fa;">${eleitores.toLocaleString('pt-BR')}</b>
-              <div style="font-size:0.72rem; color:#22c55e; font-weight:600;">${share}% do exterior</div>
-            </div>
-          </div>
-        `;
-      });
-      paisesHtml += '</div>';
-      rightCol.innerHTML = paisesHtml;
-    } else {
-      let filteredCidades = ext.cidadesTop || [];
-      if (q) {
-        filteredCidades = filteredCidades.filter(c => c.cidade.toLowerCase().includes(q) || c.pais.toLowerCase().includes(q));
-      }
-      secoesCount.textContent = `${filteredCidades.length} cidades`;
+    ras.forEach((r, idx) => {
+      const isCelinaWin = r.vencedor && r.vencedor.numero === '11';
+      const winBadge = isCelinaWin
+        ? '<span style="font-size:0.72rem; background:#0083ca25; color:#38bdf8; border:1px solid #0083ca55; padding:2px 8px; border-radius:100px; font-weight:700;">🏆 Celina Leão venceu</span>'
+        : '<span style="font-size:0.72rem; background:#ee2d3525; color:#fca5a5; border:1px solid #ee2d3555; padding:2px 8px; border-radius:100px; font-weight:700;">🏆 Leandro Grass venceu</span>';
 
-      let cidadesHtml = toggleBtnsHtml + '<div style="display:flex; flex-direction:column; gap:8px;">';
-      filteredCidades.forEach((c, idx) => {
-        const share = ((c.eleitorado / ext.totalEleitorado) * 100).toFixed(2);
-        cidadesHtml += `
-          <div style="background:rgba(255,255,255,0.02); border:1px solid rgba(255,255,255,0.06); border-radius:10px; padding:10px 14px; display:flex; justify-content:space-between; align-items:center;">
+      const pCelinaNum = parseFloat(r.percentualCelina.replace(',', '.'));
+      const pGrassNum = parseFloat(r.percentualGrass.replace(',', '.'));
+      const pPaulaNum = parseFloat(r.percentualPaula.replace(',', '.'));
+      const pKikoNum = parseFloat(r.percentualKiko.replace(',', '.'));
+      const pOutrosNum = 100 - (pCelinaNum + pGrassNum + pPaulaNum + pKikoNum);
+
+      cardsHtml += `
+        <div style="background:rgba(255,255,255,0.02); border:1px solid ${isCelinaWin ? 'rgba(0,131,202,0.3)' : 'rgba(238,45,53,0.3)'}; border-radius:12px; padding:12px 14px; transition:border .15s;">
+          <!-- CABEÇALHO DO CARD DA RA -->
+          <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:8px;">
             <div>
-              <div style="font-weight:700; font-size:0.9rem; color:#fff;">${idx + 1}º ${c.cidade}</div>
-              <div style="font-size:0.75rem; color:#A6A39C; margin-top:2px;">
-                🏛️ ${c.pais} · <span style="color:#60a5fa;">${c.secoes} seções eleitorais</span> · Cód. TSE: ${c.codigo}
+              <div style="display:flex; align-items:center; gap:8px;">
+                <span style="font-size:1rem; font-weight:700; color:#fff;">${r.codigo} - ${r.nome}</span>
+                ${winBadge}
+              </div>
+              <div style="font-size:0.75rem; color:#A6A39C; margin-top:3px;">
+                📍 ${r.zonas} · <b>${r.totalSecoes} seções</b> · Eleitorado: <b>${r.eleitorado.toLocaleString('pt-BR')}</b> · Válidos: <b>${r.validos.toLocaleString('pt-BR')}</b>
               </div>
             </div>
             <div style="text-align:right;">
-              <b style="font-size:1rem; color:#fff;">${c.eleitorado.toLocaleString('pt-BR')} eleitores</b>
-              <div style="font-size:0.72rem; color:#22c55e; font-weight:600;">${share}% do exterior</div>
+              <span style="font-size:0.72rem; color:#A6A39C;">Comparecimento</span>
+              <div style="font-size:0.85rem; font-weight:700; color:#22c55e;">${r.percentualComparecimento}</div>
             </div>
           </div>
-        `;
-      });
-      cidadesHtml += '</div>';
-      rightCol.innerHTML = cidadesHtml;
-    }
 
+          <!-- BARRA PROPORCIONAL DE VOTOS DA RA -->
+          <div style="width:100%; height:8px; display:flex; border-radius:100px; overflow:hidden; margin:8px 0; background:rgba(255,255,255,0.06);">
+            <div style="width:${pCelinaNum}%; background:#0083ca; height:100%;" title="Celina Leão: ${r.percentualCelina}"></div>
+            <div style="width:${pGrassNum}%; background:#ee2d35; height:100%;" title="Leandro Grass: ${r.percentualGrass}"></div>
+            <div style="width:${pPaulaNum}%; background:#f59e0b; height:100%;" title="Paula Belmonte: ${r.percentualPaula}"></div>
+            <div style="width:${pKikoNum}%; background:#ff6f00; height:100%;" title="Kiko Caputo: ${r.percentualKiko}"></div>
+            <div style="width:${Math.max(0, pOutrosNum)}%; background:#85827C; height:100%;" title="Outros: ${r.percentualOutros}"></div>
+          </div>
+
+          <!-- TABELA DE VOTOS DETALHADA POR CANDIDATO NESTA RA -->
+          <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(130px, 1fr)); gap:6px; margin-top:8px;">
+            <!-- CELINA LEÃO -->
+            <div style="background:${isCelinaWin ? 'rgba(0,131,202,0.12)' : 'rgba(255,255,255,0.02)'}; border:1px solid ${isCelinaWin ? 'rgba(0,131,202,0.35)' : 'rgba(255,255,255,0.06)'}; padding:6px 8px; border-radius:6px;">
+              <div style="font-size:0.7rem; color:#38bdf8; font-weight:700;">Celina Leão (PP · 11)</div>
+              <div style="font-size:0.95rem; font-weight:700; color:#fff;">${r.votosCelina.toLocaleString('pt-BR')} <small style="font-size:0.75rem; color:#38bdf8;">(${r.percentualCelina})</small></div>
+            </div>
+
+            <!-- LEANDRO GRASS -->
+            <div style="background:${!isCelinaWin ? 'rgba(238,45,53,0.12)' : 'rgba(255,255,255,0.02)'}; border:1px solid ${!isCelinaWin ? 'rgba(238,45,53,0.35)' : 'rgba(255,255,255,0.06)'}; padding:6px 8px; border-radius:6px;">
+              <div style="font-size:0.7rem; color:#fca5a5; font-weight:700;">Leandro Grass (PT · 13)</div>
+              <div style="font-size:0.95rem; font-weight:700; color:#fff;">${r.votosGrass.toLocaleString('pt-BR')} <small style="font-size:0.75rem; color:#fca5a5;">(${r.percentualGrass})</small></div>
+            </div>
+
+            <!-- PAULA BELMONTE -->
+            <div style="background:rgba(255,255,255,0.02); border:1px solid rgba(255,255,255,0.06); padding:6px 8px; border-radius:6px;">
+              <div style="font-size:0.7rem; color:#f59e0b; font-weight:600;">Paula Belmonte (45)</div>
+              <div style="font-size:0.85rem; font-weight:700; color:#D6D4CF;">${r.votosPaula.toLocaleString('pt-BR')} <small style="font-size:0.7rem; color:#f59e0b;">(${r.percentualPaula})</small></div>
+            </div>
+
+            <!-- KIKO CAPUTO -->
+            <div style="background:rgba(255,255,255,0.02); border:1px solid rgba(255,255,255,0.06); padding:6px 8px; border-radius:6px;">
+              <div style="font-size:0.7rem; color:#ff6f00; font-weight:600;">Kiko Caputo (30)</div>
+              <div style="font-size:0.85rem; font-weight:700; color:#D6D4CF;">${r.votosKiko.toLocaleString('pt-BR')} <small style="font-size:0.7rem; color:#ff6f00;">(${r.percentualKiko})</small></div>
+            </div>
+
+            <!-- DEMAIS CANDIDATOS -->
+            <div style="background:rgba(255,255,255,0.02); border:1px solid rgba(255,255,255,0.06); padding:6px 8px; border-radius:6px;">
+              <div style="font-size:0.7rem; color:#A6A39C; font-weight:600;">Outros Candidatos</div>
+              <div style="font-size:0.85rem; font-weight:700; color:#A6A39C;">${(r.votosCappelli + r.votosOutros).toLocaleString('pt-BR')} <small style="font-size:0.7rem;">(${(( (r.votosCappelli + r.votosOutros) / r.validos ) * 100).toFixed(2)}%)</small></div>
+            </div>
+          </div>
+        </div>
+      `;
+    });
+
+    cardsHtml += '</div>';
+    rightCol.innerHTML = cardsHtml;
     return;
   }
 
-  let activeRas = window.dfGlobalData.regioesAdministrativas;
-  if (window.selectedRaId !== 'all') {
-    activeRas = activeRas.filter(ra => String(ra.id) === String(window.selectedRaId));
-  }
-
-  // --- RENDER LEFT COLUMN ---
+  // =========================================================================
+  // ABA 2: DOSSIÊ ELEITORAL MARCELA PASSAMANI (15555 · MDB)
+  // =========================================================================
   if (window.currentTab === 'marcela') {
     const d = window.dfGlobalData.marcelaPassamaniDossie;
     let rasTableHtml = '';
@@ -721,228 +803,235 @@ function renderDfView(filterQuery = '') {
         </div>
       </div>
     `;
-  } else {
-    // TAB QUADRO GERAL
+
+    // --- COLUNA DA DIREITA: 37 COLÉGIOS ELEITORAIS OU SEÇÕES ELEITORAIS ---
+    const z18Det = window.dfGlobalData.marcelaPassamaniDossie?.zona18Detalhamento;
+
+    if (window.selectedZona === '18' && window.viewModeZ18 === 'locais' && z18Det) {
+      let locais = z18Det.locais || [];
+      if (window.selectedTipo !== 'all') {
+        locais = locais.filter(l => l.tipo === window.selectedTipo);
+      }
+      if (filterQuery) {
+        locais = locais.filter(l => {
+          const q = filterQuery.toLowerCase();
+          return l.local.toLowerCase().includes(q) || l.ra.toLowerCase().includes(q) || l.tipo.toLowerCase().includes(q);
+        });
+      }
+
+      secoesTitle.textContent = `⭐ 37 Colégios Eleitorais da 18ª Zona Eleitoral (TRE-DF)`;
+      secoesSubtitle.textContent = `841 votos oficiais de Marcela Passamani mapeados em todas as 431 seções eleitorais`;
+      secoesCount.textContent = `${locais.length} colégios exibidos`;
+
+      let html = `
+        <div style="display:flex; gap:10px; margin-bottom:12px; align-items:center;">
+          <button onclick="setZ18ViewMode('locais')" style="all:unset; cursor:pointer; font-size:0.78rem; font-weight:700; padding:4px 12px; border-radius:100px; background:#10b981; color:#fff;">
+            🏫 Ver os 37 Colégios (Ranking)
+          </button>
+          <button onclick="setZ18ViewMode('secoes')" style="all:unset; cursor:pointer; font-size:0.78rem; font-weight:600; padding:4px 12px; border-radius:100px; background:rgba(255,255,255,0.08); color:#FAFAF9;">
+            🗳️ Ver Todas as 431 Seções
+          </button>
+        </div>
+      `;
+
+      locais.forEach((loc, idx) => {
+        const isRural = (loc.tipo === 'Rural');
+        const badgeTipo = isRural
+          ? '<span style="font-size:0.7rem; background:#22c55e22; color:#4ade80; border:1px solid #22c55e44; padding:2px 8px; border-radius:100px; font-weight:600;">🌾 Zona Rural</span>'
+          : '<span style="font-size:0.7rem; background:#3b82f622; color:#60a5fa; border:1px solid #3b82f644; padding:2px 8px; border-radius:100px; font-weight:600;">🏙️ Zona Urbana</span>';
+
+        html += `
+          <div style="background:rgba(255,255,255,0.02); border:1px solid ${isRural ? 'rgba(34,197,94,0.35)' : 'rgba(16,185,129,0.3)'}; border-radius:10px; padding:12px; margin-bottom:8px;">
+            <div style="display:flex; justify-content:space-between; align-items:flex-start;">
+              <div>
+                <div style="display:flex; align-items:center; gap:8px;">
+                  <span style="font-size:0.95rem; font-weight:700; color:#fff;">${idx + 1}º ${loc.local}</span>
+                  ${badgeTipo}
+                </div>
+                <div style="font-size:0.75rem; color:#A6A39C; margin-top:3px;">
+                  📍 Região: <b>${loc.ra}</b> · 18ª Zona Eleitoral · <b>${loc.totalSecoes} seções</b>
+                </div>
+              </div>
+              <div style="text-align:right;">
+                <b style="font-size:1.05rem; color:#f59e0b;">${loc.totalVotosMarcela} votos</b>
+                <div style="font-size:0.7rem; color:#22c55e;">Marcela Passamani (15555)</div>
+              </div>
+            </div>
+          </div>`;
+      });
+
+      rightCol.innerHTML = html;
+      return;
+    }
+
+    // Seções individuais Marcela
+    let activeRas = window.dfGlobalData.regioesAdministrativas || [];
+    if (window.selectedRaId !== 'all') {
+      activeRas = activeRas.filter(ra => String(ra.id) === String(window.selectedRaId));
+    }
+
+    let allSecoes = [];
+    activeRas.forEach(ra => {
+      (ra.secoesDetalhe || []).forEach(sec => {
+        allSecoes.push(Object.assign({}, sec, {
+          raNome: ra.nome,
+          raCodigo: ra.codigo
+        }));
+      });
+    });
+
+    if (window.selectedZona !== 'all') {
+      allSecoes = allSecoes.filter(sec => {
+        const zNum = String(sec.zona).replace(/[^0-9]/g, '');
+        return zNum === String(window.selectedZona);
+      });
+    }
+
+    if (window.selectedTipo !== 'all') {
+      allSecoes = allSecoes.filter(sec => {
+        const isRural = (sec.tipo === 'Rural' || (sec.colegioEleitoral || '').toLowerCase().includes('rural') || (sec.endereco || '').toLowerCase().includes('br-') || (sec.endereco || '').toLowerCase().includes('df-') || (sec.colegioEleitoral || '').toLowerCase().includes('café sem troco') || (sec.colegioEleitoral || '').toLowerCase().includes('pad-df') || (sec.colegioEleitoral || '').toLowerCase().includes('betânia') || (sec.colegioEleitoral || '').toLowerCase().includes('morro da cruz'));
+        return window.selectedTipo === 'Rural' ? isRural : !isRural;
+      });
+    }
+
+    if (filterQuery) {
+      allSecoes = allSecoes.filter(sec => {
+        const txt = `${sec.numero} ${sec.colegioEleitoral || ''} ${sec.local || ''} ${sec.endereco || ''} ${sec.zona} ${sec.raNome} ${sec.raCodigo}`.toLowerCase();
+        return txt.includes(filterQuery);
+      });
+    }
+
+    if (window.selectedZona === '18') {
+      secoesTitle.textContent = `⭐ 18ª Zona Eleitoral (São Sebastião, Jardim Botânico & Lago Sul)`;
+      secoesSubtitle.textContent = `841 votos oficiais de Marcela Passamani mapeados em todas as 431 seções eleitorais`;
+    } else if (window.selectedRaId === 'all') {
+      secoesTitle.textContent = `Colégios Eleitorais e Seções de Todas as 35 Regiões Administrativas`;
+      secoesSubtitle.textContent = `Exibindo seções eleitorais do Distrito Federal com detalhamento de Marcela Passamani (15555)`;
+    } else {
+      secoesTitle.textContent = `Colégios Eleitorais de ${activeRas[0]?.nome || ''}`;
+      secoesSubtitle.textContent = `${activeRas[0]?.codigo || ''} · ${activeRas[0]?.zonas || ''}`;
+    }
+    secoesCount.textContent = `${allSecoes.length} seções exibidas`;
+
+    let toggleBtnHtml = '';
+    if (window.selectedZona === '18') {
+      toggleBtnHtml = `
+        <div style="display:flex; gap:10px; margin-bottom:12px; align-items:center;">
+          <button onclick="setZ18ViewMode('locais')" style="all:unset; cursor:pointer; font-size:0.78rem; font-weight:600; padding:4px 12px; border-radius:100px; background:rgba(255,255,255,0.08); color:#FAFAF9;">
+            🏫 Ver os 37 Colégios (Ranking)
+          </button>
+          <button onclick="setZ18ViewMode('secoes')" style="all:unset; cursor:pointer; font-size:0.78rem; font-weight:700; padding:4px 12px; border-radius:100px; background:#10b981; color:#fff;">
+            🗳️ Ver Todas as 431 Seções
+          </button>
+        </div>
+      `;
+    }
+
+    let secoesHtml = toggleBtnHtml;
+    allSecoes.slice(0, 100).forEach(sec => {
+      const isRural = (sec.tipo === 'Rural' || (sec.colegioEleitoral || '').toLowerCase().includes('rural') || (sec.endereco || '').toLowerCase().includes('br-') || (sec.endereco || '').toLowerCase().includes('df-') || (sec.colegioEleitoral || '').toLowerCase().includes('café sem troco') || (sec.colegioEleitoral || '').toLowerCase().includes('pad-df') || (sec.colegioEleitoral || '').toLowerCase().includes('betânia') || (sec.colegioEleitoral || '').toLowerCase().includes('morro da cruz'));
+      const isZ18 = (String(sec.zona).includes('18'));
+
+      const badgeTipo = isRural 
+        ? '<span style="font-size:0.7rem; background:#22c55e22; color:#4ade80; border:1px solid #22c55e44; padding:2px 8px; border-radius:100px; font-weight:600;">🌾 Zona Rural</span>'
+        : '<span style="font-size:0.7rem; background:#3b82f622; color:#60a5fa; border:1px solid #3b82f644; padding:2px 8px; border-radius:100px; font-weight:600;">🏙️ Urbana</span>';
+
+      const badgeZ18 = isZ18
+        ? '<span style="font-size:0.7rem; background:#10b98125; color:#34d399; border:1px solid #10b98155; padding:2px 8px; border-radius:100px; font-weight:700;">⭐ 18ª ZE</span>'
+        : '';
+
+      secoesHtml += `
+        <div style="background:rgba(255,255,255,0.02); border:1px solid ${isRural ? 'rgba(34,197,94,0.35)' : (isZ18 ? 'rgba(16,185,129,0.35)' : 'rgba(255,255,255,0.06)')}; border-radius:10px; padding:12px; margin-bottom:8px;">
+          <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:8px;">
+            <div>
+              <div style="display:flex; align-items:center; gap:8px;">
+                <span style="font-size:0.95rem; font-weight:700; color:#fff;">Seção ${sec.numero}</span>
+                <span style="font-size:0.72rem; background:rgba(255,255,255,0.08); padding:2px 8px; border-radius:6px; color:#D6D4CF;">${sec.raCodigo || ''} - ${sec.raNome || ''}</span>
+                ${badgeTipo}
+                ${badgeZ18}
+              </div>
+              <div style="font-size:0.82rem; font-weight:600; color:#FAFAF9; margin-top:4px;">
+                🏫 ${sec.colegioEleitoral || sec.local}
+              </div>
+              <div style="font-size:0.72rem; color:#A6A39C; margin-top:2px;">
+                📍 ${sec.endereco || ''} · ${sec.zona}
+              </div>
+            </div>
+            <div style="text-align:right;">
+              <div style="font-size:0.72rem; color:#A6A39C;">Comparecimento</div>
+              <div style="font-size:0.85rem; font-weight:700; color:#fff;"><b style="color:#22c55e;">${sec.comparecimento || 0}</b> de ${sec.aptos || 0}</div>
+            </div>
+          </div>
+
+          <div style="background:rgba(245,158,11,0.12); border:1px solid rgba(245,158,11,0.3); border-radius:6px; padding:6px 10px; display:flex; justify-content:space-between; align-items:center;">
+            <div style="font-size:0.75rem; color:#f59e0b; font-weight:600; display:flex; align-items:center; gap:6px;">
+              <span>⭐</span><span>Marcela Passamani (15555 · MDB):</span>
+            </div>
+            <div>
+              <b style="font-size:0.85rem; color:#f59e0b;">${sec.votosMarcela || 0} votos apurados</b>
+            </div>
+          </div>
+        </div>`;
+    });
+
+    rightCol.innerHTML = secoesHtml;
+    return;
+  }
+
+  // =========================================================================
+  // ABA 3: QUADRO GERAL DE DEPUTADOS DISTRITAIS
+  // =========================================================================
+  if (window.currentTab === 'geral') {
     let candsHtml = '';
-    const candList = window.dfGlobalData.candidatosDestaque || [];
+    const candList = window.dfGlobalData.candidatosDestaque || window.dfGlobalData.candidatosDistritais || [];
     candList.forEach((c, idx) => {
       const isM = (c.numero === '15555');
       candsHtml += `
         <div style="display:flex; justify-content:space-between; align-items:center; padding:8px 10px; background:${isM ? 'rgba(245,158,11,0.15)' : 'rgba(255,255,255,0.02)'}; border-radius:8px; margin-bottom:6px; border-left:3px solid ${c.cor}; border:${isM ? '1px solid rgba(245,158,11,0.4)' : 'none'};">
           <div>
             <div style="font-weight:700; font-size:0.85rem; color:${isM ? '#f59e0b' : '#fff'};">${idx + 1}º ${c.nome} ${isM ? '⭐' : ''}</div>
-            <div style="font-size:0.75rem; color:#A6A39C;">${c.partido} ${c.numero} · ${c.situacao}</div>
+            <div style="font-size:0.75rem; color:#A6A39C;">${c.partido} ${c.numero} · ${c.situacao || (c.eleito ? 'Eleito' : 'Suplente')}</div>
           </div>
           <div style="text-align:right;">
-            <b style="font-size:0.95rem; color:${c.cor};">${c.totalVotos.toLocaleString('pt-BR')}</b>
-            <div style="font-size:0.7rem; color:${c.eleito ? '#22c55e' : '#f59e0b'};">${c.eleito ? 'Eleito' : c.situacao}</div>
+            <b style="font-size:0.95rem; color:${c.cor};">${(c.totalVotos || c.votos || 0).toLocaleString('pt-BR')}</b>
+            <div style="font-size:0.7rem; color:${c.eleito ? '#22c55e' : '#f59e0b'};">${c.eleito ? 'Eleito' : 'Suplente'}</div>
           </div>
         </div>`;
     });
 
     leftCol.innerHTML = `
       <div style="margin-bottom:12px;">
-        <h3 style="margin:0 0 4px; font-size:0.95rem; color:#fff;">Quadro dos Mais Votados (DF)</h3>
-        <p style="margin:0; font-size:0.75rem; color:#A6A39C;">Total apurado: 1.684.210 votos nominais válidos</p>
+        <h3 style="margin:0 0 4px; font-size:0.95rem; color:#fff;">Quadro dos Mais Votados (Dep. Distritais)</h3>
+        <p style="margin:0; font-size:0.75rem; color:#A6A39C;">Câmara Legislativa do DF (CLDF) · 24 cadeiras</p>
       </div>
       <div style="display:flex; flex-direction:column;">
         ${candsHtml}
       </div>
     `;
-  }
 
-  // --- RENDER RIGHT COLUMN (COLÉGIOS ELEITORAIS E SEÇÕES) ---
-  const z18Det = window.dfGlobalData.marcelaPassamaniDossie?.zona18Detalhamento;
+    secoesTitle.textContent = 'Eleição para Deputado Distrital · 35 RAs do DF';
+    secoesSubtitle.textContent = 'Distribuição de vagas da CLDF nas 35 Regiões Administrativas';
+    secoesCount.textContent = '24 Cadeiras';
 
-  if (window.selectedZona === '18' && window.viewModeZ18 === 'locais' && z18Det) {
-    // VISUALIZAÇÃO AGRUPADA DOS 37 COLÉGIOS ELEITORAIS DA ZONA 18
-    let locais = z18Det.locais || [];
-
-    if (window.selectedTipo !== 'all') {
-      locais = locais.filter(l => l.tipo === window.selectedTipo);
-    }
-
-    if (filterQuery) {
-      locais = locais.filter(l => {
-        const q = filterQuery.toLowerCase();
-        return l.local.toLowerCase().includes(q) || l.ra.toLowerCase().includes(q) || l.tipo.toLowerCase().includes(q);
-      });
-    }
-
-    secoesTitle.textContent = `⭐ 37 Colégios Eleitorais da 18ª Zona Eleitoral (TRE-DF)`;
-    secoesSubtitle.textContent = `841 votos oficiais de Marcela Passamani mapeados em todas as 431 seções eleitorais`;
-    secoesCount.textContent = `${locais.length} colégios exibidos`;
-
-    let html = `
-      <div style="display:flex; gap:10px; margin-bottom:12px; align-items:center;">
-        <button onclick="setZ18ViewMode('locais')" style="all:unset; cursor:pointer; font-size:0.78rem; font-weight:700; padding:4px 12px; border-radius:100px; background:#10b981; color:#fff;">
-          🏫 Ver os 37 Colégios (Ranking)
-        </button>
-        <button onclick="setZ18ViewMode('secoes')" style="all:unset; cursor:pointer; font-size:0.78rem; font-weight:600; padding:4px 12px; border-radius:100px; background:rgba(255,255,255,0.08); color:#FAFAF9;">
-          🗳️ Ver Todas as 431 Seções
-        </button>
-      </div>
-    `;
-
-    locais.forEach((loc, idx) => {
-      const isRural = (loc.tipo === 'Rural');
-      const badgeTipo = isRural
-        ? '<span style="font-size:0.7rem; background:#22c55e22; color:#4ade80; border:1px solid #22c55e44; padding:2px 8px; border-radius:100px; font-weight:600;">🌾 Zona Rural</span>'
-        : '<span style="font-size:0.7rem; background:#3b82f622; color:#60a5fa; border:1px solid #3b82f644; padding:2px 8px; border-radius:100px; font-weight:600;">🏙️ Zona Urbana</span>';
-
-      html += `
-        <div style="background:rgba(255,255,255,0.02); border:1px solid ${isRural ? 'rgba(34,197,94,0.35)' : 'rgba(16,185,129,0.3)'}; border-radius:10px; padding:12px; margin-bottom:8px;">
-          <div style="display:flex; justify-content:space-between; align-items:flex-start;">
-            <div>
-              <div style="display:flex; align-items:center; gap:8px;">
-                <span style="font-size:0.95rem; font-weight:700; color:#fff;">${idx + 1}º ${loc.local}</span>
-                ${badgeTipo}
-              </div>
-              <div style="font-size:0.75rem; color:#A6A39C; margin-top:3px;">
-                📍 Região: <b>${loc.ra}</b> · 18ª Zona Eleitoral · <b>${loc.totalSecoes} seções</b>
-              </div>
-            </div>
-            <div style="text-align:right;">
-              <b style="font-size:1.05rem; color:#f59e0b;">${loc.totalVotosMarcela} votos</b>
-              <div style="font-size:0.7rem; color:#22c55e;">Marcela Passamani (15555)</div>
-            </div>
-          </div>
-        </div>`;
-    });
-
-    rightCol.innerHTML = html;
-    return;
-  }
-
-  // MODO SEÇÕES INDIVIDUAIS
-  let allSecoes = [];
-  activeRas.forEach(ra => {
-    (ra.secoesDetalhe || []).forEach(sec => {
-      allSecoes.push(Object.assign({}, sec, {
-        raNome: ra.nome,
-        raCodigo: ra.codigo
-      }));
-    });
-  });
-
-  // Filtro por Zona
-  if (window.selectedZona !== 'all') {
-    allSecoes = allSecoes.filter(sec => {
-      const zNum = String(sec.zona).replace(/[^0-9]/g, '');
-      return zNum === String(window.selectedZona);
-    });
-  }
-
-  // Filtro por Tipo de Área
-  if (window.selectedTipo !== 'all') {
-    allSecoes = allSecoes.filter(sec => {
-      const isRural = (sec.tipo === 'Rural' || (sec.colegioEleitoral || '').toLowerCase().includes('rural') || (sec.endereco || '').toLowerCase().includes('br-') || (sec.endereco || '').toLowerCase().includes('df-') || (sec.colegioEleitoral || '').toLowerCase().includes('café sem troco') || (sec.colegioEleitoral || '').toLowerCase().includes('pad-df') || (sec.colegioEleitoral || '').toLowerCase().includes('betânia') || (sec.colegioEleitoral || '').toLowerCase().includes('morro da cruz'));
-      return window.selectedTipo === 'Rural' ? isRural : !isRural;
-    });
-  }
-
-  // Busca textual
-  if (filterQuery) {
-    allSecoes = allSecoes.filter(sec => {
-      const txt = `${sec.numero} ${sec.colegioEleitoral || ''} ${sec.local || ''} ${sec.endereco || ''} ${sec.zona} ${sec.raNome} ${sec.raCodigo}`.toLowerCase();
-      return txt.includes(filterQuery);
-    });
-  }
-
-  if (window.selectedZona === '18') {
-    secoesTitle.textContent = `⭐ 18ª Zona Eleitoral (Nossa Zona: São Sebastião, Jardim Botânico & Lago Sul)`;
-    secoesSubtitle.textContent = `841 votos oficiais de Marcela Passamani mapeados em todas as 431 seções eleitorais`;
-  } else if (window.selectedRaId === 'all') {
-    secoesTitle.textContent = `Colégios Eleitorais e Seções de Todas as 35 Regiões Administrativas`;
-    secoesSubtitle.textContent = `Exibindo seções eleitorais do Distrito Federal com detalhamento de Marcela Passamani (15555)`;
-  } else {
-    secoesTitle.textContent = `Colégios Eleitorais de ${activeRas[0]?.nome || ''}`;
-    secoesSubtitle.textContent = `${activeRas[0]?.codigo || ''} · ${activeRas[0]?.zonas || ''}`;
-  }
-  secoesCount.textContent = `${allSecoes.length} seções exibidas`;
-
-  if (allSecoes.length === 0) {
-    rightCol.innerHTML = `
-      <div style="text-align:center; padding:40px 20px; color:#A6A39C;">
-        <div style="font-size:2rem; margin-bottom:10px;">🔍</div>
-        <div style="font-size:0.9rem; font-weight:600; color:#fff;">Nenhuma seção encontrada com estes filtros</div>
-        <div style="font-size:0.8rem; margin-top:4px;">Tente remover o filtro de busca ou alternar entre Rural/Urbano</div>
-        <button onclick="resetAllFilters()" style="all:unset; cursor:pointer; margin-top:14px; padding:6px 14px; border-radius:100px; background:rgba(255,255,255,0.1); color:#fff; font-size:0.8rem;">
-          Restaurar Filtros Padrão
-        </button>
-      </div>`;
-    return;
-  }
-
-  let toggleBtnHtml = '';
-  if (window.selectedZona === '18') {
-    toggleBtnHtml = `
-      <div style="display:flex; gap:10px; margin-bottom:12px; align-items:center;">
-        <button onclick="setZ18ViewMode('locais')" style="all:unset; cursor:pointer; font-size:0.78rem; font-weight:600; padding:4px 12px; border-radius:100px; background:rgba(255,255,255,0.08); color:#FAFAF9;">
-          🏫 Ver os 37 Colégios (Ranking)
-        </button>
-        <button onclick="setZ18ViewMode('secoes')" style="all:unset; cursor:pointer; font-size:0.78rem; font-weight:700; padding:4px 12px; border-radius:100px; background:#10b981; color:#fff;">
-          🗳️ Ver Todas as 431 Seções
-        </button>
-      </div>
-    `;
-  }
-
-  let secoesHtml = toggleBtnHtml;
-  allSecoes.slice(0, 100).forEach(sec => {
-    const isRural = (sec.tipo === 'Rural' || (sec.colegioEleitoral || '').toLowerCase().includes('rural') || (sec.endereco || '').toLowerCase().includes('br-') || (sec.endereco || '').toLowerCase().includes('df-') || (sec.colegioEleitoral || '').toLowerCase().includes('café sem troco') || (sec.colegioEleitoral || '').toLowerCase().includes('pad-df') || (sec.colegioEleitoral || '').toLowerCase().includes('betânia') || (sec.colegioEleitoral || '').toLowerCase().includes('morro da cruz'));
-    const isZ18 = (String(sec.zona).includes('18'));
-
-    const badgeTipo = isRural 
-      ? '<span style="font-size:0.7rem; background:#22c55e22; color:#4ade80; border:1px solid #22c55e44; padding:2px 8px; border-radius:100px; font-weight:600;">🌾 Zona Rural</span>'
-      : '<span style="font-size:0.7rem; background:#3b82f622; color:#60a5fa; border:1px solid #3b82f644; padding:2px 8px; border-radius:100px; font-weight:600;">🏙️ Urbana</span>';
-
-    const badgeZ18 = isZ18
-      ? '<span style="font-size:0.7rem; background:#10b98125; color:#34d399; border:1px solid #10b98155; padding:2px 8px; border-radius:100px; font-weight:700;">⭐ 18ª ZE</span>'
-      : '';
-
-    secoesHtml += `
-      <div style="background:rgba(255,255,255,0.02); border:1px solid ${isRural ? 'rgba(34,197,94,0.35)' : (isZ18 ? 'rgba(16,185,129,0.35)' : 'rgba(255,255,255,0.06)')}; border-radius:10px; padding:12px; margin-bottom:8px; transition:border .15s;">
-        <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:8px;">
+    let rasHtml = '<div style="display:flex; flex-direction:column; gap:8px;">';
+    (window.dfGlobalData.regioesAdministrativas || []).forEach(ra => {
+      rasHtml += `
+        <div style="background:rgba(255,255,255,0.02); border:1px solid rgba(255,255,255,0.06); border-radius:10px; padding:12px; display:flex; justify-content:space-between; align-items:center;">
           <div>
-            <div style="display:flex; align-items:center; gap:8px;">
-              <span style="font-size:0.95rem; font-weight:700; color:#fff;">Seção ${sec.numero}</span>
-              <span style="font-size:0.72rem; background:rgba(255,255,255,0.08); padding:2px 8px; border-radius:6px; color:#D6D4CF;">${sec.raCodigo || ''} - ${sec.raNome || ''}</span>
-              ${badgeTipo}
-              ${badgeZ18}
-            </div>
-            <div style="font-size:0.82rem; font-weight:600; color:#FAFAF9; margin-top:4px;">
-              🏫 ${sec.colegioEleitoral || sec.local}
-            </div>
-            <div style="font-size:0.72rem; color:#A6A39C; margin-top:2px;">
-              📍 ${sec.endereco || ''} · ${sec.zona}
+            <div style="font-weight:700; font-size:0.9rem; color:#fff;">${ra.codigo} - ${ra.nome}</div>
+            <div style="font-size:0.75rem; color:#A6A39C; margin-top:2px;">
+              📍 ${ra.zonas} · ${ra.secoes} seções · Eleitorado: ${ra.eleitorado.toLocaleString('pt-BR')}
             </div>
           </div>
           <div style="text-align:right;">
-            <div style="font-size:0.72rem; color:#A6A39C;">Comparecimento</div>
-            <div style="font-size:0.85rem; font-weight:700; color:#fff;"><b style="color:#22c55e;">${sec.comparecimento || 0}</b> de ${sec.aptos || 0}</div>
+            <span style="font-size:0.75rem; color:#22c55e; font-weight:700;">100% Apurado</span>
           </div>
         </div>
-
-        <div style="background:rgba(245,158,11,0.12); border:1px solid rgba(245,158,11,0.3); border-radius:6px; padding:6px 10px; display:flex; justify-content:space-between; align-items:center;">
-          <div style="font-size:0.75rem; color:#f59e0b; font-weight:600; display:flex; align-items:center; gap:6px;">
-            <span>⭐</span><span>Marcela Passamani (15555 · MDB):</span>
-          </div>
-          <div>
-            <b style="font-size:0.85rem; color:#f59e0b;">${sec.votosMarcela || 0} votos apurados</b>
-          </div>
-        </div>
-      </div>`;
-  });
-
-  if (allSecoes.length > 100) {
-    secoesHtml += `
-      <div style="text-align:center; padding:12px; color:#A6A39C; font-size:0.75rem;">
-        Mostrando 100 seções de um total de ${allSecoes.length}. Use os filtros acima para refinar.
-      </div>`;
+      `;
+    });
+    rasHtml += '</div>';
+    rightCol.innerHTML = rasHtml;
   }
-
-  rightCol.innerHTML = secoesHtml;
 }
 
 // Inicializa dados quando script carregar
@@ -966,11 +1055,8 @@ async function switchTseTurno(id) {
   console.log('[TSE Oficial ' + id + ' Recebido]:', data);
 }
 
-// Exportações globais para compatibilidade total
-window.openExteriorView = openExteriorView;
-window.filterExteriorCountry = filterExteriorCountry;
-window.setExteriorViewMode = setExteriorViewMode;
-window.getCountryFlag = getCountryFlag;
+// Exportações globais
+window.openGovernoDfModal = openGovernoDfModal;
 window.openMarcelaDossie = openMarcelaDossie;
 window.openDfModal = openDfModal;
 window.closeDfModal = closeDfModal;
@@ -979,9 +1065,12 @@ window.setMobileSubTab = setMobileSubTab;
 window.toggleTopSection = toggleTopSection;
 window.quickFilterZona18 = quickFilterZona18;
 window.quickFilterTipo = quickFilterTipo;
+window.quickFilterGov = quickFilterGov;
+window.setGovernoSort = setGovernoSort;
 window.resetAllFilters = resetAllFilters;
 window.selectDfRa = selectDfRa;
 window.selectDfZona = selectDfZona;
 window.selectDfTipo = selectDfTipo;
 window.switchTseTurno = switchTseTurno;
-
+window.filterDfData = filterDfData;
+window.setZ18ViewMode = setZ18ViewMode;

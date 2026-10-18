@@ -211,18 +211,19 @@ const server = http.createServer(async (req, res) => {
     }
   }
 
-  // Endpoint oficial com dados consolidados do Exterior (Zona ZZ - TSE)
-  if (pathname === '/api/tse/exterior') {
+  // Endpoint oficial com dados de votação para Governador do DF nas 35 RAs
+  if (pathname === '/api/df/governo') {
     try {
-      const data = fs.readFileSync(path.join(BASE_DIR, 'exterior_data.json'), 'utf8');
+      const data = fs.readFileSync(path.join(BASE_DIR, 'df_distritais_data.json'), 'utf8');
+      const json = JSON.parse(data);
       res.writeHead(200, {
         'Content-Type': 'application/json; charset=utf-8',
         'Access-Control-Allow-Origin': '*'
       });
-      return res.end(data);
+      return res.end(JSON.stringify(json.governoDf || {}, null, 2));
     } catch (err) {
       res.writeHead(500, { 'Content-Type': 'text/plain; charset=utf-8' });
-      return res.end('Erro lendo dados do exterior');
+      return res.end('Erro lendo dados de governo do DF');
     }
   }
 
@@ -313,19 +314,19 @@ const server = http.createServer(async (req, res) => {
       transform: none !important;
       width: calc(100vw - 20px) !important;
       max-width: calc(100vw - 20px) !important;
-      padding: 8px 12px !important;
-      gap: 8px !important;
-      border-radius: 20px !important;
+      padding: 8px 10px !important;
+      gap: 6px !important;
+      border-radius: 16px !important;
       flex-wrap: wrap !important;
-      justify-content: space-between !important;
-    }
-    #btn-open-marcela {
-      flex: 1 1 auto !important;
-      min-height: 44px !important;
       justify-content: center !important;
-      font-size: 13px !important;
-      padding: 10px 14px !important;
-      border-radius: 14px !important;
+    }
+    #btn-open-governo, #btn-open-marcela {
+      flex: 1 1 auto !important;
+      min-height: 40px !important;
+      justify-content: center !important;
+      font-size: 12px !important;
+      padding: 8px 12px !important;
+      border-radius: 12px !important;
     }
     #df-distritais-modal {
       padding: 0 !important;
@@ -385,6 +386,12 @@ const server = http.createServer(async (req, res) => {
     }
   }
   @media (min-width: 901px) {
+    #tse-top-banner {
+      display: none !important;
+    }
+    .hud canvas.map, .hud .mapzoom, .hud canvas.prev, .hud canvas.hov, .hud canvas.fx, .hud .marks {
+      transform: translateY(-16px) !important;
+    }
     #df-mobile-sticky-bar {
       display: none !important;
     }
@@ -406,8 +413,8 @@ const server = http.createServer(async (req, res) => {
   }
 </style>
 
-<!-- BARRA PRINCIPAL FLUTUANTE (DESIGN EXECUTIVO E TOTALMENTE RESPONSIVO) -->
-<div id="tse-top-banner" style="position:fixed; bottom:16px; left:50%; transform:translateX(-50%); z-index:9999; display:flex; align-items:center; gap:10px; background:rgba(21,20,18,0.96); backdrop-filter:blur(22px); -webkit-backdrop-filter:blur(22px); border:1px solid rgba(250,250,249,0.22); border-radius:100px; padding:6px 14px; box-shadow:0 12px 35px rgba(0,0,0,0.9); font-family:var(--sans, system-ui); font-size:12px; color:#FAFAF9;">
+<!-- BARRA PRINCIPAL FLUTUANTE (DESIGN EXECUTIVO, PERFEITAMENTE AJUSTADA ACIMA DA TIMELINE) -->
+<div id="tse-top-banner" style="position:fixed; bottom:78px; left:50%; transform:translateX(-50%); z-index:9999; display:flex; align-items:center; gap:8px; background:rgba(21,20,18,0.96); backdrop-filter:blur(24px); -webkit-backdrop-filter:blur(24px); border:1px solid rgba(250,250,249,0.22); border-radius:100px; padding:6px 14px; box-shadow:0 12px 35px rgba(0,0,0,0.92); font-family:var(--sans, system-ui); font-size:12px; color:#FAFAF9; white-space:nowrap;">
   <span id="tse-live-badge" style="display:flex; align-items:center; gap:6px; font-weight:600; color:#22c55e;">
     <span style="width:8px; height:8px; border-radius:50%; background:#22c55e; box-shadow:0 0 10px #22c55e;"></span>
     TSE 2026 Ao Vivo
@@ -422,34 +429,34 @@ const server = http.createServer(async (req, res) => {
     </button>
   </div>
   <span style="color:rgba(250,250,249,0.3);">|</span>
-  <!-- BOTÃO EXCLUSIVO MARCELA PASSAMANI (15555) -->
-  <button id="btn-open-marcela" onclick="openMarcelaDossie()" style="all:unset; cursor:pointer; padding:7px 18px; border-radius:100px; font-weight:800; font-size:13px; background:linear-gradient(135deg, #f59e0b, #d97706); color:#fff; box-shadow:0 0 20px rgba(245,158,11,0.6); transition:transform .12s, box-shadow .12s; display:inline-flex; align-items:center; gap:7px;" onmousedown="this.style.transform='scale(0.96)'" onmouseup="this.style.transform='scale(1)'">
-    ⭐ Marcela Passamani (15555) · 16.622 votos
+  <!-- BOTÃO NOVO EXCLUSIVO: GOVERNADOR DO DF (35 RAs) -->
+  <button id="btn-open-governo" onclick="openGovernoDfModal()" style="all:unset; cursor:pointer; padding:7px 16px; border-radius:100px; font-weight:800; font-size:12.5px; background:linear-gradient(135deg, #0284c7, #0369a1); color:#fff; box-shadow:0 0 18px rgba(2,132,199,0.55); transition:transform .12s, box-shadow .12s; display:inline-flex; align-items:center; gap:6px;" onmousedown="this.style.transform='scale(0.96)'" onmouseup="this.style.transform='scale(1)'">
+    🏛️ Governador do DF · 35 RAs
   </button>
   <span style="color:rgba(250,250,249,0.3);">|</span>
-  <!-- BOTÃO VOTOS DO EXTERIOR (ZZ) -->
-  <button id="btn-open-exterior" onclick="openExteriorView()" style="all:unset; cursor:pointer; padding:7px 15px; border-radius:100px; font-weight:700; font-size:12px; background:rgba(59,130,246,0.18); border:1px solid rgba(59,130,246,0.45); color:#60a5fa; display:inline-flex; align-items:center; gap:6px; transition:transform .12s, background .12s;" onmousedown="this.style.transform='scale(0.96)'" onmouseup="this.style.transform='scale(1)'">
-    🌍 Exterior (ZZ) · 916k votos
+  <!-- BOTÃO EXCLUSIVO MARCELA PASSAMANI (15555) -->
+  <button id="btn-open-marcela" onclick="openMarcelaDossie()" style="all:unset; cursor:pointer; padding:7px 16px; border-radius:100px; font-weight:700; font-size:12.5px; background:linear-gradient(135deg, #f59e0b, #d97706); color:#fff; box-shadow:0 0 16px rgba(245,158,11,0.5); transition:transform .12s, box-shadow .12s; display:inline-flex; align-items:center; gap:6px;" onmousedown="this.style.transform='scale(0.96)'" onmouseup="this.style.transform='scale(1)'">
+    ⭐ Marcela Passamani (15555)
   </button>
 </div>
 
-<!-- MODAL COMPLETO DE RAs E SEÇÕES DO DISTRITO FEDERAL COM DOSSIÊ MARCELA PASSAMANI E EXTERIOR (ZZ) -->
+<!-- MODAL COMPLETO DE RAs E SEÇÕES DO DISTRITO FEDERAL (GOVERNO DO DF + MARCELA PASSAMANI) -->
 <div id="df-distritais-modal" style="display:none; position:fixed; inset:0; z-index:10000; background:rgba(0,0,0,0.85); backdrop-filter:blur(22px); -webkit-backdrop-filter:blur(22px); align-items:center; justify-content:center; padding:16px; font-family:var(--sans, system-ui); color:#FAFAF9;">
   <div id="df-modal-container" style="background:#151412; border:1px solid rgba(255,255,255,0.18); border-radius:20px; width:100%; max-width:1200px; height:92vh; display:flex; flex-direction:column; box-shadow:0 30px 70px rgba(0,0,0,0.95); overflow:hidden;">
     
     <!-- BARRA STICKY MOBILE (SUB-ABAS + BOTÃO SUBIR/EXPANDIR + FECHAR) -->
     <div id="df-mobile-sticky-bar" style="position:sticky; top:0; z-index:100; padding:8px 12px; border-bottom:1px solid rgba(255,255,255,0.14); background:rgba(21,20,18,0.98); backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px); display:none; gap:6px; align-items:center;">
-      <button id="btn-mobile-tab-dossie" onclick="setMobileSubTab('dossie')" style="all:unset; flex:1; text-align:center; padding:7px 6px; border-radius:8px; font-size:0.75rem; font-weight:700; background:linear-gradient(135deg, #f59e0b, #d97706); color:#fff; cursor:pointer; white-space:nowrap;">
-        ⭐ Dossiê
+      <button id="btn-mobile-tab-governo" onclick="setMobileSubTab('governo')" style="all:unset; flex:1; text-align:center; padding:7px 6px; border-radius:8px; font-size:0.75rem; font-weight:700; background:linear-gradient(135deg, #0284c7, #0369a1); color:#fff; cursor:pointer; white-space:nowrap;">
+        🏛️ Governo DF
+      </button>
+      <button id="btn-mobile-tab-dossie" onclick="setMobileSubTab('dossie')" style="all:unset; flex:1; text-align:center; padding:7px 6px; border-radius:8px; font-size:0.75rem; font-weight:600; background:rgba(255,255,255,0.08); color:#D6D4CF; cursor:pointer; white-space:nowrap;">
+        ⭐ Marcela
       </button>
       <button id="btn-mobile-tab-colegios" onclick="setMobileSubTab('colegios')" style="all:unset; flex:1; text-align:center; padding:7px 6px; border-radius:8px; font-size:0.75rem; font-weight:600; background:rgba(255,255,255,0.08); color:#D6D4CF; cursor:pointer; white-space:nowrap;">
         🏫 37 Colégios
       </button>
-      <button id="btn-mobile-tab-exterior" onclick="setMobileSubTab('exterior')" style="all:unset; flex:1; text-align:center; padding:7px 6px; border-radius:8px; font-size:0.75rem; font-weight:600; background:rgba(59,130,246,0.15); border:1px solid rgba(59,130,246,0.3); color:#93c5fd; cursor:pointer; white-space:nowrap;">
-        🌍 Exterior
-      </button>
       <!-- BOTÃO PARA SUBIR / RECOLHER FILTROS E EXPANDIR TELA -->
-      <button id="btn-toggle-top-mobile" onclick="toggleTopSection()" title="Subir cabeçalho e ver dados em tela cheia" style="all:unset; cursor:pointer; padding:7px 8px; border-radius:8px; font-size:0.75rem; font-weight:700; background:rgba(245,158,11,0.2); border:1px solid rgba(245,158,11,0.5); color:#f59e0b; display:inline-flex; align-items:center; gap:2px; white-space:nowrap;">
+      <button id="btn-toggle-top-mobile" onclick="toggleTopSection()" title="Subir cabeçalho e ver dados em tela cheia" style="all:unset; cursor:pointer; padding:7px 8px; border-radius:8px; font-size:0.75rem; font-weight:700; background:rgba(2,132,199,0.2); border:1px solid rgba(2,132,199,0.5); color:#38bdf8; display:inline-flex; align-items:center; gap:2px; white-space:nowrap;">
         <span id="btn-toggle-top-icon">🔼</span> <span id="btn-toggle-top-text">Subir</span>
       </button>
       <!-- BOTÃO FECHAR MODAL MOBILE -->
@@ -463,12 +470,12 @@ const server = http.createServer(async (req, res) => {
         <div>
           <div style="display:flex; align-items:center; gap:10px;">
             <h2 style="margin:0; font-size:1.25rem; font-weight:700; display:flex; align-items:center; gap:8px;">
-              <span>🏛️</span><span>Distrito Federal & Exterior (ZZ) — Apuração Oficial por RAs, Zonas e Países</span>
+              <span>🏛️</span><span>Distrito Federal — Apuração Oficial por Regiões Administrativas (35 RAs)</span>
             </h2>
             <span style="font-size:0.75rem; background:#22c55e22; color:#22c55e; border:1px solid #22c55e44; padding:2px 8px; border-radius:100px; font-weight:600;">100,00% Apurado</span>
           </div>
           <p style="margin:4px 0 0; font-size:0.8rem; color:#A6A39C;">
-            Dados Oficiais do TRE-DF / TSE (Eleição 6259 & 6257) · 35 RAs · 19 Zonas do DF · Zona Eleitoral do Exterior (ZZ)
+            Dados Oficiais do TRE-DF / TSE (Eleição Oficial 6259 & 6257) · Governador do DF · 35 RAs · 19 Zonas Eleitorais
           </p>
         </div>
         <div style="display:flex; align-items:center; gap:10px;">
@@ -481,32 +488,19 @@ const server = http.createServer(async (req, res) => {
 
       <!-- TABS DE MODO DE VISUALIZAÇÃO -->
       <div id="df-desktop-tabs" style="padding:10px 24px; border-bottom:1px solid rgba(255,255,255,0.08); display:flex; gap:10px; align-items:center; flex-wrap:wrap; background:rgba(0,0,0,0.3);">
-        <button id="tab-marcela" onclick="setDfTab('marcela')" style="all:unset; cursor:pointer; padding:6px 16px; border-radius:100px; font-weight:700; font-size:0.85rem; background:linear-gradient(135deg, #f59e0b, #d97706); color:#fff; display:inline-flex; align-items:center; gap:6px; transition:all .15s;">
-          ⭐ Dossiê Eleitoral: Marcela Passamani (15555 · MDB)
+        <button id="tab-governo" onclick="setDfTab('governo')" style="all:unset; cursor:pointer; padding:7px 18px; border-radius:100px; font-weight:700; font-size:0.85rem; background:linear-gradient(135deg, #0284c7, #0369a1); color:#fff; display:inline-flex; align-items:center; gap:6px; transition:all .15s; box-shadow:0 0 14px rgba(2,132,199,0.45);">
+          🏛️ Governador do DF (Votação nas 35 RAs)
         </button>
-        <button id="tab-geral" onclick="setDfTab('geral')" style="all:unset; cursor:pointer; padding:6px 14px; border-radius:100px; font-weight:600; font-size:0.85rem; background:transparent; color:rgba(255,255,255,0.6); transition:all .15s;">
-          📊 Quadro Geral das 35 RAs (Todos os Distritais)
+        <button id="tab-marcela" onclick="setDfTab('marcela')" style="all:unset; cursor:pointer; padding:7px 16px; border-radius:100px; font-weight:600; font-size:0.85rem; background:transparent; color:#f59e0b; border:1px solid rgba(245,158,11,0.4); display:inline-flex; align-items:center; gap:6px; transition:all .15s;">
+          ⭐ Dossiê Marcela Passamani (15555 · MDB)
         </button>
-        <button id="tab-exterior" onclick="setDfTab('exterior')" style="all:unset; cursor:pointer; padding:6px 14px; border-radius:100px; font-weight:600; font-size:0.85rem; background:transparent; color:rgba(255,255,255,0.6); border:1px solid rgba(59,130,246,0.4); transition:all .15s; display:inline-flex; align-items:center; gap:6px;">
-          🌍 Votos do Exterior (Zona ZZ · TRE-DF / TSE)
+        <button id="tab-geral" onclick="setDfTab('geral')" style="all:unset; cursor:pointer; padding:7px 14px; border-radius:100px; font-weight:600; font-size:0.85rem; background:transparent; color:rgba(255,255,255,0.6); transition:all .15s;">
+          📊 Quadro Geral das 35 RAs (Distritais)
         </button>
       </div>
 
-      <!-- BOTÕES DE FILTRO RÁPIDO -->
+      <!-- BOTÕES DE FILTRO RÁPIDO (DINÂMICO CONFORME A ABA) -->
       <div id="df-modal-quick-filters" style="padding:8px 24px; border-bottom:1px solid rgba(255,255,255,0.06); display:flex; gap:8px; align-items:center; flex-wrap:wrap; background:rgba(255,255,255,0.015);">
-        <span style="font-size:0.75rem; color:#A6A39C; font-weight:600; text-transform:uppercase; letter-spacing:0.04em;">Filtros:</span>
-        <button onclick="quickFilterZona18()" id="btn-quick-z18" style="all:unset; cursor:pointer; font-size:0.8rem; font-weight:700; padding:4px 12px; border-radius:100px; background:rgba(16,185,129,0.2); border:1px solid rgba(16,185,129,0.45); color:#34d399; display:inline-flex; align-items:center; gap:5px;">
-          ⭐ 18ª ZE (São Sebastião 518 · JB 162 · Lago Sul 161)
-        </button>
-        <button onclick="quickFilterTipo('Rural')" id="btn-quick-rural" style="all:unset; cursor:pointer; font-size:0.8rem; font-weight:700; padding:4px 12px; border-radius:100px; background:rgba(34,197,94,0.15); border:1px solid rgba(34,197,94,0.35); color:#4ade80; display:inline-flex; align-items:center; gap:5px;">
-          🌾 Zona Rural
-        </button>
-        <button onclick="quickFilterTipo('Urbano')" id="btn-quick-urbano" style="all:unset; cursor:pointer; font-size:0.8rem; font-weight:600; padding:4px 12px; border-radius:100px; background:rgba(59,130,246,0.15); border:1px solid rgba(59,130,246,0.35); color:#60a5fa; display:inline-flex; align-items:center; gap:5px;">
-          🏙️ Zona Urbana
-        </button>
-        <button onclick="resetAllFilters()" style="all:unset; cursor:pointer; font-size:0.8rem; font-weight:600; padding:4px 10px; border-radius:100px; background:rgba(255,255,255,0.08); color:#FAFAF9;">
-          🔄 Ver Todas
-        </button>
       </div>
 
       <!-- CONTROLS & DROPDOWN FILTERS -->
