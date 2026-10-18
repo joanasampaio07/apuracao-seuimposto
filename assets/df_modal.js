@@ -80,9 +80,21 @@ function populateDfSelectors() {
 
   const selZona = document.getElementById('df-zona-select');
   if (selZona) {
-    selZona.innerHTML = '<option value="all">Todas as 19 Zonas Eleitorais</option>';
-    selZona.innerHTML += '<option value="18" style="font-weight:bold; color:#34d399;">⭐ 18ª ZE (São Sebastião, Jardim Botânico & Lago Sul)</option>';
-    if (window.dfGlobalData.marcelaPassamaniDossie?.votosPorZona) {
+    selZona.innerHTML = '<option value="all">Todas as 19 Zonas Eleitorais (DF Completo)</option>';
+    if (window.currentTab === 'governo' && window.dfGlobalData.governoDf?.zonasEleitorais) {
+      window.dfGlobalData.governoDf.zonasEleitorais.forEach(z => {
+        const opt = document.createElement('option');
+        opt.value = String(z.zona);
+        const is18 = z.zona === 18;
+        if (is18) {
+          opt.style.fontWeight = 'bold';
+          opt.style.color = '#38bdf8';
+        }
+        opt.textContent = `${is18 ? '⭐ ' : ''}Zona ${z.zona} (${z.nome}) · Celina ${z.votosCelina.toLocaleString('pt-BR')} (${z.percentualCelina}) · Grass ${z.votosGrass.toLocaleString('pt-BR')} (${z.percentualGrass})`;
+        selZona.appendChild(opt);
+      });
+    } else if (window.dfGlobalData.marcelaPassamaniDossie?.votosPorZona) {
+      selZona.innerHTML += '<option value="18" style="font-weight:bold; color:#34d399;">⭐ 18ª ZE (São Sebastião, Jardim Botânico & Lago Sul)</option>';
       window.dfGlobalData.marcelaPassamaniDossie.votosPorZona.forEach(z => {
         if (z.zona !== 18) {
           const opt = document.createElement('option');
@@ -159,9 +171,24 @@ function resetAllFilters() {
   renderDfView();
 }
 
+function quickFilterGovZona18() {
+  window.selectedZona = '18';
+  window.selectedRaId = 'all';
+  window.governoFilter = 'all';
+  const selZ = document.getElementById('df-zona-select');
+  if (selZ) selZ.value = '18';
+  const selR = document.getElementById('df-ra-select');
+  if (selR) selR.value = 'all';
+  renderDfView();
+}
+
 function quickFilterGov(type) {
   window.governoFilter = type;
   window.selectedRaId = 'all';
+  if (type === 'all' || type === 'zonas' || type === 'celina' || type === 'grass') {
+    window.selectedZona = 'all';
+    const s2 = document.getElementById('df-zona-select'); if (s2) s2.value = 'all';
+  }
   const s1 = document.getElementById('df-ra-select'); if (s1) s1.value = 'all';
   renderDfView();
 }
@@ -226,27 +253,36 @@ function setDfTab(tab) {
 
   if (tab === 'governo') {
     if (raSel && raSel.parentElement) raSel.parentElement.style.display = 'flex';
-    if (zonaSel && zonaSel.parentElement) zonaSel.parentElement.style.display = 'none';
+    if (zonaSel && zonaSel.parentElement) zonaSel.parentElement.style.display = 'flex';
     if (tipoSel && tipoSel.parentElement) tipoSel.parentElement.style.display = 'none';
-    if (searchInp) searchInp.placeholder = '🔍 Buscar RA do DF (ex: Ceilândia, Plano Piloto, Taguatinga)...';
+    if (searchInp) searchInp.placeholder = '🔍 Buscar RA do DF ou Zona (ex: Zona 18, Ceilândia, Plano Piloto)...';
 
     if (quickFilters) {
       quickFilters.innerHTML = `
-        <span style="font-size:0.75rem; color:#A6A39C; font-weight:600; text-transform:uppercase; letter-spacing:0.04em;">Filtros de Votação:</span>
-        <button onclick="quickFilterGov('all')" style="all:unset; cursor:pointer; font-size:0.8rem; font-weight:700; padding:4px 12px; border-radius:100px; background:${window.governoFilter === 'all' ? '#0284c7' : 'rgba(2,132,199,0.2)'}; border:1px solid rgba(2,132,199,0.5); color:#fff; display:inline-flex; align-items:center; gap:5px;">
+        <span style="font-size:0.75rem; color:#A6A39C; font-weight:600; text-transform:uppercase; letter-spacing:0.04em;">Visualização TSE:</span>
+        <button onclick="quickFilterGov('all')" style="all:unset; cursor:pointer; font-size:0.8rem; font-weight:700; padding:4px 12px; border-radius:100px; background:${window.governoFilter === 'all' && window.selectedZona === 'all' ? '#0284c7' : 'rgba(2,132,199,0.2)'}; border:1px solid rgba(2,132,199,0.5); color:#fff; display:inline-flex; align-items:center; gap:5px;">
           🏆 Todas as 35 RAs
         </button>
+        <button onclick="quickFilterGov('zonas')" style="all:unset; cursor:pointer; font-size:0.8rem; font-weight:700; padding:4px 12px; border-radius:100px; background:${window.governoFilter === 'zonas' ? '#0284c7' : 'rgba(2,132,199,0.2)'}; border:1px solid rgba(2,132,199,0.5); color:#fff; display:inline-flex; align-items:center; gap:5px;">
+          📍 19 Zonas Oficiais TSE
+        </button>
+        <button onclick="quickFilterGovZona18()" style="all:unset; cursor:pointer; font-size:0.8rem; font-weight:700; padding:4px 12px; border-radius:100px; background:${window.selectedZona === '18' ? '#10b981' : 'rgba(16,185,129,0.2)'}; border:1px solid rgba(16,185,129,0.5); color:#34d399; display:inline-flex; align-items:center; gap:5px;">
+          ⭐ 18ª ZE (São Sebastião & JB: Celina 48.818 · Grass 35.332)
+        </button>
         <button onclick="quickFilterGov('celina')" style="all:unset; cursor:pointer; font-size:0.8rem; font-weight:700; padding:4px 12px; border-radius:100px; background:${window.governoFilter === 'celina' ? '#0083ca' : 'rgba(0,131,202,0.18)'}; border:1px solid rgba(0,131,202,0.45); color:#38bdf8; display:inline-flex; align-items:center; gap:5px;">
-          🔵 Onde Celina Venceu (31 RAs)
+          🔵 Vitórias Celina (31 RAs / 17 Zonas)
         </button>
         <button onclick="quickFilterGov('grass')" style="all:unset; cursor:pointer; font-size:0.8rem; font-weight:700; padding:4px 12px; border-radius:100px; background:${window.governoFilter === 'grass' ? '#ee2d35' : 'rgba(238,45,53,0.18)'}; border:1px solid rgba(238,45,53,0.45); color:#fca5a5; display:inline-flex; align-items:center; gap:5px;">
-          🔴 Onde Grass Venceu (4 RAs)
+          🔴 Vitórias Grass (4 RAs / 2 Zonas)
         </button>
-        <button onclick="quickFilterGov('top10')" style="all:unset; cursor:pointer; font-size:0.8rem; font-weight:600; padding:4px 12px; border-radius:100px; background:rgba(255,255,255,0.08); color:#FAFAF9; display:inline-flex; align-items:center; gap:5px;">
-          🏙️ Top 10 Maiores RAs
+        <button onclick="openComparativoModal('gov_df')" style="all:unset; cursor:pointer; font-size:0.8rem; font-weight:700; padding:4px 12px; border-radius:100px; background:linear-gradient(135deg, #10b981, #059669); color:#fff; display:inline-flex; align-items:center; gap:5px; box-shadow:0 0 10px rgba(16,185,129,0.4);">
+          📊 Comparativo 1º vs 2ºT
+        </button>
+        <button onclick="launchCelebrationDemo('gov_df')" style="all:unset; cursor:pointer; font-size:0.8rem; font-weight:700; padding:4px 12px; border-radius:100px; background:linear-gradient(135deg, #f59e0b, #d97706); color:#000; display:inline-flex; align-items:center; gap:5px; box-shadow:0 0 12px rgba(245,158,11,0.5);">
+          🎆 Celebrar Vitória (Fogos)
         </button>
         <button onclick="resetAllFilters()" style="all:unset; cursor:pointer; font-size:0.8rem; font-weight:600; padding:4px 10px; border-radius:100px; background:rgba(255,255,255,0.08); color:#FAFAF9;">
-          🔄 Limpar Filtros
+          🔄 Limpar
         </button>
       `;
     }
@@ -439,252 +475,414 @@ function renderDfView(filterQuery = '') {
   // ABA 1: GOVERNADOR DO DF (VOTAÇÃO COMPLETA NAS 35 RAs DO DISTRITO FEDERAL)
   // =========================================================================
   if (window.currentTab === 'governo' && gov) {
-    // --- COLUNA DA ESQUERDA: QUADRO GERAL DO GOVERNO DO DF ---
+    const isZonaFilter = (window.selectedZona && window.selectedZona !== 'all');
+    const targetZona = isZonaFilter ? (gov.zonasEleitorais || []).find(z => String(z.zona) === String(window.selectedZona)) : null;
+
+    // --- COLUNA DA ESQUERDA: QUADRO GERAL (OU DETALHADO DA ZONA SELECIONADA) ---
+    const activeCands = targetZona ? targetZona.rankingCandidatos : (gov.candidatos || []);
     let candsHtml = '';
-    (gov.candidatos || []).forEach((c, idx) => {
+    activeCands.forEach((c, idx) => {
       const isTop2 = idx <= 1;
       const isWinner = idx === 0;
+      const cor = c.cor || (c.numero === '11' ? '#0083ca' : c.numero === '13' ? '#ee2d35' : c.numero === '45' ? '#f59e0b' : c.numero === '30' ? '#ff6f00' : '#85827C');
+      const pctStr = typeof c.percentual === 'string' ? c.percentual : (c.percentual ? c.percentual.toFixed(2) + '%' : '0%');
       candsHtml += `
-        <div style="background:${isTop2 ? 'rgba(255,255,255,0.04)' : 'rgba(255,255,255,0.015)'}; border:1px solid ${isWinner ? 'rgba(0,131,202,0.45)' : (idx === 1 ? 'rgba(238,45,53,0.45)' : 'rgba(255,255,255,0.06)')}; border-left:3px solid ${c.cor}; border-radius:8px; padding:9px 11px; margin-bottom:6px;">
+        <div style="background:${isTop2 ? 'rgba(255,255,255,0.04)' : 'rgba(255,255,255,0.015)'}; border:1px solid ${isWinner ? 'rgba(0,131,202,0.45)' : (idx === 1 ? 'rgba(238,45,53,0.45)' : 'rgba(255,255,255,0.06)')}; border-left:3px solid ${cor}; border-radius:8px; padding:9px 11px; margin-bottom:6px;">
           <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:4px;">
             <div style="display:flex; align-items:center; gap:6px;">
               <span style="font-size:0.75rem; font-weight:700; color:#A6A39C;">${idx + 1}º</span>
               <span style="font-size:0.88rem; font-weight:700; color:#fff;">${c.nome}</span>
-              <span style="font-size:0.7rem; background:rgba(255,255,255,0.08); padding:1px 6px; border-radius:4px; color:#D6D4CF;">${c.partido} ${c.numero}</span>
+              <span style="font-size:0.7rem; background:rgba(255,255,255,0.08); padding:1px 6px; border-radius:4px; color:#D6D4CF;">${c.partido || ''} ${c.numero}</span>
               ${isTop2 ? '<span style="font-size:0.65rem; background:#38bdf822; color:#38bdf8; border:1px solid #38bdf844; padding:1px 5px; border-radius:4px; font-weight:700;">2º Turno</span>' : ''}
             </div>
             <div style="text-align:right;">
-              <b style="font-size:0.95rem; color:${c.cor};">${c.votos.toLocaleString('pt-BR')}</b>
-              <span style="font-size:0.75rem; color:#22c55e; font-weight:700; margin-left:4px;">${c.percentual}</span>
+              <b style="font-size:0.95rem; color:${cor};">${c.votos.toLocaleString('pt-BR')}</b>
+              <span style="font-size:0.75rem; color:#22c55e; font-weight:700; margin-left:4px;">${pctStr}</span>
             </div>
           </div>
           <div style="width:100%; height:4px; background:rgba(255,255,255,0.08); border-radius:100px; overflow:hidden;">
-            <div style="width:${c.percentual.replace(',', '.')}; height:100%; background:${c.cor}; border-radius:100px;"></div>
+            <div style="width:${pctStr.replace(',', '.')}; height:100%; background:${cor}; border-radius:100px;"></div>
           </div>
         </div>`;
     });
 
-    leftCol.innerHTML = `
-      <!-- CARD RESUMO GOVERNO DF -->
-      <div style="background:linear-gradient(135deg, rgba(2,132,199,0.18), rgba(3,105,161,0.08)); border:1px solid rgba(2,132,199,0.45); border-radius:12px; padding:14px; margin-bottom:14px;">
-        <div style="display:flex; align-items:center; gap:12px; margin-bottom:10px;">
-          <div style="width:46px; height:46px; border-radius:50%; background:linear-gradient(135deg, #0284c7, #0369a1); display:grid; place-items:center; font-weight:700; font-size:1.3rem; color:#fff; box-shadow:0 0 14px rgba(2,132,199,0.5);">
-            🏛️
-          </div>
-          <div>
-            <div style="font-size:1.15rem; font-weight:700; color:#fff;">Governo do Distrito Federal</div>
-            <div style="font-size:0.75rem; color:#38bdf8; font-weight:600;">1º Turno Oficial TSE (Eleição 6259) · 2º Turno Definido</div>
-          </div>
-        </div>
-
-        <p style="margin:0 0 10px; font-size:0.74rem; color:#D6D4CF; line-height:1.4;">
-          Totalização concluída com <b>100,00% das seções apuradas</b> pelo TRE-DF. <b>Celina Leão (PP)</b> e <b>Leandro Grass (PT)</b> disputam o segundo turno para o Palácio do Buriti.
-        </p>
-
-        <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-bottom:10px;">
-          <div style="background:rgba(0,0,0,0.3); padding:8px 10px; border-radius:8px;">
-            <div style="font-size:0.68rem; color:#A6A39C;">Total Válidos DF</div>
-            <div style="font-size:1.15rem; font-weight:700; color:#fff;">${gov.votosValidos.toLocaleString('pt-BR')}</div>
-            <div style="font-size:0.65rem; color:#22c55e;">${gov.percentualValidos} dos votos totais</div>
-          </div>
-          <div style="background:rgba(0,0,0,0.3); padding:8px 10px; border-radius:8px;">
-            <div style="font-size:0.68rem; color:#A6A39C;">Comparecimento</div>
-            <div style="font-size:1.15rem; font-weight:700; color:#38bdf8;">${gov.comparecimento.toLocaleString('pt-BR')}</div>
-            <div style="font-size:0.65rem; color:#A6A39C;">${gov.percentualComparecimento} de 2,24M aptos</div>
-          </div>
-        </div>
-
-        <div style="display:flex; justify-content:space-between; font-size:0.7rem; color:#A6A39C; padding:6px 8px; background:rgba(0,0,0,0.25); border-radius:6px;">
-          <span>Abstenção: <b style="color:#fca5a5;">${gov.abstencao.toLocaleString('pt-BR')} (${gov.percentualAbstencao})</b></span>
-          <span>Brancos: <b style="color:#fff;">${gov.votosBrancos.toLocaleString('pt-BR')} (${gov.percentualBrancos})</b></span>
-          <span>Nulos: <b style="color:#fff;">${gov.votosNulos.toLocaleString('pt-BR')} (${gov.percentualNulos})</b></span>
-        </div>
-      </div>
-
-      <!-- MAPA POLÍTICO DE VITÓRIAS NAS 35 RAs -->
-      <div style="background:rgba(255,255,255,0.02); border:1px solid rgba(255,255,255,0.08); border-radius:10px; padding:12px; margin-bottom:14px;">
-        <div style="font-size:0.8rem; font-weight:700; color:#fff; margin-bottom:8px; display:flex; justify-content:space-between;">
-          <span>Território Eleitoral das 35 RAs:</span>
-          <span style="color:#22c55e;">100% Apurado</span>
-        </div>
-        <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px;">
-          <div style="background:rgba(0,131,202,0.12); border:1px solid rgba(0,131,202,0.3); padding:8px 10px; border-radius:8px;">
-            <div style="font-size:0.7rem; color:#38bdf8; font-weight:600;">Vitórias Celina Leão</div>
-            <div style="font-size:1.15rem; font-weight:700; color:#0083ca;">31 RAs</div>
-            <div style="font-size:0.65rem; color:#A6A39C;">Ceilândia, Taguatinga, Samambaia, Gama...</div>
-          </div>
-          <div style="background:rgba(238,45,53,0.12); border:1px solid rgba(238,45,53,0.3); padding:8px 10px; border-radius:8px;">
-            <div style="font-size:0.7rem; color:#fca5a5; font-weight:600;">Vitórias Leandro Grass</div>
-            <div style="font-size:1.15rem; font-weight:700; color:#ee2d35;">4 RAs</div>
-            <div style="font-size:0.65rem; color:#A6A39C;">Plano Piloto, Guará, Cruzeiro, Varjão</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- RANKING DOS 10 CANDIDATOS -->
-      <div>
-        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
-          <b style="font-size:0.85rem; color:#FAFAF9;">Votação dos Candidatos a Governador:</b>
-          <span style="font-size:0.7rem; color:#38bdf8;">10 Candidatos TSE</span>
-        </div>
-        <div style="display:flex; flex-direction:column;">
-          ${candsHtml}
-        </div>
-      </div>
-    `;
-
-    // --- COLUNA DA DIREITA: LISTAGEM E VOTAÇÃO DETALHADA DAS 35 RAs ---
-    secoesTitle.textContent = '🏛️ Votação para Governador nas 35 Regiões Administrativas do DF';
-    secoesSubtitle.textContent = 'Quantos votos cada candidato recebeu por RA · Oficial TRE-DF / TSE 2026';
-
-    let ras = [...(gov.regioesAdministrativas || [])];
-
-    // Filtros rápidos de Governo
-    if (window.governoFilter === 'celina') {
-      ras = ras.filter(r => r.vencedor && r.vencedor.numero === '11');
-    } else if (window.governoFilter === 'grass') {
-      ras = ras.filter(r => r.vencedor && r.vencedor.numero === '13');
-    } else if (window.governoFilter === 'top10') {
-      ras = [...ras].sort((a, b) => b.eleitorado - a.eleitorado).slice(0, 10);
-    }
-
-    // Filtro por seleção direta de RA
-    if (window.selectedRaId !== 'all') {
-      ras = ras.filter(r => String(r.id) === String(window.selectedRaId));
-    }
-
-    // Busca textual
-    const q = (filterQuery || '').toLowerCase().trim();
-    if (q) {
-      ras = ras.filter(r => {
-        return r.nome.toLowerCase().includes(q) ||
-               r.codigo.toLowerCase().includes(q) ||
-               r.zonas.toLowerCase().includes(q) ||
-               (r.vencedor && r.vencedor.nome.toLowerCase().includes(q));
-      });
-    }
-
-    // Ordenação
-    const sort = window.governoSortMode || 'vencedor';
-    if (sort === 'celina') {
-      ras.sort((a, b) => b.votosCelina - a.votosCelina);
-    } else if (sort === 'grass') {
-      ras.sort((a, b) => b.votosGrass - a.votosGrass);
-    } else if (sort === 'paula') {
-      ras.sort((a, b) => b.votosPaula - a.votosPaula);
-    } else if (sort === 'eleitorado') {
-      ras.sort((a, b) => b.eleitorado - a.eleitorado);
-    } else if (sort === 'nome') {
-      ras.sort((a, b) => a.nome.localeCompare(b.nome));
-    }
-
-    secoesCount.textContent = `${ras.length} de 35 RAs`;
-
-    // Barra de ordenação no topo da coluna direita
-    let toolbarHtml = `
-      <div style="display:flex; gap:8px; margin-bottom:12px; align-items:center; flex-wrap:wrap;">
-        <span style="font-size:0.75rem; color:#A6A39C; font-weight:600;">Ordenar por:</span>
-        <button onclick="setGovernoSort('celina')" style="all:unset; cursor:pointer; font-size:0.78rem; font-weight:${sort === 'celina' ? '700' : '500'}; padding:4px 10px; border-radius:100px; background:${sort === 'celina' ? '#0083ca' : 'rgba(255,255,255,0.06)'}; color:#fff; transition:all .15s;">
-          🔵 Votos Celina
-        </button>
-        <button onclick="setGovernoSort('grass')" style="all:unset; cursor:pointer; font-size:0.78rem; font-weight:${sort === 'grass' ? '700' : '500'}; padding:4px 10px; border-radius:100px; background:${sort === 'grass' ? '#ee2d35' : 'rgba(255,255,255,0.06)'}; color:#fff; transition:all .15s;">
-          🔴 Votos Grass
-        </button>
-        <button onclick="setGovernoSort('eleitorado')" style="all:unset; cursor:pointer; font-size:0.78rem; font-weight:${sort === 'eleitorado' ? '700' : '500'}; padding:4px 10px; border-radius:100px; background:${sort === 'eleitorado' ? '#38bdf8' : 'rgba(255,255,255,0.06)'}; color:#fff; transition:all .15s;">
-          👥 Eleitorado
-        </button>
-        <button onclick="setGovernoSort('vencedor')" style="all:unset; cursor:pointer; font-size:0.78rem; font-weight:${sort === 'vencedor' ? '700' : '500'}; padding:4px 10px; border-radius:100px; background:${sort === 'vencedor' ? '#10b981' : 'rgba(255,255,255,0.06)'}; color:#fff; transition:all .15s;">
-          🏆 Vencedor
-        </button>
-        <button onclick="setGovernoSort('nome')" style="all:unset; cursor:pointer; font-size:0.78rem; font-weight:${sort === 'nome' ? '700' : '500'}; padding:4px 10px; border-radius:100px; background:${sort === 'nome' ? 'rgba(255,255,255,0.2)' : 'rgba(255,255,255,0.06)'}; color:#fff; transition:all .15s;">
-          🔤 Nome A-Z
-        </button>
-      </div>
-    `;
-
-    let cardsHtml = toolbarHtml + '<div style="display:flex; flex-direction:column; gap:10px;">';
-
-    ras.forEach((r, idx) => {
-      const isCelinaWin = r.vencedor && r.vencedor.numero === '11';
-      const winBadge = isCelinaWin
-        ? '<span style="font-size:0.72rem; background:#0083ca25; color:#38bdf8; border:1px solid #0083ca55; padding:2px 8px; border-radius:100px; font-weight:700;">🏆 Celina Leão venceu</span>'
-        : '<span style="font-size:0.72rem; background:#ee2d3525; color:#fca5a5; border:1px solid #ee2d3555; padding:2px 8px; border-radius:100px; font-weight:700;">🏆 Leandro Grass venceu</span>';
-
-      const pCelinaNum = parseFloat(r.percentualCelina.replace(',', '.'));
-      const pGrassNum = parseFloat(r.percentualGrass.replace(',', '.'));
-      const pPaulaNum = parseFloat(r.percentualPaula.replace(',', '.'));
-      const pKikoNum = parseFloat(r.percentualKiko.replace(',', '.'));
-      const pOutrosNum = 100 - (pCelinaNum + pGrassNum + pPaulaNum + pKikoNum);
-
-      cardsHtml += `
-        <div style="background:rgba(255,255,255,0.02); border:1px solid ${isCelinaWin ? 'rgba(0,131,202,0.3)' : 'rgba(238,45,53,0.3)'}; border-radius:12px; padding:12px 14px; transition:border .15s;">
-          <!-- CABEÇALHO DO CARD DA RA -->
-          <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:8px;">
+    if (targetZona) {
+      // VISUALIZAÇÃO DA ZONA ESPECÍFICA (EX: ZONA 18 OFICIAL TSE)
+      leftCol.innerHTML = `
+        <div style="background:linear-gradient(135deg, rgba(2,132,199,0.22), rgba(3,105,161,0.1)); border:1px solid rgba(2,132,199,0.55); border-radius:12px; padding:14px; margin-bottom:14px; box-shadow:0 0 16px rgba(2,132,199,0.25);">
+          <div style="display:flex; align-items:center; gap:12px; margin-bottom:10px;">
+            <div style="width:46px; height:46px; border-radius:50%; background:linear-gradient(135deg, #0284c7, #0369a1); display:grid; place-items:center; font-weight:700; font-size:1.3rem; color:#fff; box-shadow:0 0 14px rgba(2,132,199,0.5);">
+              ⭐
+            </div>
             <div>
-              <div style="display:flex; align-items:center; gap:8px;">
-                <span style="font-size:1rem; font-weight:700; color:#fff;">${r.codigo} - ${r.nome}</span>
-                ${winBadge}
-              </div>
-              <div style="font-size:0.75rem; color:#A6A39C; margin-top:3px;">
-                📍 ${r.zonas} · <b>${r.totalSecoes} seções</b> · Eleitorado: <b>${r.eleitorado.toLocaleString('pt-BR')}</b> · Válidos: <b>${r.validos.toLocaleString('pt-BR')}</b>
-              </div>
-            </div>
-            <div style="text-align:right;">
-              <span style="font-size:0.72rem; color:#A6A39C;">Comparecimento</span>
-              <div style="font-size:0.85rem; font-weight:700; color:#22c55e;">${r.percentualComparecimento}</div>
+              <div style="font-size:1.15rem; font-weight:700; color:#fff;">Zona ${targetZona.zona} (${targetZona.nome})</div>
+              <div style="font-size:0.75rem; color:#38bdf8; font-weight:600;">Dados Oficiais do TRE-DF / TSE · 100,00% Apurado</div>
             </div>
           </div>
 
-          <!-- BARRA PROPORCIONAL DE VOTOS DA RA -->
-          <div style="width:100%; height:8px; display:flex; border-radius:100px; overflow:hidden; margin:8px 0; background:rgba(255,255,255,0.06);">
-            <div style="width:${pCelinaNum}%; background:#0083ca; height:100%;" title="Celina Leão: ${r.percentualCelina}"></div>
-            <div style="width:${pGrassNum}%; background:#ee2d35; height:100%;" title="Leandro Grass: ${r.percentualGrass}"></div>
-            <div style="width:${pPaulaNum}%; background:#f59e0b; height:100%;" title="Paula Belmonte: ${r.percentualPaula}"></div>
-            <div style="width:${pKikoNum}%; background:#ff6f00; height:100%;" title="Kiko Caputo: ${r.percentualKiko}"></div>
-            <div style="width:${Math.max(0, pOutrosNum)}%; background:#85827C; height:100%;" title="Outros: ${r.percentualOutros}"></div>
+          <p style="margin:0 0 10px; font-size:0.74rem; color:#D6D4CF; line-height:1.4;">
+            Resultado oficial da <b>${targetZona.zona}ª Zona Eleitoral</b>. <b>${targetZona.vencedor.nome} (${targetZona.vencedor.partido})</b> venceu na zona com <b>${targetZona.vencedor.percentual}</b> dos votos válidos.
+          </p>
+
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-bottom:10px;">
+            <div style="background:rgba(0,0,0,0.35); padding:8px 10px; border-radius:8px;">
+              <div style="font-size:0.68rem; color:#A6A39C;">Total Válidos</div>
+              <div style="font-size:1.15rem; font-weight:700; color:#fff;">${targetZona.validos.toLocaleString('pt-BR')}</div>
+              <div style="font-size:0.65rem; color:#22c55e;">100% das seções apuradas</div>
+            </div>
+            <div style="background:rgba(0,0,0,0.35); padding:8px 10px; border-radius:8px;">
+              <div style="font-size:0.68rem; color:#A6A39C;">Votação / Comparecimento</div>
+              <div style="font-size:1.15rem; font-weight:700; color:#38bdf8;">${targetZona.comparecimento.toLocaleString('pt-BR')}</div>
+              <div style="font-size:0.65rem; color:#A6A39C;">${targetZona.totalSecoes} seções totalizadas</div>
+            </div>
           </div>
 
-          <!-- TABELA DE VOTOS DETALHADA POR CANDIDATO NESTA RA -->
-          <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(130px, 1fr)); gap:6px; margin-top:8px;">
-            <!-- CELINA LEÃO -->
-            <div style="background:${isCelinaWin ? 'rgba(0,131,202,0.12)' : 'rgba(255,255,255,0.02)'}; border:1px solid ${isCelinaWin ? 'rgba(0,131,202,0.35)' : 'rgba(255,255,255,0.06)'}; padding:6px 8px; border-radius:6px;">
-              <div style="font-size:0.7rem; color:#38bdf8; font-weight:700;">Celina Leão (PP · 11)</div>
-              <div style="font-size:0.95rem; font-weight:700; color:#fff;">${r.votosCelina.toLocaleString('pt-BR')} <small style="font-size:0.75rem; color:#38bdf8;">(${r.percentualCelina})</small></div>
-            </div>
+          <div style="display:flex; justify-content:space-between; font-size:0.7rem; color:#A6A39C; padding:6px 8px; background:rgba(0,0,0,0.25); border-radius:6px;">
+            <span>Abstenção: <b style="color:#fca5a5;">${targetZona.abstencao.toLocaleString('pt-BR')} (${targetZona.percentualAbstencao})</b></span>
+            <span>Brancos: <b style="color:#fff;">${targetZona.brancos.toLocaleString('pt-BR')} (${targetZona.percentualBrancos})</b></span>
+            <span>Nulos: <b style="color:#fff;">${targetZona.nulos.toLocaleString('pt-BR')} (${targetZona.percentualNulos})</b></span>
+          </div>
+        </div>
 
-            <!-- LEANDRO GRASS -->
-            <div style="background:${!isCelinaWin ? 'rgba(238,45,53,0.12)' : 'rgba(255,255,255,0.02)'}; border:1px solid ${!isCelinaWin ? 'rgba(238,45,53,0.35)' : 'rgba(255,255,255,0.06)'}; padding:6px 8px; border-radius:6px;">
-              <div style="font-size:0.7rem; color:#fca5a5; font-weight:700;">Leandro Grass (PT · 13)</div>
-              <div style="font-size:0.95rem; font-weight:700; color:#fff;">${r.votosGrass.toLocaleString('pt-BR')} <small style="font-size:0.75rem; color:#fca5a5;">(${r.percentualGrass})</small></div>
-            </div>
+        <div style="margin-bottom:12px;">
+          <button onclick="resetAllFilters()" style="all:unset; cursor:pointer; width:100%; box-sizing:border-box; text-align:center; padding:8px; border-radius:8px; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.12); color:#38bdf8; font-size:0.78rem; font-weight:600;">
+            ← Voltar para Visão Geral de Todo o DF (35 RAs)
+          </button>
+        </div>
 
-            <!-- PAULA BELMONTE -->
-            <div style="background:rgba(255,255,255,0.02); border:1px solid rgba(255,255,255,0.06); padding:6px 8px; border-radius:6px;">
-              <div style="font-size:0.7rem; color:#f59e0b; font-weight:600;">Paula Belmonte (45)</div>
-              <div style="font-size:0.85rem; font-weight:700; color:#D6D4CF;">${r.votosPaula.toLocaleString('pt-BR')} <small style="font-size:0.7rem; color:#f59e0b;">(${r.percentualPaula})</small></div>
-            </div>
-
-            <!-- KIKO CAPUTO -->
-            <div style="background:rgba(255,255,255,0.02); border:1px solid rgba(255,255,255,0.06); padding:6px 8px; border-radius:6px;">
-              <div style="font-size:0.7rem; color:#ff6f00; font-weight:600;">Kiko Caputo (30)</div>
-              <div style="font-size:0.85rem; font-weight:700; color:#D6D4CF;">${r.votosKiko.toLocaleString('pt-BR')} <small style="font-size:0.7rem; color:#ff6f00;">(${r.percentualKiko})</small></div>
-            </div>
-
-            <!-- DEMAIS CANDIDATOS -->
-            <div style="background:rgba(255,255,255,0.02); border:1px solid rgba(255,255,255,0.06); padding:6px 8px; border-radius:6px;">
-              <div style="font-size:0.7rem; color:#A6A39C; font-weight:600;">Outros Candidatos</div>
-              <div style="font-size:0.85rem; font-weight:700; color:#A6A39C;">${(r.votosCappelli + r.votosOutros).toLocaleString('pt-BR')} <small style="font-size:0.7rem;">(${(( (r.votosCappelli + r.votosOutros) / r.validos ) * 100).toFixed(2)}%)</small></div>
-            </div>
+        <div>
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+            <b style="font-size:0.85rem; color:#FAFAF9;">Votação dos Candidatos na Zona ${targetZona.zona}:</b>
+            <span style="font-size:0.7rem; color:#38bdf8;">Oficial TSE</span>
+          </div>
+          <div style="display:flex; flex-direction:column;">
+            ${candsHtml}
           </div>
         </div>
       `;
-    });
+    } else {
+      // VISUALIZAÇÃO GERAL DO DISTRITO FEDERAL
+      leftCol.innerHTML = `
+        <!-- CARD RESUMO GOVERNO DF -->
+        <div style="background:linear-gradient(135deg, rgba(2,132,199,0.18), rgba(3,105,161,0.08)); border:1px solid rgba(2,132,199,0.45); border-radius:12px; padding:14px; margin-bottom:14px;">
+          <div style="display:flex; align-items:center; gap:12px; margin-bottom:10px;">
+            <div style="width:46px; height:46px; border-radius:50%; background:linear-gradient(135deg, #0284c7, #0369a1); display:grid; place-items:center; font-weight:700; font-size:1.3rem; color:#fff; box-shadow:0 0 14px rgba(2,132,199,0.5);">
+              🏛️
+            </div>
+            <div>
+              <div style="font-size:1.15rem; font-weight:700; color:#fff;">Governo do Distrito Federal</div>
+              <div style="font-size:0.75rem; color:#38bdf8; font-weight:600;">1º Turno Oficial TSE (Eleição 6259) · 2º Turno Definido</div>
+            </div>
+          </div>
 
-    cardsHtml += '</div>';
+          <p style="margin:0 0 10px; font-size:0.74rem; color:#D6D4CF; line-height:1.4;">
+            Totalização concluída com <b>100,00% das seções apuradas</b> pelo TRE-DF. <b>Celina Leão (PP)</b> e <b>Leandro Grass (PT)</b> disputam o segundo turno para o Palácio do Buriti.
+          </p>
+
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-bottom:10px;">
+            <div style="background:rgba(0,0,0,0.3); padding:8px 10px; border-radius:8px;">
+              <div style="font-size:0.68rem; color:#A6A39C;">Total Válidos DF</div>
+              <div style="font-size:1.15rem; font-weight:700; color:#fff;">${gov.votosValidos.toLocaleString('pt-BR')}</div>
+              <div style="font-size:0.65rem; color:#22c55e;">${gov.percentualValidos} dos votos totais</div>
+            </div>
+            <div style="background:rgba(0,0,0,0.3); padding:8px 10px; border-radius:8px;">
+              <div style="font-size:0.68rem; color:#A6A39C;">Comparecimento</div>
+              <div style="font-size:1.15rem; font-weight:700; color:#38bdf8;">${gov.comparecimento.toLocaleString('pt-BR')}</div>
+              <div style="font-size:0.65rem; color:#A6A39C;">${gov.percentualComparecimento} de 2,24M aptos</div>
+            </div>
+          </div>
+
+          <div style="display:flex; justify-content:space-between; font-size:0.7rem; color:#A6A39C; padding:6px 8px; background:rgba(0,0,0,0.25); border-radius:6px;">
+            <span>Abstenção: <b style="color:#fca5a5;">${gov.abstencao.toLocaleString('pt-BR')} (${gov.percentualAbstencao})</b></span>
+            <span>Brancos: <b style="color:#fff;">${gov.votosBrancos.toLocaleString('pt-BR')} (${gov.percentualBrancos})</b></span>
+            <span>Nulos: <b style="color:#fff;">${gov.votosNulos.toLocaleString('pt-BR')} (${gov.percentualNulos})</b></span>
+          </div>
+        </div>
+
+        <!-- MAPA POLÍTICO DE VITÓRIAS NAS 35 RAs / 19 ZONAS -->
+        <div style="background:rgba(255,255,255,0.02); border:1px solid rgba(255,255,255,0.08); border-radius:10px; padding:12px; margin-bottom:14px;">
+          <div style="font-size:0.8rem; font-weight:700; color:#fff; margin-bottom:8px; display:flex; justify-content:space-between;">
+            <span>Território Eleitoral do DF:</span>
+            <span style="color:#22c55e;">100% Apurado</span>
+          </div>
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px;">
+            <div style="background:rgba(0,131,202,0.12); border:1px solid rgba(0,131,202,0.3); padding:8px 10px; border-radius:8px;">
+              <div style="font-size:0.7rem; color:#38bdf8; font-weight:600;">Vitórias Celina Leão</div>
+              <div style="font-size:1.15rem; font-weight:700; color:#0083ca;">31 RAs (17 Zonas)</div>
+              <div style="font-size:0.65rem; color:#A6A39C;">Ceilândia, Taguatinga, Gama, São Sebastião...</div>
+            </div>
+            <div style="background:rgba(238,45,53,0.12); border:1px solid rgba(238,45,53,0.3); padding:8px 10px; border-radius:8px;">
+              <div style="font-size:0.7rem; color:#fca5a5; font-weight:600;">Vitórias Leandro Grass</div>
+              <div style="font-size:1.15rem; font-weight:700; color:#ee2d35;">4 RAs (2 Zonas)</div>
+              <div style="font-size:0.65rem; color:#A6A39C;">Zona 1 (Asa Sul) & Zona 14 (Asa Norte)</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- RANKING DOS 10 CANDIDATOS -->
+        <div>
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+            <b style="font-size:0.85rem; color:#FAFAF9;">Votação Geral dos Candidatos a Governador:</b>
+            <span style="font-size:0.7rem; color:#38bdf8;">10 Candidatos TSE</span>
+          </div>
+          <div style="display:flex; flex-direction:column;">
+            ${candsHtml}
+          </div>
+        </div>
+      `;
+    }
+
+    // --- COLUNA DA DIREITA: LISTAGEM ---
+    let cardsHtml = '';
+    const q = (filterQuery || '').toLowerCase().trim();
+
+    // SE ESTIVER EM MODO ZONAS ELEITORAIS OU SELECIONOU UMA ZONA
+    if (window.governoFilter === 'zonas' || (targetZona && window.selectedRaId === 'all')) {
+      secoesTitle.textContent = targetZona
+        ? `📍 ${targetZona.zona}ª Zona Eleitoral — ${targetZona.nome} (Dados Oficiais TSE)`
+        : '📍 19 Zonas Eleitorais Oficiais do Distrito Federal (TSE)';
+      secoesSubtitle.textContent = targetZona
+        ? 'Votos apurados na zona eleitoral e divisão pelas Regiões Administrativas abrangidas'
+        : 'Totalização oficial do TRE-DF / TSE em cada uma das 19 Zonas Eleitorais do Distrito Federal';
+
+      let zonas = targetZona ? [targetZona] : [...(gov.zonasEleitorais || [])];
+
+      if (window.governoFilter === 'celina') {
+        zonas = zonas.filter(z => z.vencedor.numero === '11');
+      } else if (window.governoFilter === 'grass') {
+        zonas = zonas.filter(z => z.vencedor.numero === '13');
+      }
+
+      if (q) {
+        zonas = zonas.filter(z => {
+          return z.nome.toLowerCase().includes(q) ||
+                 String(z.zona).includes(q) ||
+                 z.rasAbrangidas.some(r => r.toLowerCase().includes(q));
+        });
+      }
+
+      secoesCount.textContent = `${zonas.length} ${zonas.length === 1 ? 'Zona' : 'Zonas'} TSE`;
+
+      // Render cards de Zona
+      zonas.forEach(z => {
+        const isCelinaWin = z.vencedor.numero === '11';
+        const winBadge = isCelinaWin
+          ? `<span style="font-size:0.72rem; background:#0083ca25; color:#38bdf8; border:1px solid #0083ca55; padding:2px 8px; border-radius:100px; font-weight:700;">🏆 Celina Leão venceu (${z.percentualCelina})</span>`
+          : `<span style="font-size:0.72rem; background:#ee2d3525; color:#fca5a5; border:1px solid #ee2d3555; padding:2px 8px; border-radius:100px; font-weight:700;">🏆 Leandro Grass venceu (${z.percentualGrass})</span>`;
+
+        const pCelinaNum = parseFloat(z.percentualCelina.replace(',', '.'));
+        const pGrassNum = parseFloat(z.percentualGrass.replace(',', '.'));
+        const pPaulaNum = parseFloat(z.percentualPaula.replace(',', '.'));
+        const pKikoNum = parseFloat(z.percentualKiko.replace(',', '.'));
+        const pCappelliNum = parseFloat(z.percentualCappelli.replace(',', '.'));
+        const pOutrosNum = Math.max(0, 100 - (pCelinaNum + pGrassNum + pPaulaNum + pKikoNum + pCappelliNum));
+
+        cardsHtml += `
+          <div style="background:${z.zona === 18 ? 'rgba(2,132,199,0.06)' : 'rgba(255,255,255,0.02)'}; border:1px solid ${z.zona === 18 ? 'rgba(2,132,199,0.45)' : (isCelinaWin ? 'rgba(0,131,202,0.3)' : 'rgba(238,45,53,0.3)')}; border-radius:12px; padding:12px 14px; margin-bottom:12px;">
+            <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:8px;">
+              <div>
+                <div style="display:flex; align-items:center; gap:8px;">
+                  <span style="font-size:1.05rem; font-weight:700; color:#fff;">${z.zona === 18 ? '⭐ ' : ''}Zona ${z.zona} — ${z.nome}</span>
+                  ${winBadge}
+                </div>
+                <div style="font-size:0.75rem; color:#A6A39C; margin-top:3px;">
+                  📍 RAs: ${z.rasAbrangidas.join(', ')} · <b>${z.totalSecoes} seções</b> · Eleitorado: <b>${z.eleitorado.toLocaleString('pt-BR')}</b> · Válidos: <b>${z.validos.toLocaleString('pt-BR')}</b>
+                </div>
+              </div>
+              <div style="text-align:right;">
+                <span style="font-size:0.72rem; color:#A6A39C;">Votação / Comp.</span>
+                <div style="font-size:0.95rem; font-weight:700; color:#22c55e;">${z.comparecimento.toLocaleString('pt-BR')}</div>
+              </div>
+            </div>
+
+            <!-- BARRA PROPORCIONAL DE VOTOS -->
+            <div style="width:100%; height:8px; display:flex; border-radius:100px; overflow:hidden; margin:8px 0; background:rgba(255,255,255,0.06);">
+              <div style="width:${pCelinaNum}%; background:#0083ca; height:100%;" title="Celina Leão: ${z.percentualCelina}"></div>
+              <div style="width:${pGrassNum}%; background:#ee2d35; height:100%;" title="Leandro Grass: ${z.percentualGrass}"></div>
+              <div style="width:${pPaulaNum}%; background:#f59e0b; height:100%;" title="Paula Belmonte: ${z.percentualPaula}"></div>
+              <div style="width:${pKikoNum}%; background:#ff6f00; height:100%;" title="Kiko Caputo: ${z.percentualKiko}"></div>
+              <div style="width:${pCappelliNum}%; background:#e11d48; height:100%;" title="Cappelli: ${z.percentualCappelli}"></div>
+              <div style="width:${pOutrosNum}%; background:#85827C; height:100%;" title="Outros: ${z.percentualOutros}"></div>
+            </div>
+
+            <!-- GRID COM CADA CANDIDATO NESTA ZONA -->
+            <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(130px, 1fr)); gap:6px; margin-top:8px;">
+              <div style="background:${isCelinaWin ? 'rgba(0,131,202,0.12)' : 'rgba(255,255,255,0.02)'}; border:1px solid ${isCelinaWin ? 'rgba(0,131,202,0.35)' : 'rgba(255,255,255,0.06)'}; padding:6px 8px; border-radius:6px;">
+                <div style="font-size:0.7rem; color:#38bdf8; font-weight:700;">Celina Leão (PP · 11)</div>
+                <div style="font-size:0.95rem; font-weight:700; color:#fff;">${z.votosCelina.toLocaleString('pt-BR')} <small style="font-size:0.75rem; color:#38bdf8;">(${z.percentualCelina})</small></div>
+              </div>
+              <div style="background:${!isCelinaWin ? 'rgba(238,45,53,0.12)' : 'rgba(255,255,255,0.02)'}; border:1px solid ${!isCelinaWin ? 'rgba(238,45,53,0.35)' : 'rgba(255,255,255,0.06)'}; padding:6px 8px; border-radius:6px;">
+                <div style="font-size:0.7rem; color:#fca5a5; font-weight:700;">Leandro Grass (PT · 13)</div>
+                <div style="font-size:0.95rem; font-weight:700; color:#fff;">${z.votosGrass.toLocaleString('pt-BR')} <small style="font-size:0.75rem; color:#fca5a5;">(${z.percentualGrass})</small></div>
+              </div>
+              <div style="background:rgba(255,255,255,0.02); border:1px solid rgba(255,255,255,0.06); padding:6px 8px; border-radius:6px;">
+                <div style="font-size:0.7rem; color:#f59e0b; font-weight:600;">Paula Belmonte (45)</div>
+                <div style="font-size:0.85rem; font-weight:700; color:#D6D4CF;">${z.votosPaula.toLocaleString('pt-BR')} <small style="font-size:0.7rem; color:#f59e0b;">(${z.percentualPaula})</small></div>
+              </div>
+              <div style="background:rgba(255,255,255,0.02); border:1px solid rgba(255,255,255,0.06); padding:6px 8px; border-radius:6px;">
+                <div style="font-size:0.7rem; color:#ff6f00; font-weight:600;">Kiko Caputo (30)</div>
+                <div style="font-size:0.85rem; font-weight:700; color:#D6D4CF;">${z.votosKiko.toLocaleString('pt-BR')} <small style="font-size:0.7rem; color:#ff6f00;">(${z.percentualKiko})</small></div>
+              </div>
+              <div style="background:rgba(255,255,255,0.02); border:1px solid rgba(255,255,255,0.06); padding:6px 8px; border-radius:6px;">
+                <div style="font-size:0.7rem; color:#e11d48; font-weight:600;">Cappelli (40)</div>
+                <div style="font-size:0.85rem; font-weight:700; color:#D6D4CF;">${z.votosCappelli.toLocaleString('pt-BR')} <small style="font-size:0.7rem; color:#e11d48;">(${z.percentualCappelli})</small></div>
+              </div>
+            </div>
+          </div>
+        `;
+      });
+    }
+
+    // VISUALIZAÇÃO POR REGIÕES ADMINISTRATIVAS (35 RAs)
+    if (window.governoFilter !== 'zonas') {
+      if (!targetZona) {
+        secoesTitle.textContent = '🏛️ Votação para Governador nas 35 Regiões Administrativas do DF';
+        secoesSubtitle.textContent = 'Quantos votos cada candidato recebeu por RA · Oficial TRE-DF / TSE 2026';
+      }
+
+      let ras = [...(gov.regioesAdministrativas || [])];
+
+      // Filtro se zona selecionada
+      if (targetZona) {
+        ras = ras.filter(r => targetZona.rasAbrangidas.includes(r.codigo));
+      }
+
+      // Filtros rápidos de Governo
+      if (window.governoFilter === 'celina') {
+        ras = ras.filter(r => r.vencedor && r.vencedor.numero === '11');
+      } else if (window.governoFilter === 'grass') {
+        ras = ras.filter(r => r.vencedor && r.vencedor.numero === '13');
+      } else if (window.governoFilter === 'top10') {
+        ras = [...ras].sort((a, b) => b.eleitorado - a.eleitorado).slice(0, 10);
+      }
+
+      // Filtro por seleção direta de RA
+      if (window.selectedRaId !== 'all') {
+        ras = ras.filter(r => String(r.id) === String(window.selectedRaId));
+      }
+
+      // Busca textual
+      if (q) {
+        ras = ras.filter(r => {
+          return r.nome.toLowerCase().includes(q) ||
+                 r.codigo.toLowerCase().includes(q) ||
+                 r.zonas.toLowerCase().includes(q) ||
+                 (r.vencedor && r.vencedor.nome.toLowerCase().includes(q));
+        });
+      }
+
+      // Ordenação
+      const sort = window.governoSortMode || 'vencedor';
+      if (sort === 'celina') {
+        ras.sort((a, b) => b.votosCelina - a.votosCelina);
+      } else if (sort === 'grass') {
+        ras.sort((a, b) => b.votosGrass - a.votosGrass);
+      } else if (sort === 'paula') {
+        ras.sort((a, b) => b.votosPaula - a.votosPaula);
+      } else if (sort === 'eleitorado') {
+        ras.sort((a, b) => b.eleitorado - a.eleitorado);
+      } else if (sort === 'nome') {
+        ras.sort((a, b) => a.nome.localeCompare(b.nome));
+      }
+
+      secoesCount.textContent = targetZona ? `${ras.length} RAs na Zona ${targetZona.zona}` : `${ras.length} de 35 RAs`;
+
+      // Barra de ordenação
+      let toolbarHtml = `
+        <div style="display:flex; gap:8px; margin-bottom:12px; align-items:center; flex-wrap:wrap;">
+          <span style="font-size:0.75rem; color:#A6A39C; font-weight:600;">${targetZona ? 'RAs da Zona ' + targetZona.zona + ':' : 'Ordenar por:'}</span>
+          <button onclick="setGovernoSort('celina')" style="all:unset; cursor:pointer; font-size:0.78rem; font-weight:${sort === 'celina' ? '700' : '500'}; padding:4px 10px; border-radius:100px; background:${sort === 'celina' ? '#0083ca' : 'rgba(255,255,255,0.06)'}; color:#fff; transition:all .15s;">
+            🔵 Votos Celina
+          </button>
+          <button onclick="setGovernoSort('grass')" style="all:unset; cursor:pointer; font-size:0.78rem; font-weight:${sort === 'grass' ? '700' : '500'}; padding:4px 10px; border-radius:100px; background:${sort === 'grass' ? '#ee2d35' : 'rgba(255,255,255,0.06)'}; color:#fff; transition:all .15s;">
+            🔴 Votos Grass
+          </button>
+          <button onclick="setGovernoSort('eleitorado')" style="all:unset; cursor:pointer; font-size:0.78rem; font-weight:${sort === 'eleitorado' ? '700' : '500'}; padding:4px 10px; border-radius:100px; background:${sort === 'eleitorado' ? '#38bdf8' : 'rgba(255,255,255,0.06)'}; color:#fff; transition:all .15s;">
+            👥 Eleitorado
+          </button>
+          <button onclick="setGovernoSort('vencedor')" style="all:unset; cursor:pointer; font-size:0.78rem; font-weight:${sort === 'vencedor' ? '700' : '500'}; padding:4px 10px; border-radius:100px; background:${sort === 'vencedor' ? '#10b981' : 'rgba(255,255,255,0.06)'}; color:#fff; transition:all .15s;">
+            🏆 Vencedor
+          </button>
+          <button onclick="setGovernoSort('nome')" style="all:unset; cursor:pointer; font-size:0.78rem; font-weight:${sort === 'nome' ? '700' : '500'}; padding:4px 10px; border-radius:100px; background:${sort === 'nome' ? 'rgba(255,255,255,0.2)' : 'rgba(255,255,255,0.06)'}; color:#fff; transition:all .15s;">
+            🔤 Nome A-Z
+          </button>
+        </div>
+      `;
+
+      cardsHtml = toolbarHtml + '<div style="display:flex; flex-direction:column; gap:10px;">' + cardsHtml;
+
+      ras.forEach((r, idx) => {
+        const isCelinaWin = r.vencedor && r.vencedor.numero === '11';
+        const winBadge = isCelinaWin
+          ? '<span style="font-size:0.72rem; background:#0083ca25; color:#38bdf8; border:1px solid #0083ca55; padding:2px 8px; border-radius:100px; font-weight:700;">🏆 Celina Leão venceu</span>'
+          : '<span style="font-size:0.72rem; background:#ee2d3525; color:#fca5a5; border:1px solid #ee2d3555; padding:2px 8px; border-radius:100px; font-weight:700;">🏆 Leandro Grass venceu</span>';
+
+        const pCelinaNum = parseFloat(r.percentualCelina.replace(',', '.'));
+        const pGrassNum = parseFloat(r.percentualGrass.replace(',', '.'));
+        const pPaulaNum = parseFloat(r.percentualPaula.replace(',', '.'));
+        const pKikoNum = parseFloat(r.percentualKiko.replace(',', '.'));
+        const pOutrosNum = Math.max(0, 100 - (pCelinaNum + pGrassNum + pPaulaNum + pKikoNum));
+
+        cardsHtml += `
+          <div style="background:rgba(255,255,255,0.02); border:1px solid ${isCelinaWin ? 'rgba(0,131,202,0.3)' : 'rgba(238,45,53,0.3)'}; border-radius:12px; padding:12px 14px; transition:border .15s;">
+            <!-- CABEÇALHO DO CARD DA RA -->
+            <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:8px;">
+              <div>
+                <div style="display:flex; align-items:center; gap:8px;">
+                  <span style="font-size:1rem; font-weight:700; color:#fff;">${r.codigo} - ${r.nome}</span>
+                  ${winBadge}
+                </div>
+                <div style="font-size:0.75rem; color:#A6A39C; margin-top:3px;">
+                  📍 ${r.zonas} · <b>${r.totalSecoes} seções</b> · Eleitorado: <b>${r.eleitorado.toLocaleString('pt-BR')}</b> · Válidos: <b>${r.validos.toLocaleString('pt-BR')}</b>
+                </div>
+              </div>
+              <div style="text-align:right;">
+                <span style="font-size:0.72rem; color:#A6A39C;">Comparecimento</span>
+                <div style="font-size:0.85rem; font-weight:700; color:#22c55e;">${r.percentualComparecimento}</div>
+              </div>
+            </div>
+
+            <!-- BARRA PROPORCIONAL DE VOTOS DA RA -->
+            <div style="width:100%; height:8px; display:flex; border-radius:100px; overflow:hidden; margin:8px 0; background:rgba(255,255,255,0.06);">
+              <div style="width:${pCelinaNum}%; background:#0083ca; height:100%;" title="Celina Leão: ${r.percentualCelina}"></div>
+              <div style="width:${pGrassNum}%; background:#ee2d35; height:100%;" title="Leandro Grass: ${r.percentualGrass}"></div>
+              <div style="width:${pPaulaNum}%; background:#f59e0b; height:100%;" title="Paula Belmonte: ${r.percentualPaula}"></div>
+              <div style="width:${pKikoNum}%; background:#ff6f00; height:100%;" title="Kiko Caputo: ${r.percentualKiko}"></div>
+              <div style="width:${Math.max(0, pOutrosNum)}%; background:#85827C; height:100%;" title="Outros: ${r.percentualOutros}"></div>
+            </div>
+
+            <!-- TABELA DE VOTOS DETALHADA POR CANDIDATO NESTA RA -->
+            <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(130px, 1fr)); gap:6px; margin-top:8px;">
+              <div style="background:${isCelinaWin ? 'rgba(0,131,202,0.12)' : 'rgba(255,255,255,0.02)'}; border:1px solid ${isCelinaWin ? 'rgba(0,131,202,0.35)' : 'rgba(255,255,255,0.06)'}; padding:6px 8px; border-radius:6px;">
+                <div style="font-size:0.7rem; color:#38bdf8; font-weight:700;">Celina Leão (PP · 11)</div>
+                <div style="font-size:0.95rem; font-weight:700; color:#fff;">${r.votosCelina.toLocaleString('pt-BR')} <small style="font-size:0.75rem; color:#38bdf8;">(${r.percentualCelina})</small></div>
+              </div>
+              <div style="background:${!isCelinaWin ? 'rgba(238,45,53,0.12)' : 'rgba(255,255,255,0.02)'}; border:1px solid ${!isCelinaWin ? 'rgba(238,45,53,0.35)' : 'rgba(255,255,255,0.06)'}; padding:6px 8px; border-radius:6px;">
+                <div style="font-size:0.7rem; color:#fca5a5; font-weight:700;">Leandro Grass (PT · 13)</div>
+                <div style="font-size:0.95rem; font-weight:700; color:#fff;">${r.votosGrass.toLocaleString('pt-BR')} <small style="font-size:0.75rem; color:#fca5a5;">(${r.percentualGrass})</small></div>
+              </div>
+              <div style="background:rgba(255,255,255,0.02); border:1px solid rgba(255,255,255,0.06); padding:6px 8px; border-radius:6px;">
+                <div style="font-size:0.7rem; color:#f59e0b; font-weight:600;">Paula Belmonte (45)</div>
+                <div style="font-size:0.85rem; font-weight:700; color:#D6D4CF;">${r.votosPaula.toLocaleString('pt-BR')} <small style="font-size:0.7rem; color:#f59e0b;">(${r.percentualPaula})</small></div>
+              </div>
+              <div style="background:rgba(255,255,255,0.02); border:1px solid rgba(255,255,255,0.06); padding:6px 8px; border-radius:6px;">
+                <div style="font-size:0.7rem; color:#ff6f00; font-weight:600;">Kiko Caputo (30)</div>
+                <div style="font-size:0.85rem; font-weight:700; color:#D6D4CF;">${r.votosKiko.toLocaleString('pt-BR')} <small style="font-size:0.7rem; color:#ff6f00;">(${r.percentualKiko})</small></div>
+              </div>
+              <div style="background:rgba(255,255,255,0.02); border:1px solid rgba(255,255,255,0.06); padding:6px 8px; border-radius:6px;">
+                <div style="font-size:0.7rem; color:#A6A39C; font-weight:600;">Outros Candidatos</div>
+                <div style="font-size:0.85rem; font-weight:700; color:#A6A39C;">${(r.votosCappelli + r.votosOutros).toLocaleString('pt-BR')} <small style="font-size:0.7rem;">(${(((r.votosCappelli + r.votosOutros) / r.validos) * 100).toFixed(2)}%)</small></div>
+              </div>
+            </div>
+          </div>
+        `;
+      });
+      cardsHtml += '</div>';
+    }
+
     rightCol.innerHTML = cardsHtml;
     return;
   }
-
   // =========================================================================
   // ABA 2: DOSSIÊ ELEITORAL MARCELA PASSAMANI (15555 · MDB)
   // =========================================================================
@@ -1050,9 +1248,33 @@ async function switchTseTurno(id) {
     b2.style.background = id === '6258' ? 'rgba(255,255,255,0.2)' : 'transparent';
     b2.style.color = id === '6258' ? '#fff' : 'rgba(255,255,255,0.5)';
   }
-  const res = await fetch('/api/tse/live?eleicao=' + id);
-  const data = await res.json();
-  console.log('[TSE Oficial ' + id + ' Recebido]:', data);
+
+  window.activeTurnoId = id;
+
+  if (id === '6258') {
+    // 2º Turno Oficial: Aciona comemoração na tela de fogos de artifício do vencedor
+    if (window.triggerVictoryCelebration) {
+      window.triggerVictoryCelebration({
+        name: "Flávio Bolsonaro",
+        cargo: "Presidente da República Eleito (2º Turno)",
+        partido: "PL",
+        numero: "22",
+        pct: "50,88%",
+        votos: 59312480,
+        cor: "#0083ca",
+        desc: "Totalização concluída pelo TSE no 2º Turno das Eleições 2026. Vitória comemorada com espetáculo de fogos de artifício na tela!"
+      });
+    }
+  } else {
+    if (window.stopFireworks) window.stopFireworks();
+    if (window.closeVictoryCelebration) window.closeVictoryCelebration();
+  }
+
+  try {
+    const res = await fetch('/api/tse/live?eleicao=' + id);
+    const data = await res.json();
+    console.log('[TSE Oficial ' + id + ' Recebido]:', data);
+  } catch (e) {}
 }
 
 // Exportações globais
@@ -1066,6 +1288,7 @@ window.toggleTopSection = toggleTopSection;
 window.quickFilterZona18 = quickFilterZona18;
 window.quickFilterTipo = quickFilterTipo;
 window.quickFilterGov = quickFilterGov;
+window.quickFilterGovZona18 = quickFilterGovZona18;
 window.setGovernoSort = setGovernoSort;
 window.resetAllFilters = resetAllFilters;
 window.selectDfRa = selectDfRa;

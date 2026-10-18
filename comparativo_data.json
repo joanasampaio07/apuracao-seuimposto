@@ -1,0 +1,3609 @@
+{
+  "versao": "2026.2",
+  "geradoEm": "2026-10-18T21:35:23.325Z",
+  "presidente": {
+    "nacional": [
+      {
+        "numero": "22",
+        "nome": "Flávio Bolsonaro",
+        "partido": "PL",
+        "cor": "#0083ca",
+        "votos1t": 56104503,
+        "pct1t": 47.03,
+        "votos2t": 59312480,
+        "pct2t": 50.88,
+        "deltaVotos": 3207977,
+        "deltaPctVotos": 5.72,
+        "deltaPctValidos": 3.85,
+        "aumentou": true,
+        "eleito": true
+      },
+      {
+        "numero": "13",
+        "nome": "Luiz Inácio Lula da Silva",
+        "partido": "PT",
+        "cor": "#ee2d35",
+        "votos1t": 53879538,
+        "pct1t": 45.16,
+        "votos2t": 57261890,
+        "pct2t": 49.12,
+        "deltaVotos": 3382352,
+        "deltaPctVotos": 6.28,
+        "deltaPctValidos": 3.96,
+        "aumentou": true,
+        "eleito": false
+      }
+    ],
+    "ufs": [
+      {
+        "uf": "AC",
+        "nome": "Acre",
+        "secoes": 2270,
+        "comparecimento1t": 488330,
+        "candidatos": [
+          {
+            "numero": "22",
+            "nome": "Flávio Bolsonaro",
+            "partido": "PL",
+            "cor": "#0083ca",
+            "votos1t": 302807,
+            "pct1t": 64.56,
+            "votos2t": 319402,
+            "pct2t": 68.73,
+            "deltaVotos": 16595,
+            "deltaPctVotos": 5.48,
+            "aumentou": true
+          },
+          {
+            "numero": "13",
+            "nome": "Luiz Inácio Lula da Silva",
+            "partido": "PT",
+            "cor": "#ee2d35",
+            "votos1t": 134770,
+            "pct1t": 28.73,
+            "votos2t": 145300,
+            "pct2t": 31.27,
+            "deltaVotos": 10530,
+            "deltaPctVotos": 7.81,
+            "aumentou": true
+          }
+        ],
+        "vencedor1t": "Flávio Bolsonaro",
+        "vencedor2t": "Flávio Bolsonaro",
+        "totalValidos1t": 469066,
+        "totalValidos2t": 464702
+      },
+      {
+        "uf": "AL",
+        "nome": "Alagoas",
+        "secoes": 7101,
+        "comparecimento1t": 1938428,
+        "candidatos": [
+          {
+            "numero": "22",
+            "nome": "Flávio Bolsonaro",
+            "partido": "PL",
+            "cor": "#0083ca",
+            "votos1t": 735718,
+            "pct1t": 40.45,
+            "votos2t": 764038,
+            "pct2t": 42.27,
+            "deltaVotos": 28320,
+            "deltaPctVotos": 3.85,
+            "aumentou": true
+          },
+          {
+            "numero": "13",
+            "nome": "Luiz Inácio Lula da Silva",
+            "partido": "PT",
+            "cor": "#ee2d35",
+            "votos1t": 995459,
+            "pct1t": 54.73,
+            "votos2t": 1043297,
+            "pct2t": 57.73,
+            "deltaVotos": 47838,
+            "deltaPctVotos": 4.81,
+            "aumentou": true
+          }
+        ],
+        "vencedor1t": "Lula",
+        "vencedor2t": "Lula",
+        "totalValidos1t": 1818856,
+        "totalValidos2t": 1807335
+      },
+      {
+        "uf": "AM",
+        "nome": "Amazonas",
+        "secoes": 8157,
+        "comparecimento1t": 2234549,
+        "candidatos": [
+          {
+            "numero": "22",
+            "nome": "Flávio Bolsonaro",
+            "partido": "PL",
+            "cor": "#0083ca",
+            "votos1t": 976764,
+            "pct1t": 45,
+            "votos2t": 1024246,
+            "pct2t": 47.61,
+            "deltaVotos": 47482,
+            "deltaPctVotos": 4.86,
+            "aumentou": true
+          },
+          {
+            "numero": "13",
+            "nome": "Luiz Inácio Lula da Silva",
+            "partido": "PT",
+            "cor": "#ee2d35",
+            "votos1t": 1046996,
+            "pct1t": 48.23,
+            "votos2t": 1127201,
+            "pct2t": 52.39,
+            "deltaVotos": 80205,
+            "deltaPctVotos": 7.66,
+            "aumentou": true
+          }
+        ],
+        "vencedor1t": "Lula",
+        "vencedor2t": "Lula",
+        "totalValidos1t": 2170763,
+        "totalValidos2t": 2151447
+      },
+      {
+        "uf": "AP",
+        "nome": "Amapá",
+        "secoes": 1914,
+        "comparecimento1t": 476562,
+        "candidatos": [
+          {
+            "numero": "22",
+            "nome": "Flávio Bolsonaro",
+            "partido": "PL",
+            "cor": "#0083ca",
+            "votos1t": 212278,
+            "pct1t": 45.67,
+            "votos2t": 225223,
+            "pct2t": 49,
+            "deltaVotos": 12945,
+            "deltaPctVotos": 6.1,
+            "aumentou": true
+          },
+          {
+            "numero": "13",
+            "nome": "Luiz Inácio Lula da Silva",
+            "partido": "PT",
+            "cor": "#ee2d35",
+            "votos1t": 212503,
+            "pct1t": 45.71,
+            "votos2t": 234369,
+            "pct2t": 51,
+            "deltaVotos": 21866,
+            "deltaPctVotos": 10.29,
+            "aumentou": true
+          }
+        ],
+        "vencedor1t": "Lula",
+        "vencedor2t": "Lula",
+        "totalValidos1t": 464858,
+        "totalValidos2t": 459592
+      },
+      {
+        "uf": "BA",
+        "nome": "Bahia",
+        "secoes": 35476,
+        "comparecimento1t": 9053601,
+        "candidatos": [
+          {
+            "numero": "22",
+            "nome": "Flávio Bolsonaro",
+            "partido": "PL",
+            "cor": "#0083ca",
+            "votos1t": 2442585,
+            "pct1t": 28.53,
+            "votos2t": 2588883,
+            "pct2t": 30.45,
+            "deltaVotos": 146298,
+            "deltaPctVotos": 5.99,
+            "aumentou": true
+          },
+          {
+            "numero": "13",
+            "nome": "Luiz Inácio Lula da Silva",
+            "partido": "PT",
+            "cor": "#ee2d35",
+            "votos1t": 5664771,
+            "pct1t": 66.17,
+            "votos2t": 5911892,
+            "pct2t": 69.55,
+            "deltaVotos": 247121,
+            "deltaPctVotos": 4.36,
+            "aumentou": true
+          }
+        ],
+        "vencedor1t": "Lula",
+        "vencedor2t": "Lula",
+        "totalValidos1t": 8560291,
+        "totalValidos2t": 8500775
+      },
+      {
+        "uf": "CE",
+        "nome": "Ceará",
+        "secoes": 23765,
+        "comparecimento1t": 5910471,
+        "candidatos": [
+          {
+            "numero": "22",
+            "nome": "Flávio Bolsonaro",
+            "partido": "PL",
+            "cor": "#0083ca",
+            "votos1t": 1756850,
+            "pct1t": 31.27,
+            "votos2t": 1855591,
+            "pct2t": 33.27,
+            "deltaVotos": 98741,
+            "deltaPctVotos": 5.62,
+            "aumentou": true
+          },
+          {
+            "numero": "13",
+            "nome": "Luiz Inácio Lula da Silva",
+            "partido": "PT",
+            "cor": "#ee2d35",
+            "votos1t": 3555263,
+            "pct1t": 63.29,
+            "votos2t": 3722053,
+            "pct2t": 66.73,
+            "deltaVotos": 166790,
+            "deltaPctVotos": 4.69,
+            "aumentou": true
+          }
+        ],
+        "vencedor1t": "Lula",
+        "vencedor2t": "Lula",
+        "totalValidos1t": 5617814,
+        "totalValidos2t": 5577644
+      },
+      {
+        "uf": "DF",
+        "nome": "Distrito Federal",
+        "secoes": 6969,
+        "comparecimento1t": 1831396,
+        "candidatos": [
+          {
+            "numero": "22",
+            "nome": "Flávio Bolsonaro",
+            "partido": "PL",
+            "cor": "#0083ca",
+            "votos1t": 909616,
+            "pct1t": 51.31,
+            "votos2t": 1008463,
+            "pct2t": 57.73,
+            "deltaVotos": 98847,
+            "deltaPctVotos": 10.87,
+            "aumentou": true
+          },
+          {
+            "numero": "13",
+            "nome": "Luiz Inácio Lula da Silva",
+            "partido": "PT",
+            "cor": "#ee2d35",
+            "votos1t": 675627,
+            "pct1t": 38.11,
+            "votos2t": 738349,
+            "pct2t": 42.27,
+            "deltaVotos": 62722,
+            "deltaPctVotos": 9.28,
+            "aumentou": true
+          }
+        ],
+        "vencedor1t": "Flávio Bolsonaro",
+        "vencedor2t": "Flávio Bolsonaro",
+        "totalValidos1t": 1772808,
+        "totalValidos2t": 1746812
+      },
+      {
+        "uf": "ES",
+        "nome": "Espírito Santo",
+        "secoes": 9844,
+        "comparecimento1t": 2352282,
+        "candidatos": [
+          {
+            "numero": "22",
+            "nome": "Flávio Bolsonaro",
+            "partido": "PL",
+            "cor": "#0083ca",
+            "votos1t": 1233194,
+            "pct1t": 54.78,
+            "votos2t": 1321654,
+            "pct2t": 59.33,
+            "deltaVotos": 88460,
+            "deltaPctVotos": 7.17,
+            "aumentou": true
+          },
+          {
+            "numero": "13",
+            "nome": "Luiz Inácio Lula da Silva",
+            "partido": "PT",
+            "cor": "#ee2d35",
+            "votos1t": 850028,
+            "pct1t": 37.76,
+            "votos2t": 906159,
+            "pct2t": 40.67,
+            "deltaVotos": 56131,
+            "deltaPctVotos": 6.6,
+            "aumentou": true
+          }
+        ],
+        "vencedor1t": "Flávio Bolsonaro",
+        "vencedor2t": "Flávio Bolsonaro",
+        "totalValidos1t": 2251078,
+        "totalValidos2t": 2227813
+      },
+      {
+        "uf": "GO",
+        "nome": "Goiás",
+        "secoes": 15686,
+        "comparecimento1t": 3971587,
+        "candidatos": [
+          {
+            "numero": "22",
+            "nome": "Flávio Bolsonaro",
+            "partido": "PL",
+            "cor": "#0083ca",
+            "votos1t": 2051888,
+            "pct1t": 53.6,
+            "votos2t": 2361266,
+            "pct2t": 63.03,
+            "deltaVotos": 309378,
+            "deltaPctVotos": 15.08,
+            "aumentou": true
+          },
+          {
+            "numero": "13",
+            "nome": "Luiz Inácio Lula da Silva",
+            "partido": "PT",
+            "cor": "#ee2d35",
+            "votos1t": 1188880,
+            "pct1t": 31.06,
+            "votos2t": 1385191,
+            "pct2t": 36.97,
+            "deltaVotos": 196311,
+            "deltaPctVotos": 16.51,
+            "aumentou": true
+          }
+        ],
+        "vencedor1t": "Flávio Bolsonaro",
+        "vencedor2t": "Flávio Bolsonaro",
+        "totalValidos1t": 3827823,
+        "totalValidos2t": 3746457
+      },
+      {
+        "uf": "MA",
+        "nome": "Maranhão",
+        "secoes": 18093,
+        "comparecimento1t": 4160343,
+        "candidatos": [
+          {
+            "numero": "22",
+            "nome": "Flávio Bolsonaro",
+            "partido": "PL",
+            "cor": "#0083ca",
+            "votos1t": 1239040,
+            "pct1t": 30.9,
+            "votos2t": 1305287,
+            "pct2t": 32.77,
+            "deltaVotos": 66247,
+            "deltaPctVotos": 5.35,
+            "aumentou": true
+          },
+          {
+            "numero": "13",
+            "nome": "Luiz Inácio Lula da Silva",
+            "partido": "PT",
+            "cor": "#ee2d35",
+            "votos1t": 2566301,
+            "pct1t": 63.99,
+            "votos2t": 2678202,
+            "pct2t": 67.23,
+            "deltaVotos": 111901,
+            "deltaPctVotos": 4.36,
+            "aumentou": true
+          }
+        ],
+        "vencedor1t": "Lula",
+        "vencedor2t": "Lula",
+        "totalValidos1t": 4010439,
+        "totalValidos2t": 3983489
+      },
+      {
+        "uf": "MG",
+        "nome": "Minas Gerais",
+        "secoes": 52062,
+        "comparecimento1t": 12637274,
+        "candidatos": [
+          {
+            "numero": "22",
+            "nome": "Flávio Bolsonaro",
+            "partido": "PL",
+            "cor": "#0083ca",
+            "votos1t": 5777548,
+            "pct1t": 48.24,
+            "votos2t": 6309687,
+            "pct2t": 53.31,
+            "deltaVotos": 532139,
+            "deltaPctVotos": 9.21,
+            "aumentou": true
+          },
+          {
+            "numero": "13",
+            "nome": "Luiz Inácio Lula da Silva",
+            "partido": "PT",
+            "cor": "#ee2d35",
+            "votos1t": 5188936,
+            "pct1t": 43.33,
+            "votos2t": 5526597,
+            "pct2t": 46.69,
+            "deltaVotos": 337661,
+            "deltaPctVotos": 6.51,
+            "aumentou": true
+          }
+        ],
+        "vencedor1t": "Flávio Bolsonaro",
+        "vencedor2t": "Flávio Bolsonaro",
+        "totalValidos1t": 11976235,
+        "totalValidos2t": 11836284
+      },
+      {
+        "uf": "MS",
+        "nome": "Mato Grosso do Sul",
+        "secoes": 7106,
+        "comparecimento1t": 1541220,
+        "candidatos": [
+          {
+            "numero": "22",
+            "nome": "Flávio Bolsonaro",
+            "partido": "PL",
+            "cor": "#0083ca",
+            "votos1t": 873351,
+            "pct1t": 58.6,
+            "votos2t": 926089,
+            "pct2t": 62.73,
+            "deltaVotos": 52738,
+            "deltaPctVotos": 6.04,
+            "aumentou": true
+          },
+          {
+            "numero": "13",
+            "nome": "Luiz Inácio Lula da Silva",
+            "partido": "PT",
+            "cor": "#ee2d35",
+            "votos1t": 516855,
+            "pct1t": 34.68,
+            "votos2t": 550319,
+            "pct2t": 37.27,
+            "deltaVotos": 33464,
+            "deltaPctVotos": 6.47,
+            "aumentou": true
+          }
+        ],
+        "vencedor1t": "Flávio Bolsonaro",
+        "vencedor2t": "Flávio Bolsonaro",
+        "totalValidos1t": 1490278,
+        "totalValidos2t": 1476408
+      },
+      {
+        "uf": "MT",
+        "nome": "Mato Grosso",
+        "secoes": 8287,
+        "comparecimento1t": 2052133,
+        "candidatos": [
+          {
+            "numero": "22",
+            "nome": "Flávio Bolsonaro",
+            "partido": "PL",
+            "cor": "#0083ca",
+            "votos1t": 1298581,
+            "pct1t": 65.15,
+            "votos2t": 1358146,
+            "pct2t": 68.68,
+            "deltaVotos": 59565,
+            "deltaPctVotos": 4.59,
+            "aumentou": true
+          },
+          {
+            "numero": "13",
+            "nome": "Luiz Inácio Lula da Silva",
+            "partido": "PT",
+            "cor": "#ee2d35",
+            "votos1t": 581681,
+            "pct1t": 29.18,
+            "votos2t": 619477,
+            "pct2t": 31.32,
+            "deltaVotos": 37796,
+            "deltaPctVotos": 6.5,
+            "aumentou": true
+          }
+        ],
+        "vencedor1t": "Flávio Bolsonaro",
+        "vencedor2t": "Flávio Bolsonaro",
+        "totalValidos1t": 1993288,
+        "totalValidos2t": 1977623
+      },
+      {
+        "uf": "PA",
+        "nome": "Pará",
+        "secoes": 20827,
+        "comparecimento1t": 5066504,
+        "candidatos": [
+          {
+            "numero": "22",
+            "nome": "Flávio Bolsonaro",
+            "partido": "PL",
+            "cor": "#0083ca",
+            "votos1t": 2163957,
+            "pct1t": 44.5,
+            "votos2t": 2251806,
+            "pct2t": 46.65,
+            "deltaVotos": 87849,
+            "deltaPctVotos": 4.06,
+            "aumentou": true
+          },
+          {
+            "numero": "13",
+            "nome": "Luiz Inácio Lula da Silva",
+            "partido": "PT",
+            "cor": "#ee2d35",
+            "votos1t": 2427237,
+            "pct1t": 49.91,
+            "votos2t": 2575628,
+            "pct2t": 53.35,
+            "deltaVotos": 148391,
+            "deltaPctVotos": 6.11,
+            "aumentou": true
+          }
+        ],
+        "vencedor1t": "Lula",
+        "vencedor2t": "Lula",
+        "totalValidos1t": 4863172,
+        "totalValidos2t": 4827434
+      },
+      {
+        "uf": "PB",
+        "nome": "Paraíba",
+        "secoes": 10712,
+        "comparecimento1t": 2683988,
+        "candidatos": [
+          {
+            "numero": "22",
+            "nome": "Flávio Bolsonaro",
+            "partido": "PL",
+            "cor": "#0083ca",
+            "votos1t": 831377,
+            "pct1t": 33.07,
+            "votos2t": 876998,
+            "pct2t": 35.15,
+            "deltaVotos": 45621,
+            "deltaPctVotos": 5.49,
+            "aumentou": true
+          },
+          {
+            "numero": "13",
+            "nome": "Luiz Inácio Lula da Silva",
+            "partido": "PT",
+            "cor": "#ee2d35",
+            "votos1t": 1541127,
+            "pct1t": 61.31,
+            "votos2t": 1618189,
+            "pct2t": 64.85,
+            "deltaVotos": 77062,
+            "deltaPctVotos": 5,
+            "aumentou": true
+          }
+        ],
+        "vencedor1t": "Lula",
+        "vencedor2t": "Lula",
+        "totalValidos1t": 2513747,
+        "totalValidos2t": 2495187
+      },
+      {
+        "uf": "PE",
+        "nome": "Pernambuco",
+        "secoes": 21418,
+        "comparecimento1t": 5911062,
+        "candidatos": [
+          {
+            "numero": "22",
+            "nome": "Flávio Bolsonaro",
+            "partido": "PL",
+            "cor": "#0083ca",
+            "votos1t": 1738043,
+            "pct1t": 31.03,
+            "votos2t": 1837851,
+            "pct2t": 33.05,
+            "deltaVotos": 99808,
+            "deltaPctVotos": 5.74,
+            "aumentou": true
+          },
+          {
+            "numero": "13",
+            "nome": "Luiz Inácio Lula da Silva",
+            "partido": "PT",
+            "cor": "#ee2d35",
+            "votos1t": 3553971,
+            "pct1t": 63.45,
+            "votos2t": 3722563,
+            "pct2t": 66.95,
+            "deltaVotos": 168592,
+            "deltaPctVotos": 4.74,
+            "aumentou": true
+          }
+        ],
+        "vencedor1t": "Lula",
+        "vencedor2t": "Lula",
+        "totalValidos1t": 5601017,
+        "totalValidos2t": 5560414
+      },
+      {
+        "uf": "PI",
+        "nome": "Piauí",
+        "secoes": 10225,
+        "comparecimento1t": 2240883,
+        "candidatos": [
+          {
+            "numero": "22",
+            "nome": "Flávio Bolsonaro",
+            "partido": "PL",
+            "cor": "#0083ca",
+            "votos1t": 517028,
+            "pct1t": 24.09,
+            "votos2t": 551155,
+            "pct2t": 25.85,
+            "deltaVotos": 34127,
+            "deltaPctVotos": 6.6,
+            "aumentou": true
+          },
+          {
+            "numero": "13",
+            "nome": "Luiz Inácio Lula da Silva",
+            "partido": "PT",
+            "cor": "#ee2d35",
+            "votos1t": 1523710,
+            "pct1t": 70.99,
+            "votos2t": 1581356,
+            "pct2t": 74.15,
+            "deltaVotos": 57646,
+            "deltaPctVotos": 3.78,
+            "aumentou": true
+          }
+        ],
+        "vencedor1t": "Lula",
+        "vencedor2t": "Lula",
+        "totalValidos1t": 2146394,
+        "totalValidos2t": 2132511
+      },
+      {
+        "uf": "PR",
+        "nome": "Paraná",
+        "secoes": 27142,
+        "comparecimento1t": 6841457,
+        "candidatos": [
+          {
+            "numero": "22",
+            "nome": "Flávio Bolsonaro",
+            "partido": "PL",
+            "cor": "#0083ca",
+            "votos1t": 3945345,
+            "pct1t": 59.91,
+            "votos2t": 4253799,
+            "pct2t": 65.4,
+            "deltaVotos": 308454,
+            "deltaPctVotos": 7.82,
+            "aumentou": true
+          },
+          {
+            "numero": "13",
+            "nome": "Luiz Inácio Lula da Silva",
+            "partido": "PT",
+            "cor": "#ee2d35",
+            "votos1t": 2054597,
+            "pct1t": 31.2,
+            "votos2t": 2250322,
+            "pct2t": 34.6,
+            "deltaVotos": 195725,
+            "deltaPctVotos": 9.53,
+            "aumentou": true
+          }
+        ],
+        "vencedor1t": "Flávio Bolsonaro",
+        "vencedor2t": "Flávio Bolsonaro",
+        "totalValidos1t": 6585243,
+        "totalValidos2t": 6504121
+      },
+      {
+        "uf": "RJ",
+        "nome": "Rio de Janeiro",
+        "secoes": 37675,
+        "comparecimento1t": 9859802,
+        "candidatos": [
+          {
+            "numero": "22",
+            "nome": "Flávio Bolsonaro",
+            "partido": "PL",
+            "cor": "#0083ca",
+            "votos1t": 4966844,
+            "pct1t": 53.01,
+            "votos2t": 5340927,
+            "pct2t": 57.61,
+            "deltaVotos": 374083,
+            "deltaPctVotos": 7.53,
+            "aumentou": true
+          },
+          {
+            "numero": "13",
+            "nome": "Luiz Inácio Lula da Silva",
+            "partido": "PT",
+            "cor": "#ee2d35",
+            "votos1t": 3693021,
+            "pct1t": 39.41,
+            "votos2t": 3930390,
+            "pct2t": 42.39,
+            "deltaVotos": 237369,
+            "deltaPctVotos": 6.43,
+            "aumentou": true
+          }
+        ],
+        "vencedor1t": "Flávio Bolsonaro",
+        "vencedor2t": "Flávio Bolsonaro",
+        "totalValidos1t": 9369700,
+        "totalValidos2t": 9271317
+      },
+      {
+        "uf": "RN",
+        "nome": "Rio Grande do Norte",
+        "secoes": 8115,
+        "comparecimento1t": 2171013,
+        "candidatos": [
+          {
+            "numero": "22",
+            "nome": "Flávio Bolsonaro",
+            "partido": "PL",
+            "cor": "#0083ca",
+            "votos1t": 720493,
+            "pct1t": 34.77,
+            "votos2t": 757135,
+            "pct2t": 36.81,
+            "deltaVotos": 36642,
+            "deltaPctVotos": 5.09,
+            "aumentou": true
+          },
+          {
+            "numero": "13",
+            "nome": "Luiz Inácio Lula da Silva",
+            "partido": "PT",
+            "cor": "#ee2d35",
+            "votos1t": 1237963,
+            "pct1t": 59.75,
+            "votos2t": 1299857,
+            "pct2t": 63.19,
+            "deltaVotos": 61894,
+            "deltaPctVotos": 5,
+            "aumentou": true
+          }
+        ],
+        "vencedor1t": "Lula",
+        "vencedor2t": "Lula",
+        "totalValidos1t": 2071898,
+        "totalValidos2t": 2056992
+      },
+      {
+        "uf": "RO",
+        "nome": "Rondônia",
+        "secoes": 4698,
+        "comparecimento1t": 991080,
+        "candidatos": [
+          {
+            "numero": "22",
+            "nome": "Flávio Bolsonaro",
+            "partido": "PL",
+            "cor": "#0083ca",
+            "votos1t": 652988,
+            "pct1t": 67.45,
+            "votos2t": 686929,
+            "pct2t": 71.62,
+            "deltaVotos": 33941,
+            "deltaPctVotos": 5.2,
+            "aumentou": true
+          },
+          {
+            "numero": "13",
+            "nome": "Luiz Inácio Lula da Silva",
+            "partido": "PT",
+            "cor": "#ee2d35",
+            "votos1t": 250667,
+            "pct1t": 25.89,
+            "votos2t": 272204,
+            "pct2t": 28.38,
+            "deltaVotos": 21537,
+            "deltaPctVotos": 8.59,
+            "aumentou": true
+          }
+        ],
+        "vencedor1t": "Flávio Bolsonaro",
+        "vencedor2t": "Flávio Bolsonaro",
+        "totalValidos1t": 968059,
+        "totalValidos2t": 959133
+      },
+      {
+        "uf": "RR",
+        "nome": "Roraima",
+        "secoes": 1519,
+        "comparecimento1t": 332772,
+        "candidatos": [
+          {
+            "numero": "22",
+            "nome": "Flávio Bolsonaro",
+            "partido": "PL",
+            "cor": "#0083ca",
+            "votos1t": 231322,
+            "pct1t": 71.06,
+            "votos2t": 241758,
+            "pct2t": 74.89,
+            "deltaVotos": 10436,
+            "deltaPctVotos": 4.51,
+            "aumentou": true
+          },
+          {
+            "numero": "13",
+            "nome": "Luiz Inácio Lula da Silva",
+            "partido": "PT",
+            "cor": "#ee2d35",
+            "votos1t": 74420,
+            "pct1t": 22.86,
+            "votos2t": 81042,
+            "pct2t": 25.11,
+            "deltaVotos": 6622,
+            "deltaPctVotos": 8.9,
+            "aumentou": true
+          }
+        ],
+        "vencedor1t": "Flávio Bolsonaro",
+        "vencedor2t": "Flávio Bolsonaro",
+        "totalValidos1t": 325545,
+        "totalValidos2t": 322800
+      },
+      {
+        "uf": "RS",
+        "nome": "Rio Grande do Sul",
+        "secoes": 27547,
+        "comparecimento1t": 6702903,
+        "candidatos": [
+          {
+            "numero": "22",
+            "nome": "Flávio Bolsonaro",
+            "partido": "PL",
+            "cor": "#0083ca",
+            "votos1t": 3573783,
+            "pct1t": 55.64,
+            "votos2t": 3866007,
+            "pct2t": 60.92,
+            "deltaVotos": 292224,
+            "deltaPctVotos": 8.18,
+            "aumentou": true
+          },
+          {
+            "numero": "13",
+            "nome": "Luiz Inácio Lula da Silva",
+            "partido": "PT",
+            "cor": "#ee2d35",
+            "votos1t": 2294759,
+            "pct1t": 35.73,
+            "votos2t": 2480185,
+            "pct2t": 39.08,
+            "deltaVotos": 185426,
+            "deltaPctVotos": 8.08,
+            "aumentou": true
+          }
+        ],
+        "vencedor1t": "Flávio Bolsonaro",
+        "vencedor2t": "Flávio Bolsonaro",
+        "totalValidos1t": 6423046,
+        "totalValidos2t": 6346192
+      },
+      {
+        "uf": "SC",
+        "nome": "Santa Catarina",
+        "secoes": 17326,
+        "comparecimento1t": 4648159,
+        "candidatos": [
+          {
+            "numero": "22",
+            "nome": "Flávio Bolsonaro",
+            "partido": "PL",
+            "cor": "#0083ca",
+            "votos1t": 3000020,
+            "pct1t": 66.65,
+            "votos2t": 3196965,
+            "pct2t": 71.86,
+            "deltaVotos": 196945,
+            "deltaPctVotos": 6.56,
+            "aumentou": true
+          },
+          {
+            "numero": "13",
+            "nome": "Luiz Inácio Lula da Silva",
+            "partido": "PT",
+            "cor": "#ee2d35",
+            "votos1t": 1127168,
+            "pct1t": 25.04,
+            "votos2t": 1252136,
+            "pct2t": 28.14,
+            "deltaVotos": 124968,
+            "deltaPctVotos": 11.09,
+            "aumentou": true
+          }
+        ],
+        "vencedor1t": "Flávio Bolsonaro",
+        "vencedor2t": "Flávio Bolsonaro",
+        "totalValidos1t": 4500897,
+        "totalValidos2t": 4449101
+      },
+      {
+        "uf": "SE",
+        "nome": "Sergipe",
+        "secoes": 5923,
+        "comparecimento1t": 1439082,
+        "candidatos": [
+          {
+            "numero": "22",
+            "nome": "Flávio Bolsonaro",
+            "partido": "PL",
+            "cor": "#0083ca",
+            "votos1t": 417839,
+            "pct1t": 30.63,
+            "votos2t": 447018,
+            "pct2t": 33.06,
+            "deltaVotos": 29179,
+            "deltaPctVotos": 6.98,
+            "aumentou": true
+          },
+          {
+            "numero": "13",
+            "nome": "Luiz Inácio Lula da Silva",
+            "partido": "PT",
+            "cor": "#ee2d35",
+            "votos1t": 856019,
+            "pct1t": 62.75,
+            "votos2t": 905307,
+            "pct2t": 66.94,
+            "deltaVotos": 49288,
+            "deltaPctVotos": 5.76,
+            "aumentou": true
+          }
+        ],
+        "vencedor1t": "Lula",
+        "vencedor2t": "Lula",
+        "totalValidos1t": 1364196,
+        "totalValidos2t": 1352325
+      },
+      {
+        "uf": "SP",
+        "nome": "São Paulo",
+        "secoes": 103656,
+        "comparecimento1t": 26431992,
+        "candidatos": [
+          {
+            "numero": "22",
+            "nome": "Flávio Bolsonaro",
+            "partido": "PL",
+            "cor": "#0083ca",
+            "votos1t": 12922023,
+            "pct1t": 51.93,
+            "votos2t": 14216078,
+            "pct2t": 57.92,
+            "deltaVotos": 1294055,
+            "deltaPctVotos": 10.01,
+            "aumentou": true
+          },
+          {
+            "numero": "13",
+            "nome": "Luiz Inácio Lula da Silva",
+            "partido": "PT",
+            "cor": "#ee2d35",
+            "votos1t": 9505413,
+            "pct1t": 38.2,
+            "votos2t": 10326536,
+            "pct2t": 42.08,
+            "deltaVotos": 821123,
+            "deltaPctVotos": 8.64,
+            "aumentou": true
+          }
+        ],
+        "vencedor1t": "Flávio Bolsonaro",
+        "vencedor2t": "Flávio Bolsonaro",
+        "totalValidos1t": 24882948,
+        "totalValidos2t": 24542614
+      },
+      {
+        "uf": "TO",
+        "nome": "Tocantins",
+        "secoes": 4384,
+        "comparecimento1t": 965196,
+        "candidatos": [
+          {
+            "numero": "22",
+            "nome": "Flávio Bolsonaro",
+            "partido": "PL",
+            "cor": "#0083ca",
+            "votos1t": 469321,
+            "pct1t": 50.44,
+            "votos2t": 499422,
+            "pct2t": 54.14,
+            "deltaVotos": 30101,
+            "deltaPctVotos": 6.41,
+            "aumentou": true
+          },
+          {
+            "numero": "13",
+            "nome": "Luiz Inácio Lula da Silva",
+            "partido": "PT",
+            "cor": "#ee2d35",
+            "votos1t": 404009,
+            "pct1t": 43.42,
+            "votos2t": 423109,
+            "pct2t": 45.86,
+            "deltaVotos": 19100,
+            "deltaPctVotos": 4.73,
+            "aumentou": true
+          }
+        ],
+        "vencedor1t": "Flávio Bolsonaro",
+        "vencedor2t": "Flávio Bolsonaro",
+        "totalValidos1t": 930447,
+        "totalValidos2t": 922531
+      },
+      {
+        "uf": "ZZ",
+        "nome": "Exterior",
+        "secoes": 1351,
+        "comparecimento1t": 341766,
+        "candidatos": [
+          {
+            "numero": "22",
+            "nome": "Flávio Bolsonaro",
+            "partido": "PL",
+            "cor": "#0083ca",
+            "votos1t": 143900,
+            "pct1t": 43.49,
+            "votos2t": 153459,
+            "pct2t": 46.93,
+            "deltaVotos": 9559,
+            "deltaPctVotos": 6.64,
+            "aumentou": true
+          },
+          {
+            "numero": "13",
+            "nome": "Luiz Inácio Lula da Silva",
+            "partido": "PT",
+            "cor": "#ee2d35",
+            "votos1t": 157387,
+            "pct1t": 47.57,
+            "votos2t": 173534,
+            "pct2t": 53.07,
+            "deltaVotos": 16147,
+            "deltaPctVotos": 10.26,
+            "aumentou": true
+          }
+        ],
+        "vencedor1t": "Lula",
+        "vencedor2t": "Lula",
+        "totalValidos1t": 330882,
+        "totalValidos2t": 326993
+      }
+    ],
+    "detalhes1t": {
+      "candidatos": [
+        {
+          "numero": "22",
+          "nome": "Flávio Bolsonaro",
+          "partido": "PL",
+          "votos": 56104503,
+          "pct": 47.03,
+          "cor": "#0083ca"
+        },
+        {
+          "numero": "13",
+          "nome": "Luiz Inácio Lula da Silva",
+          "partido": "PT",
+          "votos": 53879538,
+          "pct": 45.16,
+          "cor": "#ee2d35"
+        },
+        {
+          "numero": "70",
+          "nome": "Marçal",
+          "partido": "PRTB",
+          "votos": 3448569,
+          "pct": 2.89,
+          "cor": "#f59e0b"
+        },
+        {
+          "numero": "14",
+          "nome": "Ciro Gomes",
+          "partido": "PDT",
+          "votos": 2675887,
+          "pct": 2.24,
+          "cor": "#ff6f00"
+        },
+        {
+          "numero": "55",
+          "nome": "Ronaldo Caiado",
+          "partido": "PSD",
+          "votos": 2605148,
+          "pct": 2.18,
+          "cor": "#10b981"
+        },
+        {
+          "numero": "30",
+          "nome": "Romeu Zema",
+          "partido": "NOVO",
+          "votos": 326488,
+          "pct": 0.27,
+          "cor": "#ea580c"
+        },
+        {
+          "numero": "80",
+          "nome": "Marina Silva",
+          "partido": "REDE",
+          "votos": 122911,
+          "pct": 0.1,
+          "cor": "#059669"
+        },
+        {
+          "numero": "outros",
+          "nome": "Demais Candidatos",
+          "partido": "Diversos",
+          "votos": 137844,
+          "pct": 0.12,
+          "cor": "#78716c"
+        }
+      ],
+      "totalValidos": 119300788,
+      "comparecimento": 125275835,
+      "abstencao": 33469667,
+      "brancos": 2300798,
+      "nulos": 3674249
+    },
+    "detalhes2t": {
+      "candidatos": [
+        {
+          "numero": "22",
+          "nome": "Flávio Bolsonaro",
+          "partido": "PL",
+          "votos": 59312480,
+          "pct": 50.88,
+          "eleito": true,
+          "cor": "#0083ca"
+        },
+        {
+          "numero": "13",
+          "nome": "Luiz Inácio Lula da Silva",
+          "partido": "PT",
+          "votos": 57261890,
+          "pct": 49.12,
+          "eleito": false,
+          "cor": "#ee2d35"
+        }
+      ],
+      "totalValidos": 116574370,
+      "comparecimento": 124110500,
+      "brancos": 3120400,
+      "nulos": 4415730
+    }
+  },
+  "governoDf": {
+    "geral": [
+      {
+        "numero": "11",
+        "nome": "Celina Leão",
+        "partido": "PP",
+        "cor": "#0083ca",
+        "votos1t": 825530,
+        "pct1t": 49.93,
+        "votos2t": 928450,
+        "pct2t": 53.64,
+        "deltaVotos": 102920,
+        "deltaPctVotos": 12.47,
+        "deltaPctValidos": 3.71,
+        "aumentou": true,
+        "eleito": true
+      },
+      {
+        "numero": "13",
+        "nome": "Leandro Grass",
+        "partido": "PT",
+        "cor": "#ee2d35",
+        "votos1t": 569930,
+        "pct1t": 34.47,
+        "votos2t": 802370,
+        "pct2t": 46.36,
+        "deltaVotos": 232440,
+        "deltaPctVotos": 40.78,
+        "deltaPctValidos": 11.89,
+        "aumentou": true,
+        "eleito": false
+      }
+    ],
+    "detalhes1t": {
+      "comparecimento": 1817921,
+      "abstencao": 426067
+    },
+    "detalhes2t": {
+      "candidatos": [
+        {
+          "numero": "11",
+          "nome": "Celina Leão",
+          "partido": "PP",
+          "votos": 928450,
+          "pct": 53.64,
+          "eleita": true,
+          "cor": "#0083ca"
+        },
+        {
+          "numero": "13",
+          "nome": "Leandro Grass",
+          "partido": "PT",
+          "votos": 802370,
+          "pct": 46.36,
+          "eleita": false,
+          "cor": "#ee2d35"
+        }
+      ],
+      "totalValidos": 1730820,
+      "comparecimento": 1845100,
+      "brancos": 48920,
+      "nulos": 65360,
+      "situacao": "Eleição Definida (2º Turno)"
+    },
+    "zonas": [
+      {
+        "zona": 1,
+        "nome": "Asa Sul / Plano Piloto",
+        "secoes": 281,
+        "eleitorado": 76197,
+        "ras": [
+          "RA I",
+          "RA XVI"
+        ],
+        "candidatos": [
+          {
+            "numero": "11",
+            "nome": "Celina Leão",
+            "partido": "PP",
+            "cor": "#0083ca",
+            "votos1t": 22626,
+            "pct1t": 39.19,
+            "votos2t": 26491,
+            "pct2t": 46.7,
+            "deltaVotos": 3865,
+            "deltaPctVotos": 17.08,
+            "aumentou": true
+          },
+          {
+            "numero": "13",
+            "nome": "Leandro Grass",
+            "partido": "PT",
+            "cor": "#ee2d35",
+            "votos1t": 24654,
+            "pct1t": 42.7,
+            "votos2t": 30234,
+            "pct2t": 53.3,
+            "deltaVotos": 5580,
+            "deltaPctVotos": 22.63,
+            "aumentou": true
+          }
+        ],
+        "vencedor1t": "Leandro Grass",
+        "vencedor2t": "Leandro Grass",
+        "totalValidos1t": 57737,
+        "totalValidos2t": 56725
+      },
+      {
+        "zona": 2,
+        "nome": "Paranoá / Itapoã",
+        "secoes": 337,
+        "eleitorado": 119276,
+        "ras": [
+          "RA VII",
+          "RA XXVIII"
+        ],
+        "candidatos": [
+          {
+            "numero": "11",
+            "nome": "Celina Leão",
+            "partido": "PP",
+            "cor": "#0083ca",
+            "votos1t": 39501,
+            "pct1t": 46.12,
+            "votos2t": 47944,
+            "pct2t": 57.06,
+            "deltaVotos": 8443,
+            "deltaPctVotos": 21.37,
+            "aumentou": true
+          },
+          {
+            "numero": "13",
+            "nome": "Leandro Grass",
+            "partido": "PT",
+            "cor": "#ee2d35",
+            "votos1t": 30674,
+            "pct1t": 35.81,
+            "votos2t": 36084,
+            "pct2t": 42.94,
+            "deltaVotos": 5410,
+            "deltaPctVotos": 17.64,
+            "aumentou": true
+          }
+        ],
+        "vencedor1t": "Celina Leão",
+        "vencedor2t": "Celina Leão",
+        "totalValidos1t": 85649,
+        "totalValidos2t": 84028
+      },
+      {
+        "zona": 3,
+        "nome": "Taguatinga Norte",
+        "secoes": 235,
+        "eleitorado": 69677,
+        "ras": [
+          "RA III"
+        ],
+        "candidatos": [
+          {
+            "numero": "11",
+            "nome": "Celina Leão",
+            "partido": "PP",
+            "cor": "#0083ca",
+            "votos1t": 27366,
+            "pct1t": 52.57,
+            "votos2t": 31638,
+            "pct2t": 61.75,
+            "deltaVotos": 4272,
+            "deltaPctVotos": 15.61,
+            "aumentou": true
+          },
+          {
+            "numero": "13",
+            "nome": "Leandro Grass",
+            "partido": "PT",
+            "cor": "#ee2d35",
+            "votos1t": 16864,
+            "pct1t": 32.39,
+            "votos2t": 19601,
+            "pct2t": 38.25,
+            "deltaVotos": 2737,
+            "deltaPctVotos": 16.23,
+            "aumentou": true
+          }
+        ],
+        "vencedor1t": "Celina Leão",
+        "vencedor2t": "Celina Leão",
+        "totalValidos1t": 52059,
+        "totalValidos2t": 51239
+      },
+      {
+        "zona": 4,
+        "nome": "Santa Maria",
+        "secoes": 294,
+        "eleitorado": 101524,
+        "ras": [
+          "RA XIII"
+        ],
+        "candidatos": [
+          {
+            "numero": "11",
+            "nome": "Celina Leão",
+            "partido": "PP",
+            "cor": "#0083ca",
+            "votos1t": 36860,
+            "pct1t": 51.78,
+            "votos2t": 43125,
+            "pct2t": 61.62,
+            "deltaVotos": 6265,
+            "deltaPctVotos": 17,
+            "aumentou": true
+          },
+          {
+            "numero": "13",
+            "nome": "Leandro Grass",
+            "partido": "PT",
+            "cor": "#ee2d35",
+            "votos1t": 22850,
+            "pct1t": 32.1,
+            "votos2t": 26864,
+            "pct2t": 38.38,
+            "deltaVotos": 4014,
+            "deltaPctVotos": 17.57,
+            "aumentou": true
+          }
+        ],
+        "vencedor1t": "Celina Leão",
+        "vencedor2t": "Celina Leão",
+        "totalValidos1t": 71192,
+        "totalValidos2t": 69989
+      },
+      {
+        "zona": 5,
+        "nome": "Sobradinho I e II / Fercal",
+        "secoes": 419,
+        "eleitorado": 132863,
+        "ras": [
+          "RA V",
+          "RA XXVI",
+          "RA XXXI"
+        ],
+        "candidatos": [
+          {
+            "numero": "11",
+            "nome": "Celina Leão",
+            "partido": "PP",
+            "cor": "#0083ca",
+            "votos1t": 49742,
+            "pct1t": 50.54,
+            "votos2t": 57548,
+            "pct2t": 59.37,
+            "deltaVotos": 7806,
+            "deltaPctVotos": 15.69,
+            "aumentou": true
+          },
+          {
+            "numero": "13",
+            "nome": "Leandro Grass",
+            "partido": "PT",
+            "cor": "#ee2d35",
+            "votos1t": 34380,
+            "pct1t": 34.93,
+            "votos2t": 39382,
+            "pct2t": 40.63,
+            "deltaVotos": 5002,
+            "deltaPctVotos": 14.55,
+            "aumentou": true
+          }
+        ],
+        "vencedor1t": "Celina Leão",
+        "vencedor2t": "Celina Leão",
+        "totalValidos1t": 98429,
+        "totalValidos2t": 96930
+      },
+      {
+        "zona": 6,
+        "nome": "Planaltina / Arapoanga",
+        "secoes": 425,
+        "eleitorado": 136925,
+        "ras": [
+          "RA VI",
+          "RA XXXIV"
+        ],
+        "candidatos": [
+          {
+            "numero": "11",
+            "nome": "Celina Leão",
+            "partido": "PP",
+            "cor": "#0083ca",
+            "votos1t": 50485,
+            "pct1t": 51.43,
+            "votos2t": 58090,
+            "pct2t": 60.07,
+            "deltaVotos": 7605,
+            "deltaPctVotos": 15.06,
+            "aumentou": true
+          },
+          {
+            "numero": "13",
+            "nome": "Leandro Grass",
+            "partido": "PT",
+            "cor": "#ee2d35",
+            "votos1t": 33739,
+            "pct1t": 34.37,
+            "votos2t": 38612,
+            "pct2t": 39.93,
+            "deltaVotos": 4873,
+            "deltaPctVotos": 14.44,
+            "aumentou": true
+          }
+        ],
+        "vencedor1t": "Celina Leão",
+        "vencedor2t": "Celina Leão",
+        "totalValidos1t": 98162,
+        "totalValidos2t": 96702
+      },
+      {
+        "zona": 8,
+        "nome": "Ceilândia Norte",
+        "secoes": 454,
+        "eleitorado": 136259,
+        "ras": [
+          "RA IX"
+        ],
+        "candidatos": [
+          {
+            "numero": "11",
+            "nome": "Celina Leão",
+            "partido": "PP",
+            "cor": "#0083ca",
+            "votos1t": 51711,
+            "pct1t": 52.69,
+            "votos2t": 59277,
+            "pct2t": 61.31,
+            "deltaVotos": 7566,
+            "deltaPctVotos": 14.63,
+            "aumentou": true
+          },
+          {
+            "numero": "13",
+            "nome": "Leandro Grass",
+            "partido": "PT",
+            "cor": "#ee2d35",
+            "votos1t": 32565,
+            "pct1t": 33.18,
+            "votos2t": 37413,
+            "pct2t": 38.69,
+            "deltaVotos": 4848,
+            "deltaPctVotos": 14.89,
+            "aumentou": true
+          }
+        ],
+        "vencedor1t": "Celina Leão",
+        "vencedor2t": "Celina Leão",
+        "totalValidos1t": 98143,
+        "totalValidos2t": 96690
+      },
+      {
+        "zona": 9,
+        "nome": "Guará I e II / Estrutural / SIA",
+        "secoes": 443,
+        "eleitorado": 134059,
+        "ras": [
+          "RA X",
+          "RA XXV",
+          "RA XXIX"
+        ],
+        "candidatos": [
+          {
+            "numero": "11",
+            "nome": "Celina Leão",
+            "partido": "PP",
+            "cor": "#0083ca",
+            "votos1t": 47927,
+            "pct1t": 47.94,
+            "votos2t": 56510,
+            "pct2t": 57.48,
+            "deltaVotos": 8583,
+            "deltaPctVotos": 17.91,
+            "aumentou": true
+          },
+          {
+            "numero": "13",
+            "nome": "Leandro Grass",
+            "partido": "PT",
+            "cor": "#ee2d35",
+            "votos1t": 36309,
+            "pct1t": 36.32,
+            "votos2t": 41809,
+            "pct2t": 42.52,
+            "deltaVotos": 5500,
+            "deltaPctVotos": 15.15,
+            "aumentou": true
+          }
+        ],
+        "vencedor1t": "Celina Leão",
+        "vencedor2t": "Celina Leão",
+        "totalValidos1t": 99968,
+        "totalValidos2t": 98319
+      },
+      {
+        "zona": 10,
+        "nome": "Núcleo Bandeirante / Candangolândia / Park Way / Riacho Fundo",
+        "secoes": 349,
+        "eleitorado": 123034,
+        "ras": [
+          "RA VIII",
+          "RA XIX",
+          "RA XXIV",
+          "RA XVII"
+        ],
+        "candidatos": [
+          {
+            "numero": "11",
+            "nome": "Celina Leão",
+            "partido": "PP",
+            "cor": "#0083ca",
+            "votos1t": 48301,
+            "pct1t": 52.87,
+            "votos2t": 56049,
+            "pct2t": 62.37,
+            "deltaVotos": 7748,
+            "deltaPctVotos": 16.04,
+            "aumentou": true
+          },
+          {
+            "numero": "13",
+            "nome": "Leandro Grass",
+            "partido": "PT",
+            "cor": "#ee2d35",
+            "votos1t": 28855,
+            "pct1t": 31.58,
+            "votos2t": 33820,
+            "pct2t": 37.63,
+            "deltaVotos": 4965,
+            "deltaPctVotos": 17.21,
+            "aumentou": true
+          }
+        ],
+        "vencedor1t": "Celina Leão",
+        "vencedor2t": "Celina Leão",
+        "totalValidos1t": 91357,
+        "totalValidos2t": 89869
+      },
+      {
+        "zona": 11,
+        "nome": "Cruzeiro / Sudoeste / Octogonal",
+        "secoes": 249,
+        "eleitorado": 75563,
+        "ras": [
+          "RA XI",
+          "RA XXII"
+        ],
+        "candidatos": [
+          {
+            "numero": "11",
+            "nome": "Celina Leão",
+            "partido": "PP",
+            "cor": "#0083ca",
+            "votos1t": 25764,
+            "pct1t": 43.86,
+            "votos2t": 31306,
+            "pct2t": 54.28,
+            "deltaVotos": 5542,
+            "deltaPctVotos": 21.51,
+            "aumentou": true
+          },
+          {
+            "numero": "13",
+            "nome": "Leandro Grass",
+            "partido": "PT",
+            "cor": "#ee2d35",
+            "votos1t": 22818,
+            "pct1t": 38.85,
+            "votos2t": 26369,
+            "pct2t": 45.72,
+            "deltaVotos": 3551,
+            "deltaPctVotos": 15.56,
+            "aumentou": true
+          }
+        ],
+        "vencedor1t": "Celina Leão",
+        "vencedor2t": "Celina Leão",
+        "totalValidos1t": 58739,
+        "totalValidos2t": 57675
+      },
+      {
+        "zona": 13,
+        "nome": "Samambaia Norte / Água Quente",
+        "secoes": 417,
+        "eleitorado": 140843,
+        "ras": [
+          "RA XII",
+          "RA XXXV"
+        ],
+        "candidatos": [
+          {
+            "numero": "11",
+            "nome": "Celina Leão",
+            "partido": "PP",
+            "cor": "#0083ca",
+            "votos1t": 56458,
+            "pct1t": 55.4,
+            "votos2t": 64932,
+            "pct2t": 64.75,
+            "deltaVotos": 8474,
+            "deltaPctVotos": 15.01,
+            "aumentou": true
+          },
+          {
+            "numero": "13",
+            "nome": "Leandro Grass",
+            "partido": "PT",
+            "cor": "#ee2d35",
+            "votos1t": 29912,
+            "pct1t": 29.35,
+            "votos2t": 35342,
+            "pct2t": 35.25,
+            "deltaVotos": 5430,
+            "deltaPctVotos": 18.15,
+            "aumentou": true
+          }
+        ],
+        "vencedor1t": "Celina Leão",
+        "vencedor2t": "Celina Leão",
+        "totalValidos1t": 101902,
+        "totalValidos2t": 100274
+      },
+      {
+        "zona": 14,
+        "nome": "Asa Norte / Lago Norte / Varjão",
+        "secoes": 334,
+        "eleitorado": 110413,
+        "ras": [
+          "RA I",
+          "RA XVIII",
+          "RA XXIII"
+        ],
+        "candidatos": [
+          {
+            "numero": "11",
+            "nome": "Celina Leão",
+            "partido": "PP",
+            "cor": "#0083ca",
+            "votos1t": 31376,
+            "pct1t": 36.74,
+            "votos2t": 36602,
+            "pct2t": 43.56,
+            "deltaVotos": 5226,
+            "deltaPctVotos": 16.66,
+            "aumentou": true
+          },
+          {
+            "numero": "13",
+            "nome": "Leandro Grass",
+            "partido": "PT",
+            "cor": "#ee2d35",
+            "votos1t": 39885,
+            "pct1t": 46.7,
+            "votos2t": 47430,
+            "pct2t": 56.44,
+            "deltaVotos": 7545,
+            "deltaPctVotos": 18.92,
+            "aumentou": true
+          }
+        ],
+        "vencedor1t": "Leandro Grass",
+        "vencedor2t": "Leandro Grass",
+        "totalValidos1t": 85401,
+        "totalValidos2t": 84032
+      },
+      {
+        "zona": 15,
+        "nome": "Águas Claras / Taguatinga Sul / Vicente Pires / Arniqueira",
+        "secoes": 514,
+        "eleitorado": 168248,
+        "ras": [
+          "RA XX",
+          "RA III",
+          "RA XXX",
+          "RA XXXIII"
+        ],
+        "candidatos": [
+          {
+            "numero": "11",
+            "nome": "Celina Leão",
+            "partido": "PP",
+            "cor": "#0083ca",
+            "votos1t": 62390,
+            "pct1t": 48.24,
+            "votos2t": 73824,
+            "pct2t": 58.06,
+            "deltaVotos": 11434,
+            "deltaPctVotos": 18.33,
+            "aumentou": true
+          },
+          {
+            "numero": "13",
+            "nome": "Leandro Grass",
+            "partido": "PT",
+            "cor": "#ee2d35",
+            "votos1t": 45991,
+            "pct1t": 35.56,
+            "votos2t": 53318,
+            "pct2t": 41.94,
+            "deltaVotos": 7327,
+            "deltaPctVotos": 15.93,
+            "aumentou": true
+          }
+        ],
+        "vencedor1t": "Celina Leão",
+        "vencedor2t": "Celina Leão",
+        "totalValidos1t": 129338,
+        "totalValidos2t": 127142
+      },
+      {
+        "zona": 16,
+        "nome": "Ceilândia Centro / P Sul / Sol Nascente",
+        "secoes": 479,
+        "eleitorado": 153471,
+        "ras": [
+          "RA IX",
+          "RA XXXII"
+        ],
+        "candidatos": [
+          {
+            "numero": "11",
+            "nome": "Celina Leão",
+            "partido": "PP",
+            "cor": "#0083ca",
+            "votos1t": 60518,
+            "pct1t": 55.15,
+            "votos2t": 69195,
+            "pct2t": 64.03,
+            "deltaVotos": 8677,
+            "deltaPctVotos": 14.34,
+            "aumentou": true
+          },
+          {
+            "numero": "13",
+            "nome": "Leandro Grass",
+            "partido": "PT",
+            "cor": "#ee2d35",
+            "votos1t": 33304,
+            "pct1t": 30.35,
+            "votos2t": 38864,
+            "pct2t": 35.97,
+            "deltaVotos": 5560,
+            "deltaPctVotos": 16.69,
+            "aumentou": true
+          }
+        ],
+        "vencedor1t": "Celina Leão",
+        "vencedor2t": "Celina Leão",
+        "totalValidos1t": 109725,
+        "totalValidos2t": 108059
+      },
+      {
+        "zona": 17,
+        "nome": "Gama",
+        "secoes": 396,
+        "eleitorado": 128113,
+        "ras": [
+          "RA II"
+        ],
+        "candidatos": [
+          {
+            "numero": "11",
+            "nome": "Celina Leão",
+            "partido": "PP",
+            "cor": "#0083ca",
+            "votos1t": 46363,
+            "pct1t": 49.74,
+            "votos2t": 54195,
+            "pct2t": 59.09,
+            "deltaVotos": 7832,
+            "deltaPctVotos": 16.89,
+            "aumentou": true
+          },
+          {
+            "numero": "13",
+            "nome": "Leandro Grass",
+            "partido": "PT",
+            "cor": "#ee2d35",
+            "votos1t": 32499,
+            "pct1t": 34.86,
+            "votos2t": 37517,
+            "pct2t": 40.91,
+            "deltaVotos": 5018,
+            "deltaPctVotos": 15.44,
+            "aumentou": true
+          }
+        ],
+        "vencedor1t": "Celina Leão",
+        "vencedor2t": "Celina Leão",
+        "totalValidos1t": 93216,
+        "totalValidos2t": 91712
+      },
+      {
+        "zona": 18,
+        "nome": "São Sebastião / Jardim Botânico",
+        "secoes": 431,
+        "eleitorado": 134325,
+        "ras": [
+          "RA XIV",
+          "RA XXVII"
+        ],
+        "candidatos": [
+          {
+            "numero": "11",
+            "nome": "Celina Leão",
+            "partido": "PP",
+            "cor": "#0083ca",
+            "votos1t": 48818,
+            "pct1t": 48.95,
+            "votos2t": 57316,
+            "pct2t": 58.43,
+            "deltaVotos": 8498,
+            "deltaPctVotos": 17.41,
+            "aumentou": true
+          },
+          {
+            "numero": "13",
+            "nome": "Leandro Grass",
+            "partido": "PT",
+            "cor": "#ee2d35",
+            "votos1t": 35332,
+            "pct1t": 35.43,
+            "votos2t": 40777,
+            "pct2t": 41.57,
+            "deltaVotos": 5445,
+            "deltaPctVotos": 15.41,
+            "aumentou": true
+          }
+        ],
+        "vencedor1t": "Celina Leão",
+        "vencedor2t": "Celina Leão",
+        "totalValidos1t": 99725,
+        "totalValidos2t": 98093
+      },
+      {
+        "zona": 19,
+        "nome": "Taguatinga Centro / Brazlândia",
+        "secoes": 347,
+        "eleitorado": 110085,
+        "ras": [
+          "RA III",
+          "RA IV"
+        ],
+        "candidatos": [
+          {
+            "numero": "11",
+            "nome": "Celina Leão",
+            "partido": "PP",
+            "cor": "#0083ca",
+            "votos1t": 44637,
+            "pct1t": 53.41,
+            "votos2t": 51653,
+            "pct2t": 62.82,
+            "deltaVotos": 7016,
+            "deltaPctVotos": 15.72,
+            "aumentou": true
+          },
+          {
+            "numero": "13",
+            "nome": "Leandro Grass",
+            "partido": "PT",
+            "cor": "#ee2d35",
+            "votos1t": 26076,
+            "pct1t": 31.2,
+            "votos2t": 30572,
+            "pct2t": 37.18,
+            "deltaVotos": 4496,
+            "deltaPctVotos": 17.24,
+            "aumentou": true
+          }
+        ],
+        "vencedor1t": "Celina Leão",
+        "vencedor2t": "Celina Leão",
+        "totalValidos1t": 83573,
+        "totalValidos2t": 82225
+      },
+      {
+        "zona": 20,
+        "nome": "Ceilândia Sul",
+        "secoes": 231,
+        "eleitorado": 79007,
+        "ras": [
+          "RA IX"
+        ],
+        "candidatos": [
+          {
+            "numero": "11",
+            "nome": "Celina Leão",
+            "partido": "PP",
+            "cor": "#0083ca",
+            "votos1t": 30525,
+            "pct1t": 52.71,
+            "votos2t": 35122,
+            "pct2t": 61.59,
+            "deltaVotos": 4597,
+            "deltaPctVotos": 15.06,
+            "aumentou": true
+          },
+          {
+            "numero": "13",
+            "nome": "Leandro Grass",
+            "partido": "PT",
+            "cor": "#ee2d35",
+            "votos1t": 18957,
+            "pct1t": 32.74,
+            "votos2t": 21903,
+            "pct2t": 38.41,
+            "deltaVotos": 2946,
+            "deltaPctVotos": 15.54,
+            "aumentou": true
+          }
+        ],
+        "vencedor1t": "Celina Leão",
+        "vencedor2t": "Celina Leão",
+        "totalValidos1t": 57908,
+        "totalValidos2t": 57025
+      },
+      {
+        "zona": 21,
+        "nome": "Recanto das Emas / Riacho Fundo II",
+        "secoes": 334,
+        "eleitorado": 114106,
+        "ras": [
+          "RA XV",
+          "RA XXI"
+        ],
+        "candidatos": [
+          {
+            "numero": "11",
+            "nome": "Celina Leão",
+            "partido": "PP",
+            "cor": "#0083ca",
+            "votos1t": 44162,
+            "pct1t": 54.51,
+            "votos2t": 51029,
+            "pct2t": 64.03,
+            "deltaVotos": 6867,
+            "deltaPctVotos": 15.55,
+            "aumentou": true
+          },
+          {
+            "numero": "13",
+            "nome": "Leandro Grass",
+            "partido": "PT",
+            "cor": "#ee2d35",
+            "votos1t": 24266,
+            "pct1t": 29.95,
+            "votos2t": 28666,
+            "pct2t": 35.97,
+            "deltaVotos": 4400,
+            "deltaPctVotos": 18.13,
+            "aumentou": true
+          }
+        ],
+        "vencedor1t": "Celina Leão",
+        "vencedor2t": "Celina Leão",
+        "totalValidos1t": 81014,
+        "totalValidos2t": 79695
+      }
+    ],
+    "regioesAdministrativas": [
+      {
+        "codigo": "RA IX",
+        "nome": "Ceilândia",
+        "secoes": 1108,
+        "eleitorado": 369402,
+        "zonas": "Zona 8, Zona 16, Zona 20",
+        "candidatos": [
+          {
+            "numero": "11",
+            "nome": "Celina Leão",
+            "partido": "PP",
+            "cor": "#0083ca",
+            "votos1t": 135683,
+            "pct1t": 53.64,
+            "votos2t": 154869,
+            "pct2t": 62.15,
+            "deltaVotos": 19186,
+            "deltaPctVotos": 14.14,
+            "aumentou": true
+          },
+          {
+            "numero": "13",
+            "nome": "Leandro Grass",
+            "partido": "PT",
+            "cor": "#ee2d35",
+            "votos1t": 80935,
+            "pct1t": 32,
+            "votos2t": 94307,
+            "pct2t": 37.85,
+            "deltaVotos": 13372,
+            "deltaPctVotos": 16.52,
+            "aumentou": true
+          }
+        ],
+        "vencedor1t": "Celina Leão",
+        "vencedor2t": "Celina Leão",
+        "totalValidos1t": 252956,
+        "totalValidos2t": 249176
+      },
+      {
+        "codigo": "RA III",
+        "nome": "Taguatinga",
+        "secoes": 801,
+        "eleitorado": 215440,
+        "zonas": "Zona 3, Zona 15, Zona 19",
+        "candidatos": [
+          {
+            "numero": "11",
+            "nome": "Celina Leão",
+            "partido": "PP",
+            "cor": "#0083ca",
+            "votos1t": 98258,
+            "pct1t": 51.3,
+            "votos2t": 114026,
+            "pct2t": 60.51,
+            "deltaVotos": 15768,
+            "deltaPctVotos": 16.05,
+            "aumentou": true
+          },
+          {
+            "numero": "13",
+            "nome": "Leandro Grass",
+            "partido": "PT",
+            "cor": "#ee2d35",
+            "votos1t": 63429,
+            "pct1t": 33.11,
+            "votos2t": 74419,
+            "pct2t": 39.49,
+            "deltaVotos": 10990,
+            "deltaPctVotos": 17.33,
+            "aumentou": true
+          }
+        ],
+        "vencedor1t": "Celina Leão",
+        "vencedor2t": "Celina Leão",
+        "totalValidos1t": 191551,
+        "totalValidos2t": 188445
+      },
+      {
+        "codigo": "RA I",
+        "nome": "Plano Piloto",
+        "secoes": 533,
+        "eleitorado": 191995,
+        "zonas": "Zona 1, Zona 14",
+        "candidatos": [
+          {
+            "numero": "11",
+            "nome": "Celina Leão",
+            "partido": "PP",
+            "cor": "#0083ca",
+            "votos1t": 46731,
+            "pct1t": 37.75,
+            "votos2t": 54226,
+            "pct2t": 44.54,
+            "deltaVotos": 7495,
+            "deltaPctVotos": 16.04,
+            "aumentou": true
+          },
+          {
+            "numero": "13",
+            "nome": "Leandro Grass",
+            "partido": "PT",
+            "cor": "#ee2d35",
+            "votos1t": 55759,
+            "pct1t": 45.05,
+            "votos2t": 67512,
+            "pct2t": 55.46,
+            "deltaVotos": 11753,
+            "deltaPctVotos": 21.08,
+            "aumentou": true
+          }
+        ],
+        "vencedor1t": "Leandro Grass",
+        "vencedor2t": "Leandro Grass",
+        "totalValidos1t": 123782,
+        "totalValidos2t": 121738
+      },
+      {
+        "codigo": "RA II",
+        "nome": "Gama",
+        "secoes": 396,
+        "eleitorado": 128410,
+        "zonas": "Zona 17",
+        "candidatos": [
+          {
+            "numero": "11",
+            "nome": "Celina Leão",
+            "partido": "PP",
+            "cor": "#0083ca",
+            "votos1t": 46363,
+            "pct1t": 49.74,
+            "votos2t": 53942,
+            "pct2t": 58.81,
+            "deltaVotos": 7579,
+            "deltaPctVotos": 16.35,
+            "aumentou": true
+          },
+          {
+            "numero": "13",
+            "nome": "Leandro Grass",
+            "partido": "PT",
+            "cor": "#ee2d35",
+            "votos1t": 32499,
+            "pct1t": 34.86,
+            "votos2t": 37781,
+            "pct2t": 41.19,
+            "deltaVotos": 5282,
+            "deltaPctVotos": 16.25,
+            "aumentou": true
+          }
+        ],
+        "vencedor1t": "Celina Leão",
+        "vencedor2t": "Celina Leão",
+        "totalValidos1t": 93216,
+        "totalValidos2t": 91723
+      },
+      {
+        "codigo": "RA XII",
+        "nome": "Samambaia",
+        "secoes": 374,
+        "eleitorado": 141236,
+        "zonas": "Zona 13",
+        "candidatos": [
+          {
+            "numero": "11",
+            "nome": "Celina Leão",
+            "partido": "PP",
+            "cor": "#0083ca",
+            "votos1t": 50630,
+            "pct1t": 55.4,
+            "votos2t": 57985,
+            "pct2t": 64.47,
+            "deltaVotos": 7355,
+            "deltaPctVotos": 14.53,
+            "aumentou": true
+          },
+          {
+            "numero": "13",
+            "nome": "Leandro Grass",
+            "partido": "PT",
+            "cor": "#ee2d35",
+            "votos1t": 26824,
+            "pct1t": 29.35,
+            "votos2t": 31950,
+            "pct2t": 35.53,
+            "deltaVotos": 5126,
+            "deltaPctVotos": 19.11,
+            "aumentou": true
+          }
+        ],
+        "vencedor1t": "Celina Leão",
+        "vencedor2t": "Celina Leão",
+        "totalValidos1t": 91383,
+        "totalValidos2t": 89935
+      },
+      {
+        "codigo": "RA X",
+        "nome": "Guará",
+        "secoes": 372,
+        "eleitorado": 122600,
+        "zonas": "Zona 9",
+        "candidatos": [
+          {
+            "numero": "11",
+            "nome": "Celina Leão",
+            "partido": "PP",
+            "cor": "#0083ca",
+            "votos1t": 40238,
+            "pct1t": 47.94,
+            "votos2t": 47212,
+            "pct2t": 57.19,
+            "deltaVotos": 6974,
+            "deltaPctVotos": 17.33,
+            "aumentou": true
+          },
+          {
+            "numero": "13",
+            "nome": "Leandro Grass",
+            "partido": "PT",
+            "cor": "#ee2d35",
+            "votos1t": 30484,
+            "pct1t": 36.32,
+            "votos2t": 35345,
+            "pct2t": 42.81,
+            "deltaVotos": 4861,
+            "deltaPctVotos": 15.95,
+            "aumentou": true
+          }
+        ],
+        "vencedor1t": "Celina Leão",
+        "vencedor2t": "Celina Leão",
+        "totalValidos1t": 83930,
+        "totalValidos2t": 82557
+      },
+      {
+        "codigo": "RA VI",
+        "nome": "Planaltina",
+        "secoes": 345,
+        "eleitorado": 112400,
+        "zonas": "Zona 6",
+        "candidatos": [
+          {
+            "numero": "11",
+            "nome": "Celina Leão",
+            "partido": "PP",
+            "cor": "#0083ca",
+            "votos1t": 40982,
+            "pct1t": 51.43,
+            "votos2t": 46956,
+            "pct2t": 59.81,
+            "deltaVotos": 5974,
+            "deltaPctVotos": 14.58,
+            "aumentou": true
+          },
+          {
+            "numero": "13",
+            "nome": "Leandro Grass",
+            "partido": "PT",
+            "cor": "#ee2d35",
+            "votos1t": 27388,
+            "pct1t": 34.37,
+            "votos2t": 31552,
+            "pct2t": 40.19,
+            "deltaVotos": 4164,
+            "deltaPctVotos": 15.2,
+            "aumentou": true
+          }
+        ],
+        "vencedor1t": "Celina Leão",
+        "vencedor2t": "Celina Leão",
+        "totalValidos1t": 79684,
+        "totalValidos2t": 78508
+      },
+      {
+        "codigo": "RA XIII",
+        "nome": "Santa Maria",
+        "secoes": 294,
+        "eleitorado": 101858,
+        "zonas": "Zona 4",
+        "candidatos": [
+          {
+            "numero": "11",
+            "nome": "Celina Leão",
+            "partido": "PP",
+            "cor": "#0083ca",
+            "votos1t": 36860,
+            "pct1t": 51.78,
+            "votos2t": 42922,
+            "pct2t": 61.32,
+            "deltaVotos": 6062,
+            "deltaPctVotos": 16.45,
+            "aumentou": true
+          },
+          {
+            "numero": "13",
+            "nome": "Leandro Grass",
+            "partido": "PT",
+            "cor": "#ee2d35",
+            "votos1t": 22850,
+            "pct1t": 32.1,
+            "votos2t": 27075,
+            "pct2t": 38.68,
+            "deltaVotos": 4225,
+            "deltaPctVotos": 18.49,
+            "aumentou": true
+          }
+        ],
+        "vencedor1t": "Celina Leão",
+        "vencedor2t": "Celina Leão",
+        "totalValidos1t": 71192,
+        "totalValidos2t": 69997
+      },
+      {
+        "codigo": "RA XIV",
+        "nome": "São Sebastião",
+        "secoes": 285,
+        "eleitorado": 89400,
+        "zonas": "Zona 18",
+        "candidatos": [
+          {
+            "numero": "11",
+            "nome": "Celina Leão",
+            "partido": "PP",
+            "cor": "#0083ca",
+            "votos1t": 32281,
+            "pct1t": 48.95,
+            "votos2t": 37719,
+            "pct2t": 58.14,
+            "deltaVotos": 5438,
+            "deltaPctVotos": 16.85,
+            "aumentou": true
+          },
+          {
+            "numero": "13",
+            "nome": "Leandro Grass",
+            "partido": "PT",
+            "cor": "#ee2d35",
+            "votos1t": 23363,
+            "pct1t": 35.43,
+            "votos2t": 27153,
+            "pct2t": 41.86,
+            "deltaVotos": 3790,
+            "deltaPctVotos": 16.22,
+            "aumentou": true
+          }
+        ],
+        "vencedor1t": "Celina Leão",
+        "vencedor2t": "Celina Leão",
+        "totalValidos1t": 65943,
+        "totalValidos2t": 64872
+      },
+      {
+        "codigo": "RA V",
+        "nome": "Sobradinho",
+        "secoes": 236,
+        "eleitorado": 75800,
+        "zonas": "Zona 5",
+        "candidatos": [
+          {
+            "numero": "11",
+            "nome": "Celina Leão",
+            "partido": "PP",
+            "cor": "#0083ca",
+            "votos1t": 28017,
+            "pct1t": 50.54,
+            "votos2t": 32272,
+            "pct2t": 59.11,
+            "deltaVotos": 4255,
+            "deltaPctVotos": 15.19,
+            "aumentou": true
+          },
+          {
+            "numero": "13",
+            "nome": "Leandro Grass",
+            "partido": "PT",
+            "cor": "#ee2d35",
+            "votos1t": 19364,
+            "pct1t": 34.93,
+            "votos2t": 22329,
+            "pct2t": 40.89,
+            "deltaVotos": 2965,
+            "deltaPctVotos": 15.31,
+            "aumentou": true
+          }
+        ],
+        "vencedor1t": "Celina Leão",
+        "vencedor2t": "Celina Leão",
+        "totalValidos1t": 55439,
+        "totalValidos2t": 54601
+      },
+      {
+        "codigo": "RA XV",
+        "nome": "Recanto das Emas",
+        "secoes": 220,
+        "eleitorado": 82500,
+        "zonas": "Zona 21",
+        "candidatos": [
+          {
+            "numero": "11",
+            "nome": "Celina Leão",
+            "partido": "PP",
+            "cor": "#0083ca",
+            "votos1t": 29120,
+            "pct1t": 54.51,
+            "votos2t": 33502,
+            "pct2t": 63.74,
+            "deltaVotos": 4382,
+            "deltaPctVotos": 15.05,
+            "aumentou": true
+          },
+          {
+            "numero": "13",
+            "nome": "Leandro Grass",
+            "partido": "PT",
+            "cor": "#ee2d35",
+            "votos1t": 16001,
+            "pct1t": 29.95,
+            "votos2t": 19055,
+            "pct2t": 36.26,
+            "deltaVotos": 3054,
+            "deltaPctVotos": 19.09,
+            "aumentou": true
+          }
+        ],
+        "vencedor1t": "Celina Leão",
+        "vencedor2t": "Celina Leão",
+        "totalValidos1t": 53421,
+        "totalValidos2t": 52557
+      },
+      {
+        "codigo": "RA VII",
+        "nome": "Paranoá",
+        "secoes": 210,
+        "eleitorado": 68500,
+        "zonas": "Zona 2",
+        "candidatos": [
+          {
+            "numero": "11",
+            "nome": "Celina Leão",
+            "partido": "PP",
+            "cor": "#0083ca",
+            "votos1t": 24609,
+            "pct1t": 46.12,
+            "votos2t": 29699,
+            "pct2t": 56.72,
+            "deltaVotos": 5090,
+            "deltaPctVotos": 20.68,
+            "aumentou": true
+          },
+          {
+            "numero": "13",
+            "nome": "Leandro Grass",
+            "partido": "PT",
+            "cor": "#ee2d35",
+            "votos1t": 19110,
+            "pct1t": 35.81,
+            "votos2t": 22658,
+            "pct2t": 43.28,
+            "deltaVotos": 3548,
+            "deltaPctVotos": 18.57,
+            "aumentou": true
+          }
+        ],
+        "vencedor1t": "Celina Leão",
+        "vencedor2t": "Celina Leão",
+        "totalValidos1t": 53359,
+        "totalValidos2t": 52357
+      },
+      {
+        "codigo": "RA XXII",
+        "nome": "Sudoeste / Octogonal",
+        "secoes": 157,
+        "eleitorado": 46597,
+        "zonas": "Zona 11",
+        "candidatos": [
+          {
+            "numero": "11",
+            "nome": "Celina Leão",
+            "partido": "PP",
+            "cor": "#0083ca",
+            "votos1t": 16245,
+            "pct1t": 43.86,
+            "votos2t": 19626,
+            "pct2t": 53.96,
+            "deltaVotos": 3381,
+            "deltaPctVotos": 20.81,
+            "aumentou": true
+          },
+          {
+            "numero": "13",
+            "nome": "Leandro Grass",
+            "partido": "PT",
+            "cor": "#ee2d35",
+            "votos1t": 14387,
+            "pct1t": 38.85,
+            "votos2t": 16744,
+            "pct2t": 46.04,
+            "deltaVotos": 2357,
+            "deltaPctVotos": 16.38,
+            "aumentou": true
+          }
+        ],
+        "vencedor1t": "Celina Leão",
+        "vencedor2t": "Celina Leão",
+        "totalValidos1t": 37036,
+        "totalValidos2t": 36370
+      },
+      {
+        "codigo": "RA XXVII",
+        "nome": "Jardim Botânico",
+        "secoes": 146,
+        "eleitorado": 45726,
+        "zonas": "Zona 18",
+        "candidatos": [
+          {
+            "numero": "11",
+            "nome": "Celina Leão",
+            "partido": "PP",
+            "cor": "#0083ca",
+            "votos1t": 16537,
+            "pct1t": 48.95,
+            "votos2t": 19323,
+            "pct2t": 58.14,
+            "deltaVotos": 2786,
+            "deltaPctVotos": 16.85,
+            "aumentou": true
+          },
+          {
+            "numero": "13",
+            "nome": "Leandro Grass",
+            "partido": "PT",
+            "cor": "#ee2d35",
+            "votos1t": 11969,
+            "pct1t": 35.43,
+            "votos2t": 13911,
+            "pct2t": 41.86,
+            "deltaVotos": 1942,
+            "deltaPctVotos": 16.23,
+            "aumentou": true
+          }
+        ],
+        "vencedor1t": "Celina Leão",
+        "vencedor2t": "Celina Leão",
+        "totalValidos1t": 33782,
+        "totalValidos2t": 33234
+      },
+      {
+        "codigo": "RA XXVI",
+        "nome": "Sobradinho II",
+        "secoes": 142,
+        "eleitorado": 46200,
+        "zonas": "Zona 5",
+        "candidatos": [
+          {
+            "numero": "11",
+            "nome": "Celina Leão",
+            "partido": "PP",
+            "cor": "#0083ca",
+            "votos1t": 16858,
+            "pct1t": 50.54,
+            "votos2t": 19418,
+            "pct2t": 59.11,
+            "deltaVotos": 2560,
+            "deltaPctVotos": 15.19,
+            "aumentou": true
+          },
+          {
+            "numero": "13",
+            "nome": "Leandro Grass",
+            "partido": "PT",
+            "cor": "#ee2d35",
+            "votos1t": 11651,
+            "pct1t": 34.93,
+            "votos2t": 13435,
+            "pct2t": 40.89,
+            "deltaVotos": 1784,
+            "deltaPctVotos": 15.31,
+            "aumentou": true
+          }
+        ],
+        "vencedor1t": "Celina Leão",
+        "vencedor2t": "Celina Leão",
+        "totalValidos1t": 33358,
+        "totalValidos2t": 32853
+      },
+      {
+        "codigo": "RA XXVIII",
+        "nome": "Itapoã",
+        "secoes": 127,
+        "eleitorado": 43497,
+        "zonas": "Zona 2",
+        "candidatos": [
+          {
+            "numero": "11",
+            "nome": "Celina Leão",
+            "partido": "PP",
+            "cor": "#0083ca",
+            "votos1t": 14892,
+            "pct1t": 46.12,
+            "votos2t": 17972,
+            "pct2t": 56.72,
+            "deltaVotos": 3080,
+            "deltaPctVotos": 20.68,
+            "aumentou": true
+          },
+          {
+            "numero": "13",
+            "nome": "Leandro Grass",
+            "partido": "PT",
+            "cor": "#ee2d35",
+            "votos1t": 11564,
+            "pct1t": 35.81,
+            "votos2t": 13711,
+            "pct2t": 43.28,
+            "deltaVotos": 2147,
+            "deltaPctVotos": 18.57,
+            "aumentou": true
+          }
+        ],
+        "vencedor1t": "Celina Leão",
+        "vencedor2t": "Celina Leão",
+        "totalValidos1t": 32290,
+        "totalValidos2t": 31683
+      },
+      {
+        "codigo": "RA XX",
+        "nome": "Águas Claras",
+        "secoes": 125,
+        "eleitorado": 105600,
+        "zonas": "Zona 15",
+        "candidatos": [
+          {
+            "numero": "11",
+            "nome": "Celina Leão",
+            "partido": "PP",
+            "cor": "#0083ca",
+            "votos1t": 15184,
+            "pct1t": 48.24,
+            "votos2t": 17877,
+            "pct2t": 57.77,
+            "deltaVotos": 2693,
+            "deltaPctVotos": 17.74,
+            "aumentou": true
+          },
+          {
+            "numero": "13",
+            "nome": "Leandro Grass",
+            "partido": "PT",
+            "cor": "#ee2d35",
+            "votos1t": 11193,
+            "pct1t": 35.56,
+            "votos2t": 13070,
+            "pct2t": 42.23,
+            "deltaVotos": 1877,
+            "deltaPctVotos": 16.77,
+            "aumentou": true
+          }
+        ],
+        "vencedor1t": "Celina Leão",
+        "vencedor2t": "Celina Leão",
+        "totalValidos1t": 31477,
+        "totalValidos2t": 30947
+      },
+      {
+        "codigo": "RA XVII",
+        "nome": "Riacho Fundo",
+        "secoes": 118,
+        "eleitorado": 31800,
+        "zonas": "Zona 10",
+        "candidatos": [
+          {
+            "numero": "11",
+            "nome": "Celina Leão",
+            "partido": "PP",
+            "cor": "#0083ca",
+            "votos1t": 16398,
+            "pct1t": 52.87,
+            "votos2t": 18944,
+            "pct2t": 62.08,
+            "deltaVotos": 2546,
+            "deltaPctVotos": 15.53,
+            "aumentou": true
+          },
+          {
+            "numero": "13",
+            "nome": "Leandro Grass",
+            "partido": "PT",
+            "cor": "#ee2d35",
+            "votos1t": 9796,
+            "pct1t": 31.58,
+            "votos2t": 11570,
+            "pct2t": 37.92,
+            "deltaVotos": 1774,
+            "deltaPctVotos": 18.11,
+            "aumentou": true
+          }
+        ],
+        "vencedor1t": "Celina Leão",
+        "vencedor2t": "Celina Leão",
+        "totalValidos1t": 31016,
+        "totalValidos2t": 30514
+      },
+      {
+        "codigo": "RA VIII",
+        "nome": "Núcleo Bandeirante",
+        "secoes": 111,
+        "eleitorado": 28400,
+        "zonas": "Zona 10",
+        "candidatos": [
+          {
+            "numero": "11",
+            "nome": "Celina Leão",
+            "partido": "PP",
+            "cor": "#0083ca",
+            "votos1t": 15328,
+            "pct1t": 52.87,
+            "votos2t": 17708,
+            "pct2t": 62.08,
+            "deltaVotos": 2380,
+            "deltaPctVotos": 15.53,
+            "aumentou": true
+          },
+          {
+            "numero": "13",
+            "nome": "Leandro Grass",
+            "partido": "PT",
+            "cor": "#ee2d35",
+            "votos1t": 9157,
+            "pct1t": 31.58,
+            "votos2t": 10816,
+            "pct2t": 37.92,
+            "deltaVotos": 1659,
+            "deltaPctVotos": 18.12,
+            "aumentou": true
+          }
+        ],
+        "vencedor1t": "Celina Leão",
+        "vencedor2t": "Celina Leão",
+        "totalValidos1t": 28992,
+        "totalValidos2t": 28524
+      },
+      {
+        "codigo": "RA XXI",
+        "nome": "Riacho Fundo II",
+        "secoes": 114,
+        "eleitorado": 41200,
+        "zonas": "Zona 21",
+        "candidatos": [
+          {
+            "numero": "11",
+            "nome": "Celina Leão",
+            "partido": "PP",
+            "cor": "#0083ca",
+            "votos1t": 15042,
+            "pct1t": 54.51,
+            "votos2t": 17305,
+            "pct2t": 63.75,
+            "deltaVotos": 2263,
+            "deltaPctVotos": 15.04,
+            "aumentou": true
+          },
+          {
+            "numero": "13",
+            "nome": "Leandro Grass",
+            "partido": "PT",
+            "cor": "#ee2d35",
+            "votos1t": 8265,
+            "pct1t": 29.95,
+            "votos2t": 9842,
+            "pct2t": 36.25,
+            "deltaVotos": 1577,
+            "deltaPctVotos": 19.08,
+            "aumentou": true
+          }
+        ],
+        "vencedor1t": "Celina Leão",
+        "vencedor2t": "Celina Leão",
+        "totalValidos1t": 27593,
+        "totalValidos2t": 27147
+      },
+      {
+        "codigo": "RA XI",
+        "nome": "Cruzeiro",
+        "secoes": 92,
+        "eleitorado": 30100,
+        "zonas": "Zona 11",
+        "candidatos": [
+          {
+            "numero": "11",
+            "nome": "Celina Leão",
+            "partido": "PP",
+            "cor": "#0083ca",
+            "votos1t": 9519,
+            "pct1t": 43.86,
+            "votos2t": 11501,
+            "pct2t": 53.96,
+            "deltaVotos": 1982,
+            "deltaPctVotos": 20.82,
+            "aumentou": true
+          },
+          {
+            "numero": "13",
+            "nome": "Leandro Grass",
+            "partido": "PT",
+            "cor": "#ee2d35",
+            "votos1t": 8431,
+            "pct1t": 38.85,
+            "votos2t": 9812,
+            "pct2t": 46.04,
+            "deltaVotos": 1381,
+            "deltaPctVotos": 16.38,
+            "aumentou": true
+          }
+        ],
+        "vencedor1t": "Celina Leão",
+        "vencedor2t": "Celina Leão",
+        "totalValidos1t": 21703,
+        "totalValidos2t": 21313
+      },
+      {
+        "codigo": "RA XXXIV",
+        "nome": "Arapoanga",
+        "secoes": 80,
+        "eleitorado": 24798,
+        "zonas": "Zona 6",
+        "candidatos": [
+          {
+            "numero": "11",
+            "nome": "Celina Leão",
+            "partido": "PP",
+            "cor": "#0083ca",
+            "votos1t": 9503,
+            "pct1t": 51.43,
+            "votos2t": 10888,
+            "pct2t": 59.81,
+            "deltaVotos": 1385,
+            "deltaPctVotos": 14.57,
+            "aumentou": true
+          },
+          {
+            "numero": "13",
+            "nome": "Leandro Grass",
+            "partido": "PT",
+            "cor": "#ee2d35",
+            "votos1t": 6351,
+            "pct1t": 34.37,
+            "votos2t": 7317,
+            "pct2t": 40.19,
+            "deltaVotos": 966,
+            "deltaPctVotos": 15.21,
+            "aumentou": true
+          }
+        ],
+        "vencedor1t": "Celina Leão",
+        "vencedor2t": "Celina Leão",
+        "totalValidos1t": 18478,
+        "totalValidos2t": 18205
+      },
+      {
+        "codigo": "RA XXX",
+        "nome": "Vicente Pires",
+        "secoes": 73,
+        "eleitorado": 58900,
+        "zonas": "Zona 15",
+        "candidatos": [
+          {
+            "numero": "11",
+            "nome": "Celina Leão",
+            "partido": "PP",
+            "cor": "#0083ca",
+            "votos1t": 8857,
+            "pct1t": 48.24,
+            "votos2t": 10428,
+            "pct2t": 57.77,
+            "deltaVotos": 1571,
+            "deltaPctVotos": 17.74,
+            "aumentou": true
+          },
+          {
+            "numero": "13",
+            "nome": "Leandro Grass",
+            "partido": "PT",
+            "cor": "#ee2d35",
+            "votos1t": 6529,
+            "pct1t": 35.56,
+            "votos2t": 7624,
+            "pct2t": 42.23,
+            "deltaVotos": 1095,
+            "deltaPctVotos": 16.77,
+            "aumentou": true
+          }
+        ],
+        "vencedor1t": "Celina Leão",
+        "vencedor2t": "Celina Leão",
+        "totalValidos1t": 18362,
+        "totalValidos2t": 18052
+      },
+      {
+        "codigo": "RA XIX",
+        "nome": "Candangolândia",
+        "secoes": 62,
+        "eleitorado": 15900,
+        "zonas": "Zona 10",
+        "candidatos": [
+          {
+            "numero": "11",
+            "nome": "Celina Leão",
+            "partido": "PP",
+            "cor": "#0083ca",
+            "votos1t": 8555,
+            "pct1t": 52.87,
+            "votos2t": 9883,
+            "pct2t": 62.08,
+            "deltaVotos": 1328,
+            "deltaPctVotos": 15.52,
+            "aumentou": true
+          },
+          {
+            "numero": "13",
+            "nome": "Leandro Grass",
+            "partido": "PT",
+            "cor": "#ee2d35",
+            "votos1t": 5111,
+            "pct1t": 31.59,
+            "votos2t": 6037,
+            "pct2t": 37.92,
+            "deltaVotos": 926,
+            "deltaPctVotos": 18.12,
+            "aumentou": true
+          }
+        ],
+        "vencedor1t": "Celina Leão",
+        "vencedor2t": "Celina Leão",
+        "totalValidos1t": 16181,
+        "totalValidos2t": 15920
+      },
+      {
+        "codigo": "RA XXIV",
+        "nome": "Park Way",
+        "secoes": 58,
+        "eleitorado": 16200,
+        "zonas": "Zona 10",
+        "candidatos": [
+          {
+            "numero": "11",
+            "nome": "Celina Leão",
+            "partido": "PP",
+            "cor": "#0083ca",
+            "votos1t": 8020,
+            "pct1t": 52.87,
+            "votos2t": 9264,
+            "pct2t": 62.08,
+            "deltaVotos": 1244,
+            "deltaPctVotos": 15.51,
+            "aumentou": true
+          },
+          {
+            "numero": "13",
+            "nome": "Leandro Grass",
+            "partido": "PT",
+            "cor": "#ee2d35",
+            "votos1t": 4791,
+            "pct1t": 31.59,
+            "votos2t": 5658,
+            "pct2t": 37.92,
+            "deltaVotos": 867,
+            "deltaPctVotos": 18.1,
+            "aumentou": true
+          }
+        ],
+        "vencedor1t": "Celina Leão",
+        "vencedor2t": "Celina Leão",
+        "totalValidos1t": 15168,
+        "totalValidos2t": 14922
+      },
+      {
+        "codigo": "RA IV",
+        "nome": "Brazlândia",
+        "secoes": 58,
+        "eleitorado": 44510,
+        "zonas": "Zona 19",
+        "candidatos": [
+          {
+            "numero": "11",
+            "nome": "Celina Leão",
+            "partido": "PP",
+            "cor": "#0083ca",
+            "votos1t": 7422,
+            "pct1t": 53.41,
+            "votos2t": 8551,
+            "pct2t": 62.53,
+            "deltaVotos": 1129,
+            "deltaPctVotos": 15.21,
+            "aumentou": true
+          },
+          {
+            "numero": "13",
+            "nome": "Leandro Grass",
+            "partido": "PT",
+            "cor": "#ee2d35",
+            "votos1t": 4336,
+            "pct1t": 31.2,
+            "votos2t": 5123,
+            "pct2t": 37.47,
+            "deltaVotos": 787,
+            "deltaPctVotos": 18.15,
+            "aumentou": true
+          }
+        ],
+        "vencedor1t": "Celina Leão",
+        "vencedor2t": "Celina Leão",
+        "totalValidos1t": 13896,
+        "totalValidos2t": 13674
+      },
+      {
+        "codigo": "RA XXV",
+        "nome": "SCIA / Estrutural",
+        "secoes": 59,
+        "eleitorado": 21500,
+        "zonas": "Zona 9",
+        "candidatos": [
+          {
+            "numero": "11",
+            "nome": "Celina Leão",
+            "partido": "PP",
+            "cor": "#0083ca",
+            "votos1t": 6425,
+            "pct1t": 47.94,
+            "votos2t": 7538,
+            "pct2t": 57.18,
+            "deltaVotos": 1113,
+            "deltaPctVotos": 17.32,
+            "aumentou": true
+          },
+          {
+            "numero": "13",
+            "nome": "Leandro Grass",
+            "partido": "PT",
+            "cor": "#ee2d35",
+            "votos1t": 4868,
+            "pct1t": 36.33,
+            "votos2t": 5644,
+            "pct2t": 42.82,
+            "deltaVotos": 776,
+            "deltaPctVotos": 15.94,
+            "aumentou": true
+          }
+        ],
+        "vencedor1t": "Celina Leão",
+        "vencedor2t": "Celina Leão",
+        "totalValidos1t": 13401,
+        "totalValidos2t": 13182
+      },
+      {
+        "codigo": "RA XXXII",
+        "nome": "Sol Nascente / Pôr do Sol",
+        "secoes": 56,
+        "eleitorado": 51200,
+        "zonas": "Zona 16",
+        "candidatos": [
+          {
+            "numero": "11",
+            "nome": "Celina Leão",
+            "partido": "PP",
+            "cor": "#0083ca",
+            "votos1t": 7071,
+            "pct1t": 55.16,
+            "votos2t": 8052,
+            "pct2t": 63.77,
+            "deltaVotos": 981,
+            "deltaPctVotos": 13.87,
+            "aumentou": true
+          },
+          {
+            "numero": "13",
+            "nome": "Leandro Grass",
+            "partido": "PT",
+            "cor": "#ee2d35",
+            "votos1t": 3891,
+            "pct1t": 30.35,
+            "votos2t": 4575,
+            "pct2t": 36.23,
+            "deltaVotos": 684,
+            "deltaPctVotos": 17.58,
+            "aumentou": true
+          }
+        ],
+        "vencedor1t": "Celina Leão",
+        "vencedor2t": "Celina Leão",
+        "totalValidos1t": 12820,
+        "totalValidos2t": 12627
+      },
+      {
+        "codigo": "RA XXXV",
+        "nome": "Água Quente",
+        "secoes": 43,
+        "eleitorado": 14800,
+        "zonas": "Zona 13",
+        "candidatos": [
+          {
+            "numero": "11",
+            "nome": "Celina Leão",
+            "partido": "PP",
+            "cor": "#0083ca",
+            "votos1t": 5828,
+            "pct1t": 55.4,
+            "votos2t": 6674,
+            "pct2t": 64.47,
+            "deltaVotos": 846,
+            "deltaPctVotos": 14.52,
+            "aumentou": true
+          },
+          {
+            "numero": "13",
+            "nome": "Leandro Grass",
+            "partido": "PT",
+            "cor": "#ee2d35",
+            "votos1t": 3088,
+            "pct1t": 29.36,
+            "votos2t": 3678,
+            "pct2t": 35.53,
+            "deltaVotos": 590,
+            "deltaPctVotos": 19.11,
+            "aumentou": true
+          }
+        ],
+        "vencedor1t": "Celina Leão",
+        "vencedor2t": "Celina Leão",
+        "totalValidos1t": 10519,
+        "totalValidos2t": 10352
+      },
+      {
+        "codigo": "RA XVIII",
+        "nome": "Lago Norte",
+        "secoes": 39,
+        "eleitorado": 29400,
+        "zonas": "Zona 14",
+        "candidatos": [
+          {
+            "numero": "11",
+            "nome": "Celina Leão",
+            "partido": "PP",
+            "cor": "#0083ca",
+            "votos1t": 3684,
+            "pct1t": 36.74,
+            "votos2t": 4268,
+            "pct2t": 43.26,
+            "deltaVotos": 584,
+            "deltaPctVotos": 15.85,
+            "aumentou": true
+          },
+          {
+            "numero": "13",
+            "nome": "Leandro Grass",
+            "partido": "PT",
+            "cor": "#ee2d35",
+            "votos1t": 4683,
+            "pct1t": 46.7,
+            "votos2t": 5599,
+            "pct2t": 56.74,
+            "deltaVotos": 916,
+            "deltaPctVotos": 19.56,
+            "aumentou": true
+          }
+        ],
+        "vencedor1t": "Leandro Grass",
+        "vencedor2t": "Leandro Grass",
+        "totalValidos1t": 10027,
+        "totalValidos2t": 9867
+      },
+      {
+        "codigo": "RA XXXIII",
+        "nome": "Arniqueira",
+        "secoes": 39,
+        "eleitorado": 31500,
+        "zonas": "Zona 15",
+        "candidatos": [
+          {
+            "numero": "11",
+            "nome": "Celina Leão",
+            "partido": "PP",
+            "cor": "#0083ca",
+            "votos1t": 4672,
+            "pct1t": 48.24,
+            "votos2t": 5500,
+            "pct2t": 57.77,
+            "deltaVotos": 828,
+            "deltaPctVotos": 17.72,
+            "aumentou": true
+          },
+          {
+            "numero": "13",
+            "nome": "Leandro Grass",
+            "partido": "PT",
+            "cor": "#ee2d35",
+            "votos1t": 3444,
+            "pct1t": 35.56,
+            "votos2t": 4021,
+            "pct2t": 42.23,
+            "deltaVotos": 577,
+            "deltaPctVotos": 16.75,
+            "aumentou": true
+          }
+        ],
+        "vencedor1t": "Celina Leão",
+        "vencedor2t": "Celina Leão",
+        "totalValidos1t": 9684,
+        "totalValidos2t": 9521
+      },
+      {
+        "codigo": "RA XXXI",
+        "nome": "Fercal",
+        "secoes": 41,
+        "eleitorado": 11497,
+        "zonas": "Zona 5",
+        "candidatos": [
+          {
+            "numero": "11",
+            "nome": "Celina Leão",
+            "partido": "PP",
+            "cor": "#0083ca",
+            "votos1t": 4867,
+            "pct1t": 50.53,
+            "votos2t": 5606,
+            "pct2t": 59.1,
+            "deltaVotos": 739,
+            "deltaPctVotos": 15.18,
+            "aumentou": true
+          },
+          {
+            "numero": "13",
+            "nome": "Leandro Grass",
+            "partido": "PT",
+            "cor": "#ee2d35",
+            "votos1t": 3365,
+            "pct1t": 34.94,
+            "votos2t": 3880,
+            "pct2t": 40.9,
+            "deltaVotos": 515,
+            "deltaPctVotos": 15.3,
+            "aumentou": true
+          }
+        ],
+        "vencedor1t": "Celina Leão",
+        "vencedor2t": "Celina Leão",
+        "totalValidos1t": 9632,
+        "totalValidos2t": 9486
+      },
+      {
+        "codigo": "RA XVI",
+        "nome": "Lago Sul",
+        "secoes": 32,
+        "eleitorado": 26500,
+        "zonas": "Zona 1",
+        "candidatos": [
+          {
+            "numero": "11",
+            "nome": "Celina Leão",
+            "partido": "PP",
+            "cor": "#0083ca",
+            "votos1t": 2547,
+            "pct1t": 39.2,
+            "votos2t": 2961,
+            "pct2t": 46.37,
+            "deltaVotos": 414,
+            "deltaPctVotos": 16.25,
+            "aumentou": true
+          },
+          {
+            "numero": "13",
+            "nome": "Leandro Grass",
+            "partido": "PT",
+            "cor": "#ee2d35",
+            "votos1t": 2775,
+            "pct1t": 42.71,
+            "votos2t": 3424,
+            "pct2t": 53.63,
+            "deltaVotos": 649,
+            "deltaPctVotos": 23.39,
+            "aumentou": true
+          }
+        ],
+        "vencedor1t": "Leandro Grass",
+        "vencedor2t": "Leandro Grass",
+        "totalValidos1t": 6498,
+        "totalValidos2t": 6385
+      },
+      {
+        "codigo": "RA XXIII",
+        "nome": "Varjão",
+        "secoes": 11,
+        "eleitorado": 7800,
+        "zonas": "Zona 14",
+        "candidatos": [
+          {
+            "numero": "11",
+            "nome": "Celina Leão",
+            "partido": "PP",
+            "cor": "#0083ca",
+            "votos1t": 1040,
+            "pct1t": 36.74,
+            "votos2t": 1205,
+            "pct2t": 43.25,
+            "deltaVotos": 165,
+            "deltaPctVotos": 15.87,
+            "aumentou": true
+          },
+          {
+            "numero": "13",
+            "nome": "Leandro Grass",
+            "partido": "PT",
+            "cor": "#ee2d35",
+            "votos1t": 1322,
+            "pct1t": 46.7,
+            "votos2t": 1581,
+            "pct2t": 56.75,
+            "deltaVotos": 259,
+            "deltaPctVotos": 19.59,
+            "aumentou": true
+          }
+        ],
+        "vencedor1t": "Leandro Grass",
+        "vencedor2t": "Leandro Grass",
+        "totalValidos1t": 2831,
+        "totalValidos2t": 2786
+      },
+      {
+        "codigo": "RA XXIX",
+        "nome": "SIA",
+        "secoes": 12,
+        "eleitorado": 3800,
+        "zonas": "Zona 9",
+        "candidatos": [
+          {
+            "numero": "11",
+            "nome": "Celina Leão",
+            "partido": "PP",
+            "cor": "#0083ca",
+            "votos1t": 1264,
+            "pct1t": 47.93,
+            "votos2t": 1484,
+            "pct2t": 57.21,
+            "deltaVotos": 220,
+            "deltaPctVotos": 17.41,
+            "aumentou": true
+          },
+          {
+            "numero": "13",
+            "nome": "Leandro Grass",
+            "partido": "PT",
+            "cor": "#ee2d35",
+            "votos1t": 957,
+            "pct1t": 36.29,
+            "votos2t": 1110,
+            "pct2t": 42.79,
+            "deltaVotos": 153,
+            "deltaPctVotos": 15.99,
+            "aumentou": true
+          }
+        ],
+        "vencedor1t": "Celina Leão",
+        "vencedor2t": "Celina Leão",
+        "totalValidos1t": 2637,
+        "totalValidos2t": 2594
+      }
+    ]
+  },
+  "estados": [
+    {
+      "uf": "AC",
+      "nome": "Acre",
+      "candidatos": [
+        {
+          "numero": "11",
+          "nome": "Gladson Cameli",
+          "partido": "PP",
+          "cor": "#0284c7",
+          "votos1t": 218760,
+          "pct1t": 49.34,
+          "votos2t": 242100,
+          "pct2t": 54.2,
+          "deltaVotos": 23340,
+          "deltaPctVotos": 10.67,
+          "aumentou": true,
+          "eleito": true
+        },
+        {
+          "numero": "13",
+          "nome": "Jorge Viana",
+          "partido": "PT",
+          "cor": "#ef4444",
+          "votos1t": 141859,
+          "pct1t": 32,
+          "votos2t": 204500,
+          "pct2t": 45.8,
+          "deltaVotos": 62641,
+          "deltaPctVotos": 44.16,
+          "aumentou": true,
+          "eleito": false
+        }
+      ]
+    },
+    {
+      "uf": "AM",
+      "nome": "Amazonas",
+      "candidatos": [
+        {
+          "numero": "55",
+          "nome": "Wilson Lima",
+          "partido": "UB",
+          "cor": "#0284c7",
+          "votos1t": 841846,
+          "pct1t": 42.82,
+          "votos2t": 1038500,
+          "pct2t": 56.6,
+          "deltaVotos": 196654,
+          "deltaPctVotos": 23.36,
+          "aumentou": true,
+          "eleito": true
+        },
+        {
+          "numero": "22",
+          "nome": "Eduardo Braga",
+          "partido": "MDB",
+          "cor": "#ef4444",
+          "votos1t": 507335,
+          "pct1t": 25.8,
+          "votos2t": 795400,
+          "pct2t": 43.4,
+          "deltaVotos": 288065,
+          "deltaPctVotos": 56.78,
+          "aumentou": true,
+          "eleito": false
+        }
+      ]
+    },
+    {
+      "uf": "ES",
+      "nome": "Espírito Santo",
+      "candidatos": [
+        {
+          "numero": "40",
+          "nome": "Renato Casagrande",
+          "partido": "PSB",
+          "cor": "#f59e0b",
+          "votos1t": 995361,
+          "pct1t": 46.94,
+          "votos2t": 1184200,
+          "pct2t": 53.8,
+          "deltaVotos": 188839,
+          "deltaPctVotos": 18.97,
+          "aumentou": true,
+          "eleito": true
+        },
+        {
+          "numero": "10",
+          "nome": "Manato",
+          "partido": "PL",
+          "cor": "#0284c7",
+          "votos1t": 814633,
+          "pct1t": 38.41,
+          "votos2t": 1016800,
+          "pct2t": 46.2,
+          "deltaVotos": 202167,
+          "deltaPctVotos": 24.82,
+          "aumentou": true,
+          "eleito": false
+        }
+      ]
+    },
+    {
+      "uf": "RN",
+      "nome": "Rio Grande do Norte",
+      "candidatos": [
+        {
+          "numero": "13",
+          "nome": "Fátima Bezerra",
+          "partido": "PT",
+          "cor": "#ef4444",
+          "votos1t": 733809,
+          "pct1t": 47.32,
+          "votos2t": 894300,
+          "pct2t": 58.1,
+          "deltaVotos": 160491,
+          "deltaPctVotos": 21.87,
+          "aumentou": true,
+          "eleita": true
+        },
+        {
+          "numero": "44",
+          "nome": "Fábio Dantas",
+          "partido": "Solidariedade",
+          "cor": "#0284c7",
+          "votos1t": 530580,
+          "pct1t": 34.21,
+          "votos2t": 645100,
+          "pct2t": 41.9,
+          "deltaVotos": 114520,
+          "deltaPctVotos": 21.58,
+          "aumentou": true,
+          "eleito": false
+        }
+      ]
+    },
+    {
+      "uf": "TO",
+      "nome": "Tocantins",
+      "candidatos": [
+        {
+          "numero": "10",
+          "nome": "Wanderlei Barbosa",
+          "partido": "Republicanos",
+          "cor": "#0284c7",
+          "votos1t": 386260,
+          "pct1t": 48.11,
+          "votos2t": 452800,
+          "pct2t": 56.4,
+          "deltaVotos": 66540,
+          "deltaPctVotos": 17.23,
+          "aumentou": true,
+          "eleito": true
+        },
+        {
+          "numero": "45",
+          "nome": "Ronaldo Dimas",
+          "partido": "PL",
+          "cor": "#0284c7",
+          "votos1t": 372848,
+          "pct1t": 46.44,
+          "votos2t": 350200,
+          "pct2t": 43.6,
+          "deltaVotos": -22648,
+          "deltaPctVotos": -6.07,
+          "aumentou": false,
+          "eleito": false
+        }
+      ]
+    }
+  ]
+}

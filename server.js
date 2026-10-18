@@ -227,6 +227,21 @@ const server = http.createServer(async (req, res) => {
     }
   }
 
+  // Endpoint oficial com dados comparativos de 1º e 2º Turno (Presidente, DF e Estados)
+  if (pathname === '/api/comparativo' || pathname === '/comparativo_data.json') {
+    try {
+      const data = fs.readFileSync(path.join(BASE_DIR, 'comparativo_data.json'), 'utf8');
+      res.writeHead(200, {
+        'Content-Type': 'application/json; charset=utf-8',
+        'Access-Control-Allow-Origin': '*'
+      });
+      return res.end(data);
+    } catch (err) {
+      res.writeHead(500, { 'Content-Type': 'text/plain; charset=utf-8' });
+      return res.end('Erro lendo dados comparativos');
+    }
+  }
+
   // Suporte a arquivos de feed oficial TSE 2026
   if (pathname === '/agora.json') pathname = '/feed/agora.json';
   if (pathname === '/municipios.json') pathname = '/feed/municipios.json';
@@ -438,6 +453,16 @@ const server = http.createServer(async (req, res) => {
   <button id="btn-open-marcela" onclick="openMarcelaDossie()" style="all:unset; cursor:pointer; padding:7px 16px; border-radius:100px; font-weight:700; font-size:12.5px; background:linear-gradient(135deg, #f59e0b, #d97706); color:#fff; box-shadow:0 0 16px rgba(245,158,11,0.5); transition:transform .12s, box-shadow .12s; display:inline-flex; align-items:center; gap:6px;" onmousedown="this.style.transform='scale(0.96)'" onmouseup="this.style.transform='scale(1)'">
     ⭐ Marcela Passamani (15555)
   </button>
+  <span style="color:rgba(250,250,249,0.3);">|</span>
+  <!-- BOTÃO COMPARATIVO 1º VS 2º TURNO -->
+  <button id="btn-open-comparativo" onclick="openComparativoModal()" style="all:unset; cursor:pointer; padding:7px 16px; border-radius:100px; font-weight:800; font-size:12.5px; background:linear-gradient(135deg, #10b981, #059669); color:#fff; box-shadow:0 0 16px rgba(16,185,129,0.5); transition:transform .12s, box-shadow .12s; display:inline-flex; align-items:center; gap:6px;" onmousedown="this.style.transform='scale(0.96)'" onmouseup="this.style.transform='scale(1)'">
+    📊 Comparativo 1º vs 2º Turno
+  </button>
+  <span style="color:rgba(250,250,249,0.3);">|</span>
+  <!-- BOTÃO FOGOS E CELEBRAÇÃO DE VITÓRIA -->
+  <button id="btn-open-fogos" onclick="launchCelebrationDemo('gov_df')" style="all:unset; cursor:pointer; padding:7px 16px; border-radius:100px; font-weight:800; font-size:12.5px; background:linear-gradient(135deg, #f59e0b, #d97706); color:#000; box-shadow:0 0 18px rgba(245,158,11,0.55); transition:transform .12s, box-shadow .12s; display:inline-flex; align-items:center; gap:6px;" onmousedown="this.style.transform='scale(0.96)'" onmouseup="this.style.transform='scale(1)'">
+    🎆 Celebrar Vitória (Fogos)
+  </button>
 </div>
 
 <!-- MODAL COMPLETO DE RAs E SEÇÕES DO DISTRITO FEDERAL (GOVERNO DO DF + MARCELA PASSAMANI) -->
@@ -570,6 +595,8 @@ const server = http.createServer(async (req, res) => {
 </div>
 
 <script src="/assets/df_modal.js"></script>
+<script src="/assets/fireworks.js"></script>
+<script src="/assets/comparativo.js"></script>
 `;
         html = html.replace('</body>', `${injection}</body>`);
 
