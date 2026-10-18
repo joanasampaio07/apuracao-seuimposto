@@ -173934,36 +173934,36 @@
         "codigo": "RA IX",
         "nome": "Ceilândia",
         "zonas": "Zona 8, Zona 16, Zona 20",
-        "totalSecoes": 1108,
-        "secoesApuradas": 1108,
+        "totalSecoes": 1164,
+        "secoesApuradas": 1164,
         "percentualApurado": "100,00%",
-        "eleitorado": 369402,
-        "comparecimento": 282666,
-        "percentualComparecimento": "76.52%",
-        "abstencao": 68139,
-        "percentualAbstencao": "18.45%",
-        "brancos": 13424,
-        "nulos": 16286,
-        "validos": 252956,
-        "votosCelina": 135683,
-        "percentualCelina": "53,64%",
-        "votosGrass": 80935,
-        "percentualGrass": "32,00%",
-        "votosPaula": 22703,
+        "eleitorado": 368737,
+        "comparecimento": 297052,
+        "percentualComparecimento": "80.56%",
+        "abstencao": 71685,
+        "percentualAbstencao": "19.44%",
+        "brancos": 14130,
+        "nulos": 17146,
+        "validos": 265776,
+        "votosCelina": 142754,
+        "percentualCelina": "53,71%",
+        "votosGrass": 84826,
+        "percentualGrass": "31,92%",
+        "votosPaula": 23874,
         "percentualPaula": "8,98%",
-        "votosKiko": 7127,
-        "percentualKiko": "2,82%",
-        "votosCappelli": 5453,
+        "votosKiko": 7476,
+        "percentualKiko": "2,81%",
+        "votosCappelli": 5743,
         "percentualCappelli": "2,16%",
-        "votosOutros": 1055,
+        "votosOutros": 1103,
         "percentualOutros": "0,42%",
         "vencedor": {
           "numero": "11",
           "nome": "Celina Leão",
           "partido": "PP",
           "cor": "#0083ca",
-          "votos": 135683,
-          "percentual": "53,64%"
+          "votos": 142754,
+          "percentual": "53,71%"
         },
         "rankingCandidatos": [
           {
@@ -173971,23 +173971,23 @@
             "nome": "Celina Leão",
             "partido": "PP",
             "cor": "#0083ca",
-            "votos": 135683,
-            "percentual": "53,64%"
+            "votos": 142754,
+            "percentual": "53,71%"
           },
           {
             "numero": "13",
             "nome": "Leandro Grass",
             "partido": "PT",
             "cor": "#ee2d35",
-            "votos": 80935,
-            "percentual": "32,00%"
+            "votos": 84826,
+            "percentual": "31,92%"
           },
           {
             "numero": "45",
             "nome": "Paula Belmonte",
             "partido": "PSDB",
             "cor": "#f59e0b",
-            "votos": 22703,
+            "votos": 23874,
             "percentual": "8,98%"
           },
           {
@@ -173995,15 +173995,15 @@
             "nome": "Kiko Caputo",
             "partido": "NOVO",
             "cor": "#ff6f00",
-            "votos": 7127,
-            "percentual": "2,82%"
+            "votos": 7476,
+            "percentual": "2,81%"
           },
           {
             "numero": "40",
             "nome": "Cappelli",
             "partido": "PSB",
             "cor": "#e11d48",
-            "votos": 5453,
+            "votos": 5743,
             "percentual": "2,16%"
           },
           {
@@ -174011,182 +174011,8 @@
             "nome": "Demais Candidatos",
             "partido": "Outros",
             "cor": "#85827C",
-            "votos": 1055,
+            "votos": 1103,
             "percentual": "0,42%"
-          }
-        ]
-      },
-      {
-        "id": 3,
-        "codigo": "RA III",
-        "nome": "Taguatinga",
-        "zonas": "Zona 3, Zona 15, Zona 19",
-        "totalSecoes": 801,
-        "secoesApuradas": 801,
-        "percentualApurado": "100,00%",
-        "eleitorado": 215440,
-        "comparecimento": 208090,
-        "percentualComparecimento": "96.59%",
-        "abstencao": 44186,
-        "percentualAbstencao": "20.51%",
-        "brancos": 7381,
-        "nulos": 9158,
-        "validos": 191551,
-        "votosCelina": 98258,
-        "percentualCelina": "51,30%",
-        "votosGrass": 63429,
-        "percentualGrass": "33,11%",
-        "votosPaula": 15801,
-        "percentualPaula": "8,25%",
-        "votosKiko": 9165,
-        "percentualKiko": "4,78%",
-        "votosCappelli": 4026,
-        "percentualCappelli": "2,10%",
-        "votosOutros": 872,
-        "percentualOutros": "0,46%",
-        "vencedor": {
-          "numero": "11",
-          "nome": "Celina Leão",
-          "partido": "PP",
-          "cor": "#0083ca",
-          "votos": 98258,
-          "percentual": "51,30%"
-        },
-        "rankingCandidatos": [
-          {
-            "numero": "11",
-            "nome": "Celina Leão",
-            "partido": "PP",
-            "cor": "#0083ca",
-            "votos": 98258,
-            "percentual": "51,30%"
-          },
-          {
-            "numero": "13",
-            "nome": "Leandro Grass",
-            "partido": "PT",
-            "cor": "#ee2d35",
-            "votos": 63429,
-            "percentual": "33,11%"
-          },
-          {
-            "numero": "45",
-            "nome": "Paula Belmonte",
-            "partido": "PSDB",
-            "cor": "#f59e0b",
-            "votos": 15801,
-            "percentual": "8,25%"
-          },
-          {
-            "numero": "30",
-            "nome": "Kiko Caputo",
-            "partido": "NOVO",
-            "cor": "#ff6f00",
-            "votos": 9165,
-            "percentual": "4,78%"
-          },
-          {
-            "numero": "40",
-            "nome": "Cappelli",
-            "partido": "PSB",
-            "cor": "#e11d48",
-            "votos": 4026,
-            "percentual": "2,10%"
-          },
-          {
-            "numero": "outros",
-            "nome": "Demais Candidatos",
-            "partido": "Outros",
-            "cor": "#85827C",
-            "votos": 872,
-            "percentual": "0,46%"
-          }
-        ]
-      },
-      {
-        "id": 1,
-        "codigo": "RA I",
-        "nome": "Plano Piloto",
-        "zonas": "Zona 1, Zona 14",
-        "totalSecoes": 533,
-        "secoesApuradas": 533,
-        "percentualApurado": "100,00%",
-        "eleitorado": 191995,
-        "comparecimento": 131234,
-        "percentualComparecimento": "68.35%",
-        "abstencao": 30176,
-        "percentualAbstencao": "15.72%",
-        "brancos": 3466,
-        "nulos": 3985,
-        "validos": 123782,
-        "votosCelina": 46731,
-        "percentualCelina": "37,75%",
-        "votosGrass": 55759,
-        "percentualGrass": "45,05%",
-        "votosPaula": 8066,
-        "percentualPaula": "6,52%",
-        "votosKiko": 8930,
-        "percentualKiko": "7,21%",
-        "votosCappelli": 3526,
-        "percentualCappelli": "2,85%",
-        "votosOutros": 770,
-        "percentualOutros": "0,62%",
-        "vencedor": {
-          "numero": "13",
-          "nome": "Leandro Grass",
-          "partido": "PT",
-          "cor": "#ee2d35",
-          "votos": 55759,
-          "percentual": "45,05%"
-        },
-        "rankingCandidatos": [
-          {
-            "numero": "13",
-            "nome": "Leandro Grass",
-            "partido": "PT",
-            "cor": "#ee2d35",
-            "votos": 55759,
-            "percentual": "45,05%"
-          },
-          {
-            "numero": "11",
-            "nome": "Celina Leão",
-            "partido": "PP",
-            "cor": "#0083ca",
-            "votos": 46731,
-            "percentual": "37,75%"
-          },
-          {
-            "numero": "30",
-            "nome": "Kiko Caputo",
-            "partido": "NOVO",
-            "cor": "#ff6f00",
-            "votos": 8930,
-            "percentual": "7,21%"
-          },
-          {
-            "numero": "45",
-            "nome": "Paula Belmonte",
-            "partido": "PSDB",
-            "cor": "#f59e0b",
-            "votos": 8066,
-            "percentual": "6,52%"
-          },
-          {
-            "numero": "40",
-            "nome": "Cappelli",
-            "partido": "PSB",
-            "cor": "#e11d48",
-            "votos": 3526,
-            "percentual": "2,85%"
-          },
-          {
-            "numero": "outros",
-            "nome": "Demais Candidatos",
-            "partido": "Outros",
-            "cor": "#85827C",
-            "votos": 770,
-            "percentual": "0,62%"
           }
         ]
       },
@@ -174198,11 +174024,11 @@
         "totalSecoes": 396,
         "secoesApuradas": 396,
         "percentualApurado": "100,00%",
-        "eleitorado": 128410,
+        "eleitorado": 128113,
         "comparecimento": 103698,
-        "percentualComparecimento": "80.76%",
+        "percentualComparecimento": "80.94%",
         "abstencao": 24415,
-        "percentualAbstencao": "19.01%",
+        "percentualAbstencao": "19.06%",
         "brancos": 4769,
         "nulos": 5713,
         "validos": 93216,
@@ -174278,267 +174104,6 @@
         ]
       },
       {
-        "id": 12,
-        "codigo": "RA XII",
-        "nome": "Samambaia",
-        "zonas": "Zona 13",
-        "totalSecoes": 374,
-        "secoesApuradas": 374,
-        "percentualApurado": "100,00%",
-        "eleitorado": 141236,
-        "comparecimento": 102491,
-        "percentualComparecimento": "72.57%",
-        "abstencao": 23814,
-        "percentualAbstencao": "16.86%",
-        "brancos": 5019,
-        "nulos": 6088,
-        "validos": 91383,
-        "votosCelina": 50630,
-        "percentualCelina": "55,40%",
-        "votosGrass": 26824,
-        "percentualGrass": "29,35%",
-        "votosPaula": 8431,
-        "percentualPaula": "9,23%",
-        "votosKiko": 3114,
-        "percentualKiko": "3,41%",
-        "votosCappelli": 1941,
-        "percentualCappelli": "2,12%",
-        "votosOutros": 443,
-        "percentualOutros": "0,48%",
-        "vencedor": {
-          "numero": "11",
-          "nome": "Celina Leão",
-          "partido": "PP",
-          "cor": "#0083ca",
-          "votos": 50630,
-          "percentual": "55,40%"
-        },
-        "rankingCandidatos": [
-          {
-            "numero": "11",
-            "nome": "Celina Leão",
-            "partido": "PP",
-            "cor": "#0083ca",
-            "votos": 50630,
-            "percentual": "55,40%"
-          },
-          {
-            "numero": "13",
-            "nome": "Leandro Grass",
-            "partido": "PT",
-            "cor": "#ee2d35",
-            "votos": 26824,
-            "percentual": "29,35%"
-          },
-          {
-            "numero": "45",
-            "nome": "Paula Belmonte",
-            "partido": "PSDB",
-            "cor": "#f59e0b",
-            "votos": 8431,
-            "percentual": "9,23%"
-          },
-          {
-            "numero": "30",
-            "nome": "Kiko Caputo",
-            "partido": "NOVO",
-            "cor": "#ff6f00",
-            "votos": 3114,
-            "percentual": "3,41%"
-          },
-          {
-            "numero": "40",
-            "nome": "Cappelli",
-            "partido": "PSB",
-            "cor": "#e11d48",
-            "votos": 1941,
-            "percentual": "2,12%"
-          },
-          {
-            "numero": "outros",
-            "nome": "Demais Candidatos",
-            "partido": "Outros",
-            "cor": "#85827C",
-            "votos": 443,
-            "percentual": "0,48%"
-          }
-        ]
-      },
-      {
-        "id": 10,
-        "codigo": "RA X",
-        "nome": "Guará",
-        "zonas": "Zona 9",
-        "totalSecoes": 372,
-        "secoesApuradas": 372,
-        "percentualApurado": "100,00%",
-        "eleitorado": 122600,
-        "comparecimento": 91384,
-        "percentualComparecimento": "74.54%",
-        "abstencao": 21167,
-        "percentualAbstencao": "17.27%",
-        "brancos": 3265,
-        "nulos": 4189,
-        "validos": 83930,
-        "votosCelina": 40238,
-        "percentualCelina": "47,94%",
-        "votosGrass": 30484,
-        "percentualGrass": "36,32%",
-        "votosPaula": 6594,
-        "percentualPaula": "7,86%",
-        "votosKiko": 4224,
-        "percentualKiko": "5,03%",
-        "votosCappelli": 1875,
-        "percentualCappelli": "2,23%",
-        "votosOutros": 515,
-        "percentualOutros": "0,61%",
-        "vencedor": {
-          "numero": "11",
-          "nome": "Celina Leão",
-          "partido": "PP",
-          "cor": "#0083ca",
-          "votos": 40238,
-          "percentual": "47,94%"
-        },
-        "rankingCandidatos": [
-          {
-            "numero": "11",
-            "nome": "Celina Leão",
-            "partido": "PP",
-            "cor": "#0083ca",
-            "votos": 40238,
-            "percentual": "47,94%"
-          },
-          {
-            "numero": "13",
-            "nome": "Leandro Grass",
-            "partido": "PT",
-            "cor": "#ee2d35",
-            "votos": 30484,
-            "percentual": "36,32%"
-          },
-          {
-            "numero": "45",
-            "nome": "Paula Belmonte",
-            "partido": "PSDB",
-            "cor": "#f59e0b",
-            "votos": 6594,
-            "percentual": "7,86%"
-          },
-          {
-            "numero": "30",
-            "nome": "Kiko Caputo",
-            "partido": "NOVO",
-            "cor": "#ff6f00",
-            "votos": 4224,
-            "percentual": "5,03%"
-          },
-          {
-            "numero": "40",
-            "nome": "Cappelli",
-            "partido": "PSB",
-            "cor": "#e11d48",
-            "votos": 1875,
-            "percentual": "2,23%"
-          },
-          {
-            "numero": "outros",
-            "nome": "Demais Candidatos",
-            "partido": "Outros",
-            "cor": "#85827C",
-            "votos": 515,
-            "percentual": "0,61%"
-          }
-        ]
-      },
-      {
-        "id": 6,
-        "codigo": "RA VI",
-        "nome": "Planaltina",
-        "zonas": "Zona 6",
-        "totalSecoes": 345,
-        "secoesApuradas": 345,
-        "percentualApurado": "100,00%",
-        "eleitorado": 112400,
-        "comparecimento": 89086,
-        "percentualComparecimento": "79.26%",
-        "abstencao": 22065,
-        "percentualAbstencao": "19.63%",
-        "brancos": 4203,
-        "nulos": 5199,
-        "validos": 79684,
-        "votosCelina": 40982,
-        "percentualCelina": "51,43%",
-        "votosGrass": 27388,
-        "percentualGrass": "34,37%",
-        "votosPaula": 7101,
-        "percentualPaula": "8,91%",
-        "votosKiko": 2177,
-        "percentualKiko": "2,73%",
-        "votosCappelli": 1725,
-        "percentualCappelli": "2,16%",
-        "votosOutros": 311,
-        "percentualOutros": "0,39%",
-        "vencedor": {
-          "numero": "11",
-          "nome": "Celina Leão",
-          "partido": "PP",
-          "cor": "#0083ca",
-          "votos": 40982,
-          "percentual": "51,43%"
-        },
-        "rankingCandidatos": [
-          {
-            "numero": "11",
-            "nome": "Celina Leão",
-            "partido": "PP",
-            "cor": "#0083ca",
-            "votos": 40982,
-            "percentual": "51,43%"
-          },
-          {
-            "numero": "13",
-            "nome": "Leandro Grass",
-            "partido": "PT",
-            "cor": "#ee2d35",
-            "votos": 27388,
-            "percentual": "34,37%"
-          },
-          {
-            "numero": "45",
-            "nome": "Paula Belmonte",
-            "partido": "PSDB",
-            "cor": "#f59e0b",
-            "votos": 7101,
-            "percentual": "8,91%"
-          },
-          {
-            "numero": "30",
-            "nome": "Kiko Caputo",
-            "partido": "NOVO",
-            "cor": "#ff6f00",
-            "votos": 2177,
-            "percentual": "2,73%"
-          },
-          {
-            "numero": "40",
-            "nome": "Cappelli",
-            "partido": "PSB",
-            "cor": "#e11d48",
-            "votos": 1725,
-            "percentual": "2,16%"
-          },
-          {
-            "numero": "outros",
-            "nome": "Demais Candidatos",
-            "partido": "Outros",
-            "cor": "#85827C",
-            "votos": 311,
-            "percentual": "0,39%"
-          }
-        ]
-      },
-      {
         "id": 13,
         "codigo": "RA XIII",
         "nome": "Santa Maria",
@@ -174546,11 +174111,11 @@
         "totalSecoes": 294,
         "secoesApuradas": 294,
         "percentualApurado": "100,00%",
-        "eleitorado": 101858,
+        "eleitorado": 101524,
         "comparecimento": 80822,
-        "percentualComparecimento": "79.35%",
+        "percentualComparecimento": "79.61%",
         "abstencao": 20702,
-        "percentualAbstencao": "20.32%",
+        "percentualAbstencao": "20.39%",
         "brancos": 4684,
         "nulos": 4946,
         "validos": 71192,
@@ -174626,6 +174191,354 @@
         ]
       },
       {
+        "id": 12,
+        "codigo": "RA XII",
+        "nome": "Samambaia",
+        "zonas": "Zona 13",
+        "totalSecoes": 417,
+        "secoesApuradas": 417,
+        "percentualApurado": "100,00%",
+        "eleitorado": 140843,
+        "comparecimento": 114288,
+        "percentualComparecimento": "81.15%",
+        "abstencao": 26555,
+        "percentualAbstencao": "18.85%",
+        "brancos": 5597,
+        "nulos": 6789,
+        "validos": 101902,
+        "votosCelina": 56458,
+        "percentualCelina": "55,40%",
+        "votosGrass": 29912,
+        "percentualGrass": "29,35%",
+        "votosPaula": 9401,
+        "percentualPaula": "9,23%",
+        "votosKiko": 3473,
+        "percentualKiko": "3,41%",
+        "votosCappelli": 2164,
+        "percentualCappelli": "2,12%",
+        "votosOutros": 494,
+        "percentualOutros": "0,48%",
+        "vencedor": {
+          "numero": "11",
+          "nome": "Celina Leão",
+          "partido": "PP",
+          "cor": "#0083ca",
+          "votos": 56458,
+          "percentual": "55,40%"
+        },
+        "rankingCandidatos": [
+          {
+            "numero": "11",
+            "nome": "Celina Leão",
+            "partido": "PP",
+            "cor": "#0083ca",
+            "votos": 56458,
+            "percentual": "55,40%"
+          },
+          {
+            "numero": "13",
+            "nome": "Leandro Grass",
+            "partido": "PT",
+            "cor": "#ee2d35",
+            "votos": 29912,
+            "percentual": "29,35%"
+          },
+          {
+            "numero": "45",
+            "nome": "Paula Belmonte",
+            "partido": "PSDB",
+            "cor": "#f59e0b",
+            "votos": 9401,
+            "percentual": "9,23%"
+          },
+          {
+            "numero": "30",
+            "nome": "Kiko Caputo",
+            "partido": "NOVO",
+            "cor": "#ff6f00",
+            "votos": 3473,
+            "percentual": "3,41%"
+          },
+          {
+            "numero": "40",
+            "nome": "Cappelli",
+            "partido": "PSB",
+            "cor": "#e11d48",
+            "votos": 2164,
+            "percentual": "2,12%"
+          },
+          {
+            "numero": "outros",
+            "nome": "Demais Candidatos",
+            "partido": "Outros",
+            "cor": "#85827C",
+            "votos": 494,
+            "percentual": "0,48%"
+          }
+        ]
+      },
+      {
+        "id": 1,
+        "codigo": "RA I",
+        "nome": "Plano Piloto",
+        "zonas": "Zona 1, Zona 14",
+        "totalSecoes": 504,
+        "secoesApuradas": 504,
+        "percentualApurado": "100,00%",
+        "eleitorado": 153021,
+        "comparecimento": 124437,
+        "percentualComparecimento": "81.32%",
+        "abstencao": 28584,
+        "percentualAbstencao": "18.68%",
+        "brancos": 3287,
+        "nulos": 3777,
+        "validos": 117373,
+        "votosCelina": 44281,
+        "percentualCelina": "37,73%",
+        "votosGrass": 52922,
+        "percentualGrass": "45,09%",
+        "votosPaula": 7647,
+        "percentualPaula": "6,52%",
+        "votosKiko": 8447,
+        "percentualKiko": "7,20%",
+        "votosCappelli": 3344,
+        "percentualCappelli": "2,85%",
+        "votosOutros": 729,
+        "percentualOutros": "0,62%",
+        "vencedor": {
+          "numero": "13",
+          "nome": "Leandro Grass",
+          "partido": "PT",
+          "cor": "#ee2d35",
+          "votos": 52922,
+          "percentual": "45,09%"
+        },
+        "rankingCandidatos": [
+          {
+            "numero": "13",
+            "nome": "Leandro Grass",
+            "partido": "PT",
+            "cor": "#ee2d35",
+            "votos": 52922,
+            "percentual": "45,09%"
+          },
+          {
+            "numero": "11",
+            "nome": "Celina Leão",
+            "partido": "PP",
+            "cor": "#0083ca",
+            "votos": 44281,
+            "percentual": "37,73%"
+          },
+          {
+            "numero": "30",
+            "nome": "Kiko Caputo",
+            "partido": "NOVO",
+            "cor": "#ff6f00",
+            "votos": 8447,
+            "percentual": "7,20%"
+          },
+          {
+            "numero": "45",
+            "nome": "Paula Belmonte",
+            "partido": "PSDB",
+            "cor": "#f59e0b",
+            "votos": 7647,
+            "percentual": "6,52%"
+          },
+          {
+            "numero": "40",
+            "nome": "Cappelli",
+            "partido": "PSB",
+            "cor": "#e11d48",
+            "votos": 3344,
+            "percentual": "2,85%"
+          },
+          {
+            "numero": "outros",
+            "nome": "Demais Candidatos",
+            "partido": "Outros",
+            "cor": "#85827C",
+            "votos": 729,
+            "percentual": "0,62%"
+          }
+        ]
+      },
+      {
+        "id": 16,
+        "codigo": "RA XVI",
+        "nome": "Lago Sul",
+        "zonas": "Zona 1",
+        "totalSecoes": 51,
+        "secoesApuradas": 51,
+        "percentualApurado": "100,00%",
+        "eleitorado": 13715,
+        "comparecimento": 11028,
+        "percentualComparecimento": "80.41%",
+        "abstencao": 2687,
+        "percentualAbstencao": "19.59%",
+        "brancos": 289,
+        "nulos": 347,
+        "validos": 10393,
+        "votosCelina": 4073,
+        "percentualCelina": "39,19%",
+        "votosGrass": 4438,
+        "percentualGrass": "42,70%",
+        "votosPaula": 683,
+        "percentualPaula": "6,57%",
+        "votosKiko": 847,
+        "percentualKiko": "8,15%",
+        "votosCappelli": 293,
+        "percentualCappelli": "2,82%",
+        "votosOutros": 61,
+        "percentualOutros": "0,59%",
+        "vencedor": {
+          "numero": "13",
+          "nome": "Leandro Grass",
+          "partido": "PT",
+          "cor": "#ee2d35",
+          "votos": 4438,
+          "percentual": "42,70%"
+        },
+        "rankingCandidatos": [
+          {
+            "numero": "13",
+            "nome": "Leandro Grass",
+            "partido": "PT",
+            "cor": "#ee2d35",
+            "votos": 4438,
+            "percentual": "42,70%"
+          },
+          {
+            "numero": "11",
+            "nome": "Celina Leão",
+            "partido": "PP",
+            "cor": "#0083ca",
+            "votos": 4073,
+            "percentual": "39,19%"
+          },
+          {
+            "numero": "30",
+            "nome": "Kiko Caputo",
+            "partido": "NOVO",
+            "cor": "#ff6f00",
+            "votos": 847,
+            "percentual": "8,15%"
+          },
+          {
+            "numero": "45",
+            "nome": "Paula Belmonte",
+            "partido": "PSDB",
+            "cor": "#f59e0b",
+            "votos": 683,
+            "percentual": "6,57%"
+          },
+          {
+            "numero": "40",
+            "nome": "Cappelli",
+            "partido": "PSB",
+            "cor": "#e11d48",
+            "votos": 293,
+            "percentual": "2,82%"
+          },
+          {
+            "numero": "outros",
+            "nome": "Demais Candidatos",
+            "partido": "Outros",
+            "cor": "#85827C",
+            "votos": 61,
+            "percentual": "0,59%"
+          }
+        ]
+      },
+      {
+        "id": 18,
+        "codigo": "RA XVIII",
+        "nome": "Lago Norte",
+        "zonas": "Zona 14",
+        "totalSecoes": 60,
+        "secoesApuradas": 60,
+        "percentualApurado": "100,00%",
+        "eleitorado": 19874,
+        "comparecimento": 16288,
+        "percentualComparecimento": "81.96%",
+        "abstencao": 3586,
+        "percentualAbstencao": "18.04%",
+        "brancos": 433,
+        "nulos": 483,
+        "validos": 15372,
+        "votosCelina": 5648,
+        "percentualCelina": "36,74%",
+        "votosGrass": 7179,
+        "percentualGrass": "46,70%",
+        "votosPaula": 996,
+        "percentualPaula": "6,48%",
+        "votosKiko": 1008,
+        "percentualKiko": "6,56%",
+        "votosCappelli": 441,
+        "percentualCappelli": "2,87%",
+        "votosOutros": 102,
+        "percentualOutros": "0,66%",
+        "vencedor": {
+          "numero": "13",
+          "nome": "Leandro Grass",
+          "partido": "PT",
+          "cor": "#ee2d35",
+          "votos": 7179,
+          "percentual": "46,70%"
+        },
+        "rankingCandidatos": [
+          {
+            "numero": "13",
+            "nome": "Leandro Grass",
+            "partido": "PT",
+            "cor": "#ee2d35",
+            "votos": 7179,
+            "percentual": "46,70%"
+          },
+          {
+            "numero": "11",
+            "nome": "Celina Leão",
+            "partido": "PP",
+            "cor": "#0083ca",
+            "votos": 5648,
+            "percentual": "36,74%"
+          },
+          {
+            "numero": "30",
+            "nome": "Kiko Caputo",
+            "partido": "NOVO",
+            "cor": "#ff6f00",
+            "votos": 1008,
+            "percentual": "6,56%"
+          },
+          {
+            "numero": "45",
+            "nome": "Paula Belmonte",
+            "partido": "PSDB",
+            "cor": "#f59e0b",
+            "votos": 996,
+            "percentual": "6,48%"
+          },
+          {
+            "numero": "40",
+            "nome": "Cappelli",
+            "partido": "PSB",
+            "cor": "#e11d48",
+            "votos": 441,
+            "percentual": "2,87%"
+          },
+          {
+            "numero": "outros",
+            "nome": "Demais Candidatos",
+            "partido": "Outros",
+            "cor": "#85827C",
+            "votos": 102,
+            "percentual": "0,66%"
+          }
+        ]
+      },
+      {
         "id": 14,
         "codigo": "RA XIV",
         "nome": "São Sebastião",
@@ -174633,11 +174546,11 @@
         "totalSecoes": 285,
         "secoesApuradas": 285,
         "percentualApurado": "100,00%",
-        "eleitorado": 89400,
+        "eleitorado": 88823,
         "comparecimento": 71922,
-        "percentualComparecimento": "80.45%",
+        "percentualComparecimento": "80.97%",
         "abstencao": 16901,
-        "percentualAbstencao": "18.90%",
+        "percentualAbstencao": "19.03%",
         "brancos": 2820,
         "nulos": 3159,
         "validos": 65943,
@@ -174651,7 +174564,7 @@
         "percentualKiko": "6,28%",
         "votosCappelli": 1231,
         "percentualCappelli": "1,87%",
-        "votosOutros": 298,
+        "votosOutros": 297,
         "percentualOutros": "0,45%",
         "vencedor": {
           "numero": "11",
@@ -174707,8 +174620,269 @@
             "nome": "Demais Candidatos",
             "partido": "Outros",
             "cor": "#85827C",
-            "votos": 298,
+            "votos": 297,
             "percentual": "0,45%"
+          }
+        ]
+      },
+      {
+        "id": 27,
+        "codigo": "RA XXVII",
+        "nome": "Jardim Botânico",
+        "zonas": "Zona 18",
+        "totalSecoes": 146,
+        "secoesApuradas": 146,
+        "percentualApurado": "100,00%",
+        "eleitorado": 45502,
+        "comparecimento": 36844,
+        "percentualComparecimento": "80.97%",
+        "abstencao": 8658,
+        "percentualAbstencao": "19.03%",
+        "brancos": 1444,
+        "nulos": 1618,
+        "validos": 33782,
+        "votosCelina": 16537,
+        "percentualCelina": "48,95%",
+        "votosGrass": 11969,
+        "percentualGrass": "35,43%",
+        "votosPaula": 2370,
+        "percentualPaula": "7,02%",
+        "votosKiko": 2123,
+        "percentualKiko": "6,28%",
+        "votosCappelli": 631,
+        "percentualCappelli": "1,87%",
+        "votosOutros": 153,
+        "percentualOutros": "0,45%",
+        "vencedor": {
+          "numero": "11",
+          "nome": "Celina Leão",
+          "partido": "PP",
+          "cor": "#0083ca",
+          "votos": 16537,
+          "percentual": "48,95%"
+        },
+        "rankingCandidatos": [
+          {
+            "numero": "11",
+            "nome": "Celina Leão",
+            "partido": "PP",
+            "cor": "#0083ca",
+            "votos": 16537,
+            "percentual": "48,95%"
+          },
+          {
+            "numero": "13",
+            "nome": "Leandro Grass",
+            "partido": "PT",
+            "cor": "#ee2d35",
+            "votos": 11969,
+            "percentual": "35,43%"
+          },
+          {
+            "numero": "45",
+            "nome": "Paula Belmonte",
+            "partido": "PSDB",
+            "cor": "#f59e0b",
+            "votos": 2370,
+            "percentual": "7,02%"
+          },
+          {
+            "numero": "30",
+            "nome": "Kiko Caputo",
+            "partido": "NOVO",
+            "cor": "#ff6f00",
+            "votos": 2123,
+            "percentual": "6,28%"
+          },
+          {
+            "numero": "40",
+            "nome": "Cappelli",
+            "partido": "PSB",
+            "cor": "#e11d48",
+            "votos": 631,
+            "percentual": "1,87%"
+          },
+          {
+            "numero": "outros",
+            "nome": "Demais Candidatos",
+            "partido": "Outros",
+            "cor": "#85827C",
+            "votos": 153,
+            "percentual": "0,45%"
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "codigo": "RA III",
+        "nome": "Taguatinga",
+        "zonas": "Zona 3, Zona 19",
+        "totalSecoes": 444,
+        "secoesApuradas": 444,
+        "percentualApurado": "100,00%",
+        "eleitorado": 137138,
+        "comparecimento": 112909,
+        "percentualComparecimento": "82.33%",
+        "abstencao": 24229,
+        "percentualAbstencao": "17.67%",
+        "brancos": 4190,
+        "nulos": 5247,
+        "validos": 103472,
+        "votosCelina": 54930,
+        "percentualCelina": "53,09%",
+        "votosGrass": 32758,
+        "percentualGrass": "31,66%",
+        "votosPaula": 8761,
+        "percentualPaula": "8,47%",
+        "votosKiko": 4385,
+        "percentualKiko": "4,24%",
+        "votosCappelli": 2182,
+        "percentualCappelli": "2,11%",
+        "votosOutros": 454,
+        "percentualOutros": "0,44%",
+        "vencedor": {
+          "numero": "11",
+          "nome": "Celina Leão",
+          "partido": "PP",
+          "cor": "#0083ca",
+          "votos": 54930,
+          "percentual": "53,09%"
+        },
+        "rankingCandidatos": [
+          {
+            "numero": "11",
+            "nome": "Celina Leão",
+            "partido": "PP",
+            "cor": "#0083ca",
+            "votos": 54930,
+            "percentual": "53,09%"
+          },
+          {
+            "numero": "13",
+            "nome": "Leandro Grass",
+            "partido": "PT",
+            "cor": "#ee2d35",
+            "votos": 32758,
+            "percentual": "31,66%"
+          },
+          {
+            "numero": "45",
+            "nome": "Paula Belmonte",
+            "partido": "PSDB",
+            "cor": "#f59e0b",
+            "votos": 8761,
+            "percentual": "8,47%"
+          },
+          {
+            "numero": "30",
+            "nome": "Kiko Caputo",
+            "partido": "NOVO",
+            "cor": "#ff6f00",
+            "votos": 4385,
+            "percentual": "4,24%"
+          },
+          {
+            "numero": "40",
+            "nome": "Cappelli",
+            "partido": "PSB",
+            "cor": "#e11d48",
+            "votos": 2182,
+            "percentual": "2,11%"
+          },
+          {
+            "numero": "outros",
+            "nome": "Demais Candidatos",
+            "partido": "Outros",
+            "cor": "#85827C",
+            "votos": 454,
+            "percentual": "0,44%"
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "codigo": "RA IV",
+        "nome": "Brazlândia",
+        "zonas": "Zona 19",
+        "totalSecoes": 138,
+        "secoesApuradas": 138,
+        "percentualApurado": "100,00%",
+        "eleitorado": 43780,
+        "comparecimento": 36025,
+        "percentualComparecimento": "82.29%",
+        "abstencao": 7755,
+        "percentualAbstencao": "17.71%",
+        "brancos": 1246,
+        "nulos": 1542,
+        "validos": 33237,
+        "votosCelina": 17752,
+        "percentualCelina": "53,41%",
+        "votosGrass": 10370,
+        "percentualGrass": "31,20%",
+        "votosPaula": 2752,
+        "percentualPaula": "8,28%",
+        "votosKiko": 1549,
+        "percentualKiko": "4,66%",
+        "votosCappelli": 674,
+        "percentualCappelli": "2,03%",
+        "votosOutros": 141,
+        "percentualOutros": "0,42%",
+        "vencedor": {
+          "numero": "11",
+          "nome": "Celina Leão",
+          "partido": "PP",
+          "cor": "#0083ca",
+          "votos": 17752,
+          "percentual": "53,41%"
+        },
+        "rankingCandidatos": [
+          {
+            "numero": "11",
+            "nome": "Celina Leão",
+            "partido": "PP",
+            "cor": "#0083ca",
+            "votos": 17752,
+            "percentual": "53,41%"
+          },
+          {
+            "numero": "13",
+            "nome": "Leandro Grass",
+            "partido": "PT",
+            "cor": "#ee2d35",
+            "votos": 10370,
+            "percentual": "31,20%"
+          },
+          {
+            "numero": "45",
+            "nome": "Paula Belmonte",
+            "partido": "PSDB",
+            "cor": "#f59e0b",
+            "votos": 2752,
+            "percentual": "8,28%"
+          },
+          {
+            "numero": "30",
+            "nome": "Kiko Caputo",
+            "partido": "NOVO",
+            "cor": "#ff6f00",
+            "votos": 1549,
+            "percentual": "4,66%"
+          },
+          {
+            "numero": "40",
+            "nome": "Cappelli",
+            "partido": "PSB",
+            "cor": "#e11d48",
+            "votos": 674,
+            "percentual": "2,03%"
+          },
+          {
+            "numero": "outros",
+            "nome": "Demais Candidatos",
+            "partido": "Outros",
+            "cor": "#85827C",
+            "votos": 141,
+            "percentual": "0,42%"
           }
         ]
       },
@@ -174720,14 +174894,14 @@
         "totalSecoes": 236,
         "secoesApuradas": 236,
         "percentualApurado": "100,00%",
-        "eleitorado": 75800,
+        "eleitorado": 74835,
         "comparecimento": 60684,
-        "percentualComparecimento": "80.06%",
-        "abstencao": 14150,
-        "percentualAbstencao": "18.67%",
+        "percentualComparecimento": "81.09%",
+        "abstencao": 14151,
+        "percentualAbstencao": "18.91%",
         "brancos": 2300,
         "nulos": 2945,
-        "validos": 55439,
+        "validos": 55440,
         "votosCelina": 28017,
         "percentualCelina": "50,54%",
         "votosGrass": 19364,
@@ -174800,354 +174974,6 @@
         ]
       },
       {
-        "id": 15,
-        "codigo": "RA XV",
-        "nome": "Recanto das Emas",
-        "zonas": "Zona 21",
-        "totalSecoes": 220,
-        "secoesApuradas": 220,
-        "percentualApurado": "100,00%",
-        "eleitorado": 82500,
-        "comparecimento": 59980,
-        "percentualComparecimento": "72.70%",
-        "abstencao": 15261,
-        "percentualAbstencao": "18.50%",
-        "brancos": 3027,
-        "nulos": 3532,
-        "validos": 53421,
-        "votosCelina": 29120,
-        "percentualCelina": "54,51%",
-        "votosGrass": 16001,
-        "percentualGrass": "29,95%",
-        "votosPaula": 5267,
-        "percentualPaula": "9,86%",
-        "votosKiko": 1602,
-        "percentualKiko": "3,00%",
-        "votosCappelli": 1199,
-        "percentualCappelli": "2,24%",
-        "votosOutros": 232,
-        "percentualOutros": "0,43%",
-        "vencedor": {
-          "numero": "11",
-          "nome": "Celina Leão",
-          "partido": "PP",
-          "cor": "#0083ca",
-          "votos": 29120,
-          "percentual": "54,51%"
-        },
-        "rankingCandidatos": [
-          {
-            "numero": "11",
-            "nome": "Celina Leão",
-            "partido": "PP",
-            "cor": "#0083ca",
-            "votos": 29120,
-            "percentual": "54,51%"
-          },
-          {
-            "numero": "13",
-            "nome": "Leandro Grass",
-            "partido": "PT",
-            "cor": "#ee2d35",
-            "votos": 16001,
-            "percentual": "29,95%"
-          },
-          {
-            "numero": "45",
-            "nome": "Paula Belmonte",
-            "partido": "PSDB",
-            "cor": "#f59e0b",
-            "votos": 5267,
-            "percentual": "9,86%"
-          },
-          {
-            "numero": "30",
-            "nome": "Kiko Caputo",
-            "partido": "NOVO",
-            "cor": "#ff6f00",
-            "votos": 1602,
-            "percentual": "3,00%"
-          },
-          {
-            "numero": "40",
-            "nome": "Cappelli",
-            "partido": "PSB",
-            "cor": "#e11d48",
-            "votos": 1199,
-            "percentual": "2,24%"
-          },
-          {
-            "numero": "outros",
-            "nome": "Demais Candidatos",
-            "partido": "Outros",
-            "cor": "#85827C",
-            "votos": 232,
-            "percentual": "0,43%"
-          }
-        ]
-      },
-      {
-        "id": 7,
-        "codigo": "RA VII",
-        "nome": "Paranoá",
-        "zonas": "Zona 2",
-        "totalSecoes": 210,
-        "secoesApuradas": 210,
-        "percentualApurado": "100,00%",
-        "eleitorado": 68500,
-        "comparecimento": 58685,
-        "percentualComparecimento": "85.67%",
-        "abstencao": 15624,
-        "percentualAbstencao": "22.81%",
-        "brancos": 2422,
-        "nulos": 2903,
-        "validos": 53359,
-        "votosCelina": 24609,
-        "percentualCelina": "46,12%",
-        "votosGrass": 19110,
-        "percentualGrass": "35,81%",
-        "votosPaula": 5700,
-        "percentualPaula": "10,68%",
-        "votosKiko": 2421,
-        "percentualKiko": "4,54%",
-        "votosCappelli": 1226,
-        "percentualCappelli": "2,30%",
-        "votosOutros": 293,
-        "percentualOutros": "0,55%",
-        "vencedor": {
-          "numero": "11",
-          "nome": "Celina Leão",
-          "partido": "PP",
-          "cor": "#0083ca",
-          "votos": 24609,
-          "percentual": "46,12%"
-        },
-        "rankingCandidatos": [
-          {
-            "numero": "11",
-            "nome": "Celina Leão",
-            "partido": "PP",
-            "cor": "#0083ca",
-            "votos": 24609,
-            "percentual": "46,12%"
-          },
-          {
-            "numero": "13",
-            "nome": "Leandro Grass",
-            "partido": "PT",
-            "cor": "#ee2d35",
-            "votos": 19110,
-            "percentual": "35,81%"
-          },
-          {
-            "numero": "45",
-            "nome": "Paula Belmonte",
-            "partido": "PSDB",
-            "cor": "#f59e0b",
-            "votos": 5700,
-            "percentual": "10,68%"
-          },
-          {
-            "numero": "30",
-            "nome": "Kiko Caputo",
-            "partido": "NOVO",
-            "cor": "#ff6f00",
-            "votos": 2421,
-            "percentual": "4,54%"
-          },
-          {
-            "numero": "40",
-            "nome": "Cappelli",
-            "partido": "PSB",
-            "cor": "#e11d48",
-            "votos": 1226,
-            "percentual": "2,30%"
-          },
-          {
-            "numero": "outros",
-            "nome": "Demais Candidatos",
-            "partido": "Outros",
-            "cor": "#85827C",
-            "votos": 293,
-            "percentual": "0,55%"
-          }
-        ]
-      },
-      {
-        "id": 22,
-        "codigo": "RA XXII",
-        "nome": "Sudoeste / Octogonal",
-        "zonas": "Zona 11",
-        "totalSecoes": 157,
-        "secoesApuradas": 157,
-        "percentualApurado": "100,00%",
-        "eleitorado": 46597,
-        "comparecimento": 39547,
-        "percentualComparecimento": "84.87%",
-        "abstencao": 8097,
-        "percentualAbstencao": "17.38%",
-        "brancos": 1154,
-        "nulos": 1356,
-        "validos": 37036,
-        "votosCelina": 16245,
-        "percentualCelina": "43,86%",
-        "votosGrass": 14387,
-        "percentualGrass": "38,85%",
-        "votosPaula": 2620,
-        "percentualPaula": "7,07%",
-        "votosKiko": 2622,
-        "percentualKiko": "7,08%",
-        "votosCappelli": 989,
-        "percentualCappelli": "2,67%",
-        "votosOutros": 173,
-        "percentualOutros": "0,47%",
-        "vencedor": {
-          "numero": "11",
-          "nome": "Celina Leão",
-          "partido": "PP",
-          "cor": "#0083ca",
-          "votos": 16245,
-          "percentual": "43,86%"
-        },
-        "rankingCandidatos": [
-          {
-            "numero": "11",
-            "nome": "Celina Leão",
-            "partido": "PP",
-            "cor": "#0083ca",
-            "votos": 16245,
-            "percentual": "43,86%"
-          },
-          {
-            "numero": "13",
-            "nome": "Leandro Grass",
-            "partido": "PT",
-            "cor": "#ee2d35",
-            "votos": 14387,
-            "percentual": "38,85%"
-          },
-          {
-            "numero": "30",
-            "nome": "Kiko Caputo",
-            "partido": "NOVO",
-            "cor": "#ff6f00",
-            "votos": 2622,
-            "percentual": "7,08%"
-          },
-          {
-            "numero": "45",
-            "nome": "Paula Belmonte",
-            "partido": "PSDB",
-            "cor": "#f59e0b",
-            "votos": 2620,
-            "percentual": "7,07%"
-          },
-          {
-            "numero": "40",
-            "nome": "Cappelli",
-            "partido": "PSB",
-            "cor": "#e11d48",
-            "votos": 989,
-            "percentual": "2,67%"
-          },
-          {
-            "numero": "outros",
-            "nome": "Demais Candidatos",
-            "partido": "Outros",
-            "cor": "#85827C",
-            "votos": 173,
-            "percentual": "0,47%"
-          }
-        ]
-      },
-      {
-        "id": 27,
-        "codigo": "RA XXVII",
-        "nome": "Jardim Botânico",
-        "zonas": "Zona 18",
-        "totalSecoes": 146,
-        "secoesApuradas": 146,
-        "percentualApurado": "100,00%",
-        "eleitorado": 45726,
-        "comparecimento": 36844,
-        "percentualComparecimento": "80.58%",
-        "abstencao": 8658,
-        "percentualAbstencao": "18.93%",
-        "brancos": 1444,
-        "nulos": 1618,
-        "validos": 33782,
-        "votosCelina": 16537,
-        "percentualCelina": "48,95%",
-        "votosGrass": 11969,
-        "percentualGrass": "35,43%",
-        "votosPaula": 2370,
-        "percentualPaula": "7,02%",
-        "votosKiko": 2123,
-        "percentualKiko": "6,28%",
-        "votosCappelli": 631,
-        "percentualCappelli": "1,87%",
-        "votosOutros": 152,
-        "percentualOutros": "0,45%",
-        "vencedor": {
-          "numero": "11",
-          "nome": "Celina Leão",
-          "partido": "PP",
-          "cor": "#0083ca",
-          "votos": 16537,
-          "percentual": "48,95%"
-        },
-        "rankingCandidatos": [
-          {
-            "numero": "11",
-            "nome": "Celina Leão",
-            "partido": "PP",
-            "cor": "#0083ca",
-            "votos": 16537,
-            "percentual": "48,95%"
-          },
-          {
-            "numero": "13",
-            "nome": "Leandro Grass",
-            "partido": "PT",
-            "cor": "#ee2d35",
-            "votos": 11969,
-            "percentual": "35,43%"
-          },
-          {
-            "numero": "45",
-            "nome": "Paula Belmonte",
-            "partido": "PSDB",
-            "cor": "#f59e0b",
-            "votos": 2370,
-            "percentual": "7,02%"
-          },
-          {
-            "numero": "30",
-            "nome": "Kiko Caputo",
-            "partido": "NOVO",
-            "cor": "#ff6f00",
-            "votos": 2123,
-            "percentual": "6,28%"
-          },
-          {
-            "numero": "40",
-            "nome": "Cappelli",
-            "partido": "PSB",
-            "cor": "#e11d48",
-            "votos": 631,
-            "percentual": "1,87%"
-          },
-          {
-            "numero": "outros",
-            "nome": "Demais Candidatos",
-            "partido": "Outros",
-            "cor": "#85827C",
-            "votos": 152,
-            "percentual": "0,45%"
-          }
-        ]
-      },
-      {
         "id": 26,
         "codigo": "RA XXVI",
         "nome": "Sobradinho II",
@@ -175155,11 +174981,11 @@
         "totalSecoes": 142,
         "secoesApuradas": 142,
         "percentualApurado": "100,00%",
-        "eleitorado": 46200,
+        "eleitorado": 45028,
         "comparecimento": 36513,
-        "percentualComparecimento": "79.03%",
-        "abstencao": 8514,
-        "percentualAbstencao": "18.43%",
+        "percentualComparecimento": "81.09%",
+        "abstencao": 8515,
+        "percentualAbstencao": "18.91%",
         "brancos": 1384,
         "nulos": 1772,
         "validos": 33358,
@@ -175235,40 +175061,40 @@
         ]
       },
       {
-        "id": 28,
-        "codigo": "RA XXVIII",
-        "nome": "Itapoã",
-        "zonas": "Zona 2",
-        "totalSecoes": 127,
-        "secoesApuradas": 127,
+        "id": 31,
+        "codigo": "RA XXXI",
+        "nome": "Fercal",
+        "zonas": "Zona 5",
+        "totalSecoes": 41,
+        "secoesApuradas": 41,
         "percentualApurado": "100,00%",
-        "eleitorado": 43497,
-        "comparecimento": 35512,
-        "percentualComparecimento": "81.64%",
-        "abstencao": 9455,
-        "percentualAbstencao": "21.74%",
-        "brancos": 1466,
-        "nulos": 1757,
-        "validos": 32290,
-        "votosCelina": 14892,
-        "percentualCelina": "46,12%",
-        "votosGrass": 11564,
-        "percentualGrass": "35,81%",
-        "votosPaula": 3449,
-        "percentualPaula": "10,68%",
-        "votosKiko": 1465,
-        "percentualKiko": "4,54%",
-        "votosCappelli": 742,
-        "percentualCappelli": "2,30%",
-        "votosOutros": 178,
-        "percentualOutros": "0,55%",
+        "eleitorado": 13001,
+        "comparecimento": 10543,
+        "percentualComparecimento": "81.09%",
+        "abstencao": 2458,
+        "percentualAbstencao": "18.91%",
+        "brancos": 400,
+        "nulos": 512,
+        "validos": 9631,
+        "votosCelina": 4867,
+        "percentualCelina": "50,53%",
+        "votosGrass": 3364,
+        "percentualGrass": "34,93%",
+        "votosPaula": 800,
+        "percentualPaula": "8,31%",
+        "votosKiko": 334,
+        "percentualKiko": "3,47%",
+        "votosCappelli": 209,
+        "percentualCappelli": "2,17%",
+        "votosOutros": 58,
+        "percentualOutros": "0,60%",
         "vencedor": {
           "numero": "11",
           "nome": "Celina Leão",
           "partido": "PP",
           "cor": "#0083ca",
-          "votos": 14892,
-          "percentual": "46,12%"
+          "votos": 4867,
+          "percentual": "50,53%"
         },
         "rankingCandidatos": [
           {
@@ -175276,86 +175102,86 @@
             "nome": "Celina Leão",
             "partido": "PP",
             "cor": "#0083ca",
-            "votos": 14892,
-            "percentual": "46,12%"
+            "votos": 4867,
+            "percentual": "50,53%"
           },
           {
             "numero": "13",
             "nome": "Leandro Grass",
             "partido": "PT",
             "cor": "#ee2d35",
-            "votos": 11564,
-            "percentual": "35,81%"
+            "votos": 3364,
+            "percentual": "34,93%"
           },
           {
             "numero": "45",
             "nome": "Paula Belmonte",
             "partido": "PSDB",
             "cor": "#f59e0b",
-            "votos": 3449,
-            "percentual": "10,68%"
+            "votos": 800,
+            "percentual": "8,31%"
           },
           {
             "numero": "30",
             "nome": "Kiko Caputo",
             "partido": "NOVO",
             "cor": "#ff6f00",
-            "votos": 1465,
-            "percentual": "4,54%"
+            "votos": 334,
+            "percentual": "3,47%"
           },
           {
             "numero": "40",
             "nome": "Cappelli",
             "partido": "PSB",
             "cor": "#e11d48",
-            "votos": 742,
-            "percentual": "2,30%"
+            "votos": 209,
+            "percentual": "2,17%"
           },
           {
             "numero": "outros",
             "nome": "Demais Candidatos",
             "partido": "Outros",
             "cor": "#85827C",
-            "votos": 178,
-            "percentual": "0,55%"
+            "votos": 58,
+            "percentual": "0,60%"
           }
         ]
       },
       {
-        "id": 20,
-        "codigo": "RA XX",
-        "nome": "Águas Claras",
-        "zonas": "Zona 15",
-        "totalSecoes": 125,
-        "secoesApuradas": 125,
+        "id": 6,
+        "codigo": "RA VI",
+        "nome": "Planaltina",
+        "zonas": "Zona 6",
+        "totalSecoes": 345,
+        "secoesApuradas": 345,
         "percentualApurado": "100,00%",
-        "eleitorado": 105600,
-        "comparecimento": 33882,
-        "percentualComparecimento": "32.09%",
-        "abstencao": 7065,
-        "percentualAbstencao": "6.69%",
-        "brancos": 1086,
-        "nulos": 1319,
-        "validos": 31477,
-        "votosCelina": 15184,
-        "percentualCelina": "48,24%",
-        "votosGrass": 11193,
-        "percentualGrass": "35,56%",
-        "votosPaula": 2464,
-        "percentualPaula": "7,83%",
-        "votosKiko": 1833,
-        "percentualKiko": "5,82%",
-        "votosCappelli": 653,
-        "percentualCappelli": "2,07%",
-        "votosOutros": 150,
-        "percentualOutros": "0,48%",
+        "eleitorado": 111151,
+        "comparecimento": 89086,
+        "percentualComparecimento": "80.15%",
+        "abstencao": 22065,
+        "percentualAbstencao": "19.85%",
+        "brancos": 4203,
+        "nulos": 5199,
+        "validos": 79684,
+        "votosCelina": 40982,
+        "percentualCelina": "51,43%",
+        "votosGrass": 27388,
+        "percentualGrass": "34,37%",
+        "votosPaula": 7101,
+        "percentualPaula": "8,91%",
+        "votosKiko": 2177,
+        "percentualKiko": "2,73%",
+        "votosCappelli": 1725,
+        "percentualCappelli": "2,16%",
+        "votosOutros": 311,
+        "percentualOutros": "0,39%",
         "vencedor": {
           "numero": "11",
           "nome": "Celina Leão",
           "partido": "PP",
           "cor": "#0083ca",
-          "votos": 15184,
-          "percentual": "48,24%"
+          "votos": 40982,
+          "percentual": "51,43%"
         },
         "rankingCandidatos": [
           {
@@ -175363,396 +175189,48 @@
             "nome": "Celina Leão",
             "partido": "PP",
             "cor": "#0083ca",
-            "votos": 15184,
-            "percentual": "48,24%"
+            "votos": 40982,
+            "percentual": "51,43%"
           },
           {
             "numero": "13",
             "nome": "Leandro Grass",
             "partido": "PT",
             "cor": "#ee2d35",
-            "votos": 11193,
-            "percentual": "35,56%"
+            "votos": 27388,
+            "percentual": "34,37%"
           },
           {
             "numero": "45",
             "nome": "Paula Belmonte",
             "partido": "PSDB",
             "cor": "#f59e0b",
-            "votos": 2464,
-            "percentual": "7,83%"
+            "votos": 7101,
+            "percentual": "8,91%"
           },
           {
             "numero": "30",
             "nome": "Kiko Caputo",
             "partido": "NOVO",
             "cor": "#ff6f00",
-            "votos": 1833,
-            "percentual": "5,82%"
+            "votos": 2177,
+            "percentual": "2,73%"
           },
           {
             "numero": "40",
             "nome": "Cappelli",
             "partido": "PSB",
             "cor": "#e11d48",
-            "votos": 653,
-            "percentual": "2,07%"
+            "votos": 1725,
+            "percentual": "2,16%"
           },
           {
             "numero": "outros",
             "nome": "Demais Candidatos",
             "partido": "Outros",
             "cor": "#85827C",
-            "votos": 150,
-            "percentual": "0,48%"
-          }
-        ]
-      },
-      {
-        "id": 17,
-        "codigo": "RA XVII",
-        "nome": "Riacho Fundo",
-        "zonas": "Zona 10",
-        "totalSecoes": 118,
-        "secoesApuradas": 118,
-        "percentualApurado": "100,00%",
-        "eleitorado": 31800,
-        "comparecimento": 33986,
-        "percentualComparecimento": "106.87%",
-        "abstencao": 7782,
-        "percentualAbstencao": "24.47%",
-        "brancos": 1326,
-        "nulos": 1645,
-        "validos": 31016,
-        "votosCelina": 16398,
-        "percentualCelina": "52,87%",
-        "votosGrass": 9796,
-        "percentualGrass": "31,58%",
-        "votosPaula": 2624,
-        "percentualPaula": "8,46%",
-        "votosKiko": 1438,
-        "percentualKiko": "4,64%",
-        "votosCappelli": 617,
-        "percentualCappelli": "1,99%",
-        "votosOutros": 143,
-        "percentualOutros": "0,46%",
-        "vencedor": {
-          "numero": "11",
-          "nome": "Celina Leão",
-          "partido": "PP",
-          "cor": "#0083ca",
-          "votos": 16398,
-          "percentual": "52,87%"
-        },
-        "rankingCandidatos": [
-          {
-            "numero": "11",
-            "nome": "Celina Leão",
-            "partido": "PP",
-            "cor": "#0083ca",
-            "votos": 16398,
-            "percentual": "52,87%"
-          },
-          {
-            "numero": "13",
-            "nome": "Leandro Grass",
-            "partido": "PT",
-            "cor": "#ee2d35",
-            "votos": 9796,
-            "percentual": "31,58%"
-          },
-          {
-            "numero": "45",
-            "nome": "Paula Belmonte",
-            "partido": "PSDB",
-            "cor": "#f59e0b",
-            "votos": 2624,
-            "percentual": "8,46%"
-          },
-          {
-            "numero": "30",
-            "nome": "Kiko Caputo",
-            "partido": "NOVO",
-            "cor": "#ff6f00",
-            "votos": 1438,
-            "percentual": "4,64%"
-          },
-          {
-            "numero": "40",
-            "nome": "Cappelli",
-            "partido": "PSB",
-            "cor": "#e11d48",
-            "votos": 617,
-            "percentual": "1,99%"
-          },
-          {
-            "numero": "outros",
-            "nome": "Demais Candidatos",
-            "partido": "Outros",
-            "cor": "#85827C",
-            "votos": 143,
-            "percentual": "0,46%"
-          }
-        ]
-      },
-      {
-        "id": 8,
-        "codigo": "RA VIII",
-        "nome": "Núcleo Bandeirante",
-        "zonas": "Zona 10",
-        "totalSecoes": 111,
-        "secoesApuradas": 111,
-        "percentualApurado": "100,00%",
-        "eleitorado": 28400,
-        "comparecimento": 31769,
-        "percentualComparecimento": "111.86%",
-        "abstencao": 7275,
-        "percentualAbstencao": "25.62%",
-        "brancos": 1239,
-        "nulos": 1538,
-        "validos": 28992,
-        "votosCelina": 15328,
-        "percentualCelina": "52,87%",
-        "votosGrass": 9157,
-        "percentualGrass": "31,58%",
-        "votosPaula": 2453,
-        "percentualPaula": "8,46%",
-        "votosKiko": 1344,
-        "percentualKiko": "4,64%",
-        "votosCappelli": 576,
-        "percentualCappelli": "1,99%",
-        "votosOutros": 134,
-        "percentualOutros": "0,46%",
-        "vencedor": {
-          "numero": "11",
-          "nome": "Celina Leão",
-          "partido": "PP",
-          "cor": "#0083ca",
-          "votos": 15328,
-          "percentual": "52,87%"
-        },
-        "rankingCandidatos": [
-          {
-            "numero": "11",
-            "nome": "Celina Leão",
-            "partido": "PP",
-            "cor": "#0083ca",
-            "votos": 15328,
-            "percentual": "52,87%"
-          },
-          {
-            "numero": "13",
-            "nome": "Leandro Grass",
-            "partido": "PT",
-            "cor": "#ee2d35",
-            "votos": 9157,
-            "percentual": "31,58%"
-          },
-          {
-            "numero": "45",
-            "nome": "Paula Belmonte",
-            "partido": "PSDB",
-            "cor": "#f59e0b",
-            "votos": 2453,
-            "percentual": "8,46%"
-          },
-          {
-            "numero": "30",
-            "nome": "Kiko Caputo",
-            "partido": "NOVO",
-            "cor": "#ff6f00",
-            "votos": 1344,
-            "percentual": "4,64%"
-          },
-          {
-            "numero": "40",
-            "nome": "Cappelli",
-            "partido": "PSB",
-            "cor": "#e11d48",
-            "votos": 576,
-            "percentual": "1,99%"
-          },
-          {
-            "numero": "outros",
-            "nome": "Demais Candidatos",
-            "partido": "Outros",
-            "cor": "#85827C",
-            "votos": 134,
-            "percentual": "0,46%"
-          }
-        ]
-      },
-      {
-        "id": 21,
-        "codigo": "RA XXI",
-        "nome": "Riacho Fundo II",
-        "zonas": "Zona 21",
-        "totalSecoes": 114,
-        "secoesApuradas": 114,
-        "percentualApurado": "100,00%",
-        "eleitorado": 41200,
-        "comparecimento": 30982,
-        "percentualComparecimento": "75.20%",
-        "abstencao": 7883,
-        "percentualAbstencao": "19.13%",
-        "brancos": 1564,
-        "nulos": 1825,
-        "validos": 27593,
-        "votosCelina": 15042,
-        "percentualCelina": "54,51%",
-        "votosGrass": 8265,
-        "percentualGrass": "29,95%",
-        "votosPaula": 2720,
-        "percentualPaula": "9,86%",
-        "votosKiko": 827,
-        "percentualKiko": "3,00%",
-        "votosCappelli": 619,
-        "percentualCappelli": "2,24%",
-        "votosOutros": 120,
-        "percentualOutros": "0,43%",
-        "vencedor": {
-          "numero": "11",
-          "nome": "Celina Leão",
-          "partido": "PP",
-          "cor": "#0083ca",
-          "votos": 15042,
-          "percentual": "54,51%"
-        },
-        "rankingCandidatos": [
-          {
-            "numero": "11",
-            "nome": "Celina Leão",
-            "partido": "PP",
-            "cor": "#0083ca",
-            "votos": 15042,
-            "percentual": "54,51%"
-          },
-          {
-            "numero": "13",
-            "nome": "Leandro Grass",
-            "partido": "PT",
-            "cor": "#ee2d35",
-            "votos": 8265,
-            "percentual": "29,95%"
-          },
-          {
-            "numero": "45",
-            "nome": "Paula Belmonte",
-            "partido": "PSDB",
-            "cor": "#f59e0b",
-            "votos": 2720,
-            "percentual": "9,86%"
-          },
-          {
-            "numero": "30",
-            "nome": "Kiko Caputo",
-            "partido": "NOVO",
-            "cor": "#ff6f00",
-            "votos": 827,
-            "percentual": "3,00%"
-          },
-          {
-            "numero": "40",
-            "nome": "Cappelli",
-            "partido": "PSB",
-            "cor": "#e11d48",
-            "votos": 619,
-            "percentual": "2,24%"
-          },
-          {
-            "numero": "outros",
-            "nome": "Demais Candidatos",
-            "partido": "Outros",
-            "cor": "#85827C",
-            "votos": 120,
-            "percentual": "0,43%"
-          }
-        ]
-      },
-      {
-        "id": 11,
-        "codigo": "RA XI",
-        "nome": "Cruzeiro",
-        "zonas": "Zona 11",
-        "totalSecoes": 92,
-        "secoesApuradas": 92,
-        "percentualApurado": "100,00%",
-        "eleitorado": 30100,
-        "comparecimento": 23174,
-        "percentualComparecimento": "76.99%",
-        "abstencao": 4745,
-        "percentualAbstencao": "15.76%",
-        "brancos": 677,
-        "nulos": 795,
-        "validos": 21703,
-        "votosCelina": 9519,
-        "percentualCelina": "43,86%",
-        "votosGrass": 8431,
-        "percentualGrass": "38,85%",
-        "votosPaula": 1535,
-        "percentualPaula": "7,07%",
-        "votosKiko": 1536,
-        "percentualKiko": "7,08%",
-        "votosCappelli": 580,
-        "percentualCappelli": "2,67%",
-        "votosOutros": 102,
-        "percentualOutros": "0,47%",
-        "vencedor": {
-          "numero": "11",
-          "nome": "Celina Leão",
-          "partido": "PP",
-          "cor": "#0083ca",
-          "votos": 9519,
-          "percentual": "43,86%"
-        },
-        "rankingCandidatos": [
-          {
-            "numero": "11",
-            "nome": "Celina Leão",
-            "partido": "PP",
-            "cor": "#0083ca",
-            "votos": 9519,
-            "percentual": "43,86%"
-          },
-          {
-            "numero": "13",
-            "nome": "Leandro Grass",
-            "partido": "PT",
-            "cor": "#ee2d35",
-            "votos": 8431,
-            "percentual": "38,85%"
-          },
-          {
-            "numero": "30",
-            "nome": "Kiko Caputo",
-            "partido": "NOVO",
-            "cor": "#ff6f00",
-            "votos": 1536,
-            "percentual": "7,08%"
-          },
-          {
-            "numero": "45",
-            "nome": "Paula Belmonte",
-            "partido": "PSDB",
-            "cor": "#f59e0b",
-            "votos": 1535,
-            "percentual": "7,07%"
-          },
-          {
-            "numero": "40",
-            "nome": "Cappelli",
-            "partido": "PSB",
-            "cor": "#e11d48",
-            "votos": 580,
-            "percentual": "2,67%"
-          },
-          {
-            "numero": "outros",
-            "nome": "Demais Candidatos",
-            "partido": "Outros",
-            "cor": "#85827C",
-            "votos": 102,
-            "percentual": "0,47%"
+            "votos": 311,
+            "percentual": "0,39%"
           }
         ]
       },
@@ -175764,11 +175242,11 @@
         "totalSecoes": 80,
         "secoesApuradas": 80,
         "percentualApurado": "100,00%",
-        "eleitorado": 24798,
+        "eleitorado": 25774,
         "comparecimento": 20658,
-        "percentualComparecimento": "83.31%",
+        "percentualComparecimento": "80.15%",
         "abstencao": 5116,
-        "percentualAbstencao": "20.63%",
+        "percentualAbstencao": "19.85%",
         "brancos": 975,
         "nulos": 1205,
         "validos": 18478,
@@ -175844,40 +175322,40 @@
         ]
       },
       {
-        "id": 30,
-        "codigo": "RA XXX",
-        "nome": "Vicente Pires",
-        "zonas": "Zona 15",
-        "totalSecoes": 73,
-        "secoesApuradas": 73,
+        "id": 7,
+        "codigo": "RA VII",
+        "nome": "Paranoá",
+        "zonas": "Zona 2",
+        "totalSecoes": 195,
+        "secoesApuradas": 195,
         "percentualApurado": "100,00%",
-        "eleitorado": 58900,
-        "comparecimento": 19764,
-        "percentualComparecimento": "33.56%",
-        "abstencao": 4121,
-        "percentualAbstencao": "7.00%",
-        "brancos": 634,
-        "nulos": 769,
-        "validos": 18362,
-        "votosCelina": 8857,
-        "percentualCelina": "48,24%",
-        "votosGrass": 6529,
-        "percentualGrass": "35,56%",
-        "votosPaula": 1438,
-        "percentualPaula": "7,83%",
-        "votosKiko": 1069,
-        "percentualKiko": "5,82%",
-        "votosCappelli": 381,
-        "percentualCappelli": "2,07%",
-        "votosOutros": 88,
-        "percentualOutros": "0,48%",
+        "eleitorado": 69017,
+        "comparecimento": 54506,
+        "percentualComparecimento": "78.97%",
+        "abstencao": 14511,
+        "percentualAbstencao": "21.03%",
+        "brancos": 2250,
+        "nulos": 2696,
+        "validos": 49560,
+        "votosCelina": 22857,
+        "percentualCelina": "46,12%",
+        "votosGrass": 17749,
+        "percentualGrass": "35,81%",
+        "votosPaula": 5294,
+        "percentualPaula": "10,68%",
+        "votosKiko": 2249,
+        "percentualKiko": "4,54%",
+        "votosCappelli": 1139,
+        "percentualCappelli": "2,30%",
+        "votosOutros": 272,
+        "percentualOutros": "0,55%",
         "vencedor": {
           "numero": "11",
           "nome": "Celina Leão",
           "partido": "PP",
           "cor": "#0083ca",
-          "votos": 8857,
-          "percentual": "48,24%"
+          "votos": 22857,
+          "percentual": "46,12%"
         },
         "rankingCandidatos": [
           {
@@ -175885,86 +175363,86 @@
             "nome": "Celina Leão",
             "partido": "PP",
             "cor": "#0083ca",
-            "votos": 8857,
-            "percentual": "48,24%"
+            "votos": 22857,
+            "percentual": "46,12%"
           },
           {
             "numero": "13",
             "nome": "Leandro Grass",
             "partido": "PT",
             "cor": "#ee2d35",
-            "votos": 6529,
-            "percentual": "35,56%"
+            "votos": 17749,
+            "percentual": "35,81%"
           },
           {
             "numero": "45",
             "nome": "Paula Belmonte",
             "partido": "PSDB",
             "cor": "#f59e0b",
-            "votos": 1438,
-            "percentual": "7,83%"
+            "votos": 5294,
+            "percentual": "10,68%"
           },
           {
             "numero": "30",
             "nome": "Kiko Caputo",
             "partido": "NOVO",
             "cor": "#ff6f00",
-            "votos": 1069,
-            "percentual": "5,82%"
+            "votos": 2249,
+            "percentual": "4,54%"
           },
           {
             "numero": "40",
             "nome": "Cappelli",
             "partido": "PSB",
             "cor": "#e11d48",
-            "votos": 381,
-            "percentual": "2,07%"
+            "votos": 1139,
+            "percentual": "2,30%"
           },
           {
             "numero": "outros",
             "nome": "Demais Candidatos",
             "partido": "Outros",
             "cor": "#85827C",
-            "votos": 88,
-            "percentual": "0,48%"
+            "votos": 272,
+            "percentual": "0,55%"
           }
         ]
       },
       {
-        "id": 19,
-        "codigo": "RA XIX",
-        "nome": "Candangolândia",
-        "zonas": "Zona 10",
-        "totalSecoes": 62,
-        "secoesApuradas": 62,
+        "id": 28,
+        "codigo": "RA XXVIII",
+        "nome": "Itapoã",
+        "zonas": "Zona 2",
+        "totalSecoes": 118,
+        "secoesApuradas": 118,
         "percentualApurado": "100,00%",
-        "eleitorado": 15900,
-        "comparecimento": 17731,
-        "percentualComparecimento": "111.52%",
-        "abstencao": 4061,
-        "percentualAbstencao": "25.54%",
-        "brancos": 692,
-        "nulos": 859,
-        "validos": 16181,
-        "votosCelina": 8555,
-        "percentualCelina": "52,87%",
-        "votosGrass": 5111,
-        "percentualGrass": "31,59%",
-        "votosPaula": 1369,
-        "percentualPaula": "8,46%",
-        "votosKiko": 750,
-        "percentualKiko": "4,64%",
-        "votosCappelli": 321,
-        "percentualCappelli": "1,98%",
-        "votosOutros": 75,
-        "percentualOutros": "0,46%",
+        "eleitorado": 41764,
+        "comparecimento": 32983,
+        "percentualComparecimento": "78.97%",
+        "abstencao": 8781,
+        "percentualAbstencao": "21.03%",
+        "brancos": 1361,
+        "nulos": 1632,
+        "validos": 29990,
+        "votosCelina": 13831,
+        "percentualCelina": "46,12%",
+        "votosGrass": 10740,
+        "percentualGrass": "35,81%",
+        "votosPaula": 3204,
+        "percentualPaula": "10,68%",
+        "votosKiko": 1361,
+        "percentualKiko": "4,54%",
+        "votosCappelli": 689,
+        "percentualCappelli": "2,30%",
+        "votosOutros": 165,
+        "percentualOutros": "0,55%",
         "vencedor": {
           "numero": "11",
           "nome": "Celina Leão",
           "partido": "PP",
           "cor": "#0083ca",
-          "votos": 8555,
-          "percentual": "52,87%"
+          "votos": 13831,
+          "percentual": "46,12%"
         },
         "rankingCandidatos": [
           {
@@ -175972,86 +175450,86 @@
             "nome": "Celina Leão",
             "partido": "PP",
             "cor": "#0083ca",
-            "votos": 8555,
-            "percentual": "52,87%"
+            "votos": 13831,
+            "percentual": "46,12%"
           },
           {
             "numero": "13",
             "nome": "Leandro Grass",
             "partido": "PT",
             "cor": "#ee2d35",
-            "votos": 5111,
-            "percentual": "31,59%"
+            "votos": 10740,
+            "percentual": "35,81%"
           },
           {
             "numero": "45",
             "nome": "Paula Belmonte",
             "partido": "PSDB",
             "cor": "#f59e0b",
-            "votos": 1369,
-            "percentual": "8,46%"
+            "votos": 3204,
+            "percentual": "10,68%"
           },
           {
             "numero": "30",
             "nome": "Kiko Caputo",
             "partido": "NOVO",
             "cor": "#ff6f00",
-            "votos": 750,
-            "percentual": "4,64%"
+            "votos": 1361,
+            "percentual": "4,54%"
           },
           {
             "numero": "40",
             "nome": "Cappelli",
             "partido": "PSB",
             "cor": "#e11d48",
-            "votos": 321,
-            "percentual": "1,98%"
+            "votos": 689,
+            "percentual": "2,30%"
           },
           {
             "numero": "outros",
             "nome": "Demais Candidatos",
             "partido": "Outros",
             "cor": "#85827C",
-            "votos": 75,
-            "percentual": "0,46%"
+            "votos": 165,
+            "percentual": "0,55%"
           }
         ]
       },
       {
-        "id": 24,
-        "codigo": "RA XXIV",
-        "nome": "Park Way",
-        "zonas": "Zona 10",
-        "totalSecoes": 58,
-        "secoesApuradas": 58,
+        "id": 23,
+        "codigo": "RA XXIII",
+        "nome": "Varjão",
+        "zonas": "Zona 2",
+        "totalSecoes": 24,
+        "secoesApuradas": 24,
         "percentualApurado": "100,00%",
-        "eleitorado": 16200,
-        "comparecimento": 16623,
-        "percentualComparecimento": "102.61%",
-        "abstencao": 3807,
-        "percentualAbstencao": "23.50%",
-        "brancos": 648,
-        "nulos": 805,
-        "validos": 15168,
-        "votosCelina": 8020,
-        "percentualCelina": "52,87%",
-        "votosGrass": 4791,
-        "percentualGrass": "31,59%",
-        "votosPaula": 1283,
-        "percentualPaula": "8,46%",
-        "votosKiko": 703,
-        "percentualKiko": "4,63%",
-        "votosCappelli": 301,
-        "percentualCappelli": "1,98%",
-        "votosOutros": 70,
-        "percentualOutros": "0,46%",
+        "eleitorado": 8494,
+        "comparecimento": 6708,
+        "percentualComparecimento": "78.97%",
+        "abstencao": 1786,
+        "percentualAbstencao": "21.03%",
+        "brancos": 277,
+        "nulos": 332,
+        "validos": 6100,
+        "votosCelina": 2813,
+        "percentualCelina": "46,11%",
+        "votosGrass": 2184,
+        "percentualGrass": "35,80%",
+        "votosPaula": 652,
+        "percentualPaula": "10,69%",
+        "votosKiko": 277,
+        "percentualKiko": "4,54%",
+        "votosCappelli": 140,
+        "percentualCappelli": "2,30%",
+        "votosOutros": 33,
+        "percentualOutros": "0,54%",
         "vencedor": {
           "numero": "11",
           "nome": "Celina Leão",
           "partido": "PP",
           "cor": "#0083ca",
-          "votos": 8020,
-          "percentual": "52,87%"
+          "votos": 2813,
+          "percentual": "46,11%"
         },
         "rankingCandidatos": [
           {
@@ -176059,172 +175537,85 @@
             "nome": "Celina Leão",
             "partido": "PP",
             "cor": "#0083ca",
-            "votos": 8020,
-            "percentual": "52,87%"
+            "votos": 2813,
+            "percentual": "46,11%"
           },
           {
             "numero": "13",
             "nome": "Leandro Grass",
             "partido": "PT",
             "cor": "#ee2d35",
-            "votos": 4791,
-            "percentual": "31,59%"
+            "votos": 2184,
+            "percentual": "35,80%"
           },
           {
             "numero": "45",
             "nome": "Paula Belmonte",
             "partido": "PSDB",
             "cor": "#f59e0b",
-            "votos": 1283,
-            "percentual": "8,46%"
+            "votos": 652,
+            "percentual": "10,69%"
           },
           {
             "numero": "30",
             "nome": "Kiko Caputo",
             "partido": "NOVO",
             "cor": "#ff6f00",
-            "votos": 703,
-            "percentual": "4,63%"
+            "votos": 277,
+            "percentual": "4,54%"
           },
           {
             "numero": "40",
             "nome": "Cappelli",
             "partido": "PSB",
             "cor": "#e11d48",
-            "votos": 301,
-            "percentual": "1,98%"
+            "votos": 140,
+            "percentual": "2,30%"
           },
           {
             "numero": "outros",
             "nome": "Demais Candidatos",
             "partido": "Outros",
             "cor": "#85827C",
-            "votos": 70,
-            "percentual": "0,46%"
+            "votos": 33,
+            "percentual": "0,54%"
           }
         ]
       },
       {
-        "id": 4,
-        "codigo": "RA IV",
-        "nome": "Brazlândia",
-        "zonas": "Zona 19",
-        "totalSecoes": 58,
-        "secoesApuradas": 58,
-        "percentualApurado": "100,00%",
-        "eleitorado": 44510,
-        "comparecimento": 15061,
-        "percentualComparecimento": "33.84%",
-        "abstencao": 3242,
-        "percentualAbstencao": "7.28%",
-        "brancos": 521,
-        "nulos": 645,
-        "validos": 13896,
-        "votosCelina": 7422,
-        "percentualCelina": "53,41%",
-        "votosGrass": 4336,
-        "percentualGrass": "31,20%",
-        "votosPaula": 1150,
-        "percentualPaula": "8,28%",
-        "votosKiko": 648,
-        "percentualKiko": "4,66%",
-        "votosCappelli": 282,
-        "percentualCappelli": "2,03%",
-        "votosOutros": 58,
-        "percentualOutros": "0,42%",
-        "vencedor": {
-          "numero": "11",
-          "nome": "Celina Leão",
-          "partido": "PP",
-          "cor": "#0083ca",
-          "votos": 7422,
-          "percentual": "53,41%"
-        },
-        "rankingCandidatos": [
-          {
-            "numero": "11",
-            "nome": "Celina Leão",
-            "partido": "PP",
-            "cor": "#0083ca",
-            "votos": 7422,
-            "percentual": "53,41%"
-          },
-          {
-            "numero": "13",
-            "nome": "Leandro Grass",
-            "partido": "PT",
-            "cor": "#ee2d35",
-            "votos": 4336,
-            "percentual": "31,20%"
-          },
-          {
-            "numero": "45",
-            "nome": "Paula Belmonte",
-            "partido": "PSDB",
-            "cor": "#f59e0b",
-            "votos": 1150,
-            "percentual": "8,28%"
-          },
-          {
-            "numero": "30",
-            "nome": "Kiko Caputo",
-            "partido": "NOVO",
-            "cor": "#ff6f00",
-            "votos": 648,
-            "percentual": "4,66%"
-          },
-          {
-            "numero": "40",
-            "nome": "Cappelli",
-            "partido": "PSB",
-            "cor": "#e11d48",
-            "votos": 282,
-            "percentual": "2,03%"
-          },
-          {
-            "numero": "outros",
-            "nome": "Demais Candidatos",
-            "partido": "Outros",
-            "cor": "#85827C",
-            "votos": 58,
-            "percentual": "0,42%"
-          }
-        ]
-      },
-      {
-        "id": 25,
-        "codigo": "RA XXV",
-        "nome": "SCIA / Estrutural",
+        "id": 10,
+        "codigo": "RA X",
+        "nome": "Guará",
         "zonas": "Zona 9",
-        "totalSecoes": 59,
-        "secoesApuradas": 59,
+        "totalSecoes": 370,
+        "secoesApuradas": 370,
         "percentualApurado": "100,00%",
-        "eleitorado": 21500,
-        "comparecimento": 14593,
-        "percentualComparecimento": "67.87%",
-        "abstencao": 3380,
-        "percentualAbstencao": "15.72%",
-        "brancos": 521,
-        "nulos": 669,
-        "validos": 13401,
-        "votosCelina": 6425,
+        "eleitorado": 111968,
+        "comparecimento": 90911,
+        "percentualComparecimento": "81.19%",
+        "abstencao": 21057,
+        "percentualAbstencao": "18.81%",
+        "brancos": 3248,
+        "nulos": 4168,
+        "validos": 83495,
+        "votosCelina": 40029,
         "percentualCelina": "47,94%",
-        "votosGrass": 4868,
-        "percentualGrass": "36,33%",
-        "votosPaula": 1053,
+        "votosGrass": 30326,
+        "percentualGrass": "36,32%",
+        "votosPaula": 6560,
         "percentualPaula": "7,86%",
-        "votosKiko": 674,
+        "votosKiko": 4202,
         "percentualKiko": "5,03%",
-        "votosCappelli": 299,
+        "votosCappelli": 1865,
         "percentualCappelli": "2,23%",
-        "votosOutros": 82,
+        "votosOutros": 513,
         "percentualOutros": "0,61%",
         "vencedor": {
           "numero": "11",
           "nome": "Celina Leão",
           "partido": "PP",
           "cor": "#0083ca",
-          "votos": 6425,
+          "votos": 40029,
           "percentual": "47,94%"
         },
         "rankingCandidatos": [
@@ -176233,7 +175624,7 @@
             "nome": "Celina Leão",
             "partido": "PP",
             "cor": "#0083ca",
-            "votos": 6425,
+            "votos": 40029,
             "percentual": "47,94%"
           },
           {
@@ -176241,15 +175632,15 @@
             "nome": "Leandro Grass",
             "partido": "PT",
             "cor": "#ee2d35",
-            "votos": 4868,
-            "percentual": "36,33%"
+            "votos": 30326,
+            "percentual": "36,32%"
           },
           {
             "numero": "45",
             "nome": "Paula Belmonte",
             "partido": "PSDB",
             "cor": "#f59e0b",
-            "votos": 1053,
+            "votos": 6560,
             "percentual": "7,86%"
           },
           {
@@ -176257,7 +175648,7 @@
             "nome": "Kiko Caputo",
             "partido": "NOVO",
             "cor": "#ff6f00",
-            "votos": 674,
+            "votos": 4202,
             "percentual": "5,03%"
           },
           {
@@ -176265,7 +175656,7 @@
             "nome": "Cappelli",
             "partido": "PSB",
             "cor": "#e11d48",
-            "votos": 299,
+            "votos": 1865,
             "percentual": "2,23%"
           },
           {
@@ -176273,46 +175664,46 @@
             "nome": "Demais Candidatos",
             "partido": "Outros",
             "cor": "#85827C",
-            "votos": 82,
+            "votos": 513,
             "percentual": "0,61%"
           }
         ]
       },
       {
-        "id": 32,
-        "codigo": "RA XXXII",
-        "nome": "Sol Nascente / Pôr do Sol",
-        "zonas": "Zona 16",
-        "totalSecoes": 56,
-        "secoesApuradas": 56,
+        "id": 25,
+        "codigo": "RA XXV",
+        "nome": "SCIA / Estrutural",
+        "zonas": "Zona 9",
+        "totalSecoes": 61,
+        "secoesApuradas": 61,
         "percentualApurado": "100,00%",
-        "eleitorado": 51200,
-        "comparecimento": 14386,
-        "percentualComparecimento": "28.10%",
-        "abstencao": 3546,
-        "percentualAbstencao": "6.93%",
-        "brancos": 706,
-        "nulos": 860,
-        "validos": 12820,
-        "votosCelina": 7071,
-        "percentualCelina": "55,16%",
-        "votosGrass": 3891,
-        "percentualGrass": "30,35%",
-        "votosPaula": 1171,
-        "percentualPaula": "9,13%",
-        "votosKiko": 349,
-        "percentualKiko": "2,72%",
-        "votosCappelli": 290,
-        "percentualCappelli": "2,26%",
-        "votosOutros": 48,
-        "percentualOutros": "0,37%",
+        "eleitorado": 18460,
+        "comparecimento": 14988,
+        "percentualComparecimento": "81.19%",
+        "abstencao": 3472,
+        "percentualAbstencao": "18.81%",
+        "brancos": 536,
+        "nulos": 687,
+        "validos": 13765,
+        "votosCelina": 6599,
+        "percentualCelina": "47,94%",
+        "votosGrass": 5000,
+        "percentualGrass": "36,32%",
+        "votosPaula": 1081,
+        "percentualPaula": "7,85%",
+        "votosKiko": 693,
+        "percentualKiko": "5,03%",
+        "votosCappelli": 307,
+        "percentualCappelli": "2,23%",
+        "votosOutros": 86,
+        "percentualOutros": "0,62%",
         "vencedor": {
           "numero": "11",
           "nome": "Celina Leão",
           "partido": "PP",
           "cor": "#0083ca",
-          "votos": 7071,
-          "percentual": "55,16%"
+          "votos": 6599,
+          "percentual": "47,94%"
         },
         "rankingCandidatos": [
           {
@@ -176320,570 +175711,48 @@
             "nome": "Celina Leão",
             "partido": "PP",
             "cor": "#0083ca",
-            "votos": 7071,
-            "percentual": "55,16%"
+            "votos": 6599,
+            "percentual": "47,94%"
           },
           {
             "numero": "13",
             "nome": "Leandro Grass",
             "partido": "PT",
             "cor": "#ee2d35",
-            "votos": 3891,
-            "percentual": "30,35%"
+            "votos": 5000,
+            "percentual": "36,32%"
           },
           {
             "numero": "45",
             "nome": "Paula Belmonte",
             "partido": "PSDB",
             "cor": "#f59e0b",
-            "votos": 1171,
-            "percentual": "9,13%"
+            "votos": 1081,
+            "percentual": "7,85%"
           },
           {
             "numero": "30",
             "nome": "Kiko Caputo",
             "partido": "NOVO",
             "cor": "#ff6f00",
-            "votos": 349,
-            "percentual": "2,72%"
+            "votos": 693,
+            "percentual": "5,03%"
           },
           {
             "numero": "40",
             "nome": "Cappelli",
             "partido": "PSB",
             "cor": "#e11d48",
-            "votos": 290,
-            "percentual": "2,26%"
+            "votos": 307,
+            "percentual": "2,23%"
           },
           {
             "numero": "outros",
             "nome": "Demais Candidatos",
             "partido": "Outros",
             "cor": "#85827C",
-            "votos": 48,
-            "percentual": "0,37%"
-          }
-        ]
-      },
-      {
-        "id": 35,
-        "codigo": "RA XXXV",
-        "nome": "Água Quente",
-        "zonas": "Zona 13",
-        "totalSecoes": 43,
-        "secoesApuradas": 43,
-        "percentualApurado": "100,00%",
-        "eleitorado": 14800,
-        "comparecimento": 11797,
-        "percentualComparecimento": "79.71%",
-        "abstencao": 2741,
-        "percentualAbstencao": "18.52%",
-        "brancos": 578,
-        "nulos": 701,
-        "validos": 10519,
-        "votosCelina": 5828,
-        "percentualCelina": "55,40%",
-        "votosGrass": 3088,
-        "percentualGrass": "29,36%",
-        "votosPaula": 970,
-        "percentualPaula": "9,22%",
-        "votosKiko": 359,
-        "percentualKiko": "3,41%",
-        "votosCappelli": 223,
-        "percentualCappelli": "2,12%",
-        "votosOutros": 51,
-        "percentualOutros": "0,48%",
-        "vencedor": {
-          "numero": "11",
-          "nome": "Celina Leão",
-          "partido": "PP",
-          "cor": "#0083ca",
-          "votos": 5828,
-          "percentual": "55,40%"
-        },
-        "rankingCandidatos": [
-          {
-            "numero": "11",
-            "nome": "Celina Leão",
-            "partido": "PP",
-            "cor": "#0083ca",
-            "votos": 5828,
-            "percentual": "55,40%"
-          },
-          {
-            "numero": "13",
-            "nome": "Leandro Grass",
-            "partido": "PT",
-            "cor": "#ee2d35",
-            "votos": 3088,
-            "percentual": "29,36%"
-          },
-          {
-            "numero": "45",
-            "nome": "Paula Belmonte",
-            "partido": "PSDB",
-            "cor": "#f59e0b",
-            "votos": 970,
-            "percentual": "9,22%"
-          },
-          {
-            "numero": "30",
-            "nome": "Kiko Caputo",
-            "partido": "NOVO",
-            "cor": "#ff6f00",
-            "votos": 359,
-            "percentual": "3,41%"
-          },
-          {
-            "numero": "40",
-            "nome": "Cappelli",
-            "partido": "PSB",
-            "cor": "#e11d48",
-            "votos": 223,
-            "percentual": "2,12%"
-          },
-          {
-            "numero": "outros",
-            "nome": "Demais Candidatos",
-            "partido": "Outros",
-            "cor": "#85827C",
-            "votos": 51,
-            "percentual": "0,48%"
-          }
-        ]
-      },
-      {
-        "id": 18,
-        "codigo": "RA XVIII",
-        "nome": "Lago Norte",
-        "zonas": "Zona 14",
-        "totalSecoes": 39,
-        "secoesApuradas": 39,
-        "percentualApurado": "100,00%",
-        "eleitorado": 29400,
-        "comparecimento": 10623,
-        "percentualComparecimento": "36.13%",
-        "abstencao": 2339,
-        "percentualAbstencao": "7.96%",
-        "brancos": 282,
-        "nulos": 315,
-        "validos": 10027,
-        "votosCelina": 3684,
-        "percentualCelina": "36,74%",
-        "votosGrass": 4683,
-        "percentualGrass": "46,70%",
-        "votosPaula": 649,
-        "percentualPaula": "6,47%",
-        "votosKiko": 657,
-        "percentualKiko": "6,55%",
-        "votosCappelli": 288,
-        "percentualCappelli": "2,87%",
-        "votosOutros": 66,
-        "percentualOutros": "0,66%",
-        "vencedor": {
-          "numero": "13",
-          "nome": "Leandro Grass",
-          "partido": "PT",
-          "cor": "#ee2d35",
-          "votos": 4683,
-          "percentual": "46,70%"
-        },
-        "rankingCandidatos": [
-          {
-            "numero": "13",
-            "nome": "Leandro Grass",
-            "partido": "PT",
-            "cor": "#ee2d35",
-            "votos": 4683,
-            "percentual": "46,70%"
-          },
-          {
-            "numero": "11",
-            "nome": "Celina Leão",
-            "partido": "PP",
-            "cor": "#0083ca",
-            "votos": 3684,
-            "percentual": "36,74%"
-          },
-          {
-            "numero": "30",
-            "nome": "Kiko Caputo",
-            "partido": "NOVO",
-            "cor": "#ff6f00",
-            "votos": 657,
-            "percentual": "6,55%"
-          },
-          {
-            "numero": "45",
-            "nome": "Paula Belmonte",
-            "partido": "PSDB",
-            "cor": "#f59e0b",
-            "votos": 649,
-            "percentual": "6,47%"
-          },
-          {
-            "numero": "40",
-            "nome": "Cappelli",
-            "partido": "PSB",
-            "cor": "#e11d48",
-            "votos": 288,
-            "percentual": "2,87%"
-          },
-          {
-            "numero": "outros",
-            "nome": "Demais Candidatos",
-            "partido": "Outros",
-            "cor": "#85827C",
-            "votos": 66,
-            "percentual": "0,66%"
-          }
-        ]
-      },
-      {
-        "id": 33,
-        "codigo": "RA XXXIII",
-        "nome": "Arniqueira",
-        "zonas": "Zona 15",
-        "totalSecoes": 39,
-        "secoesApuradas": 39,
-        "percentualApurado": "100,00%",
-        "eleitorado": 31500,
-        "comparecimento": 10425,
-        "percentualComparecimento": "33.10%",
-        "abstencao": 2174,
-        "percentualAbstencao": "6.90%",
-        "brancos": 334,
-        "nulos": 405,
-        "validos": 9684,
-        "votosCelina": 4672,
-        "percentualCelina": "48,24%",
-        "votosGrass": 3444,
-        "percentualGrass": "35,56%",
-        "votosPaula": 758,
-        "percentualPaula": "7,83%",
-        "votosKiko": 564,
-        "percentualKiko": "5,82%",
-        "votosCappelli": 200,
-        "percentualCappelli": "2,07%",
-        "votosOutros": 46,
-        "percentualOutros": "0,48%",
-        "vencedor": {
-          "numero": "11",
-          "nome": "Celina Leão",
-          "partido": "PP",
-          "cor": "#0083ca",
-          "votos": 4672,
-          "percentual": "48,24%"
-        },
-        "rankingCandidatos": [
-          {
-            "numero": "11",
-            "nome": "Celina Leão",
-            "partido": "PP",
-            "cor": "#0083ca",
-            "votos": 4672,
-            "percentual": "48,24%"
-          },
-          {
-            "numero": "13",
-            "nome": "Leandro Grass",
-            "partido": "PT",
-            "cor": "#ee2d35",
-            "votos": 3444,
-            "percentual": "35,56%"
-          },
-          {
-            "numero": "45",
-            "nome": "Paula Belmonte",
-            "partido": "PSDB",
-            "cor": "#f59e0b",
-            "votos": 758,
-            "percentual": "7,83%"
-          },
-          {
-            "numero": "30",
-            "nome": "Kiko Caputo",
-            "partido": "NOVO",
-            "cor": "#ff6f00",
-            "votos": 564,
-            "percentual": "5,82%"
-          },
-          {
-            "numero": "40",
-            "nome": "Cappelli",
-            "partido": "PSB",
-            "cor": "#e11d48",
-            "votos": 200,
-            "percentual": "2,07%"
-          },
-          {
-            "numero": "outros",
-            "nome": "Demais Candidatos",
-            "partido": "Outros",
-            "cor": "#85827C",
-            "votos": 46,
-            "percentual": "0,48%"
-          }
-        ]
-      },
-      {
-        "id": 31,
-        "codigo": "RA XXXI",
-        "nome": "Fercal",
-        "zonas": "Zona 5",
-        "totalSecoes": 41,
-        "secoesApuradas": 41,
-        "percentualApurado": "100,00%",
-        "eleitorado": 11497,
-        "comparecimento": 10543,
-        "percentualComparecimento": "91.70%",
-        "abstencao": 2459,
-        "percentualAbstencao": "21.39%",
-        "brancos": 399,
-        "nulos": 511,
-        "validos": 9632,
-        "votosCelina": 4867,
-        "percentualCelina": "50,53%",
-        "votosGrass": 3365,
-        "percentualGrass": "34,94%",
-        "votosPaula": 800,
-        "percentualPaula": "8,31%",
-        "votosKiko": 334,
-        "percentualKiko": "3,47%",
-        "votosCappelli": 209,
-        "percentualCappelli": "2,17%",
-        "votosOutros": 57,
-        "percentualOutros": "0,59%",
-        "vencedor": {
-          "numero": "11",
-          "nome": "Celina Leão",
-          "partido": "PP",
-          "cor": "#0083ca",
-          "votos": 4867,
-          "percentual": "50,53%"
-        },
-        "rankingCandidatos": [
-          {
-            "numero": "11",
-            "nome": "Celina Leão",
-            "partido": "PP",
-            "cor": "#0083ca",
-            "votos": 4867,
-            "percentual": "50,53%"
-          },
-          {
-            "numero": "13",
-            "nome": "Leandro Grass",
-            "partido": "PT",
-            "cor": "#ee2d35",
-            "votos": 3365,
-            "percentual": "34,94%"
-          },
-          {
-            "numero": "45",
-            "nome": "Paula Belmonte",
-            "partido": "PSDB",
-            "cor": "#f59e0b",
-            "votos": 800,
-            "percentual": "8,31%"
-          },
-          {
-            "numero": "30",
-            "nome": "Kiko Caputo",
-            "partido": "NOVO",
-            "cor": "#ff6f00",
-            "votos": 334,
-            "percentual": "3,47%"
-          },
-          {
-            "numero": "40",
-            "nome": "Cappelli",
-            "partido": "PSB",
-            "cor": "#e11d48",
-            "votos": 209,
-            "percentual": "2,17%"
-          },
-          {
-            "numero": "outros",
-            "nome": "Demais Candidatos",
-            "partido": "Outros",
-            "cor": "#85827C",
-            "votos": 57,
-            "percentual": "0,59%"
-          }
-        ]
-      },
-      {
-        "id": 16,
-        "codigo": "RA XVI",
-        "nome": "Lago Sul",
-        "zonas": "Zona 1",
-        "totalSecoes": 32,
-        "secoesApuradas": 32,
-        "percentualApurado": "100,00%",
-        "eleitorado": 26500,
-        "comparecimento": 6896,
-        "percentualComparecimento": "26.02%",
-        "abstencao": 1681,
-        "percentualAbstencao": "6.34%",
-        "brancos": 181,
-        "nulos": 217,
-        "validos": 6498,
-        "votosCelina": 2547,
-        "percentualCelina": "39,20%",
-        "votosGrass": 2775,
-        "percentualGrass": "42,71%",
-        "votosPaula": 427,
-        "percentualPaula": "6,57%",
-        "votosKiko": 529,
-        "percentualKiko": "8,14%",
-        "votosCappelli": 183,
-        "percentualCappelli": "2,82%",
-        "votosOutros": 37,
-        "percentualOutros": "0,57%",
-        "vencedor": {
-          "numero": "13",
-          "nome": "Leandro Grass",
-          "partido": "PT",
-          "cor": "#ee2d35",
-          "votos": 2775,
-          "percentual": "42,71%"
-        },
-        "rankingCandidatos": [
-          {
-            "numero": "13",
-            "nome": "Leandro Grass",
-            "partido": "PT",
-            "cor": "#ee2d35",
-            "votos": 2775,
-            "percentual": "42,71%"
-          },
-          {
-            "numero": "11",
-            "nome": "Celina Leão",
-            "partido": "PP",
-            "cor": "#0083ca",
-            "votos": 2547,
-            "percentual": "39,20%"
-          },
-          {
-            "numero": "30",
-            "nome": "Kiko Caputo",
-            "partido": "NOVO",
-            "cor": "#ff6f00",
-            "votos": 529,
-            "percentual": "8,14%"
-          },
-          {
-            "numero": "45",
-            "nome": "Paula Belmonte",
-            "partido": "PSDB",
-            "cor": "#f59e0b",
-            "votos": 427,
-            "percentual": "6,57%"
-          },
-          {
-            "numero": "40",
-            "nome": "Cappelli",
-            "partido": "PSB",
-            "cor": "#e11d48",
-            "votos": 183,
-            "percentual": "2,82%"
-          },
-          {
-            "numero": "outros",
-            "nome": "Demais Candidatos",
-            "partido": "Outros",
-            "cor": "#85827C",
-            "votos": 37,
-            "percentual": "0,57%"
-          }
-        ]
-      },
-      {
-        "id": 23,
-        "codigo": "RA XXIII",
-        "nome": "Varjão",
-        "zonas": "Zona 14",
-        "totalSecoes": 11,
-        "secoesApuradas": 11,
-        "percentualApurado": "100,00%",
-        "eleitorado": 7800,
-        "comparecimento": 3000,
-        "percentualComparecimento": "38.46%",
-        "abstencao": 661,
-        "percentualAbstencao": "8.47%",
-        "brancos": 80,
-        "nulos": 89,
-        "validos": 2831,
-        "votosCelina": 1040,
-        "percentualCelina": "36,74%",
-        "votosGrass": 1322,
-        "percentualGrass": "46,70%",
-        "votosPaula": 184,
-        "percentualPaula": "6,50%",
-        "votosKiko": 186,
-        "percentualKiko": "6,57%",
-        "votosCappelli": 81,
-        "percentualCappelli": "2,86%",
-        "votosOutros": 18,
-        "percentualOutros": "0,64%",
-        "vencedor": {
-          "numero": "13",
-          "nome": "Leandro Grass",
-          "partido": "PT",
-          "cor": "#ee2d35",
-          "votos": 1322,
-          "percentual": "46,70%"
-        },
-        "rankingCandidatos": [
-          {
-            "numero": "13",
-            "nome": "Leandro Grass",
-            "partido": "PT",
-            "cor": "#ee2d35",
-            "votos": 1322,
-            "percentual": "46,70%"
-          },
-          {
-            "numero": "11",
-            "nome": "Celina Leão",
-            "partido": "PP",
-            "cor": "#0083ca",
-            "votos": 1040,
-            "percentual": "36,74%"
-          },
-          {
-            "numero": "30",
-            "nome": "Kiko Caputo",
-            "partido": "NOVO",
-            "cor": "#ff6f00",
-            "votos": 186,
-            "percentual": "6,57%"
-          },
-          {
-            "numero": "45",
-            "nome": "Paula Belmonte",
-            "partido": "PSDB",
-            "cor": "#f59e0b",
-            "votos": 184,
-            "percentual": "6,50%"
-          },
-          {
-            "numero": "40",
-            "nome": "Cappelli",
-            "partido": "PSB",
-            "cor": "#e11d48",
-            "votos": 81,
-            "percentual": "2,86%"
-          },
-          {
-            "numero": "outros",
-            "nome": "Demais Candidatos",
-            "partido": "Outros",
-            "cor": "#85827C",
-            "votos": 18,
-            "percentual": "0,64%"
+            "votos": 86,
+            "percentual": "0,62%"
           }
         ]
       },
@@ -176895,32 +175764,32 @@
         "totalSecoes": 12,
         "secoesApuradas": 12,
         "percentualApurado": "100,00%",
-        "eleitorado": 3800,
-        "comparecimento": 2870,
-        "percentualComparecimento": "75.53%",
-        "abstencao": 665,
-        "percentualAbstencao": "17.50%",
-        "brancos": 103,
-        "nulos": 132,
-        "validos": 2637,
-        "votosCelina": 1264,
+        "eleitorado": 3631,
+        "comparecimento": 2948,
+        "percentualComparecimento": "81.19%",
+        "abstencao": 683,
+        "percentualAbstencao": "18.81%",
+        "brancos": 105,
+        "nulos": 135,
+        "validos": 2708,
+        "votosCelina": 1298,
         "percentualCelina": "47,93%",
-        "votosGrass": 957,
-        "percentualGrass": "36,29%",
-        "votosPaula": 207,
-        "percentualPaula": "7,85%",
-        "votosKiko": 133,
-        "percentualKiko": "5,04%",
-        "votosCappelli": 59,
-        "percentualCappelli": "2,24%",
+        "votosGrass": 984,
+        "percentualGrass": "36,34%",
+        "votosPaula": 213,
+        "percentualPaula": "7,87%",
+        "votosKiko": 136,
+        "percentualKiko": "5,02%",
+        "votosCappelli": 60,
+        "percentualCappelli": "2,22%",
         "votosOutros": 17,
-        "percentualOutros": "0,64%",
+        "percentualOutros": "0,63%",
         "vencedor": {
           "numero": "11",
           "nome": "Celina Leão",
           "partido": "PP",
           "cor": "#0083ca",
-          "votos": 1264,
+          "votos": 1298,
           "percentual": "47,93%"
         },
         "rankingCandidatos": [
@@ -176929,7 +175798,7 @@
             "nome": "Celina Leão",
             "partido": "PP",
             "cor": "#0083ca",
-            "votos": 1264,
+            "votos": 1298,
             "percentual": "47,93%"
           },
           {
@@ -176937,32 +175806,32 @@
             "nome": "Leandro Grass",
             "partido": "PT",
             "cor": "#ee2d35",
-            "votos": 957,
-            "percentual": "36,29%"
+            "votos": 984,
+            "percentual": "36,34%"
           },
           {
             "numero": "45",
             "nome": "Paula Belmonte",
             "partido": "PSDB",
             "cor": "#f59e0b",
-            "votos": 207,
-            "percentual": "7,85%"
+            "votos": 213,
+            "percentual": "7,87%"
           },
           {
             "numero": "30",
             "nome": "Kiko Caputo",
             "partido": "NOVO",
             "cor": "#ff6f00",
-            "votos": 133,
-            "percentual": "5,04%"
+            "votos": 136,
+            "percentual": "5,02%"
           },
           {
             "numero": "40",
             "nome": "Cappelli",
             "partido": "PSB",
             "cor": "#e11d48",
-            "votos": 59,
-            "percentual": "2,24%"
+            "votos": 60,
+            "percentual": "2,22%"
           },
           {
             "numero": "outros",
@@ -176970,7 +175839,1138 @@
             "partido": "Outros",
             "cor": "#85827C",
             "votos": 17,
-            "percentual": "0,64%"
+            "percentual": "0,63%"
+          }
+        ]
+      },
+      {
+        "id": 8,
+        "codigo": "RA VIII",
+        "nome": "Núcleo Bandeirante",
+        "zonas": "Zona 10",
+        "totalSecoes": 175,
+        "secoesApuradas": 175,
+        "percentualApurado": "100,00%",
+        "eleitorado": 61693,
+        "comparecimento": 50198,
+        "percentualComparecimento": "81.37%",
+        "abstencao": 11495,
+        "percentualAbstencao": "18.63%",
+        "brancos": 1958,
+        "nulos": 2430,
+        "validos": 45809,
+        "votosCelina": 24220,
+        "percentualCelina": "52,87%",
+        "votosGrass": 14469,
+        "percentualGrass": "31,59%",
+        "votosPaula": 3876,
+        "percentualPaula": "8,46%",
+        "votosKiko": 2124,
+        "percentualKiko": "4,64%",
+        "votosCappelli": 910,
+        "percentualCappelli": "1,99%",
+        "votosOutros": 213,
+        "percentualOutros": "0,46%",
+        "vencedor": {
+          "numero": "11",
+          "nome": "Celina Leão",
+          "partido": "PP",
+          "cor": "#0083ca",
+          "votos": 24220,
+          "percentual": "52,87%"
+        },
+        "rankingCandidatos": [
+          {
+            "numero": "11",
+            "nome": "Celina Leão",
+            "partido": "PP",
+            "cor": "#0083ca",
+            "votos": 24220,
+            "percentual": "52,87%"
+          },
+          {
+            "numero": "13",
+            "nome": "Leandro Grass",
+            "partido": "PT",
+            "cor": "#ee2d35",
+            "votos": 14469,
+            "percentual": "31,59%"
+          },
+          {
+            "numero": "45",
+            "nome": "Paula Belmonte",
+            "partido": "PSDB",
+            "cor": "#f59e0b",
+            "votos": 3876,
+            "percentual": "8,46%"
+          },
+          {
+            "numero": "30",
+            "nome": "Kiko Caputo",
+            "partido": "NOVO",
+            "cor": "#ff6f00",
+            "votos": 2124,
+            "percentual": "4,64%"
+          },
+          {
+            "numero": "40",
+            "nome": "Cappelli",
+            "partido": "PSB",
+            "cor": "#e11d48",
+            "votos": 910,
+            "percentual": "1,99%"
+          },
+          {
+            "numero": "outros",
+            "nome": "Demais Candidatos",
+            "partido": "Outros",
+            "cor": "#85827C",
+            "votos": 213,
+            "percentual": "0,46%"
+          }
+        ]
+      },
+      {
+        "id": 19,
+        "codigo": "RA XIX",
+        "nome": "Candangolândia",
+        "zonas": "Zona 10",
+        "totalSecoes": 86,
+        "secoesApuradas": 86,
+        "percentualApurado": "100,00%",
+        "eleitorado": 30318,
+        "comparecimento": 24669,
+        "percentualComparecimento": "81.37%",
+        "abstencao": 5649,
+        "percentualAbstencao": "18.63%",
+        "brancos": 962,
+        "nulos": 1194,
+        "validos": 22512,
+        "votosCelina": 11902,
+        "percentualCelina": "52,87%",
+        "votosGrass": 7110,
+        "percentualGrass": "31,58%",
+        "votosPaula": 1905,
+        "percentualPaula": "8,46%",
+        "votosKiko": 1044,
+        "percentualKiko": "4,64%",
+        "votosCappelli": 447,
+        "percentualCappelli": "1,99%",
+        "votosOutros": 103,
+        "percentualOutros": "0,46%",
+        "vencedor": {
+          "numero": "11",
+          "nome": "Celina Leão",
+          "partido": "PP",
+          "cor": "#0083ca",
+          "votos": 11902,
+          "percentual": "52,87%"
+        },
+        "rankingCandidatos": [
+          {
+            "numero": "11",
+            "nome": "Celina Leão",
+            "partido": "PP",
+            "cor": "#0083ca",
+            "votos": 11902,
+            "percentual": "52,87%"
+          },
+          {
+            "numero": "13",
+            "nome": "Leandro Grass",
+            "partido": "PT",
+            "cor": "#ee2d35",
+            "votos": 7110,
+            "percentual": "31,58%"
+          },
+          {
+            "numero": "45",
+            "nome": "Paula Belmonte",
+            "partido": "PSDB",
+            "cor": "#f59e0b",
+            "votos": 1905,
+            "percentual": "8,46%"
+          },
+          {
+            "numero": "30",
+            "nome": "Kiko Caputo",
+            "partido": "NOVO",
+            "cor": "#ff6f00",
+            "votos": 1044,
+            "percentual": "4,64%"
+          },
+          {
+            "numero": "40",
+            "nome": "Cappelli",
+            "partido": "PSB",
+            "cor": "#e11d48",
+            "votos": 447,
+            "percentual": "1,99%"
+          },
+          {
+            "numero": "outros",
+            "nome": "Demais Candidatos",
+            "partido": "Outros",
+            "cor": "#85827C",
+            "votos": 103,
+            "percentual": "0,46%"
+          }
+        ]
+      },
+      {
+        "id": 24,
+        "codigo": "RA XXIV",
+        "nome": "Park Way",
+        "zonas": "Zona 10",
+        "totalSecoes": 88,
+        "secoesApuradas": 88,
+        "percentualApurado": "100,00%",
+        "eleitorado": 31023,
+        "comparecimento": 25242,
+        "percentualComparecimento": "81.37%",
+        "abstencao": 5781,
+        "percentualAbstencao": "18.63%",
+        "brancos": 985,
+        "nulos": 1222,
+        "validos": 23036,
+        "votosCelina": 12179,
+        "percentualCelina": "52,87%",
+        "votosGrass": 7276,
+        "percentualGrass": "31,59%",
+        "votosPaula": 1949,
+        "percentualPaula": "8,46%",
+        "votosKiko": 1068,
+        "percentualKiko": "4,64%",
+        "votosCappelli": 458,
+        "percentualCappelli": "1,99%",
+        "votosOutros": 107,
+        "percentualOutros": "0,46%",
+        "vencedor": {
+          "numero": "11",
+          "nome": "Celina Leão",
+          "partido": "PP",
+          "cor": "#0083ca",
+          "votos": 12179,
+          "percentual": "52,87%"
+        },
+        "rankingCandidatos": [
+          {
+            "numero": "11",
+            "nome": "Celina Leão",
+            "partido": "PP",
+            "cor": "#0083ca",
+            "votos": 12179,
+            "percentual": "52,87%"
+          },
+          {
+            "numero": "13",
+            "nome": "Leandro Grass",
+            "partido": "PT",
+            "cor": "#ee2d35",
+            "votos": 7276,
+            "percentual": "31,59%"
+          },
+          {
+            "numero": "45",
+            "nome": "Paula Belmonte",
+            "partido": "PSDB",
+            "cor": "#f59e0b",
+            "votos": 1949,
+            "percentual": "8,46%"
+          },
+          {
+            "numero": "30",
+            "nome": "Kiko Caputo",
+            "partido": "NOVO",
+            "cor": "#ff6f00",
+            "votos": 1068,
+            "percentual": "4,64%"
+          },
+          {
+            "numero": "40",
+            "nome": "Cappelli",
+            "partido": "PSB",
+            "cor": "#e11d48",
+            "votos": 458,
+            "percentual": "1,99%"
+          },
+          {
+            "numero": "outros",
+            "nome": "Demais Candidatos",
+            "partido": "Outros",
+            "cor": "#85827C",
+            "votos": 107,
+            "percentual": "0,46%"
+          }
+        ]
+      },
+      {
+        "id": 11,
+        "codigo": "RA XI",
+        "nome": "Cruzeiro",
+        "zonas": "Zona 11",
+        "totalSecoes": 92,
+        "secoesApuradas": 92,
+        "percentualApurado": "100,00%",
+        "eleitorado": 27919,
+        "comparecimento": 23174,
+        "percentualComparecimento": "83%",
+        "abstencao": 4745,
+        "percentualAbstencao": "17%",
+        "brancos": 677,
+        "nulos": 795,
+        "validos": 21703,
+        "votosCelina": 9519,
+        "percentualCelina": "43,86%",
+        "votosGrass": 8431,
+        "percentualGrass": "38,85%",
+        "votosPaula": 1535,
+        "percentualPaula": "7,07%",
+        "votosKiko": 1536,
+        "percentualKiko": "7,08%",
+        "votosCappelli": 580,
+        "percentualCappelli": "2,67%",
+        "votosOutros": 103,
+        "percentualOutros": "0,47%",
+        "vencedor": {
+          "numero": "11",
+          "nome": "Celina Leão",
+          "partido": "PP",
+          "cor": "#0083ca",
+          "votos": 9519,
+          "percentual": "43,86%"
+        },
+        "rankingCandidatos": [
+          {
+            "numero": "11",
+            "nome": "Celina Leão",
+            "partido": "PP",
+            "cor": "#0083ca",
+            "votos": 9519,
+            "percentual": "43,86%"
+          },
+          {
+            "numero": "13",
+            "nome": "Leandro Grass",
+            "partido": "PT",
+            "cor": "#ee2d35",
+            "votos": 8431,
+            "percentual": "38,85%"
+          },
+          {
+            "numero": "30",
+            "nome": "Kiko Caputo",
+            "partido": "NOVO",
+            "cor": "#ff6f00",
+            "votos": 1536,
+            "percentual": "7,08%"
+          },
+          {
+            "numero": "45",
+            "nome": "Paula Belmonte",
+            "partido": "PSDB",
+            "cor": "#f59e0b",
+            "votos": 1535,
+            "percentual": "7,07%"
+          },
+          {
+            "numero": "40",
+            "nome": "Cappelli",
+            "partido": "PSB",
+            "cor": "#e11d48",
+            "votos": 580,
+            "percentual": "2,67%"
+          },
+          {
+            "numero": "outros",
+            "nome": "Demais Candidatos",
+            "partido": "Outros",
+            "cor": "#85827C",
+            "votos": 103,
+            "percentual": "0,47%"
+          }
+        ]
+      },
+      {
+        "id": 22,
+        "codigo": "RA XXII",
+        "nome": "Sudoeste / Octogonal",
+        "zonas": "Zona 11",
+        "totalSecoes": 157,
+        "secoesApuradas": 157,
+        "percentualApurado": "100,00%",
+        "eleitorado": 47644,
+        "comparecimento": 39547,
+        "percentualComparecimento": "83.01%",
+        "abstencao": 8097,
+        "percentualAbstencao": "16.99%",
+        "brancos": 1154,
+        "nulos": 1356,
+        "validos": 37036,
+        "votosCelina": 16245,
+        "percentualCelina": "43,86%",
+        "votosGrass": 14387,
+        "percentualGrass": "38,85%",
+        "votosPaula": 2620,
+        "percentualPaula": "7,07%",
+        "votosKiko": 2622,
+        "percentualKiko": "7,08%",
+        "votosCappelli": 989,
+        "percentualCappelli": "2,67%",
+        "votosOutros": 172,
+        "percentualOutros": "0,46%",
+        "vencedor": {
+          "numero": "11",
+          "nome": "Celina Leão",
+          "partido": "PP",
+          "cor": "#0083ca",
+          "votos": 16245,
+          "percentual": "43,86%"
+        },
+        "rankingCandidatos": [
+          {
+            "numero": "11",
+            "nome": "Celina Leão",
+            "partido": "PP",
+            "cor": "#0083ca",
+            "votos": 16245,
+            "percentual": "43,86%"
+          },
+          {
+            "numero": "13",
+            "nome": "Leandro Grass",
+            "partido": "PT",
+            "cor": "#ee2d35",
+            "votos": 14387,
+            "percentual": "38,85%"
+          },
+          {
+            "numero": "30",
+            "nome": "Kiko Caputo",
+            "partido": "NOVO",
+            "cor": "#ff6f00",
+            "votos": 2622,
+            "percentual": "7,08%"
+          },
+          {
+            "numero": "45",
+            "nome": "Paula Belmonte",
+            "partido": "PSDB",
+            "cor": "#f59e0b",
+            "votos": 2620,
+            "percentual": "7,07%"
+          },
+          {
+            "numero": "40",
+            "nome": "Cappelli",
+            "partido": "PSB",
+            "cor": "#e11d48",
+            "votos": 989,
+            "percentual": "2,67%"
+          },
+          {
+            "numero": "outros",
+            "nome": "Demais Candidatos",
+            "partido": "Outros",
+            "cor": "#85827C",
+            "votos": 172,
+            "percentual": "0,46%"
+          }
+        ]
+      },
+      {
+        "id": 20,
+        "codigo": "RA XX",
+        "nome": "Águas Claras",
+        "zonas": "Zona 15",
+        "totalSecoes": 236,
+        "secoesApuradas": 236,
+        "percentualApurado": "100,00%",
+        "eleitorado": 77250,
+        "comparecimento": 63922,
+        "percentualComparecimento": "82.75%",
+        "abstencao": 13328,
+        "percentualAbstencao": "17.25%",
+        "brancos": 2049,
+        "nulos": 2488,
+        "validos": 59385,
+        "votosCelina": 28646,
+        "percentualCelina": "48,24%",
+        "votosGrass": 21116,
+        "percentualGrass": "35,56%",
+        "votosPaula": 4649,
+        "percentualPaula": "7,83%",
+        "votosKiko": 3458,
+        "percentualKiko": "5,82%",
+        "votosCappelli": 1231,
+        "percentualCappelli": "2,07%",
+        "votosOutros": 283,
+        "percentualOutros": "0,48%",
+        "vencedor": {
+          "numero": "11",
+          "nome": "Celina Leão",
+          "partido": "PP",
+          "cor": "#0083ca",
+          "votos": 28646,
+          "percentual": "48,24%"
+        },
+        "rankingCandidatos": [
+          {
+            "numero": "11",
+            "nome": "Celina Leão",
+            "partido": "PP",
+            "cor": "#0083ca",
+            "votos": 28646,
+            "percentual": "48,24%"
+          },
+          {
+            "numero": "13",
+            "nome": "Leandro Grass",
+            "partido": "PT",
+            "cor": "#ee2d35",
+            "votos": 21116,
+            "percentual": "35,56%"
+          },
+          {
+            "numero": "45",
+            "nome": "Paula Belmonte",
+            "partido": "PSDB",
+            "cor": "#f59e0b",
+            "votos": 4649,
+            "percentual": "7,83%"
+          },
+          {
+            "numero": "30",
+            "nome": "Kiko Caputo",
+            "partido": "NOVO",
+            "cor": "#ff6f00",
+            "votos": 3458,
+            "percentual": "5,82%"
+          },
+          {
+            "numero": "40",
+            "nome": "Cappelli",
+            "partido": "PSB",
+            "cor": "#e11d48",
+            "votos": 1231,
+            "percentual": "2,07%"
+          },
+          {
+            "numero": "outros",
+            "nome": "Demais Candidatos",
+            "partido": "Outros",
+            "cor": "#85827C",
+            "votos": 283,
+            "percentual": "0,48%"
+          }
+        ]
+      },
+      {
+        "id": 30,
+        "codigo": "RA XXX",
+        "nome": "Vicente Pires",
+        "zonas": "Zona 15",
+        "totalSecoes": 182,
+        "secoesApuradas": 182,
+        "percentualApurado": "100,00%",
+        "eleitorado": 59574,
+        "comparecimento": 49295,
+        "percentualComparecimento": "82.75%",
+        "abstencao": 10279,
+        "percentualAbstencao": "17.25%",
+        "brancos": 1580,
+        "nulos": 1918,
+        "validos": 45797,
+        "votosCelina": 22091,
+        "percentualCelina": "48,24%",
+        "votosGrass": 16285,
+        "percentualGrass": "35,56%",
+        "votosPaula": 3585,
+        "percentualPaula": "7,83%",
+        "votosKiko": 2667,
+        "percentualKiko": "5,82%",
+        "votosCappelli": 950,
+        "percentualCappelli": "2,07%",
+        "votosOutros": 219,
+        "percentualOutros": "0,48%",
+        "vencedor": {
+          "numero": "11",
+          "nome": "Celina Leão",
+          "partido": "PP",
+          "cor": "#0083ca",
+          "votos": 22091,
+          "percentual": "48,24%"
+        },
+        "rankingCandidatos": [
+          {
+            "numero": "11",
+            "nome": "Celina Leão",
+            "partido": "PP",
+            "cor": "#0083ca",
+            "votos": 22091,
+            "percentual": "48,24%"
+          },
+          {
+            "numero": "13",
+            "nome": "Leandro Grass",
+            "partido": "PT",
+            "cor": "#ee2d35",
+            "votos": 16285,
+            "percentual": "35,56%"
+          },
+          {
+            "numero": "45",
+            "nome": "Paula Belmonte",
+            "partido": "PSDB",
+            "cor": "#f59e0b",
+            "votos": 3585,
+            "percentual": "7,83%"
+          },
+          {
+            "numero": "30",
+            "nome": "Kiko Caputo",
+            "partido": "NOVO",
+            "cor": "#ff6f00",
+            "votos": 2667,
+            "percentual": "5,82%"
+          },
+          {
+            "numero": "40",
+            "nome": "Cappelli",
+            "partido": "PSB",
+            "cor": "#e11d48",
+            "votos": 950,
+            "percentual": "2,07%"
+          },
+          {
+            "numero": "outros",
+            "nome": "Demais Candidatos",
+            "partido": "Outros",
+            "cor": "#85827C",
+            "votos": 219,
+            "percentual": "0,48%"
+          }
+        ]
+      },
+      {
+        "id": 33,
+        "codigo": "RA XXXIII",
+        "nome": "Arniqueira",
+        "zonas": "Zona 15",
+        "totalSecoes": 96,
+        "secoesApuradas": 96,
+        "percentualApurado": "100,00%",
+        "eleitorado": 31424,
+        "comparecimento": 26002,
+        "percentualComparecimento": "82.75%",
+        "abstencao": 5422,
+        "percentualAbstencao": "17.25%",
+        "brancos": 834,
+        "nulos": 1012,
+        "validos": 24157,
+        "votosCelina": 11653,
+        "percentualCelina": "48,24%",
+        "votosGrass": 8590,
+        "percentualGrass": "35,56%",
+        "votosPaula": 1891,
+        "percentualPaula": "7,83%",
+        "votosKiko": 1407,
+        "percentualKiko": "5,82%",
+        "votosCappelli": 501,
+        "percentualCappelli": "2,07%",
+        "votosOutros": 116,
+        "percentualOutros": "0,48%",
+        "vencedor": {
+          "numero": "11",
+          "nome": "Celina Leão",
+          "partido": "PP",
+          "cor": "#0083ca",
+          "votos": 11653,
+          "percentual": "48,24%"
+        },
+        "rankingCandidatos": [
+          {
+            "numero": "11",
+            "nome": "Celina Leão",
+            "partido": "PP",
+            "cor": "#0083ca",
+            "votos": 11653,
+            "percentual": "48,24%"
+          },
+          {
+            "numero": "13",
+            "nome": "Leandro Grass",
+            "partido": "PT",
+            "cor": "#ee2d35",
+            "votos": 8590,
+            "percentual": "35,56%"
+          },
+          {
+            "numero": "45",
+            "nome": "Paula Belmonte",
+            "partido": "PSDB",
+            "cor": "#f59e0b",
+            "votos": 1891,
+            "percentual": "7,83%"
+          },
+          {
+            "numero": "30",
+            "nome": "Kiko Caputo",
+            "partido": "NOVO",
+            "cor": "#ff6f00",
+            "votos": 1407,
+            "percentual": "5,82%"
+          },
+          {
+            "numero": "40",
+            "nome": "Cappelli",
+            "partido": "PSB",
+            "cor": "#e11d48",
+            "votos": 501,
+            "percentual": "2,07%"
+          },
+          {
+            "numero": "outros",
+            "nome": "Demais Candidatos",
+            "partido": "Outros",
+            "cor": "#85827C",
+            "votos": 116,
+            "percentual": "0,48%"
+          }
+        ]
+      },
+      {
+        "id": 32,
+        "codigo": "RA XXXII",
+        "nome": "Sol Nascente / Pôr do Sol",
+        "zonas": "Zona 16",
+        "totalSecoes": 154,
+        "secoesApuradas": 154,
+        "percentualApurado": "100,00%",
+        "eleitorado": 49341,
+        "comparecimento": 39585,
+        "percentualComparecimento": "80.23%",
+        "abstencao": 9756,
+        "percentualAbstencao": "19.77%",
+        "brancos": 1942,
+        "nulos": 2367,
+        "validos": 35277,
+        "votosCelina": 19457,
+        "percentualCelina": "55,15%",
+        "votosGrass": 10707,
+        "percentualGrass": "30,35%",
+        "votosPaula": 3221,
+        "percentualPaula": "9,13%",
+        "votosKiko": 960,
+        "percentualKiko": "2,72%",
+        "votosCappelli": 798,
+        "percentualCappelli": "2,26%",
+        "votosOutros": 133,
+        "percentualOutros": "0,38%",
+        "vencedor": {
+          "numero": "11",
+          "nome": "Celina Leão",
+          "partido": "PP",
+          "cor": "#0083ca",
+          "votos": 19457,
+          "percentual": "55,15%"
+        },
+        "rankingCandidatos": [
+          {
+            "numero": "11",
+            "nome": "Celina Leão",
+            "partido": "PP",
+            "cor": "#0083ca",
+            "votos": 19457,
+            "percentual": "55,15%"
+          },
+          {
+            "numero": "13",
+            "nome": "Leandro Grass",
+            "partido": "PT",
+            "cor": "#ee2d35",
+            "votos": 10707,
+            "percentual": "30,35%"
+          },
+          {
+            "numero": "45",
+            "nome": "Paula Belmonte",
+            "partido": "PSDB",
+            "cor": "#f59e0b",
+            "votos": 3221,
+            "percentual": "9,13%"
+          },
+          {
+            "numero": "30",
+            "nome": "Kiko Caputo",
+            "partido": "NOVO",
+            "cor": "#ff6f00",
+            "votos": 960,
+            "percentual": "2,72%"
+          },
+          {
+            "numero": "40",
+            "nome": "Cappelli",
+            "partido": "PSB",
+            "cor": "#e11d48",
+            "votos": 798,
+            "percentual": "2,26%"
+          },
+          {
+            "numero": "outros",
+            "nome": "Demais Candidatos",
+            "partido": "Outros",
+            "cor": "#85827C",
+            "votos": 133,
+            "percentual": "0,38%"
+          }
+        ]
+      },
+      {
+        "id": 15,
+        "codigo": "RA XV",
+        "nome": "Recanto das Emas",
+        "zonas": "Zona 21",
+        "totalSecoes": 163,
+        "secoesApuradas": 163,
+        "percentualApurado": "100,00%",
+        "eleitorado": 55686,
+        "comparecimento": 44392,
+        "percentualComparecimento": "79.72%",
+        "abstencao": 11294,
+        "percentualAbstencao": "20.28%",
+        "brancos": 2241,
+        "nulos": 2614,
+        "validos": 39537,
+        "votosCelina": 21552,
+        "percentualCelina": "54,51%",
+        "votosGrass": 11842,
+        "percentualGrass": "29,95%",
+        "votosPaula": 3898,
+        "percentualPaula": "9,86%",
+        "votosKiko": 1185,
+        "percentualKiko": "3,00%",
+        "votosCappelli": 887,
+        "percentualCappelli": "2,24%",
+        "votosOutros": 172,
+        "percentualOutros": "0,44%",
+        "vencedor": {
+          "numero": "11",
+          "nome": "Celina Leão",
+          "partido": "PP",
+          "cor": "#0083ca",
+          "votos": 21552,
+          "percentual": "54,51%"
+        },
+        "rankingCandidatos": [
+          {
+            "numero": "11",
+            "nome": "Celina Leão",
+            "partido": "PP",
+            "cor": "#0083ca",
+            "votos": 21552,
+            "percentual": "54,51%"
+          },
+          {
+            "numero": "13",
+            "nome": "Leandro Grass",
+            "partido": "PT",
+            "cor": "#ee2d35",
+            "votos": 11842,
+            "percentual": "29,95%"
+          },
+          {
+            "numero": "45",
+            "nome": "Paula Belmonte",
+            "partido": "PSDB",
+            "cor": "#f59e0b",
+            "votos": 3898,
+            "percentual": "9,86%"
+          },
+          {
+            "numero": "30",
+            "nome": "Kiko Caputo",
+            "partido": "NOVO",
+            "cor": "#ff6f00",
+            "votos": 1185,
+            "percentual": "3,00%"
+          },
+          {
+            "numero": "40",
+            "nome": "Cappelli",
+            "partido": "PSB",
+            "cor": "#e11d48",
+            "votos": 887,
+            "percentual": "2,24%"
+          },
+          {
+            "numero": "outros",
+            "nome": "Demais Candidatos",
+            "partido": "Outros",
+            "cor": "#85827C",
+            "votos": 172,
+            "percentual": "0,44%"
+          }
+        ]
+      },
+      {
+        "id": 17,
+        "codigo": "RA XVII",
+        "nome": "Riacho Fundo",
+        "zonas": "Zona 21",
+        "totalSecoes": 78,
+        "secoesApuradas": 78,
+        "percentualApurado": "100,00%",
+        "eleitorado": 26648,
+        "comparecimento": 21243,
+        "percentualComparecimento": "79.72%",
+        "abstencao": 5405,
+        "percentualAbstencao": "20.28%",
+        "brancos": 1072,
+        "nulos": 1251,
+        "validos": 18919,
+        "votosCelina": 10313,
+        "percentualCelina": "54,51%",
+        "votosGrass": 5667,
+        "percentualGrass": "29,95%",
+        "votosPaula": 1865,
+        "percentualPaula": "9,86%",
+        "votosKiko": 567,
+        "percentualKiko": "3,00%",
+        "votosCappelli": 425,
+        "percentualCappelli": "2,25%",
+        "votosOutros": 81,
+        "percentualOutros": "0,43%",
+        "vencedor": {
+          "numero": "11",
+          "nome": "Celina Leão",
+          "partido": "PP",
+          "cor": "#0083ca",
+          "votos": 10313,
+          "percentual": "54,51%"
+        },
+        "rankingCandidatos": [
+          {
+            "numero": "11",
+            "nome": "Celina Leão",
+            "partido": "PP",
+            "cor": "#0083ca",
+            "votos": 10313,
+            "percentual": "54,51%"
+          },
+          {
+            "numero": "13",
+            "nome": "Leandro Grass",
+            "partido": "PT",
+            "cor": "#ee2d35",
+            "votos": 5667,
+            "percentual": "29,95%"
+          },
+          {
+            "numero": "45",
+            "nome": "Paula Belmonte",
+            "partido": "PSDB",
+            "cor": "#f59e0b",
+            "votos": 1865,
+            "percentual": "9,86%"
+          },
+          {
+            "numero": "30",
+            "nome": "Kiko Caputo",
+            "partido": "NOVO",
+            "cor": "#ff6f00",
+            "votos": 567,
+            "percentual": "3,00%"
+          },
+          {
+            "numero": "40",
+            "nome": "Cappelli",
+            "partido": "PSB",
+            "cor": "#e11d48",
+            "votos": 425,
+            "percentual": "2,25%"
+          },
+          {
+            "numero": "outros",
+            "nome": "Demais Candidatos",
+            "partido": "Outros",
+            "cor": "#85827C",
+            "votos": 81,
+            "percentual": "0,43%"
+          }
+        ]
+      },
+      {
+        "id": 21,
+        "codigo": "RA XXI",
+        "nome": "Riacho Fundo II",
+        "zonas": "Zona 21",
+        "totalSecoes": 65,
+        "secoesApuradas": 65,
+        "percentualApurado": "100,00%",
+        "eleitorado": 22206,
+        "comparecimento": 17702,
+        "percentualComparecimento": "79.72%",
+        "abstencao": 4504,
+        "percentualAbstencao": "20.28%",
+        "brancos": 893,
+        "nulos": 1043,
+        "validos": 15766,
+        "votosCelina": 8594,
+        "percentualCelina": "54,51%",
+        "votosGrass": 4722,
+        "percentualGrass": "29,95%",
+        "votosPaula": 1554,
+        "percentualPaula": "9,86%",
+        "votosKiko": 473,
+        "percentualKiko": "3,00%",
+        "votosCappelli": 354,
+        "percentualCappelli": "2,25%",
+        "votosOutros": 69,
+        "percentualOutros": "0,44%",
+        "vencedor": {
+          "numero": "11",
+          "nome": "Celina Leão",
+          "partido": "PP",
+          "cor": "#0083ca",
+          "votos": 8594,
+          "percentual": "54,51%"
+        },
+        "rankingCandidatos": [
+          {
+            "numero": "11",
+            "nome": "Celina Leão",
+            "partido": "PP",
+            "cor": "#0083ca",
+            "votos": 8594,
+            "percentual": "54,51%"
+          },
+          {
+            "numero": "13",
+            "nome": "Leandro Grass",
+            "partido": "PT",
+            "cor": "#ee2d35",
+            "votos": 4722,
+            "percentual": "29,95%"
+          },
+          {
+            "numero": "45",
+            "nome": "Paula Belmonte",
+            "partido": "PSDB",
+            "cor": "#f59e0b",
+            "votos": 1554,
+            "percentual": "9,86%"
+          },
+          {
+            "numero": "30",
+            "nome": "Kiko Caputo",
+            "partido": "NOVO",
+            "cor": "#ff6f00",
+            "votos": 473,
+            "percentual": "3,00%"
+          },
+          {
+            "numero": "40",
+            "nome": "Cappelli",
+            "partido": "PSB",
+            "cor": "#e11d48",
+            "votos": 354,
+            "percentual": "2,25%"
+          },
+          {
+            "numero": "outros",
+            "nome": "Demais Candidatos",
+            "partido": "Outros",
+            "cor": "#85827C",
+            "votos": 69,
+            "percentual": "0,44%"
+          }
+        ]
+      },
+      {
+        "id": 35,
+        "codigo": "RA XXXV",
+        "nome": "Água Quente",
+        "zonas": "Zona 21",
+        "totalSecoes": 28,
+        "secoesApuradas": 28,
+        "percentualApurado": "100,00%",
+        "eleitorado": 9566,
+        "comparecimento": 7626,
+        "percentualComparecimento": "79.72%",
+        "abstencao": 1940,
+        "percentualAbstencao": "20.28%",
+        "brancos": 385,
+        "nulos": 449,
+        "validos": 6792,
+        "votosCelina": 3702,
+        "percentualCelina": "54,51%",
+        "votosGrass": 2034,
+        "percentualGrass": "29,95%",
+        "votosPaula": 670,
+        "percentualPaula": "9,86%",
+        "votosKiko": 204,
+        "percentualKiko": "3,00%",
+        "votosCappelli": 152,
+        "percentualCappelli": "2,24%",
+        "votosOutros": 30,
+        "percentualOutros": "0,44%",
+        "vencedor": {
+          "numero": "11",
+          "nome": "Celina Leão",
+          "partido": "PP",
+          "cor": "#0083ca",
+          "votos": 3702,
+          "percentual": "54,51%"
+        },
+        "rankingCandidatos": [
+          {
+            "numero": "11",
+            "nome": "Celina Leão",
+            "partido": "PP",
+            "cor": "#0083ca",
+            "votos": 3702,
+            "percentual": "54,51%"
+          },
+          {
+            "numero": "13",
+            "nome": "Leandro Grass",
+            "partido": "PT",
+            "cor": "#ee2d35",
+            "votos": 2034,
+            "percentual": "29,95%"
+          },
+          {
+            "numero": "45",
+            "nome": "Paula Belmonte",
+            "partido": "PSDB",
+            "cor": "#f59e0b",
+            "votos": 670,
+            "percentual": "9,86%"
+          },
+          {
+            "numero": "30",
+            "nome": "Kiko Caputo",
+            "partido": "NOVO",
+            "cor": "#ff6f00",
+            "votos": 204,
+            "percentual": "3,00%"
+          },
+          {
+            "numero": "40",
+            "nome": "Cappelli",
+            "partido": "PSB",
+            "cor": "#e11d48",
+            "votos": 152,
+            "percentual": "2,24%"
+          },
+          {
+            "numero": "outros",
+            "nome": "Demais Candidatos",
+            "partido": "Outros",
+            "cor": "#85827C",
+            "votos": 30,
+            "percentual": "0,44%"
           }
         ]
       }
