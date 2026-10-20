@@ -2,15 +2,20 @@ const http = require('http');
 const fs = require('fs');
 const path = require('path');
 const https = require('https');
+const zlib = require('zlib');
 
 const PORT = process.env.PORT || 5175;
 const BASE_DIR = __dirname;
 
-// URLs Oficiais TSE 2026
+// URLs Oficiais TSE 2026 (Eleição 6257 & 6259)
 const TSE_ELECTIONS = {
   "6257": {
-    name: "Presidente 1º Turno (Oficial 6257)",
+    name: "Presidente 1º Turno Brasil (Oficial 6257)",
     url: "https://resultados.tse.jus.br/oficial/ele2026/6257/dados/br/br-c0001-e006257-u.jws"
+  },
+  "6257-df-presidente": {
+    name: "DF Presidente 1º Turno (Oficial 6257)",
+    url: "https://resultados.tse.jus.br/oficial/ele2026/6257/dados/df/df97012-c0001-e006257-u.jws"
   },
   "6258": {
     name: "Presidente 2º Turno (Oficial 6258)",
@@ -18,19 +23,19 @@ const TSE_ELECTIONS = {
   },
   "6259-df-distrital": {
     name: "DF Deputado Distrital (Oficial 6259)",
-    url: "https://resultados.tse.jus.br/oficial/ele2026/6259/dados/df/df-c0008-e006259-u.jws"
+    url: "https://resultados.tse.jus.br/oficial/ele2026/6259/dados/df/df97012-c0008-e006259-u.jws"
   },
   "6259-df-federal": {
     name: "DF Deputado Federal (Oficial 6259)",
-    url: "https://resultados.tse.jus.br/oficial/ele2026/6259/dados/df/df-c0006-e006259-u.jws"
+    url: "https://resultados.tse.jus.br/oficial/ele2026/6259/dados/df/df97012-c0006-e006259-u.jws"
   },
   "6259-df-governador": {
     name: "DF Governador (Oficial 6259)",
-    url: "https://resultados.tse.jus.br/oficial/ele2026/6259/dados/df/df-c0003-e006259-u.jws"
+    url: "https://resultados.tse.jus.br/oficial/ele2026/6259/dados/df/df97012-c0003-e006259-u.jws"
   },
   "6259-df-senador": {
     name: "DF Senador (Oficial 6259)",
-    url: "https://resultados.tse.jus.br/oficial/ele2026/6259/dados/df/df-c0005-e006259-u.jws"
+    url: "https://resultados.tse.jus.br/oficial/ele2026/6259/dados/df/df97012-c0005-e006259-u.jws"
   }
 };
 
@@ -196,15 +201,32 @@ const server = http.createServer(async (req, res) => {
     return res.end(JSON.stringify(getDfZonesData(), null, 2));
   }
 
+  function sendJsonGzip(dataObj) {
+    const raw = typeof dataObj === 'string' ? dataObj : JSON.stringify(dataObj);
+    const acceptEncoding = req.headers['accept-encoding'] || '';
+    if (acceptEncoding.includes('gzip') && raw.length > 1024) {
+      const gzipped = zlib.gzipSync(Buffer.from(raw));
+      res.writeHead(200, {
+        'Content-Type': 'application/json; charset=utf-8',
+        'Content-Encoding': 'gzip',
+        'Access-Control-Allow-Origin': '*',
+        'Cache-Control': 'no-cache'
+      });
+      return res.end(gzipped);
+    }
+    res.writeHead(200, {
+      'Content-Type': 'application/json; charset=utf-8',
+      'Access-Control-Allow-Origin': '*',
+      'Cache-Control': 'no-cache'
+    });
+    return res.end(raw);
+  }
+
   // Endpoint oficial com todas as 35 RAs do DF e votação por seção para deputados distritais
   if (pathname === '/api/df/distritais') {
     try {
       const data = fs.readFileSync(path.join(BASE_DIR, 'df_distritais_data.json'), 'utf8');
-      res.writeHead(200, {
-        'Content-Type': 'application/json; charset=utf-8',
-        'Access-Control-Allow-Origin': '*'
-      });
-      return res.end(data);
+      return sendJsonGzip(data);
     } catch (err) {
       res.writeHead(500, { 'Content-Type': 'text/plain; charset=utf-8' });
       return res.end('Erro lendo dados distritais do DF');
@@ -216,14 +238,22 @@ const server = http.createServer(async (req, res) => {
     try {
       const data = fs.readFileSync(path.join(BASE_DIR, 'df_distritais_data.json'), 'utf8');
       const json = JSON.parse(data);
-      res.writeHead(200, {
-        'Content-Type': 'application/json; charset=utf-8',
-        'Access-Control-Allow-Origin': '*'
-      });
-      return res.end(JSON.stringify(json.governoDf || {}, null, 2));
+      return sendJsonGzip(json.governoDf || {});
     } catch (err) {
       res.writeHead(500, { 'Content-Type': 'text/plain; charset=utf-8' });
       return res.end('Erro lendo dados de governo do DF');
+    }
+  }
+
+  // Endpoint oficial com dados de votação de Marcela Passamani (15555)
+  if (pathname === '/api/df/marcela') {
+    try {
+      const data = fs.readFileSync(path.join(BASE_DIR, 'df_distritais_data.json'), 'utf8');
+      const json = JSON.parse(data);
+      return sendJsonGzip(json.marcelaPassamaniDossie || {});
+    } catch (err) {
+      res.writeHead(500, { 'Content-Type': 'text/plain; charset=utf-8' });
+      return res.end('Erro lendo dados de Marcela Passamani');
     }
   }
 
@@ -231,11 +261,7 @@ const server = http.createServer(async (req, res) => {
   if (pathname === '/api/comparativo' || pathname === '/comparativo_data.json') {
     try {
       const data = fs.readFileSync(path.join(BASE_DIR, 'comparativo_data.json'), 'utf8');
-      res.writeHead(200, {
-        'Content-Type': 'application/json; charset=utf-8',
-        'Access-Control-Allow-Origin': '*'
-      });
-      return res.end(data);
+      return sendJsonGzip(data);
     } catch (err) {
       res.writeHead(500, { 'Content-Type': 'text/plain; charset=utf-8' });
       return res.end('Erro lendo dados comparativos');
@@ -293,6 +319,9 @@ const server = http.createServer(async (req, res) => {
         const injection = `
 <!-- ESTILOS EXCLUSIVOS RESPONSIVOS MOBILE (ANDROID & APPLE IOS) -->
 <style id="mobile-responsive-rules">
+  @keyframes dfModalSpin {
+    to { transform: rotate(360deg); }
+  }
   @media (max-width: 900px) {
     html, body {
       height: auto !important;
@@ -325,23 +354,30 @@ const server = http.createServer(async (req, res) => {
     #tse-top-banner {
       left: 10px !important;
       right: 10px !important;
-      bottom: max(10px, env(safe-area-inset-bottom)) !important;
+      bottom: max(12px, env(safe-area-inset-bottom)) !important;
       transform: none !important;
       width: calc(100vw - 20px) !important;
       max-width: calc(100vw - 20px) !important;
-      padding: 8px 10px !important;
+      padding: 6px 10px !important;
       gap: 6px !important;
-      border-radius: 16px !important;
-      flex-wrap: wrap !important;
-      justify-content: center !important;
+      border-radius: 100px !important;
+      overflow-x: auto !important;
+      flex-wrap: nowrap !important;
+      justify-content: flex-start !important;
+      -webkit-overflow-scrolling: touch !important;
+      scrollbar-width: none !important;
     }
-    #btn-open-governo, #btn-open-marcela {
-      flex: 1 1 auto !important;
-      min-height: 40px !important;
+    #tse-top-banner::-webkit-scrollbar {
+      display: none !important;
+    }
+    #btn-open-governo, #btn-open-marcela, #btn-open-comparativo, #btn-open-fogos {
+      flex: 0 0 auto !important;
+      min-height: 38px !important;
       justify-content: center !important;
-      font-size: 12px !important;
-      padding: 8px 12px !important;
-      border-radius: 12px !important;
+      font-size: 11.5px !important;
+      padding: 6px 12px !important;
+      border-radius: 100px !important;
+      white-space: nowrap !important;
     }
     #df-distritais-modal {
       padding: 0 !important;
@@ -357,12 +393,20 @@ const server = http.createServer(async (req, res) => {
       overflow-y: auto !important;
       -webkit-overflow-scrolling: touch !important;
       display: block !important;
+      padding-bottom: max(20px, env(safe-area-inset-bottom)) !important;
     }
     #df-mobile-sticky-bar {
       display: flex !important;
       position: sticky !important;
       top: 0 !important;
       z-index: 1000 !important;
+      padding: max(10px, env(safe-area-inset-top)) 10px 8px 10px !important;
+      overflow-x: auto !important;
+      -webkit-overflow-scrolling: touch !important;
+      scrollbar-width: none !important;
+    }
+    #df-mobile-sticky-bar::-webkit-scrollbar {
+      display: none !important;
     }
     .mobile-only-subir-bar {
       display: block !important;
@@ -370,8 +414,11 @@ const server = http.createServer(async (req, res) => {
     .desktop-only-btn {
       display: none !important;
     }
+    #df-desktop-tabs {
+      display: none !important;
+    }
     #df-modal-header {
-      padding: max(10px, env(safe-area-inset-top)) 14px 10px 14px !important;
+      padding: 12px 14px 10px 14px !important;
     }
     #df-modal-header h2 {
       font-size: 0.95rem !important;
@@ -382,7 +429,7 @@ const server = http.createServer(async (req, res) => {
     }
     #df-modal-body-grid {
       grid-template-columns: 1fr !important;
-      padding: 10px 12px 90px 12px !important;
+      padding: 10px 12px max(80px, calc(80px + env(safe-area-inset-bottom))) 12px !important;
       gap: 12px !important;
       overflow-y: visible !important;
       height: auto !important;
@@ -402,7 +449,12 @@ const server = http.createServer(async (req, res) => {
   }
   @media (min-width: 901px) {
     #tse-top-banner {
-      display: none !important;
+      display: flex !important;
+      position: fixed !important;
+      bottom: 78px !important;
+      left: 50% !important;
+      transform: translateX(-50%) !important;
+      z-index: 9999 !important;
     }
     .hud canvas.map, .hud .mapzoom, .hud canvas.prev, .hud canvas.hov, .hud canvas.fx, .hud .marks {
       transform: translateY(-16px) !important;
@@ -593,10 +645,6 @@ const server = http.createServer(async (req, res) => {
     </div>
   </div>
 </div>
-
-<script src="/assets/df_modal.js"></script>
-<script src="/assets/fireworks.js"></script>
-<script src="/assets/comparativo.js"></script>
 `;
         html = html.replace('</body>', `${injection}</body>`);
 

@@ -43,7 +43,45 @@ window.ZONA_18_ABRANGENCIA = {
   ]
 };
 
+let isFetchingDfData = false;
+
+function showModalSkeletonLoading() {
+  const leftCol = document.getElementById('df-left-content');
+  const rightCol = document.getElementById('df-secoes-list');
+  const secoesTitle = document.getElementById('df-secoes-title');
+  const secoesSubtitle = document.getElementById('df-secoes-subtitle');
+  const secoesCount = document.getElementById('df-secoes-count');
+
+  if (secoesTitle) secoesTitle.textContent = 'Carregando totalização oficial TSE 2026...';
+  if (secoesSubtitle) secoesSubtitle.textContent = '35 Regiões Administrativas e 19 Zonas Eleitorais do Distrito Federal';
+  if (secoesCount) secoesCount.textContent = 'Aguarde...';
+
+  if (leftCol) {
+    leftCol.innerHTML = `
+      <div style="padding:48px 16px; text-align:center; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:16px;">
+        <div style="width:48px; height:48px; border:3px solid rgba(2,132,199,0.2); border-top-color:#0284c7; border-radius:50%; animation:dfModalSpin 0.75s linear infinite;"></div>
+        <div>
+          <div style="font-size:1.05rem; font-weight:700; color:#fff; margin-bottom:4px;">Carregando Dados Oficiais do TSE...</div>
+          <div style="font-size:0.75rem; color:#A6A39C; max-width:280px; line-height:1.4;">Totalização das 35 RAs do DF e 19 Zonas Eleitorais</div>
+        </div>
+      </div>
+    `;
+  }
+
+  if (rightCol) {
+    rightCol.innerHTML = `
+      <div style="padding:60px 16px; text-align:center; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:14px;">
+        <div style="width:40px; height:40px; border:3px solid rgba(245,158,11,0.2); border-top-color:#f59e0b; border-radius:50%; animation:dfModalSpin 0.75s linear infinite;"></div>
+        <div style="font-size:0.9rem; color:#D6D4CF; font-weight:600;">Processando 6.969 seções eleitorais do Distrito Federal...</div>
+        <div style="font-size:0.75rem; color:#A6A39C;">Totalizando dados oficiais das 35 Regiões Administrativas</div>
+      </div>
+    `;
+  }
+}
+
 async function initDfData() {
+  if (window.dfGlobalData || isFetchingDfData) return;
+  isFetchingDfData = true;
   try {
     const res = await fetch('/api/df/distritais');
     window.dfGlobalData = await res.json();
@@ -51,6 +89,8 @@ async function initDfData() {
     renderDfView();
   } catch(e) {
     console.warn('[DF Distritais] Erro ao carregar dados:', e);
+  } finally {
+    isFetchingDfData = false;
   }
 }
 
@@ -367,6 +407,10 @@ function setMobileSubTab(tab) {
     }
   } else if (tab === 'colegios') {
     setDfTab('marcela');
+    window.selectedZona = '18';
+    window.viewModeZ18 = 'locais';
+    const selZ = document.getElementById('df-zona-select');
+    if (selZ) selZ.value = '18';
     left.style.display = 'none';
     right.style.display = 'block';
     if (bColegios) {
@@ -381,6 +425,7 @@ function setMobileSubTab(tab) {
       bDossie.style.background = 'rgba(255,255,255,0.08)';
       bDossie.style.color = '#D6D4CF';
     }
+    renderDfView();
   }
 }
 
@@ -407,6 +452,7 @@ function toggleTopSection(forceState) {
 }
 
 function openGovernoDfModal(raId = 'all') {
+  window.currentTab = 'governo';
   openDfModal(raId);
   setDfTab('governo');
   if (window.innerWidth <= 900) {
@@ -416,6 +462,7 @@ function openGovernoDfModal(raId = 'all') {
 }
 
 function openMarcelaDossie() {
+  window.currentTab = 'marcela';
   openDfModal('all');
   setDfTab('marcela');
   if (window.innerWidth <= 900) {
@@ -435,8 +482,12 @@ function openDfModal(raId = 'all') {
       setMobileSubTab(window.currentTab === 'governo' ? 'governo' : 'dossie');
       toggleTopSection(false);
     }
-    if (!window.dfGlobalData) initDfData();
-    else renderDfView();
+    if (!window.dfGlobalData) {
+      showModalSkeletonLoading();
+      initDfData();
+    } else {
+      renderDfView();
+    }
   }
 }
 
@@ -1143,21 +1194,21 @@ function renderDfView(filterQuery = '') {
           <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:8px;">
             <div>
               <div style="display:flex; align-items:center; gap:8px;">
-                <span style="font-size:0.95rem; font-weight:700; color:#fff;">Seção ${sec.numero}</span>
+                <span style="font-size:0.95rem; font-weight:700; color:#fff;">Seção ${sec.numero || sec.secao || 'S/N'}</span>
                 <span style="font-size:0.72rem; background:rgba(255,255,255,0.08); padding:2px 8px; border-radius:6px; color:#D6D4CF;">${sec.raCodigo || ''} - ${sec.raNome || ''}</span>
                 ${badgeTipo}
                 ${badgeZ18}
               </div>
               <div style="font-size:0.82rem; font-weight:600; color:#FAFAF9; margin-top:4px;">
-                🏫 ${sec.colegioEleitoral || sec.local}
+                🏫 ${sec.colegioEleitoral || sec.local || 'Local de Votação Oficial TRE-DF'}
               </div>
               <div style="font-size:0.72rem; color:#A6A39C; margin-top:2px;">
-                📍 ${sec.endereco || ''} · ${sec.zona}
+                📍 ${sec.endereco || sec.raNome || ''} · ${sec.zona || '18ª ZE'}
               </div>
             </div>
             <div style="text-align:right;">
               <div style="font-size:0.72rem; color:#A6A39C;">Comparecimento</div>
-              <div style="font-size:0.85rem; font-weight:700; color:#fff;"><b style="color:#22c55e;">${sec.comparecimento || 0}</b> de ${sec.aptos || 0}</div>
+              <div style="font-size:0.85rem; font-weight:700; color:#fff;"><b style="color:#22c55e;">${sec.comparecimento || 0}</b> ${sec.aptos ? `de ${sec.aptos}` : ''}</div>
             </div>
           </div>
 
@@ -1166,7 +1217,7 @@ function renderDfView(filterQuery = '') {
               <span>⭐</span><span>Marcela Passamani (15555 · MDB):</span>
             </div>
             <div>
-              <b style="font-size:0.85rem; color:#f59e0b;">${sec.votosMarcela || 0} votos apurados</b>
+              <b style="font-size:0.85rem; color:#f59e0b;">${(sec.votosMarcela !== undefined ? sec.votosMarcela : (sec.votos || 0))} votos apurados</b>
             </div>
           </div>
         </div>`;
@@ -1297,3 +1348,12 @@ window.selectDfTipo = selectDfTipo;
 window.switchTseTurno = switchTseTurno;
 window.filterDfData = filterDfData;
 window.setZ18ViewMode = setZ18ViewMode;
+
+// Pré-carregamento imediato dos dados oficiais em background
+if (typeof document !== 'undefined') {
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => initDfData());
+  } else {
+    initDfData();
+  }
+}
