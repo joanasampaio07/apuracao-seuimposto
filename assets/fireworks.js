@@ -372,7 +372,7 @@
           <!-- FOTO / AVATAR DO ELEITO COM COROA DE LOUROS -->
           <div style="position:relative; width:110px; height:110px; margin:0 auto 16px;">
             <div id="vic-avatar-glow" style="position:absolute; inset:-4px; border-radius:50%; background:linear-gradient(135deg, #f59e0b, #ef4444); filter:blur(8px); opacity:0.8;"></div>
-            <img id="vic-photo" src="" alt="Eleito" style="position:relative; width:100%; height:100%; object-fit:cover; border-radius:50%; border:3px solid #f59e0b; background:#22201d;" onerror="this.src='/apple-touch-icon.png'" />
+            <img id="vic-photo" src="/assets/celina_leao.jpg" alt="Celina Leão" style="position:relative; width:100%; height:100%; object-fit:cover; border-radius:50%; border:3px solid #f59e0b; background:#22201d;" onerror="this.src='/retratos/celina_leao.jpg'" />
             <div style="position:absolute; bottom:-6px; right:-6px; background:#f59e0b; color:#000; font-size:1.1rem; width:32px; height:32px; border-radius:50%; display:grid; place-items:center; font-weight:900; box-shadow:0 0 10px #f59e0b;">✓</div>
           </div>
 
@@ -429,7 +429,7 @@
       numero: "11",
       pct: "53,64%",
       votos: "928.450",
-      photo: "https://seuimposto.com/assets/og.933bb11ba1.jpg",
+      photo: "/assets/celina_leao.jpg",
       cor: "#0083ca",
       desc: "Vitória consolidada no 2º Turno das Eleições 2026. Celebração oficial de vitória no Distrito Federal!"
     };
@@ -449,7 +449,10 @@
     if (elPct) elPct.textContent = data.pct;
     if (elVotes) elVotes.textContent = typeof data.votos === 'number' ? data.votos.toLocaleString('pt-BR') : data.votos;
     if (elDesc) elDesc.textContent = data.desc;
-    if (elPhoto && data.photo) elPhoto.src = data.photo;
+    if (elPhoto) {
+      elPhoto.src = (data.photo && data.photo.trim() !== '') ? data.photo : '/assets/celina_leao.jpg';
+      elPhoto.alt = data.name || 'Celina Leão';
+    }
     if (elGlow && data.cor) {
       elGlow.style.background = `linear-gradient(135deg, ${data.cor}, #f59e0b)`;
     }
@@ -498,7 +501,7 @@
         votos: 928450,
         cor: "#0083ca",
         desc: "Totalização concluída nas 19 Zonas Eleitorais e 35 Regiões Administrativas do DF. Vitória no 2º Turno!",
-        photo: ""
+        photo: "/assets/celina_leao.jpg"
       });
     }
   }
