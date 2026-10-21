@@ -446,6 +446,22 @@ const server = http.createServer(async (req, res) => {
     #df-top-collapsible.is-collapsed {
       display: none !important;
     }
+    #df-modal-quick-filters {
+      padding: 8px 12px !important;
+      gap: 6px !important;
+    }
+    #df-modal-controls {
+      padding: 10px 12px !important;
+      gap: 10px !important;
+    }
+    #df-search-wrapper {
+      width: 100% !important;
+      min-width: 100% !important;
+      flex: 1 1 100% !important;
+    }
+    #df-search-btn {
+      padding: 6px 12px !important;
+    }
   }
   @media (min-width: 901px) {
     #tse-top-banner {
@@ -582,10 +598,37 @@ const server = http.createServer(async (req, res) => {
 
       <!-- CONTROLS & DROPDOWN FILTERS -->
       <div id="df-modal-controls" style="padding:10px 24px; border-bottom:1px solid rgba(255,255,255,0.08); display:flex; gap:12px; align-items:center; flex-wrap:wrap; background:rgba(0,0,0,0.2);">
-        <!-- BUSCA LIVRE -->
-        <div style="flex:1; min-width:200px; position:relative;">
-          <input id="df-search-input" type="text" placeholder="🔍 Buscar por Colégio, Seção, RA..." oninput="filterDfData()"
-            style="width:100%; box-sizing:border-box; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.14); border-radius:100px; padding:7px 14px; color:#fff; font-size:0.85rem; outline:none;" />
+        <!-- BUSCA LIVRE COM LUPA CLICÁVEL (MOBILE E DESKTOP) -->
+        <div id="df-search-wrapper" style="flex:1; min-width:240px; position:relative;">
+          <form id="df-search-form" action="javascript:void(0);" onsubmit="triggerDfSearch(); return false;" style="position:relative; width:100%; display:flex; align-items:center; margin:0;">
+            <!-- ÍCONE LUPA FIXO NO INÍCIO DO CAMPO -->
+            <span style="position:absolute; left:12px; pointer-events:none; display:flex; align-items:center; opacity:0.65; z-index:2;">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#A6A39C" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+            </span>
+
+            <!-- INPUT DE PESQUISA COM SUPORTE TOTAL A TECLADOS MOBILE -->
+            <input id="df-search-input" type="search" enterkeyhint="search" inputmode="search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"
+              placeholder="Buscar por Colégio, Seção, RA..."
+              oninput="onDfSearchInput(this.value)"
+              onkeydown="if(event.key==='Enter'){event.preventDefault(); triggerDfSearch();}"
+              style="width:100%; box-sizing:border-box; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.16); border-radius:100px; padding:8px 90px 8px 34px; color:#fff; font-size:0.85rem; outline:none; transition:all .15s; -webkit-appearance:none;" />
+
+            <!-- AÇÕES À DIREITA: BOTÃO LIMPAR E BOTÃO LUPA CLICÁVEL -->
+            <div style="position:absolute; right:4px; display:flex; align-items:center; gap:4px; z-index:3;">
+              <button id="df-search-clear" type="button" onclick="clearDfSearch()" title="Limpar busca"
+                style="display:none; all:unset; cursor:pointer; width:26px; height:26px; border-radius:50%; background:rgba(255,255,255,0.14); color:#D6D4CF; font-size:12px; font-weight:bold; place-items:center; justify-content:center; align-items:center; transition:background .15s;"
+                onmouseover="this.style.background='rgba(255,255,255,0.25)'" onmouseout="this.style.background='rgba(255,255,255,0.14)'">
+                ✕
+              </button>
+
+              <button id="df-search-btn" type="submit" onclick="triggerDfSearch()" title="Pesquisar agora"
+                style="all:unset; cursor:pointer; background:linear-gradient(135deg, #0284c7, #0369a1); color:#fff; font-size:0.8rem; font-weight:700; padding:6px 14px; border-radius:100px; display:inline-flex; align-items:center; gap:5px; box-shadow:0 0 12px rgba(2,132,199,0.5); transition:transform .12s, box-shadow .12s; white-space:nowrap;"
+                onmousedown="this.style.transform='scale(0.94)'" onmouseup="this.style.transform='scale(1)'">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                <span class="df-search-btn-label">Buscar</span>
+              </button>
+            </div>
+          </form>
         </div>
 
         <!-- SELECT RA -->

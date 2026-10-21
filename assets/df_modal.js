@@ -208,7 +208,8 @@ function resetAllFilters() {
   const s2 = document.getElementById('df-zona-select'); if (s2) s2.value = 'all';
   const s3 = document.getElementById('df-tipo-select'); if (s3) s3.value = 'all';
   const si = document.getElementById('df-search-input'); if (si) si.value = '';
-  renderDfView();
+  const sc = document.getElementById('df-search-clear'); if (sc) sc.style.display = 'none';
+  renderDfView('');
 }
 
 function quickFilterGovZona18() {
@@ -295,7 +296,7 @@ function setDfTab(tab) {
     if (raSel && raSel.parentElement) raSel.parentElement.style.display = 'flex';
     if (zonaSel && zonaSel.parentElement) zonaSel.parentElement.style.display = 'flex';
     if (tipoSel && tipoSel.parentElement) tipoSel.parentElement.style.display = 'none';
-    if (searchInp) searchInp.placeholder = '🔍 Buscar RA do DF ou Zona (ex: Zona 18, Ceilândia, Plano Piloto)...';
+    if (searchInp) searchInp.placeholder = 'Buscar RA do DF ou Zona (ex: Zona 18, Ceilândia)...';
 
     if (quickFilters) {
       quickFilters.innerHTML = `
@@ -330,7 +331,7 @@ function setDfTab(tab) {
     if (raSel && raSel.parentElement) raSel.parentElement.style.display = 'flex';
     if (zonaSel && zonaSel.parentElement) zonaSel.parentElement.style.display = 'flex';
     if (tipoSel && tipoSel.parentElement) tipoSel.parentElement.style.display = 'flex';
-    if (searchInp) searchInp.placeholder = '🔍 Buscar por Colégio, Seção, RA...';
+    if (searchInp) searchInp.placeholder = 'Buscar por Colégio, Seção, RA...';
 
     if (quickFilters) {
       quickFilters.innerHTML = `
@@ -353,7 +354,7 @@ function setDfTab(tab) {
     if (raSel && raSel.parentElement) raSel.parentElement.style.display = 'flex';
     if (zonaSel && zonaSel.parentElement) zonaSel.parentElement.style.display = 'flex';
     if (tipoSel && tipoSel.parentElement) tipoSel.parentElement.style.display = 'flex';
-    if (searchInp) searchInp.placeholder = '🔍 Buscar candidatos distritais...';
+    if (searchInp) searchInp.placeholder = 'Buscar candidatos distritais...';
     if (quickFilters) {
       quickFilters.innerHTML = `
         <span style="font-size:0.75rem; color:#A6A39C; font-weight:600;">Deputados Distritais (DF): 24 Vagas Disputadas</span>
@@ -496,8 +497,74 @@ function closeDfModal() {
   if (m) m.style.display = 'none';
 }
 
+function triggerDfSearch() {
+  const input = document.getElementById('df-search-input');
+  if (!input) return;
+  const q = (input.value || '').trim();
+
+  // Fecha o teclado virtual no mobile
+  input.blur();
+
+  // No mobile: garante que a área de resultados fique visível
+  if (window.innerWidth <= 900) {
+    const left = document.getElementById('df-left-pane');
+    const right = document.getElementById('df-right-pane');
+    if (right) {
+      right.style.display = 'block';
+    }
+    // Se estiver no Dossiê Marcela, destaca as seções/colégios correspondentes
+    if (window.currentTab === 'marcela') {
+      const bColegios = document.getElementById('btn-mobile-tab-colegios');
+      const bDossie = document.getElementById('btn-mobile-tab-dossie');
+      if (q && bColegios && bDossie) {
+        bColegios.style.background = '#10b981';
+        bColegios.style.color = '#fff';
+        bDossie.style.background = 'rgba(255,255,255,0.08)';
+        bDossie.style.color = '#D6D4CF';
+      }
+    }
+  }
+
+  // Executa a filtragem
+  filterDfData();
+
+  // No mobile, rola a tela suavemente até a lista de resultados
+  if (window.innerWidth <= 900) {
+    setTimeout(() => {
+      const right = document.getElementById('df-right-pane');
+      if (right) {
+        right.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }, 120);
+  }
+}
+
+function onDfSearchInput(val) {
+  const clearBtn = document.getElementById('df-search-clear');
+  if (clearBtn) {
+    clearBtn.style.display = val && val.trim().length > 0 ? 'inline-flex' : 'none';
+  }
+  filterDfData();
+}
+
+function clearDfSearch() {
+  const input = document.getElementById('df-search-input');
+  if (input) {
+    input.value = '';
+    const clearBtn = document.getElementById('df-search-clear');
+    if (clearBtn) clearBtn.style.display = 'none';
+    filterDfData();
+    input.focus();
+  }
+}
+
 function filterDfData() {
-  const q = (document.getElementById('df-search-input').value || '').toLowerCase().trim();
+  const input = document.getElementById('df-search-input');
+  const q = (input ? input.value : '').toLowerCase().trim();
+  const clearBtn = document.getElementById('df-search-clear');
+  if (clearBtn) {
+    clearBtn.style.display = q.length > 0 ? 'inline-flex' : 'none';
+  }
   if (q.includes('marcela') || q.includes('15555')) {
     setDfTab('marcela');
   } else if (q.includes('celina') || q.includes('grass') || q.includes('governo') || q.includes('governador')) {
@@ -511,7 +578,7 @@ function setZ18ViewMode(mode) {
   renderDfView();
 }
 
-function renderDfView(filterQuery = '') {
+function renderDfView(filterQuery) {
   if (!window.dfGlobalData) return;
   const leftCol = document.getElementById('df-left-content');
   const rightCol = document.getElementById('df-secoes-list');
@@ -519,6 +586,12 @@ function renderDfView(filterQuery = '') {
   const secoesSubtitle = document.getElementById('df-secoes-subtitle');
   const secoesCount = document.getElementById('df-secoes-count');
   if (!leftCol || !rightCol) return;
+
+  if (filterQuery === undefined || filterQuery === null) {
+    const si = document.getElementById('df-search-input');
+    filterQuery = si ? si.value : '';
+  }
+  const q = (filterQuery || '').toLowerCase().trim();
 
   const gov = window.dfGlobalData.governoDf;
 
@@ -939,8 +1012,12 @@ function renderDfView(filterQuery = '') {
   // =========================================================================
   if (window.currentTab === 'marcela') {
     const d = window.dfGlobalData.marcelaPassamaniDossie;
+    let rasList = (d.votosPorRa || []);
+    if (q) {
+      rasList = rasList.filter(r => r.nome.toLowerCase().includes(q) || r.codigo.toLowerCase().includes(q) || r.zonas.toLowerCase().includes(q));
+    }
     let rasTableHtml = '';
-    (d.votosPorRa || []).forEach((r, idx) => {
+    rasList.forEach((r, idx) => {
       const isZ18Ra = (r.id === 14 || r.id === 27 || r.id === 16);
       rasTableHtml += `
         <div onclick="selectDfRa('${r.id}')" style="cursor:pointer; display:flex; justify-content:space-between; align-items:center; padding:7px 10px; background:${isZ18Ra ? 'rgba(16,185,129,0.12)' : 'rgba(255,255,255,0.02)'}; border-radius:8px; margin-bottom:4px; border-left:3px solid ${isZ18Ra ? '#10b981' : '#f59e0b'}; transition:background .15s;">
@@ -955,8 +1032,12 @@ function renderDfView(filterQuery = '') {
         </div>`;
     });
 
+    let zonasList = (d.votosPorZona || []);
+    if (q) {
+      zonasList = zonasList.filter(z => z.nome.toLowerCase().includes(q) || String(z.zona).includes(q));
+    }
     let zonasTableHtml = '';
-    (d.votosPorZona || []).forEach(z => {
+    zonasList.forEach(z => {
       const is18 = (z.zona === 18);
       zonasTableHtml += `
         <div onclick="selectDfZona('${z.zona}')" style="cursor:pointer; display:flex; justify-content:space-between; align-items:center; padding:6px 8px; font-size:0.75rem; border-bottom:1px solid rgba(255,255,255,0.04); background:${is18 ? 'rgba(16,185,129,0.15)' : 'transparent'}; border-radius:6px;">
@@ -1347,6 +1428,9 @@ window.selectDfZona = selectDfZona;
 window.selectDfTipo = selectDfTipo;
 window.switchTseTurno = switchTseTurno;
 window.filterDfData = filterDfData;
+window.triggerDfSearch = triggerDfSearch;
+window.onDfSearchInput = onDfSearchInput;
+window.clearDfSearch = clearDfSearch;
 window.setZ18ViewMode = setZ18ViewMode;
 
 // Pré-carregamento imediato dos dados oficiais em background
