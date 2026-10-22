@@ -45,6 +45,7 @@ const MIME_TYPES = {
   '.js': 'application/javascript; charset=utf-8',
   '.css': 'text/css; charset=utf-8',
   '.json': 'application/json; charset=utf-8',
+  '.xlsx': 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
   '.woff2': 'font/woff2',
   '.jpg': 'image/jpeg',
   '.jpeg': 'image/jpeg',
@@ -119,56 +120,80 @@ function fetchTseJws(electionId = '6257') {
   });
 }
 
-function getDfZonesData(completionRatio = 1.0) {
-  const zonas = DF_ZONAS.map(z => z.zona);
-  const secoes = DF_ZONAS.map(z => z.secoes);
-  const totalizadas = DF_ZONAS.map(z => Math.round(z.secoes * completionRatio));
-  const eleitorado = DF_ZONAS.map(z => z.eleitorado);
-  const apurado = DF_ZONAS.map(z => Math.round(z.eleitorado * completionRatio));
-  const comparecimento = apurado.map(el => Math.round(el * 0.825));
-  const brancos = comparecimento.map(comp => Math.round(comp * 0.015));
-  const nulos = comparecimento.map(comp => Math.round(comp * 0.021));
+function getDfZonesData() {
+  try {
+    const raw = JSON.parse(fs.readFileSync(path.join(BASE_DIR, 'tse_cache', 'tse_zonas_governo_oficial.json'), 'utf8'));
+    const zonas = [];
+    const secoes = [];
+    const totalizadas = [];
+    const eleitorado = [];
+    const apurado = [];
+    const comparecimento = [];
+    const brancos = [];
+    const nulos = [];
+    const votos11 = [];
+    const votos13 = [];
+    const detalhesZonas = [];
 
-  const votos = {
-    "22": comparecimento.map((comp, idx) => {
-      const share = idx % 2 === 0 ? 0.535 : 0.495;
-      return Math.round(comp * 0.964 * share);
-    }),
-    "13": comparecimento.map((comp, idx) => {
-      const share = idx % 2 === 0 ? 0.465 : 0.505;
-      return Math.round(comp * 0.964 * share);
-    })
-  };
+    const zoneList = [1, 2, 3, 4, 5, 6, 8, 9, 10, 11, 13, 14, 15, 16, 17, 18, 19, 20, 21];
+    for (const zNum of zoneList) {
+      const zd = raw[String(zNum)];
+      if (!zd) continue;
+      zonas.push(zNum);
+      secoes.push(zd.secoesTotal);
+      totalizadas.push(zd.secoesTotalizadas);
+      eleitorado.push(zd.eleitorado);
+      apurado.push(zd.eleitorado);
+      comparecimento.push(zd.comparecimento);
+      brancos.push(zd.brancos);
+      nulos.push(zd.nulos);
 
-  return {
-    versao: 1,
-    ibge: 5300108,
-    seq: 1,
-    nome: "Brasília - DF",
-    totalZonas: DF_ZONAS.length,
-    totalSecoes: secoes.reduce((a, b) => a + b, 0),
-    totalSecoesApuradas: totalizadas.reduce((a, b) => a + b, 0),
-    zonas,
-    secoes,
-    totalizadas,
-    eleitorado,
-    apurado,
-    comparecimento,
-    brancos,
-    nulos,
-    votos,
-    detalhesZonas: DF_ZONAS.map((z, idx) => ({
-      zona: z.zona,
-      nome: z.nome,
-      secoesTotal: z.secoes,
-      secoesApuradas: totalizadas[idx],
-      percentualApurado: ((totalizadas[idx] / z.secoes) * 100).toFixed(2) + "%",
-      eleitoradoTotal: z.eleitorado,
-      eleitoresApurados: apurado[idx],
-      votosCandidato22: votos["22"][idx],
-      votosCandidato13: votos["13"][idx]
-    }))
-  };
+      const celina = zd.candidatos.find(c => c.numero === '11')?.votos || 0;
+      const grass = zd.candidatos.find(c => c.numero === '13')?.votos || 0;
+      votos11.push(celina);
+      votos13.push(grass);
+
+      detalhesZonas.push({
+        zona: zNum,
+        nome: zd.nome || `Zona ${zNum}`,
+        secoesTotal: zd.secoesTotal,
+        secoesApuradas: zd.secoesTotalizadas,
+        percentualApurado: "100.00%",
+        eleitoradoTotal: zd.eleitorado,
+        eleitoresApurados: zd.eleitorado,
+        votosCandidato11: celina,
+        votosCandidato13: grass,
+        votosCandidato22: celina
+      });
+    }
+
+    return {
+      versao: 1,
+      ibge: 5300108,
+      seq: 1,
+      nome: "Brasília - DF",
+      totalZonas: zonas.length,
+      totalSecoes: secoes.reduce((a, b) => a + b, 0),
+      totalSecoesApuradas: totalizadas.reduce((a, b) => a + b, 0),
+      zonas,
+      secoes,
+      totalizadas,
+      eleitorado,
+      apurado,
+      comparecimento,
+      brancos,
+      nulos,
+      votos: {
+        "11": votos11,
+        "13": votos13,
+        "22": votos11
+      },
+      detalhesZonas
+    };
+  } catch (err) {
+    console.error("Erro em getDfZonesData:", err);
+    return {};
+  }
 }
 
 const server = http.createServer(async (req, res) => {
@@ -199,6 +224,19 @@ const server = http.createServer(async (req, res) => {
       'Access-Control-Allow-Origin': '*'
     });
     return res.end(JSON.stringify(getDfZonesData(), null, 2));
+  }
+
+  // Download direto da Planilha de Auditoria Oficial TSE (.xlsx)
+  if (pathname === '/download/planilha' || pathname === '/Auditoria_Eleitoral_DF_2026_Oficial_TSE.xlsx') {
+    const xlsxPath = path.join(BASE_DIR, 'Auditoria_Eleitoral_DF_2026_Oficial_TSE.xlsx');
+    if (fs.existsSync(xlsxPath)) {
+      res.writeHead(200, {
+        'Content-Type': 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+        'Content-Disposition': 'attachment; filename="Auditoria_Eleitoral_DF_2026_Oficial_TSE.xlsx"',
+        'Access-Control-Allow-Origin': '*'
+      });
+      return fs.createReadStream(xlsxPath).pipe(res);
+    }
   }
 
   function sendJsonGzip(dataObj) {
@@ -572,6 +610,9 @@ const server = http.createServer(async (req, res) => {
           </p>
         </div>
         <div style="display:flex; align-items:center; gap:10px;">
+          <a href="/download/planilha" download="Auditoria_Eleitoral_DF_2026_Oficial_TSE.xlsx" title="Baixar Planilha Oficial do TSE (.xlsx) Completa" style="all:unset; cursor:pointer; padding:6px 14px; border-radius:8px; font-size:0.8rem; font-weight:700; background:linear-gradient(135deg, #10b981, #059669); border:1px solid rgba(255,255,255,0.25); color:#fff; display:inline-flex; align-items:center; gap:6px; box-shadow:0 0 12px rgba(16,185,129,0.4); text-decoration:none;">
+            📥 Baixar Planilha TSE (.xlsx)
+          </a>
           <button onclick="window.print()" class="desktop-only-btn" title="Imprimir Relatório ou Salvar em PDF" style="all:unset; cursor:pointer; padding:6px 12px; border-radius:8px; font-size:0.8rem; font-weight:600; background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.16); color:#fff; display:inline-flex; align-items:center; gap:5px;">
             🖨️ Imprimir / PDF
           </button>

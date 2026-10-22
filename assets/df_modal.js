@@ -1107,6 +1107,12 @@ function renderDfView(filterQuery) {
             <div style="font-size:0.65rem; color:#A6A39C;">Centros Urbanos do DF</div>
           </div>
         </div>
+
+        <div style="margin-top:10px; text-align:center;">
+          <a href="/download/planilha" download="Auditoria_Eleitoral_DF_2026_Oficial_TSE.xlsx" style="display:block; padding:8px 12px; border-radius:8px; background:linear-gradient(135deg, #10b981, #059669); color:#fff; font-weight:700; font-size:0.8rem; text-decoration:none; box-shadow:0 0 12px rgba(16,185,129,0.35);">
+            📥 Baixar Dossiê Completo em Excel (.xlsx)
+          </a>
+        </div>
       </div>
 
       ${z18TerritorialBox}
