@@ -239,19 +239,6 @@ const server = http.createServer(async (req, res) => {
     }
   }
 
-  // Download da Planilha Exclusiva de Deputados Distritais da 18ª ZE (.xlsx)
-  if (pathname === '/download/planilha-distritais-ze18' || pathname === '/Votacao_Deputados_Distritais_18ZE_Sao_Sebastiao_2026.xlsx') {
-    const xlsxPath = path.join(BASE_DIR, 'Votacao_Deputados_Distritais_18ZE_Sao_Sebastiao_2026.xlsx');
-    if (fs.existsSync(xlsxPath)) {
-      res.writeHead(200, {
-        'Content-Type': 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
-        'Content-Disposition': 'attachment; filename="Votacao_Deputados_Distritais_18ZE_Sao_Sebastiao_2026.xlsx"',
-        'Access-Control-Allow-Origin': '*'
-      });
-      return fs.createReadStream(xlsxPath).pipe(res);
-    }
-  }
-
   function sendJsonGzip(dataObj) {
     const raw = typeof dataObj === 'string' ? dataObj : JSON.stringify(dataObj);
     const acceptEncoding = req.headers['accept-encoding'] || '';
@@ -622,17 +609,14 @@ const server = http.createServer(async (req, res) => {
             Dados Oficiais do TRE-DF / TSE (Eleição Oficial 6259 & 6257) · Governador do DF · 35 RAs · 19 Zonas Eleitorais
           </p>
         </div>
-        <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap;">
-          <a href="/download/planilha" download="Auditoria_Eleitoral_DF_2026_Oficial_TSE.xlsx" title="Baixar Planilha Oficial do TSE (.xlsx) Completa" style="all:unset; cursor:pointer; padding:6px 12px; border-radius:8px; font-size:0.78rem; font-weight:700; background:linear-gradient(135deg, #10b981, #059669); border:1px solid rgba(255,255,255,0.25); color:#fff; display:inline-flex; align-items:center; gap:5px; box-shadow:0 0 10px rgba(16,185,129,0.35); text-decoration:none;">
-            📥 Planilha TSE (.xlsx)
+        <div style="display:flex; align-items:center; gap:10px;">
+          <a href="/download/planilha" download="Auditoria_Eleitoral_DF_2026_Oficial_TSE.xlsx" title="Baixar Planilha Oficial do TSE (.xlsx) Completa" style="all:unset; cursor:pointer; padding:6px 14px; border-radius:8px; font-size:0.8rem; font-weight:700; background:linear-gradient(135deg, #10b981, #059669); border:1px solid rgba(255,255,255,0.25); color:#fff; display:inline-flex; align-items:center; gap:6px; box-shadow:0 0 12px rgba(16,185,129,0.4); text-decoration:none;">
+            📥 Baixar Planilha TSE (.xlsx)
           </a>
-          <a href="/download/planilha-distritais-ze18" download="Votacao_Deputados_Distritais_18ZE_Sao_Sebastiao_2026.xlsx" title="Baixar Planilha de Deputados Distritais da 18ª ZE (São Sebastião) com 431 seções" style="all:unset; cursor:pointer; padding:6px 12px; border-radius:8px; font-size:0.78rem; font-weight:700; background:linear-gradient(135deg, #0284c7, #0369a1); border:1px solid rgba(255,255,255,0.25); color:#fff; display:inline-flex; align-items:center; gap:5px; box-shadow:0 0 10px rgba(2,132,199,0.35); text-decoration:none;">
-            📥 Planilha 18ª ZE (Distritais)
-          </a>
-          <button onclick="window.print()" class="desktop-only-btn" title="Imprimir Relatório ou Salvar em PDF" style="all:unset; cursor:pointer; padding:6px 10px; border-radius:8px; font-size:0.78rem; font-weight:600; background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.16); color:#fff; display:inline-flex; align-items:center; gap:5px;">
-            🖨️ PDF
+          <button onclick="window.print()" class="desktop-only-btn" title="Imprimir Relatório ou Salvar em PDF" style="all:unset; cursor:pointer; padding:6px 12px; border-radius:8px; font-size:0.8rem; font-weight:600; background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.16); color:#fff; display:inline-flex; align-items:center; gap:5px;">
+            🖨️ Imprimir / PDF
           </button>
-          <button onclick="closeDfModal()" class="desktop-only-btn" style="all:unset; cursor:pointer; width:36px; height:36px; border-radius:50%; display:grid; place-items:center; background:rgba(255,255,255,0.12); color:#FAFAF9; font-size:1.2rem; font-weight:bold; transition:background .15s;">✕</button>
+          <button onclick="closeDfModal()" class="desktop-only-btn" style="all:unset; cursor:pointer; width:38px; height:38px; border-radius:50%; display:grid; place-items:center; background:rgba(255,255,255,0.12); color:#FAFAF9; font-size:1.2rem; font-weight:bold; transition:background .15s;">✕</button>
         </div>
       </div>
 
