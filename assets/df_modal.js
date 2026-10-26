@@ -94,13 +94,22 @@ async function initDfData() {
   }
 }
 
+function getActiveGovernoDf() {
+  if (!window.dfGlobalData) return null;
+  const is1T = (window.APURACAO && window.APURACAO.turno === 1) || window.activeTurnoId === '6257';
+  return is1T
+    ? (window.dfGlobalData.governoDf1t || window.dfGlobalData.governoDf)
+    : (window.dfGlobalData.governoDf2t || window.dfGlobalData.governoDf);
+}
+
 function populateDfSelectors() {
   if (!window.dfGlobalData) return;
+  const gov = getActiveGovernoDf();
   const selRa = document.getElementById('df-ra-select');
   if (selRa) {
     selRa.innerHTML = '<option value="all">Todas as 35 RAs (DF Completo)</option>';
-    if (window.currentTab === 'governo' && window.dfGlobalData.governoDf?.regioesAdministrativas) {
-      window.dfGlobalData.governoDf.regioesAdministrativas.forEach(ra => {
+    if (window.currentTab === 'governo' && gov?.regioesAdministrativas) {
+      gov.regioesAdministrativas.forEach(ra => {
         const opt = document.createElement('option');
         opt.value = String(ra.id);
         const winInfo = ra.vencedor ? ` (${ra.vencedor.nome.split(' ')[0]} ${ra.vencedor.percentual})` : '';
@@ -121,8 +130,8 @@ function populateDfSelectors() {
   const selZona = document.getElementById('df-zona-select');
   if (selZona) {
     selZona.innerHTML = '<option value="all">Todas as 19 Zonas Eleitorais (DF Completo)</option>';
-    if (window.currentTab === 'governo' && window.dfGlobalData.governoDf?.zonasEleitorais) {
-      window.dfGlobalData.governoDf.zonasEleitorais.forEach(z => {
+    if (window.currentTab === 'governo' && gov?.zonasEleitorais) {
+      gov.zonasEleitorais.forEach(z => {
         const opt = document.createElement('option');
         opt.value = String(z.zona);
         const is18 = z.zona === 18;
@@ -593,7 +602,7 @@ function renderDfView(filterQuery) {
   }
   const q = (filterQuery || '').toLowerCase().trim();
 
-  const gov = window.dfGlobalData.governoDf;
+  const gov = getActiveGovernoDf();
 
   // =========================================================================
   // ABA 1: GOVERNADOR DO DF (VOTAÇÃO COMPLETA NAS 35 RAs DO DISTRITO FEDERAL)
@@ -1380,20 +1389,28 @@ if (document.readyState === 'loading') {
 }
 
 async function switchTseTurno(id) {
-  const b1 = document.getElementById('btn-tse-1t');
-  const b2 = document.getElementById('btn-tse-2t');
-  if (b1 && b2) {
-    b1.style.background = id === '6257' ? 'rgba(255,255,255,0.2)' : 'transparent';
-    b1.style.color = id === '6257' ? '#fff' : 'rgba(255,255,255,0.5)';
-    b2.style.background = id === '6258' ? 'rgba(255,255,255,0.2)' : 'transparent';
-    b2.style.color = id === '6258' ? '#fff' : 'rgba(255,255,255,0.5)';
-  }
-
-  const turnoNum = id === '6258' ? '2' : '1';
+  const turnoNum = (id === '6258' || id === '2' || id === 2) ? '2' : '1';
   document.cookie = `tse_turno=${turnoNum}; path=/; max-age=2592000`;
-  window.activeTurnoId = id;
+  try { localStorage.setItem('tse_turno', turnoNum); } catch (e) {}
+  window.activeTurnoId = turnoNum === '2' ? '6258' : '6257';
 
-  if (id === '6258') {
+  // Atualiza botões no DOM de forma abrangente
+  const b1s = document.querySelectorAll('.btn-tse-1t, #btn-tse-1t, #btn-tse-top-1t');
+  const b2s = document.querySelectorAll('.btn-tse-2t, #btn-tse-2t, #btn-tse-top-2t');
+  b1s.forEach(b => {
+    b.style.background = turnoNum === '1' ? 'rgba(255,255,255,0.25)' : 'transparent';
+    b.style.color = turnoNum === '1' ? '#fff' : 'rgba(255,255,255,0.5)';
+    b.style.boxShadow = turnoNum === '1' ? '0 0 10px rgba(255,255,255,0.2)' : 'none';
+    b.style.fontWeight = turnoNum === '1' ? '700' : '600';
+  });
+  b2s.forEach(b => {
+    b.style.background = turnoNum === '2' ? 'rgba(255,255,255,0.25)' : 'transparent';
+    b.style.color = turnoNum === '2' ? '#fff' : 'rgba(255,255,255,0.5)';
+    b.style.boxShadow = turnoNum === '2' ? '0 0 10px rgba(255,255,255,0.2)' : 'none';
+    b.style.fontWeight = turnoNum === '2' ? '700' : '600';
+  });
+
+  if (turnoNum === '2') {
     // 2º Turno Oficial: Celina Leão eleita no DF
     if (window.triggerVictoryCelebration) {
       window.triggerVictoryCelebration({
@@ -1413,16 +1430,22 @@ async function switchTseTurno(id) {
     if (window.closeVictoryCelebration) window.closeVictoryCelebration();
   }
 
-  // Se o turno configurado na página for diferente, recarrega com parâmetro de turno
-  if (window.APURACAO && String(window.APURACAO.turno) !== turnoNum) {
-    window.location.search = `?turno=${turnoNum}`;
+  // Se o modal estiver aberto, atualiza imediatamente os seletores e visualização
+  populateDfSelectors();
+  renderDfView();
+
+  const url = new URL(window.location.href);
+  const curTurno = url.searchParams.get('turno');
+  if (curTurno !== turnoNum || (window.APURACAO && String(window.APURACAO.turno) !== turnoNum)) {
+    url.searchParams.set('turno', turnoNum);
+    window.location.href = url.toString();
     return;
   }
 
   try {
-    const res = await fetch('/api/tse/live?eleicao=' + id);
+    const res = await fetch('/api/tse/live?eleicao=' + (turnoNum === '2' ? '6258' : '6257'));
     const data = await res.json();
-    console.log('[TSE Oficial ' + id + ' Recebido]:', data);
+    console.log('[TSE Oficial ' + turnoNum + 'T Recebido]:', data);
   } catch (e) {}
 }
 

@@ -228,9 +228,15 @@ const server = http.createServer(async (req, res) => {
   const parsedUrl = new URL(req.url, `http://${req.headers.host}`);
   let pathname = parsedUrl.pathname;
 
+  // Detecção precoce e robusta do turno ativo (Query > Referer > Cookie > Padrão: 2)
+  const cookieTurno = (req.headers.cookie || '').match(/tse_turno=([12])/)?.[1];
+  const queryTurno = parsedUrl.searchParams.get('turno');
+  const refererTurno = (req.headers.referer || '').match(/[?&]turno=([12])/)?.[1];
+  const activeTurno = queryTurno || refererTurno || cookieTurno || '2';
+
   // Endpoint oficial ao vivo do TSE com seleção de turno
   if (pathname === '/api/tse/live') {
-    const electionId = parsedUrl.searchParams.get('eleicao') || '6258';
+    const electionId = parsedUrl.searchParams.get('eleicao') || (activeTurno === '1' ? '6257' : '6258');
     const tseJson = await fetchTseJws(electionId);
     res.writeHead(200, {
       'Content-Type': 'application/json; charset=utf-8',
@@ -247,7 +253,7 @@ const server = http.createServer(async (req, res) => {
 
   // Endpoint do DF por zona e seção (com suporte a turno 1 e 2)
   if (pathname === '/api/df/zonas' || pathname === '/feed/zonas/5300108.json') {
-    const turno = parsedUrl.searchParams.get('turno') || '2';
+    const turno = parsedUrl.searchParams.get('turno') || activeTurno;
     res.writeHead(200, {
       'Content-Type': 'application/json; charset=utf-8',
       'Access-Control-Allow-Origin': '*'
@@ -305,7 +311,8 @@ const server = http.createServer(async (req, res) => {
     try {
       const data = fs.readFileSync(path.join(BASE_DIR, 'df_distritais_data.json'), 'utf8');
       const json = JSON.parse(data);
-      return sendJsonGzip(json.governoDf || {});
+      const govData = activeTurno === '1' ? (json.governoDf1t || json.governoDf) : (json.governoDf2t || json.governoDf);
+      return sendJsonGzip(govData || {});
     } catch (err) {
       res.writeHead(500, { 'Content-Type': 'text/plain; charset=utf-8' });
       return res.end('Erro lendo dados de governo do DF');
@@ -336,9 +343,6 @@ const server = http.createServer(async (req, res) => {
   }
 
   // Suporte a arquivos de feed oficial TSE 2026 com chave de turno (1T vs 2T)
-  const cookieTurno = (req.headers.cookie || '').match(/tse_turno=([12])/)?.[1];
-  const queryTurno = parsedUrl.searchParams.get('turno');
-  const activeTurno = queryTurno || cookieTurno || '2';
 
   if (pathname === '/agora.json' || pathname === '/feed/agora.json') {
     const targetFile = activeTurno === '1' ? 'feed/agora_1t.json' : 'feed/agora_2t.json';
@@ -591,10 +595,10 @@ const server = http.createServer(async (req, res) => {
   </span>
   <span style="color:rgba(250,250,249,0.3);">|</span>
   <div style="display:flex; align-items:center; gap:4px;">
-    <button id="btn-tse-1t" onclick="switchTseTurno('6257')" style="all:unset; cursor:pointer; padding:6px 12px; border-radius:100px; font-weight:600; background:transparent; color:rgba(255,255,255,0.5); transition:all .15s;">
+    <button id="btn-tse-bottom-1t" class="btn-tse-1t" data-turno="1" onclick="switchTseTurno('6257')" style="all:unset; cursor:pointer; padding:6px 12px; border-radius:100px; font-weight:${activeTurno === '1' ? '700' : '600'}; background:${activeTurno === '1' ? 'rgba(255,255,255,0.25)' : 'transparent'}; color:${activeTurno === '1' ? '#fff' : 'rgba(255,255,255,0.5)'}; box-shadow:${activeTurno === '1' ? '0 0 10px rgba(255,255,255,0.2)' : 'none'}; transition:all .15s;">
       1º Turno (6257)
     </button>
-    <button id="btn-tse-2t" onclick="switchTseTurno('6258')" style="all:unset; cursor:pointer; padding:6px 12px; border-radius:100px; font-weight:600; background:rgba(255,255,255,0.2); color:#fff; transition:all .15s;">
+    <button id="btn-tse-bottom-2t" class="btn-tse-2t" data-turno="2" onclick="switchTseTurno('6258')" style="all:unset; cursor:pointer; padding:6px 12px; border-radius:100px; font-weight:${activeTurno === '2' ? '700' : '600'}; background:${activeTurno === '2' ? 'rgba(255,255,255,0.25)' : 'transparent'}; color:${activeTurno === '2' ? '#fff' : 'rgba(255,255,255,0.5)'}; box-shadow:${activeTurno === '2' ? '0 0 10px rgba(255,255,255,0.2)' : 'none'}; transition:all .15s;">
       2º Turno (6258)
     </button>
   </div>
@@ -655,7 +659,7 @@ const server = http.createServer(async (req, res) => {
             <span style="font-size:0.75rem; background:#22c55e22; color:#22c55e; border:1px solid #22c55e44; padding:2px 8px; border-radius:100px; font-weight:600;">100,00% Apurado</span>
           </div>
           <p style="margin:4px 0 0; font-size:0.8rem; color:#A6A39C;">
-            Dados Oficiais do TRE-DF / TSE (Eleição Oficial 6260 & 6258) · Governador do DF · 35 RAs · 19 Zonas Eleitorais
+            Dados Oficiais do TRE-DF / TSE (${activeTurno === '1' ? 'Eleição Oficial 6259 & 6257 · 1º Turno' : 'Eleição Oficial 6260 & 6258 · 2º Turno'}) · Governador do DF · 35 RAs · 19 Zonas Eleitorais
           </p>
         </div>
         <div style="display:flex; align-items:center; gap:10px;">

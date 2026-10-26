@@ -34,7 +34,81 @@
 </head>
 <body>
 <div id="app"></div>
-<script>window.APURACAO={"modo": "simulado", "feed": [], "build": "20261005151607", "intervalo": 15, "dia": "2026-10-04", "turno": 1, "zonas": "assets/zonas.e52b15ca56.js", "anuncio": "assets/anuncio.0c5c22b7d8.webp"};</script>
+<script>
+(function () {
+  var params = new URLSearchParams(window.location.search);
+  var qTurno = params.get('turno');
+  var cMatch = (document.cookie || '').match(/tse_turno=([12])/);
+  var lsTurno = null;
+  try { lsTurno = localStorage.getItem('tse_turno'); } catch (e) {}
+
+  var activeTurno = 2; // Padrão: 2º Turno (resultado oficial mais recente)
+  if (qTurno === '1' || qTurno === '2') {
+    activeTurno = parseInt(qTurno, 10);
+  } else if (cMatch && (cMatch[1] === '1' || cMatch[1] === '2')) {
+    activeTurno = parseInt(cMatch[1], 10);
+  } else if (lsTurno === '1' || lsTurno === '2') {
+    activeTurno = parseInt(lsTurno, 10);
+  }
+
+  // Persistir cookie e localStorage
+  document.cookie = 'tse_turno=' + activeTurno + '; path=/; max-age=2592000';
+  try { localStorage.setItem('tse_turno', String(activeTurno)); } catch (e) {}
+
+  window.APURACAO = {
+    modo: "ao-vivo",
+    feed: ["/feed/"],
+    build: activeTurno === 2 ? "2026-tse-oficial-2t" : "2026-tse-oficial-1t",
+    intervalo: 15,
+    dia: activeTurno === 2 ? "2026-10-25" : "2026-10-04",
+    turno: activeTurno,
+    zonas: "assets/zonas.e52b15ca56.js",
+    anuncio: "assets/anuncio.0c5c22b7d8.webp"
+  };
+
+  window.activeTurnoId = activeTurno === 2 ? '6258' : '6257';
+
+  window.switchTseTurno = function (id) {
+    var t = (id === '6258' || id === 2 || id === '2') ? 2 : 1;
+    document.cookie = 'tse_turno=' + t + '; path=/; max-age=2592000';
+    try { localStorage.setItem('tse_turno', String(t)); } catch (e) {}
+
+    // Atualiza imediatamente estilo visual dos botões no DOM
+    var b1s = document.querySelectorAll('.btn-tse-1t, #btn-tse-1t, #btn-tse-top-1t');
+    var b2s = document.querySelectorAll('.btn-tse-2t, #btn-tse-2t, #btn-tse-top-2t');
+    b1s.forEach(function (b) {
+      b.style.background = t === 1 ? 'rgba(255,255,255,0.25)' : 'transparent';
+      b.style.color = t === 1 ? '#fff' : 'rgba(255,255,255,0.5)';
+      b.style.boxShadow = t === 1 ? '0 0 10px rgba(255,255,255,0.2)' : 'none';
+      b.style.fontWeight = t === 1 ? '700' : '600';
+    });
+    b2s.forEach(function (b) {
+      b.style.background = t === 2 ? 'rgba(255,255,255,0.25)' : 'transparent';
+      b.style.color = t === 2 ? '#fff' : 'rgba(255,255,255,0.5)';
+      b.style.boxShadow = t === 2 ? '0 0 10px rgba(255,255,255,0.2)' : 'none';
+      b.style.fontWeight = t === 2 ? '700' : '600';
+    });
+
+    var u = new URL(window.location.href);
+    if (u.searchParams.get('turno') !== String(t)) {
+      u.searchParams.set('turno', String(t));
+      window.location.href = u.toString();
+    } else {
+      window.location.reload();
+    }
+  };
+
+  // Listener de captura para garantir que qualquer clique nos botões 1T/2T funcione instantaneamente
+  document.addEventListener('click', function (ev) {
+    var btn = ev.target && ev.target.closest && ev.target.closest('#btn-tse-1t, #btn-tse-top-1t, .btn-tse-1t, #btn-tse-2t, #btn-tse-top-2t, .btn-tse-2t');
+    if (!btn) return;
+    ev.preventDefault();
+    ev.stopPropagation();
+    var is2 = btn.id.indexOf('2t') !== -1 || btn.classList.contains('btn-tse-2t') || (btn.dataset && btn.dataset.turno === '2') || (btn.textContent && btn.textContent.indexOf('2º') !== -1);
+    window.switchTseTurno(is2 ? 2 : 1);
+  }, true);
+})();
+</script>
 <script>/* while the page loads, the top bar stands where the app will put it, at the app's own scale (built with the DOM, so a strict
    Content Security Policy lets it through) */
 (function () {
@@ -85,16 +159,7 @@
   setTimeout(function () { note('A página está demorando para abrir. Verifique a conexão e tente de novo.'); }, 30000);
 })();
 </script>
-<script>
-window.APURACAO = {
-  modo: "ao-vivo",
-  feed: ["/feed/"],
-  build: "2026-tse-oficial-2t",
-  intervalo: 15,
-  dia: "2026-10-25",
-  turno: 2
-};
-</script>
+
 <script defer src="assets/mapa.4d9d76173d.js"></script>
 <script defer src="assets/dados.c3d3520920.js"></script>
 <script defer src="assets/app.0f00cc4e2b.js"></script>
