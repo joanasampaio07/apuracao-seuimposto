@@ -1,23 +1,8 @@
 {
-  "versao": "2026.2",
-  "geradoEm": "2026-10-18T22:52:31.204Z",
+  "versao": "2026.2-oficial",
+  "geradoEm": "2026-10-26T12:56:51.726Z",
   "presidente": {
     "nacional": [
-      {
-        "numero": "22",
-        "nome": "Flávio Bolsonaro",
-        "partido": "PL",
-        "cor": "#0083ca",
-        "votos1t": 56104503,
-        "pct1t": 47.03,
-        "votos2t": 59312480,
-        "pct2t": 50.88,
-        "deltaVotos": 3207977,
-        "deltaPctVotos": 5.72,
-        "deltaPctValidos": 3.85,
-        "aumentou": true,
-        "eleito": true
-      },
       {
         "numero": "13",
         "nome": "Luiz Inácio Lula da Silva",
@@ -25,11 +10,26 @@
         "cor": "#ee2d35",
         "votos1t": 53879538,
         "pct1t": 45.16,
-        "votos2t": 57261890,
-        "pct2t": 49.12,
-        "deltaVotos": 3382352,
-        "deltaPctVotos": 6.28,
-        "deltaPctValidos": 3.96,
+        "votos2t": 64256232,
+        "pct2t": 51.79,
+        "deltaVotos": 10376694,
+        "deltaPctVotos": 19.26,
+        "deltaPctValidos": 6.62,
+        "aumentou": true,
+        "eleito": true
+      },
+      {
+        "numero": "22",
+        "nome": "Flávio Bolsonaro",
+        "partido": "PL",
+        "cor": "#0083ca",
+        "votos1t": 56104503,
+        "pct1t": 47.03,
+        "votos2t": 59826041,
+        "pct2t": 48.21,
+        "deltaVotos": 3721538,
+        "deltaPctVotos": 6.63,
+        "deltaPctValidos": 1.19,
         "aumentou": true,
         "eleito": false
       }
@@ -40,20 +40,8 @@
         "nome": "Acre",
         "secoes": 2270,
         "comparecimento1t": 488330,
+        "comparecimento2t": 453654,
         "candidatos": [
-          {
-            "numero": "22",
-            "nome": "Flávio Bolsonaro",
-            "partido": "PL",
-            "cor": "#0083ca",
-            "votos1t": 302807,
-            "pct1t": 64.56,
-            "votos2t": 319402,
-            "pct2t": 68.73,
-            "deltaVotos": 16595,
-            "deltaPctVotos": 5.48,
-            "aumentou": true
-          },
           {
             "numero": "13",
             "nome": "Luiz Inácio Lula da Silva",
@@ -61,37 +49,40 @@
             "cor": "#ee2d35",
             "votos1t": 134770,
             "pct1t": 28.73,
-            "votos2t": 145300,
-            "pct2t": 31.27,
-            "deltaVotos": 10530,
-            "deltaPctVotos": 7.81,
-            "aumentou": true
+            "votos2t": 144513,
+            "pct2t": 33.43,
+            "deltaVotos": 9743,
+            "deltaPctVotos": 7.23,
+            "aumentou": true,
+            "eleito": false
+          },
+          {
+            "numero": "22",
+            "nome": "Flávio Bolsonaro",
+            "partido": "PL",
+            "cor": "#0083ca",
+            "votos1t": 302807,
+            "pct1t": 64.56,
+            "votos2t": 287715,
+            "pct2t": 66.57,
+            "deltaVotos": -15092,
+            "deltaPctVotos": -4.98,
+            "aumentou": false,
+            "eleito": true
           }
         ],
         "vencedor1t": "Flávio Bolsonaro",
         "vencedor2t": "Flávio Bolsonaro",
         "totalValidos1t": 469066,
-        "totalValidos2t": 464702
+        "totalValidos2t": 432228
       },
       {
         "uf": "AL",
         "nome": "Alagoas",
         "secoes": 7101,
         "comparecimento1t": 1938428,
+        "comparecimento2t": 1951632,
         "candidatos": [
-          {
-            "numero": "22",
-            "nome": "Flávio Bolsonaro",
-            "partido": "PL",
-            "cor": "#0083ca",
-            "votos1t": 735718,
-            "pct1t": 40.45,
-            "votos2t": 764038,
-            "pct2t": 42.27,
-            "deltaVotos": 28320,
-            "deltaPctVotos": 3.85,
-            "aumentou": true
-          },
           {
             "numero": "13",
             "nome": "Luiz Inácio Lula da Silva",
@@ -99,37 +90,40 @@
             "cor": "#ee2d35",
             "votos1t": 995459,
             "pct1t": 54.73,
-            "votos2t": 1043297,
-            "pct2t": 57.73,
-            "deltaVotos": 47838,
-            "deltaPctVotos": 4.81,
-            "aumentou": true
+            "votos2t": 1152621,
+            "pct2t": 60.77,
+            "deltaVotos": 157162,
+            "deltaPctVotos": 15.79,
+            "aumentou": true,
+            "eleito": true
+          },
+          {
+            "numero": "22",
+            "nome": "Flávio Bolsonaro",
+            "partido": "PL",
+            "cor": "#0083ca",
+            "votos1t": 735718,
+            "pct1t": 40.45,
+            "votos2t": 744140,
+            "pct2t": 39.23,
+            "deltaVotos": 8422,
+            "deltaPctVotos": 1.14,
+            "aumentou": true,
+            "eleito": false
           }
         ],
         "vencedor1t": "Lula",
         "vencedor2t": "Lula",
         "totalValidos1t": 1818856,
-        "totalValidos2t": 1807335
+        "totalValidos2t": 1896761
       },
       {
         "uf": "AM",
         "nome": "Amazonas",
         "secoes": 8157,
         "comparecimento1t": 2234549,
+        "comparecimento2t": 2192059,
         "candidatos": [
-          {
-            "numero": "22",
-            "nome": "Flávio Bolsonaro",
-            "partido": "PL",
-            "cor": "#0083ca",
-            "votos1t": 976764,
-            "pct1t": 45,
-            "votos2t": 1024246,
-            "pct2t": 47.61,
-            "deltaVotos": 47482,
-            "deltaPctVotos": 4.86,
-            "aumentou": true
-          },
           {
             "numero": "13",
             "nome": "Luiz Inácio Lula da Silva",
@@ -137,37 +131,40 @@
             "cor": "#ee2d35",
             "votos1t": 1046996,
             "pct1t": 48.23,
-            "votos2t": 1127201,
-            "pct2t": 52.39,
-            "deltaVotos": 80205,
-            "deltaPctVotos": 7.66,
-            "aumentou": true
+            "votos2t": 1145783,
+            "pct2t": 54.02,
+            "deltaVotos": 98787,
+            "deltaPctVotos": 9.44,
+            "aumentou": true,
+            "eleito": true
+          },
+          {
+            "numero": "22",
+            "nome": "Flávio Bolsonaro",
+            "partido": "PL",
+            "cor": "#0083ca",
+            "votos1t": 976764,
+            "pct1t": 45,
+            "votos2t": 975245,
+            "pct2t": 45.98,
+            "deltaVotos": -1519,
+            "deltaPctVotos": -0.16,
+            "aumentou": false,
+            "eleito": false
           }
         ],
         "vencedor1t": "Lula",
         "vencedor2t": "Lula",
         "totalValidos1t": 2170763,
-        "totalValidos2t": 2151447
+        "totalValidos2t": 2121028
       },
       {
         "uf": "AP",
         "nome": "Amapá",
         "secoes": 1914,
         "comparecimento1t": 476562,
+        "comparecimento2t": 429975,
         "candidatos": [
-          {
-            "numero": "22",
-            "nome": "Flávio Bolsonaro",
-            "partido": "PL",
-            "cor": "#0083ca",
-            "votos1t": 212278,
-            "pct1t": 45.67,
-            "votos2t": 225223,
-            "pct2t": 49,
-            "deltaVotos": 12945,
-            "deltaPctVotos": 6.1,
-            "aumentou": true
-          },
           {
             "numero": "13",
             "nome": "Luiz Inácio Lula da Silva",
@@ -175,37 +172,40 @@
             "cor": "#ee2d35",
             "votos1t": 212503,
             "pct1t": 45.71,
-            "votos2t": 234369,
-            "pct2t": 51,
-            "deltaVotos": 21866,
-            "deltaPctVotos": 10.29,
-            "aumentou": true
+            "votos2t": 222968,
+            "pct2t": 52.88,
+            "deltaVotos": 10465,
+            "deltaPctVotos": 4.92,
+            "aumentou": true,
+            "eleito": true
+          },
+          {
+            "numero": "22",
+            "nome": "Flávio Bolsonaro",
+            "partido": "PL",
+            "cor": "#0083ca",
+            "votos1t": 212278,
+            "pct1t": 45.67,
+            "votos2t": 198674,
+            "pct2t": 47.12,
+            "deltaVotos": -13604,
+            "deltaPctVotos": -6.41,
+            "aumentou": false,
+            "eleito": false
           }
         ],
         "vencedor1t": "Lula",
         "vencedor2t": "Lula",
         "totalValidos1t": 464858,
-        "totalValidos2t": 459592
+        "totalValidos2t": 421642
       },
       {
         "uf": "BA",
         "nome": "Bahia",
         "secoes": 35476,
         "comparecimento1t": 9053601,
+        "comparecimento2t": 9422047,
         "candidatos": [
-          {
-            "numero": "22",
-            "nome": "Flávio Bolsonaro",
-            "partido": "PL",
-            "cor": "#0083ca",
-            "votos1t": 2442585,
-            "pct1t": 28.53,
-            "votos2t": 2588883,
-            "pct2t": 30.45,
-            "deltaVotos": 146298,
-            "deltaPctVotos": 5.99,
-            "aumentou": true
-          },
           {
             "numero": "13",
             "nome": "Luiz Inácio Lula da Silva",
@@ -213,37 +213,40 @@
             "cor": "#ee2d35",
             "votos1t": 5664771,
             "pct1t": 66.17,
-            "votos2t": 5911892,
-            "pct2t": 69.55,
-            "deltaVotos": 247121,
-            "deltaPctVotos": 4.36,
-            "aumentou": true
+            "votos2t": 6485258,
+            "pct2t": 71.31,
+            "deltaVotos": 820487,
+            "deltaPctVotos": 14.48,
+            "aumentou": true,
+            "eleito": true
+          },
+          {
+            "numero": "22",
+            "nome": "Flávio Bolsonaro",
+            "partido": "PL",
+            "cor": "#0083ca",
+            "votos1t": 2442585,
+            "pct1t": 28.53,
+            "votos2t": 2608761,
+            "pct2t": 28.69,
+            "deltaVotos": 166176,
+            "deltaPctVotos": 6.8,
+            "aumentou": true,
+            "eleito": false
           }
         ],
         "vencedor1t": "Lula",
         "vencedor2t": "Lula",
         "totalValidos1t": 8560291,
-        "totalValidos2t": 8500775
+        "totalValidos2t": 9094019
       },
       {
         "uf": "CE",
         "nome": "Ceará",
         "secoes": 23765,
         "comparecimento1t": 5910471,
+        "comparecimento2t": 6024843,
         "candidatos": [
-          {
-            "numero": "22",
-            "nome": "Flávio Bolsonaro",
-            "partido": "PL",
-            "cor": "#0083ca",
-            "votos1t": 1756850,
-            "pct1t": 31.27,
-            "votos2t": 1855591,
-            "pct2t": 33.27,
-            "deltaVotos": 98741,
-            "deltaPctVotos": 5.62,
-            "aumentou": true
-          },
           {
             "numero": "13",
             "nome": "Luiz Inácio Lula da Silva",
@@ -251,37 +254,40 @@
             "cor": "#ee2d35",
             "votos1t": 3555263,
             "pct1t": 63.29,
-            "votos2t": 3722053,
-            "pct2t": 66.73,
-            "deltaVotos": 166790,
-            "deltaPctVotos": 4.69,
-            "aumentou": true
+            "votos2t": 4036124,
+            "pct2t": 68.93,
+            "deltaVotos": 480861,
+            "deltaPctVotos": 13.53,
+            "aumentou": true,
+            "eleito": true
+          },
+          {
+            "numero": "22",
+            "nome": "Flávio Bolsonaro",
+            "partido": "PL",
+            "cor": "#0083ca",
+            "votos1t": 1756850,
+            "pct1t": 31.27,
+            "votos2t": 1819478,
+            "pct2t": 31.07,
+            "deltaVotos": 62628,
+            "deltaPctVotos": 3.56,
+            "aumentou": true,
+            "eleito": false
           }
         ],
         "vencedor1t": "Lula",
         "vencedor2t": "Lula",
         "totalValidos1t": 5617814,
-        "totalValidos2t": 5577644
+        "totalValidos2t": 5855602
       },
       {
         "uf": "DF",
         "nome": "Distrito Federal",
         "secoes": 6969,
         "comparecimento1t": 1831396,
+        "comparecimento2t": 1868280,
         "candidatos": [
-          {
-            "numero": "22",
-            "nome": "Flávio Bolsonaro",
-            "partido": "PL",
-            "cor": "#0083ca",
-            "votos1t": 909616,
-            "pct1t": 51.31,
-            "votos2t": 1008463,
-            "pct2t": 57.73,
-            "deltaVotos": 98847,
-            "deltaPctVotos": 10.87,
-            "aumentou": true
-          },
           {
             "numero": "13",
             "nome": "Luiz Inácio Lula da Silva",
@@ -289,37 +295,40 @@
             "cor": "#ee2d35",
             "votos1t": 675627,
             "pct1t": 38.11,
-            "votos2t": 738349,
-            "pct2t": 42.27,
-            "deltaVotos": 62722,
-            "deltaPctVotos": 9.28,
-            "aumentou": true
+            "votos2t": 825224,
+            "pct2t": 45.72,
+            "deltaVotos": 149597,
+            "deltaPctVotos": 22.14,
+            "aumentou": true,
+            "eleito": false
+          },
+          {
+            "numero": "22",
+            "nome": "Flávio Bolsonaro",
+            "partido": "PL",
+            "cor": "#0083ca",
+            "votos1t": 909616,
+            "pct1t": 51.31,
+            "votos2t": 979542,
+            "pct2t": 54.28,
+            "deltaVotos": 69926,
+            "deltaPctVotos": 7.69,
+            "aumentou": true,
+            "eleito": true
           }
         ],
         "vencedor1t": "Flávio Bolsonaro",
         "vencedor2t": "Flávio Bolsonaro",
         "totalValidos1t": 1772808,
-        "totalValidos2t": 1746812
+        "totalValidos2t": 1804766
       },
       {
         "uf": "ES",
         "nome": "Espírito Santo",
         "secoes": 9844,
         "comparecimento1t": 2352282,
+        "comparecimento2t": 2409214,
         "candidatos": [
-          {
-            "numero": "22",
-            "nome": "Flávio Bolsonaro",
-            "partido": "PL",
-            "cor": "#0083ca",
-            "votos1t": 1233194,
-            "pct1t": 54.78,
-            "votos2t": 1321654,
-            "pct2t": 59.33,
-            "deltaVotos": 88460,
-            "deltaPctVotos": 7.17,
-            "aumentou": true
-          },
           {
             "numero": "13",
             "nome": "Luiz Inácio Lula da Silva",
@@ -327,37 +336,40 @@
             "cor": "#ee2d35",
             "votos1t": 850028,
             "pct1t": 37.76,
-            "votos2t": 906159,
-            "pct2t": 40.67,
-            "deltaVotos": 56131,
-            "deltaPctVotos": 6.6,
-            "aumentou": true
+            "votos2t": 1001965,
+            "pct2t": 43.63,
+            "deltaVotos": 151937,
+            "deltaPctVotos": 17.87,
+            "aumentou": true,
+            "eleito": false
+          },
+          {
+            "numero": "22",
+            "nome": "Flávio Bolsonaro",
+            "partido": "PL",
+            "cor": "#0083ca",
+            "votos1t": 1233194,
+            "pct1t": 54.78,
+            "votos2t": 1294504,
+            "pct2t": 56.37,
+            "deltaVotos": 61310,
+            "deltaPctVotos": 4.97,
+            "aumentou": true,
+            "eleito": true
           }
         ],
         "vencedor1t": "Flávio Bolsonaro",
         "vencedor2t": "Flávio Bolsonaro",
         "totalValidos1t": 2251078,
-        "totalValidos2t": 2227813
+        "totalValidos2t": 2296469
       },
       {
         "uf": "GO",
         "nome": "Goiás",
         "secoes": 15686,
         "comparecimento1t": 3971587,
+        "comparecimento2t": 4047280,
         "candidatos": [
-          {
-            "numero": "22",
-            "nome": "Flávio Bolsonaro",
-            "partido": "PL",
-            "cor": "#0083ca",
-            "votos1t": 2051888,
-            "pct1t": 53.6,
-            "votos2t": 2361266,
-            "pct2t": 63.03,
-            "deltaVotos": 309378,
-            "deltaPctVotos": 15.08,
-            "aumentou": true
-          },
           {
             "numero": "13",
             "nome": "Luiz Inácio Lula da Silva",
@@ -365,37 +377,40 @@
             "cor": "#ee2d35",
             "votos1t": 1188880,
             "pct1t": 31.06,
-            "votos2t": 1385191,
-            "pct2t": 36.97,
-            "deltaVotos": 196311,
-            "deltaPctVotos": 16.51,
-            "aumentou": true
+            "votos2t": 1585555,
+            "pct2t": 40.34,
+            "deltaVotos": 396675,
+            "deltaPctVotos": 33.37,
+            "aumentou": true,
+            "eleito": false
+          },
+          {
+            "numero": "22",
+            "nome": "Flávio Bolsonaro",
+            "partido": "PL",
+            "cor": "#0083ca",
+            "votos1t": 2051888,
+            "pct1t": 53.6,
+            "votos2t": 2345334,
+            "pct2t": 59.66,
+            "deltaVotos": 293446,
+            "deltaPctVotos": 14.3,
+            "aumentou": true,
+            "eleito": true
           }
         ],
         "vencedor1t": "Flávio Bolsonaro",
         "vencedor2t": "Flávio Bolsonaro",
         "totalValidos1t": 3827823,
-        "totalValidos2t": 3746457
+        "totalValidos2t": 3930889
       },
       {
         "uf": "MA",
         "nome": "Maranhão",
         "secoes": 18093,
         "comparecimento1t": 4160343,
+        "comparecimento2t": 4127771,
         "candidatos": [
-          {
-            "numero": "22",
-            "nome": "Flávio Bolsonaro",
-            "partido": "PL",
-            "cor": "#0083ca",
-            "votos1t": 1239040,
-            "pct1t": 30.9,
-            "votos2t": 1305287,
-            "pct2t": 32.77,
-            "deltaVotos": 66247,
-            "deltaPctVotos": 5.35,
-            "aumentou": true
-          },
           {
             "numero": "13",
             "nome": "Luiz Inácio Lula da Silva",
@@ -403,37 +418,40 @@
             "cor": "#ee2d35",
             "votos1t": 2566301,
             "pct1t": 63.99,
-            "votos2t": 2678202,
-            "pct2t": 67.23,
-            "deltaVotos": 111901,
-            "deltaPctVotos": 4.36,
-            "aumentou": true
+            "votos2t": 2808231,
+            "pct2t": 69.54,
+            "deltaVotos": 241930,
+            "deltaPctVotos": 9.43,
+            "aumentou": true,
+            "eleito": true
+          },
+          {
+            "numero": "22",
+            "nome": "Flávio Bolsonaro",
+            "partido": "PL",
+            "cor": "#0083ca",
+            "votos1t": 1239040,
+            "pct1t": 30.9,
+            "votos2t": 1229971,
+            "pct2t": 30.46,
+            "deltaVotos": -9069,
+            "deltaPctVotos": -0.73,
+            "aumentou": false,
+            "eleito": false
           }
         ],
         "vencedor1t": "Lula",
         "vencedor2t": "Lula",
         "totalValidos1t": 4010439,
-        "totalValidos2t": 3983489
+        "totalValidos2t": 4038202
       },
       {
         "uf": "MG",
         "nome": "Minas Gerais",
         "secoes": 52062,
         "comparecimento1t": 12637274,
+        "comparecimento2t": 13044203,
         "candidatos": [
-          {
-            "numero": "22",
-            "nome": "Flávio Bolsonaro",
-            "partido": "PL",
-            "cor": "#0083ca",
-            "votos1t": 5777548,
-            "pct1t": 48.24,
-            "votos2t": 6309687,
-            "pct2t": 53.31,
-            "deltaVotos": 532139,
-            "deltaPctVotos": 9.21,
-            "aumentou": true
-          },
           {
             "numero": "13",
             "nome": "Luiz Inácio Lula da Silva",
@@ -441,37 +459,40 @@
             "cor": "#ee2d35",
             "votos1t": 5188936,
             "pct1t": 43.33,
-            "votos2t": 5526597,
-            "pct2t": 46.69,
-            "deltaVotos": 337661,
-            "deltaPctVotos": 6.51,
-            "aumentou": true
+            "votos2t": 6351099,
+            "pct2t": 50.43,
+            "deltaVotos": 1162163,
+            "deltaPctVotos": 22.4,
+            "aumentou": true,
+            "eleito": true
+          },
+          {
+            "numero": "22",
+            "nome": "Flávio Bolsonaro",
+            "partido": "PL",
+            "cor": "#0083ca",
+            "votos1t": 5777548,
+            "pct1t": 48.24,
+            "votos2t": 6241786,
+            "pct2t": 49.57,
+            "deltaVotos": 464238,
+            "deltaPctVotos": 8.04,
+            "aumentou": true,
+            "eleito": false
           }
         ],
         "vencedor1t": "Flávio Bolsonaro",
-        "vencedor2t": "Flávio Bolsonaro",
+        "vencedor2t": "Lula",
         "totalValidos1t": 11976235,
-        "totalValidos2t": 11836284
+        "totalValidos2t": 12592885
       },
       {
         "uf": "MS",
         "nome": "Mato Grosso do Sul",
         "secoes": 7106,
         "comparecimento1t": 1541220,
+        "comparecimento2t": 1594460,
         "candidatos": [
-          {
-            "numero": "22",
-            "nome": "Flávio Bolsonaro",
-            "partido": "PL",
-            "cor": "#0083ca",
-            "votos1t": 873351,
-            "pct1t": 58.6,
-            "votos2t": 926089,
-            "pct2t": 62.73,
-            "deltaVotos": 52738,
-            "deltaPctVotos": 6.04,
-            "aumentou": true
-          },
           {
             "numero": "13",
             "nome": "Luiz Inácio Lula da Silva",
@@ -479,37 +500,40 @@
             "cor": "#ee2d35",
             "votos1t": 516855,
             "pct1t": 34.68,
-            "votos2t": 550319,
-            "pct2t": 37.27,
-            "deltaVotos": 33464,
-            "deltaPctVotos": 6.47,
-            "aumentou": true
+            "votos2t": 628973,
+            "pct2t": 40.4,
+            "deltaVotos": 112118,
+            "deltaPctVotos": 21.69,
+            "aumentou": true,
+            "eleito": false
+          },
+          {
+            "numero": "22",
+            "nome": "Flávio Bolsonaro",
+            "partido": "PL",
+            "cor": "#0083ca",
+            "votos1t": 873351,
+            "pct1t": 58.6,
+            "votos2t": 927892,
+            "pct2t": 59.6,
+            "deltaVotos": 54541,
+            "deltaPctVotos": 6.25,
+            "aumentou": true,
+            "eleito": true
           }
         ],
         "vencedor1t": "Flávio Bolsonaro",
         "vencedor2t": "Flávio Bolsonaro",
         "totalValidos1t": 1490278,
-        "totalValidos2t": 1476408
+        "totalValidos2t": 1556865
       },
       {
         "uf": "MT",
         "nome": "Mato Grosso",
         "secoes": 8287,
         "comparecimento1t": 2052133,
+        "comparecimento2t": 2085334,
         "candidatos": [
-          {
-            "numero": "22",
-            "nome": "Flávio Bolsonaro",
-            "partido": "PL",
-            "cor": "#0083ca",
-            "votos1t": 1298581,
-            "pct1t": 65.15,
-            "votos2t": 1358146,
-            "pct2t": 68.68,
-            "deltaVotos": 59565,
-            "deltaPctVotos": 4.59,
-            "aumentou": true
-          },
           {
             "numero": "13",
             "nome": "Luiz Inácio Lula da Silva",
@@ -517,37 +541,40 @@
             "cor": "#ee2d35",
             "votos1t": 581681,
             "pct1t": 29.18,
-            "votos2t": 619477,
-            "pct2t": 31.32,
-            "deltaVotos": 37796,
-            "deltaPctVotos": 6.5,
-            "aumentou": true
+            "votos2t": 694167,
+            "pct2t": 33.94,
+            "deltaVotos": 112486,
+            "deltaPctVotos": 19.34,
+            "aumentou": true,
+            "eleito": false
+          },
+          {
+            "numero": "22",
+            "nome": "Flávio Bolsonaro",
+            "partido": "PL",
+            "cor": "#0083ca",
+            "votos1t": 1298581,
+            "pct1t": 65.15,
+            "votos2t": 1351099,
+            "pct2t": 66.06,
+            "deltaVotos": 52518,
+            "deltaPctVotos": 4.04,
+            "aumentou": true,
+            "eleito": true
           }
         ],
         "vencedor1t": "Flávio Bolsonaro",
         "vencedor2t": "Flávio Bolsonaro",
         "totalValidos1t": 1993288,
-        "totalValidos2t": 1977623
+        "totalValidos2t": 2045266
       },
       {
         "uf": "PA",
         "nome": "Pará",
         "secoes": 20827,
         "comparecimento1t": 5066504,
+        "comparecimento2t": 4989573,
         "candidatos": [
-          {
-            "numero": "22",
-            "nome": "Flávio Bolsonaro",
-            "partido": "PL",
-            "cor": "#0083ca",
-            "votos1t": 2163957,
-            "pct1t": 44.5,
-            "votos2t": 2251806,
-            "pct2t": 46.65,
-            "deltaVotos": 87849,
-            "deltaPctVotos": 4.06,
-            "aumentou": true
-          },
           {
             "numero": "13",
             "nome": "Luiz Inácio Lula da Silva",
@@ -555,37 +582,40 @@
             "cor": "#ee2d35",
             "votos1t": 2427237,
             "pct1t": 49.91,
-            "votos2t": 2575628,
-            "pct2t": 53.35,
-            "deltaVotos": 148391,
-            "deltaPctVotos": 6.11,
-            "aumentou": true
+            "votos2t": 2690449,
+            "pct2t": 55.02,
+            "deltaVotos": 263212,
+            "deltaPctVotos": 10.84,
+            "aumentou": true,
+            "eleito": true
+          },
+          {
+            "numero": "22",
+            "nome": "Flávio Bolsonaro",
+            "partido": "PL",
+            "cor": "#0083ca",
+            "votos1t": 2163957,
+            "pct1t": 44.5,
+            "votos2t": 2199940,
+            "pct2t": 44.98,
+            "deltaVotos": 35983,
+            "deltaPctVotos": 1.66,
+            "aumentou": true,
+            "eleito": false
           }
         ],
         "vencedor1t": "Lula",
         "vencedor2t": "Lula",
         "totalValidos1t": 4863172,
-        "totalValidos2t": 4827434
+        "totalValidos2t": 4890389
       },
       {
         "uf": "PB",
         "nome": "Paraíba",
         "secoes": 10712,
         "comparecimento1t": 2683988,
+        "comparecimento2t": 2743560,
         "candidatos": [
-          {
-            "numero": "22",
-            "nome": "Flávio Bolsonaro",
-            "partido": "PL",
-            "cor": "#0083ca",
-            "votos1t": 831377,
-            "pct1t": 33.07,
-            "votos2t": 876998,
-            "pct2t": 35.15,
-            "deltaVotos": 45621,
-            "deltaPctVotos": 5.49,
-            "aumentou": true
-          },
           {
             "numero": "13",
             "nome": "Luiz Inácio Lula da Silva",
@@ -593,37 +623,40 @@
             "cor": "#ee2d35",
             "votos1t": 1541127,
             "pct1t": 61.31,
-            "votos2t": 1618189,
-            "pct2t": 64.85,
-            "deltaVotos": 77062,
-            "deltaPctVotos": 5,
-            "aumentou": true
+            "votos2t": 1794059,
+            "pct2t": 67.46,
+            "deltaVotos": 252932,
+            "deltaPctVotos": 16.41,
+            "aumentou": true,
+            "eleito": true
+          },
+          {
+            "numero": "22",
+            "nome": "Flávio Bolsonaro",
+            "partido": "PL",
+            "cor": "#0083ca",
+            "votos1t": 831377,
+            "pct1t": 33.07,
+            "votos2t": 865210,
+            "pct2t": 32.54,
+            "deltaVotos": 33833,
+            "deltaPctVotos": 4.07,
+            "aumentou": true,
+            "eleito": false
           }
         ],
         "vencedor1t": "Lula",
         "vencedor2t": "Lula",
         "totalValidos1t": 2513747,
-        "totalValidos2t": 2495187
+        "totalValidos2t": 2659269
       },
       {
         "uf": "PE",
         "nome": "Pernambuco",
         "secoes": 21418,
         "comparecimento1t": 5911062,
+        "comparecimento2t": 6126467,
         "candidatos": [
-          {
-            "numero": "22",
-            "nome": "Flávio Bolsonaro",
-            "partido": "PL",
-            "cor": "#0083ca",
-            "votos1t": 1738043,
-            "pct1t": 31.03,
-            "votos2t": 1837851,
-            "pct2t": 33.05,
-            "deltaVotos": 99808,
-            "deltaPctVotos": 5.74,
-            "aumentou": true
-          },
           {
             "numero": "13",
             "nome": "Luiz Inácio Lula da Silva",
@@ -631,37 +664,40 @@
             "cor": "#ee2d35",
             "votos1t": 3553971,
             "pct1t": 63.45,
-            "votos2t": 3722563,
-            "pct2t": 66.95,
-            "deltaVotos": 168592,
-            "deltaPctVotos": 4.74,
-            "aumentou": true
+            "votos2t": 4117513,
+            "pct2t": 69.2,
+            "deltaVotos": 563542,
+            "deltaPctVotos": 15.86,
+            "aumentou": true,
+            "eleito": true
+          },
+          {
+            "numero": "22",
+            "nome": "Flávio Bolsonaro",
+            "partido": "PL",
+            "cor": "#0083ca",
+            "votos1t": 1738043,
+            "pct1t": 31.03,
+            "votos2t": 1832554,
+            "pct2t": 30.8,
+            "deltaVotos": 94511,
+            "deltaPctVotos": 5.44,
+            "aumentou": true,
+            "eleito": false
           }
         ],
         "vencedor1t": "Lula",
         "vencedor2t": "Lula",
         "totalValidos1t": 5601017,
-        "totalValidos2t": 5560414
+        "totalValidos2t": 5950067
       },
       {
         "uf": "PI",
         "nome": "Piauí",
         "secoes": 10225,
         "comparecimento1t": 2240883,
+        "comparecimento2t": 2239830,
         "candidatos": [
-          {
-            "numero": "22",
-            "nome": "Flávio Bolsonaro",
-            "partido": "PL",
-            "cor": "#0083ca",
-            "votos1t": 517028,
-            "pct1t": 24.09,
-            "votos2t": 551155,
-            "pct2t": 25.85,
-            "deltaVotos": 34127,
-            "deltaPctVotos": 6.6,
-            "aumentou": true
-          },
           {
             "numero": "13",
             "nome": "Luiz Inácio Lula da Silva",
@@ -669,37 +705,40 @@
             "cor": "#ee2d35",
             "votos1t": 1523710,
             "pct1t": 70.99,
-            "votos2t": 1581356,
-            "pct2t": 74.15,
-            "deltaVotos": 57646,
-            "deltaPctVotos": 3.78,
-            "aumentou": true
+            "votos2t": 1653989,
+            "pct2t": 75.88,
+            "deltaVotos": 130279,
+            "deltaPctVotos": 8.55,
+            "aumentou": true,
+            "eleito": true
+          },
+          {
+            "numero": "22",
+            "nome": "Flávio Bolsonaro",
+            "partido": "PL",
+            "cor": "#0083ca",
+            "votos1t": 517028,
+            "pct1t": 24.09,
+            "votos2t": 525859,
+            "pct2t": 24.12,
+            "deltaVotos": 8831,
+            "deltaPctVotos": 1.71,
+            "aumentou": true,
+            "eleito": false
           }
         ],
         "vencedor1t": "Lula",
         "vencedor2t": "Lula",
         "totalValidos1t": 2146394,
-        "totalValidos2t": 2132511
+        "totalValidos2t": 2179848
       },
       {
         "uf": "PR",
         "nome": "Paraná",
         "secoes": 27142,
         "comparecimento1t": 6841457,
+        "comparecimento2t": 7059339,
         "candidatos": [
-          {
-            "numero": "22",
-            "nome": "Flávio Bolsonaro",
-            "partido": "PL",
-            "cor": "#0083ca",
-            "votos1t": 3945345,
-            "pct1t": 59.91,
-            "votos2t": 4253799,
-            "pct2t": 65.4,
-            "deltaVotos": 308454,
-            "deltaPctVotos": 7.82,
-            "aumentou": true
-          },
           {
             "numero": "13",
             "nome": "Luiz Inácio Lula da Silva",
@@ -707,37 +746,40 @@
             "cor": "#ee2d35",
             "votos1t": 2054597,
             "pct1t": 31.2,
-            "votos2t": 2250322,
-            "pct2t": 34.6,
-            "deltaVotos": 195725,
-            "deltaPctVotos": 9.53,
-            "aumentou": true
+            "votos2t": 2566504,
+            "pct2t": 37.42,
+            "deltaVotos": 511907,
+            "deltaPctVotos": 24.92,
+            "aumentou": true,
+            "eleito": false
+          },
+          {
+            "numero": "22",
+            "nome": "Flávio Bolsonaro",
+            "partido": "PL",
+            "cor": "#0083ca",
+            "votos1t": 3945345,
+            "pct1t": 59.91,
+            "votos2t": 4291444,
+            "pct2t": 62.58,
+            "deltaVotos": 346099,
+            "deltaPctVotos": 8.77,
+            "aumentou": true,
+            "eleito": true
           }
         ],
         "vencedor1t": "Flávio Bolsonaro",
         "vencedor2t": "Flávio Bolsonaro",
         "totalValidos1t": 6585243,
-        "totalValidos2t": 6504121
+        "totalValidos2t": 6857948
       },
       {
         "uf": "RJ",
         "nome": "Rio de Janeiro",
         "secoes": 37675,
         "comparecimento1t": 9859802,
+        "comparecimento2t": 10077449,
         "candidatos": [
-          {
-            "numero": "22",
-            "nome": "Flávio Bolsonaro",
-            "partido": "PL",
-            "cor": "#0083ca",
-            "votos1t": 4966844,
-            "pct1t": 53.01,
-            "votos2t": 5340927,
-            "pct2t": 57.61,
-            "deltaVotos": 374083,
-            "deltaPctVotos": 7.53,
-            "aumentou": true
-          },
           {
             "numero": "13",
             "nome": "Luiz Inácio Lula da Silva",
@@ -745,37 +787,40 @@
             "cor": "#ee2d35",
             "votos1t": 3693021,
             "pct1t": 39.41,
-            "votos2t": 3930390,
-            "pct2t": 42.39,
-            "deltaVotos": 237369,
-            "deltaPctVotos": 6.43,
-            "aumentou": true
+            "votos2t": 4565393,
+            "pct2t": 46.9,
+            "deltaVotos": 872372,
+            "deltaPctVotos": 23.62,
+            "aumentou": true,
+            "eleito": false
+          },
+          {
+            "numero": "22",
+            "nome": "Flávio Bolsonaro",
+            "partido": "PL",
+            "cor": "#0083ca",
+            "votos1t": 4966844,
+            "pct1t": 53.01,
+            "votos2t": 5169033,
+            "pct2t": 53.1,
+            "deltaVotos": 202189,
+            "deltaPctVotos": 4.07,
+            "aumentou": true,
+            "eleito": true
           }
         ],
         "vencedor1t": "Flávio Bolsonaro",
         "vencedor2t": "Flávio Bolsonaro",
         "totalValidos1t": 9369700,
-        "totalValidos2t": 9271317
+        "totalValidos2t": 9734426
       },
       {
         "uf": "RN",
         "nome": "Rio Grande do Norte",
         "secoes": 8115,
         "comparecimento1t": 2171013,
+        "comparecimento2t": 2232823,
         "candidatos": [
-          {
-            "numero": "22",
-            "nome": "Flávio Bolsonaro",
-            "partido": "PL",
-            "cor": "#0083ca",
-            "votos1t": 720493,
-            "pct1t": 34.77,
-            "votos2t": 757135,
-            "pct2t": 36.81,
-            "deltaVotos": 36642,
-            "deltaPctVotos": 5.09,
-            "aumentou": true
-          },
           {
             "numero": "13",
             "nome": "Luiz Inácio Lula da Silva",
@@ -783,37 +828,40 @@
             "cor": "#ee2d35",
             "votos1t": 1237963,
             "pct1t": 59.75,
-            "votos2t": 1299857,
-            "pct2t": 63.19,
-            "deltaVotos": 61894,
-            "deltaPctVotos": 5,
-            "aumentou": true
+            "votos2t": 1413596,
+            "pct2t": 65.72,
+            "deltaVotos": 175633,
+            "deltaPctVotos": 14.19,
+            "aumentou": true,
+            "eleito": true
+          },
+          {
+            "numero": "22",
+            "nome": "Flávio Bolsonaro",
+            "partido": "PL",
+            "cor": "#0083ca",
+            "votos1t": 720493,
+            "pct1t": 34.77,
+            "votos2t": 737409,
+            "pct2t": 34.28,
+            "deltaVotos": 16916,
+            "deltaPctVotos": 2.35,
+            "aumentou": true,
+            "eleito": false
           }
         ],
         "vencedor1t": "Lula",
         "vencedor2t": "Lula",
         "totalValidos1t": 2071898,
-        "totalValidos2t": 2056992
+        "totalValidos2t": 2151005
       },
       {
         "uf": "RO",
         "nome": "Rondônia",
         "secoes": 4698,
         "comparecimento1t": 991080,
+        "comparecimento2t": 988489,
         "candidatos": [
-          {
-            "numero": "22",
-            "nome": "Flávio Bolsonaro",
-            "partido": "PL",
-            "cor": "#0083ca",
-            "votos1t": 652988,
-            "pct1t": 67.45,
-            "votos2t": 686929,
-            "pct2t": 71.62,
-            "deltaVotos": 33941,
-            "deltaPctVotos": 5.2,
-            "aumentou": true
-          },
           {
             "numero": "13",
             "nome": "Luiz Inácio Lula da Silva",
@@ -821,37 +869,40 @@
             "cor": "#ee2d35",
             "votos1t": 250667,
             "pct1t": 25.89,
-            "votos2t": 272204,
-            "pct2t": 28.38,
-            "deltaVotos": 21537,
-            "deltaPctVotos": 8.59,
-            "aumentou": true
+            "votos2t": 294446,
+            "pct2t": 30.39,
+            "deltaVotos": 43779,
+            "deltaPctVotos": 17.47,
+            "aumentou": true,
+            "eleito": false
+          },
+          {
+            "numero": "22",
+            "nome": "Flávio Bolsonaro",
+            "partido": "PL",
+            "cor": "#0083ca",
+            "votos1t": 652988,
+            "pct1t": 67.45,
+            "votos2t": 674382,
+            "pct2t": 69.61,
+            "deltaVotos": 21394,
+            "deltaPctVotos": 3.28,
+            "aumentou": true,
+            "eleito": true
           }
         ],
         "vencedor1t": "Flávio Bolsonaro",
         "vencedor2t": "Flávio Bolsonaro",
         "totalValidos1t": 968059,
-        "totalValidos2t": 959133
+        "totalValidos2t": 968828
       },
       {
         "uf": "RR",
         "nome": "Roraima",
         "secoes": 1519,
         "comparecimento1t": 332772,
+        "comparecimento2t": 308597,
         "candidatos": [
-          {
-            "numero": "22",
-            "nome": "Flávio Bolsonaro",
-            "partido": "PL",
-            "cor": "#0083ca",
-            "votos1t": 231322,
-            "pct1t": 71.06,
-            "votos2t": 241758,
-            "pct2t": 74.89,
-            "deltaVotos": 10436,
-            "deltaPctVotos": 4.51,
-            "aumentou": true
-          },
           {
             "numero": "13",
             "nome": "Luiz Inácio Lula da Silva",
@@ -859,37 +910,40 @@
             "cor": "#ee2d35",
             "votos1t": 74420,
             "pct1t": 22.86,
-            "votos2t": 81042,
-            "pct2t": 25.11,
-            "deltaVotos": 6622,
-            "deltaPctVotos": 8.9,
-            "aumentou": true
+            "votos2t": 83505,
+            "pct2t": 27.54,
+            "deltaVotos": 9085,
+            "deltaPctVotos": 12.21,
+            "aumentou": true,
+            "eleito": false
+          },
+          {
+            "numero": "22",
+            "nome": "Flávio Bolsonaro",
+            "partido": "PL",
+            "cor": "#0083ca",
+            "votos1t": 231322,
+            "pct1t": 71.06,
+            "votos2t": 219675,
+            "pct2t": 72.46,
+            "deltaVotos": -11647,
+            "deltaPctVotos": -5.03,
+            "aumentou": false,
+            "eleito": true
           }
         ],
         "vencedor1t": "Flávio Bolsonaro",
         "vencedor2t": "Flávio Bolsonaro",
         "totalValidos1t": 325545,
-        "totalValidos2t": 322800
+        "totalValidos2t": 303180
       },
       {
         "uf": "RS",
         "nome": "Rio Grande do Sul",
         "secoes": 27547,
         "comparecimento1t": 6702903,
+        "comparecimento2t": 6889638,
         "candidatos": [
-          {
-            "numero": "22",
-            "nome": "Flávio Bolsonaro",
-            "partido": "PL",
-            "cor": "#0083ca",
-            "votos1t": 3573783,
-            "pct1t": 55.64,
-            "votos2t": 3866007,
-            "pct2t": 60.92,
-            "deltaVotos": 292224,
-            "deltaPctVotos": 8.18,
-            "aumentou": true
-          },
           {
             "numero": "13",
             "nome": "Luiz Inácio Lula da Silva",
@@ -897,37 +951,40 @@
             "cor": "#ee2d35",
             "votos1t": 2294759,
             "pct1t": 35.73,
-            "votos2t": 2480185,
-            "pct2t": 39.08,
-            "deltaVotos": 185426,
-            "deltaPctVotos": 8.08,
-            "aumentou": true
+            "votos2t": 2824552,
+            "pct2t": 42.16,
+            "deltaVotos": 529793,
+            "deltaPctVotos": 23.09,
+            "aumentou": true,
+            "eleito": false
+          },
+          {
+            "numero": "22",
+            "nome": "Flávio Bolsonaro",
+            "partido": "PL",
+            "cor": "#0083ca",
+            "votos1t": 3573783,
+            "pct1t": 55.64,
+            "votos2t": 3874378,
+            "pct2t": 57.84,
+            "deltaVotos": 300595,
+            "deltaPctVotos": 8.41,
+            "aumentou": true,
+            "eleito": true
           }
         ],
         "vencedor1t": "Flávio Bolsonaro",
         "vencedor2t": "Flávio Bolsonaro",
         "totalValidos1t": 6423046,
-        "totalValidos2t": 6346192
+        "totalValidos2t": 6698930
       },
       {
         "uf": "SC",
         "nome": "Santa Catarina",
         "secoes": 17326,
         "comparecimento1t": 4648159,
+        "comparecimento2t": 4762303,
         "candidatos": [
-          {
-            "numero": "22",
-            "nome": "Flávio Bolsonaro",
-            "partido": "PL",
-            "cor": "#0083ca",
-            "votos1t": 3000020,
-            "pct1t": 66.65,
-            "votos2t": 3196965,
-            "pct2t": 71.86,
-            "deltaVotos": 196945,
-            "deltaPctVotos": 6.56,
-            "aumentou": true
-          },
           {
             "numero": "13",
             "nome": "Luiz Inácio Lula da Silva",
@@ -935,37 +992,40 @@
             "cor": "#ee2d35",
             "votos1t": 1127168,
             "pct1t": 25.04,
-            "votos2t": 1252136,
-            "pct2t": 28.14,
-            "deltaVotos": 124968,
-            "deltaPctVotos": 11.09,
-            "aumentou": true
+            "votos2t": 1418314,
+            "pct2t": 30.58,
+            "deltaVotos": 291146,
+            "deltaPctVotos": 25.83,
+            "aumentou": true,
+            "eleito": false
+          },
+          {
+            "numero": "22",
+            "nome": "Flávio Bolsonaro",
+            "partido": "PL",
+            "cor": "#0083ca",
+            "votos1t": 3000020,
+            "pct1t": 66.65,
+            "votos2t": 3220071,
+            "pct2t": 69.42,
+            "deltaVotos": 220051,
+            "deltaPctVotos": 7.33,
+            "aumentou": true,
+            "eleito": true
           }
         ],
         "vencedor1t": "Flávio Bolsonaro",
         "vencedor2t": "Flávio Bolsonaro",
         "totalValidos1t": 4500897,
-        "totalValidos2t": 4449101
+        "totalValidos2t": 4638385
       },
       {
         "uf": "SE",
         "nome": "Sergipe",
         "secoes": 5923,
         "comparecimento1t": 1439082,
+        "comparecimento2t": 1466659,
         "candidatos": [
-          {
-            "numero": "22",
-            "nome": "Flávio Bolsonaro",
-            "partido": "PL",
-            "cor": "#0083ca",
-            "votos1t": 417839,
-            "pct1t": 30.63,
-            "votos2t": 447018,
-            "pct2t": 33.06,
-            "deltaVotos": 29179,
-            "deltaPctVotos": 6.98,
-            "aumentou": true
-          },
           {
             "numero": "13",
             "nome": "Luiz Inácio Lula da Silva",
@@ -973,37 +1033,40 @@
             "cor": "#ee2d35",
             "votos1t": 856019,
             "pct1t": 62.75,
-            "votos2t": 905307,
-            "pct2t": 66.94,
-            "deltaVotos": 49288,
-            "deltaPctVotos": 5.76,
-            "aumentou": true
+            "votos2t": 989041,
+            "pct2t": 69.53,
+            "deltaVotos": 133022,
+            "deltaPctVotos": 15.54,
+            "aumentou": true,
+            "eleito": true
+          },
+          {
+            "numero": "22",
+            "nome": "Flávio Bolsonaro",
+            "partido": "PL",
+            "cor": "#0083ca",
+            "votos1t": 417839,
+            "pct1t": 30.63,
+            "votos2t": 433354,
+            "pct2t": 30.47,
+            "deltaVotos": 15515,
+            "deltaPctVotos": 3.71,
+            "aumentou": true,
+            "eleito": false
           }
         ],
         "vencedor1t": "Lula",
         "vencedor2t": "Lula",
         "totalValidos1t": 1364196,
-        "totalValidos2t": 1352325
+        "totalValidos2t": 1422395
       },
       {
         "uf": "SP",
         "nome": "São Paulo",
         "secoes": 103656,
         "comparecimento1t": 26431992,
+        "comparecimento2t": 27364389,
         "candidatos": [
-          {
-            "numero": "22",
-            "nome": "Flávio Bolsonaro",
-            "partido": "PL",
-            "cor": "#0083ca",
-            "votos1t": 12922023,
-            "pct1t": 51.93,
-            "votos2t": 14216078,
-            "pct2t": 57.92,
-            "deltaVotos": 1294055,
-            "deltaPctVotos": 10.01,
-            "aumentou": true
-          },
           {
             "numero": "13",
             "nome": "Luiz Inácio Lula da Silva",
@@ -1011,37 +1074,40 @@
             "cor": "#ee2d35",
             "votos1t": 9505413,
             "pct1t": 38.2,
-            "votos2t": 10326536,
-            "pct2t": 42.08,
-            "deltaVotos": 821123,
-            "deltaPctVotos": 8.64,
-            "aumentou": true
+            "votos2t": 12119274,
+            "pct2t": 46.15,
+            "deltaVotos": 2613861,
+            "deltaPctVotos": 27.5,
+            "aumentou": true,
+            "eleito": false
+          },
+          {
+            "numero": "22",
+            "nome": "Flávio Bolsonaro",
+            "partido": "PL",
+            "cor": "#0083ca",
+            "votos1t": 12922023,
+            "pct1t": 51.93,
+            "votos2t": 14139178,
+            "pct2t": 53.85,
+            "deltaVotos": 1217155,
+            "deltaPctVotos": 9.42,
+            "aumentou": true,
+            "eleito": true
           }
         ],
         "vencedor1t": "Flávio Bolsonaro",
         "vencedor2t": "Flávio Bolsonaro",
         "totalValidos1t": 24882948,
-        "totalValidos2t": 24542614
+        "totalValidos2t": 26258452
       },
       {
         "uf": "TO",
         "nome": "Tocantins",
         "secoes": 4384,
         "comparecimento1t": 965196,
+        "comparecimento2t": 954763,
         "candidatos": [
-          {
-            "numero": "22",
-            "nome": "Flávio Bolsonaro",
-            "partido": "PL",
-            "cor": "#0083ca",
-            "votos1t": 469321,
-            "pct1t": 50.44,
-            "votos2t": 499422,
-            "pct2t": 54.14,
-            "deltaVotos": 30101,
-            "deltaPctVotos": 6.41,
-            "aumentou": true
-          },
           {
             "numero": "13",
             "nome": "Luiz Inácio Lula da Silva",
@@ -1049,37 +1115,40 @@
             "cor": "#ee2d35",
             "votos1t": 404009,
             "pct1t": 43.42,
-            "votos2t": 423109,
-            "pct2t": 45.86,
-            "deltaVotos": 19100,
-            "deltaPctVotos": 4.73,
-            "aumentou": true
+            "votos2t": 442962,
+            "pct2t": 48.63,
+            "deltaVotos": 38953,
+            "deltaPctVotos": 9.64,
+            "aumentou": true,
+            "eleito": false
+          },
+          {
+            "numero": "22",
+            "nome": "Flávio Bolsonaro",
+            "partido": "PL",
+            "cor": "#0083ca",
+            "votos1t": 469321,
+            "pct1t": 50.44,
+            "votos2t": 467916,
+            "pct2t": 51.37,
+            "deltaVotos": -1405,
+            "deltaPctVotos": -0.3,
+            "aumentou": false,
+            "eleito": true
           }
         ],
         "vencedor1t": "Flávio Bolsonaro",
         "vencedor2t": "Flávio Bolsonaro",
         "totalValidos1t": 930447,
-        "totalValidos2t": 922531
+        "totalValidos2t": 910878
       },
       {
         "uf": "ZZ",
         "nome": "Exterior",
         "secoes": 1351,
         "comparecimento1t": 341766,
+        "comparecimento2t": 381443,
         "candidatos": [
-          {
-            "numero": "22",
-            "nome": "Flávio Bolsonaro",
-            "partido": "PL",
-            "cor": "#0083ca",
-            "votos1t": 143900,
-            "pct1t": 43.49,
-            "votos2t": 153459,
-            "pct2t": 46.93,
-            "deltaVotos": 9559,
-            "deltaPctVotos": 6.64,
-            "aumentou": true
-          },
           {
             "numero": "13",
             "nome": "Luiz Inácio Lula da Silva",
@@ -1087,86 +1156,35 @@
             "cor": "#ee2d35",
             "votos1t": 157387,
             "pct1t": 47.57,
-            "votos2t": 173534,
-            "pct2t": 53.07,
-            "deltaVotos": 16147,
-            "deltaPctVotos": 10.26,
-            "aumentou": true
+            "votos2t": 200154,
+            "pct2t": 53.86,
+            "deltaVotos": 42767,
+            "deltaPctVotos": 27.17,
+            "aumentou": true,
+            "eleito": true
+          },
+          {
+            "numero": "22",
+            "nome": "Flávio Bolsonaro",
+            "partido": "PL",
+            "cor": "#0083ca",
+            "votos1t": 143900,
+            "pct1t": 43.49,
+            "votos2t": 171497,
+            "pct2t": 46.14,
+            "deltaVotos": 27597,
+            "deltaPctVotos": 19.18,
+            "aumentou": true,
+            "eleito": false
           }
         ],
         "vencedor1t": "Lula",
         "vencedor2t": "Lula",
         "totalValidos1t": 330882,
-        "totalValidos2t": 326993
+        "totalValidos2t": 371651
       }
     ],
     "detalhes1t": {
-      "candidatos": [
-        {
-          "numero": "22",
-          "nome": "Flávio Bolsonaro",
-          "partido": "PL",
-          "votos": 56104503,
-          "pct": 47.03,
-          "cor": "#0083ca"
-        },
-        {
-          "numero": "13",
-          "nome": "Luiz Inácio Lula da Silva",
-          "partido": "PT",
-          "votos": 53879538,
-          "pct": 45.16,
-          "cor": "#ee2d35"
-        },
-        {
-          "numero": "70",
-          "nome": "Marçal",
-          "partido": "PRTB",
-          "votos": 3448569,
-          "pct": 2.89,
-          "cor": "#f59e0b"
-        },
-        {
-          "numero": "14",
-          "nome": "Ciro Gomes",
-          "partido": "PDT",
-          "votos": 2675887,
-          "pct": 2.24,
-          "cor": "#ff6f00"
-        },
-        {
-          "numero": "55",
-          "nome": "Ronaldo Caiado",
-          "partido": "PSD",
-          "votos": 2605148,
-          "pct": 2.18,
-          "cor": "#10b981"
-        },
-        {
-          "numero": "30",
-          "nome": "Romeu Zema",
-          "partido": "NOVO",
-          "votos": 326488,
-          "pct": 0.27,
-          "cor": "#ea580c"
-        },
-        {
-          "numero": "80",
-          "nome": "Marina Silva",
-          "partido": "REDE",
-          "votos": 122911,
-          "pct": 0.1,
-          "cor": "#059669"
-        },
-        {
-          "numero": "outros",
-          "nome": "Demais Candidatos",
-          "partido": "Diversos",
-          "votos": 137844,
-          "pct": 0.12,
-          "cor": "#78716c"
-        }
-      ],
       "totalValidos": 119300788,
       "comparecimento": 125275835,
       "abstencao": 33469667,
@@ -1174,30 +1192,11 @@
       "nulos": 3674249
     },
     "detalhes2t": {
-      "candidatos": [
-        {
-          "numero": "22",
-          "nome": "Flávio Bolsonaro",
-          "partido": "PL",
-          "votos": 59312480,
-          "pct": 50.88,
-          "eleito": true,
-          "cor": "#0083ca"
-        },
-        {
-          "numero": "13",
-          "nome": "Luiz Inácio Lula da Silva",
-          "partido": "PT",
-          "votos": 57261890,
-          "pct": 49.12,
-          "eleito": false,
-          "cor": "#ee2d35"
-        }
-      ],
-      "totalValidos": 116574370,
-      "comparecimento": 124110500,
-      "brancos": 3120400,
-      "nulos": 4415730
+      "totalValidos": 124082273,
+      "comparecimento": 128236074,
+      "abstencao": 30509005,
+      "brancos": 1430496,
+      "nulos": 2723305
     }
   },
   "governoDf": {
@@ -1209,11 +1208,11 @@
         "cor": "#0083ca",
         "votos1t": 825530,
         "pct1t": 49.93,
-        "votos2t": 928450,
-        "pct2t": 53.64,
-        "deltaVotos": 102920,
-        "deltaPctVotos": 12.47,
-        "deltaPctValidos": 3.71,
+        "votos2t": 987142,
+        "pct2t": 57.18,
+        "deltaVotos": 161612,
+        "deltaPctVotos": 19.58,
+        "deltaPctValidos": 7.25,
         "aumentou": true,
         "eleito": true
       },
@@ -1224,18 +1223,21 @@
         "cor": "#ee2d35",
         "votos1t": 569930,
         "pct1t": 34.47,
-        "votos2t": 802370,
-        "pct2t": 46.36,
-        "deltaVotos": 232440,
-        "deltaPctVotos": 40.78,
-        "deltaPctValidos": 11.89,
+        "votos2t": 739130,
+        "pct2t": 42.82,
+        "deltaVotos": 169200,
+        "deltaPctVotos": 29.69,
+        "deltaPctValidos": 8.35,
         "aumentou": true,
         "eleito": false
       }
     ],
     "detalhes1t": {
+      "totalValidos": 1653237,
       "comparecimento": 1817921,
-      "abstencao": 426067
+      "abstencao": 426067,
+      "brancos": 74774,
+      "nulos": 89910
     },
     "detalhes2t": {
       "candidatos": [
@@ -1243,8 +1245,8 @@
           "numero": "11",
           "nome": "Celina Leão",
           "partido": "PP",
-          "votos": 928450,
-          "pct": 53.64,
+          "votos": 987142,
+          "pct": 57.18,
           "eleita": true,
           "cor": "#0083ca"
         },
@@ -1252,24 +1254,25 @@
           "numero": "13",
           "nome": "Leandro Grass",
           "partido": "PT",
-          "votos": 802370,
-          "pct": 46.36,
+          "votos": 739130,
+          "pct": 42.82,
           "eleita": false,
           "cor": "#ee2d35"
         }
       ],
-      "totalValidos": 1730820,
-      "comparecimento": 1845100,
-      "brancos": 48920,
-      "nulos": 65360,
-      "situacao": "Eleição Definida (2º Turno)"
+      "totalValidos": 1726272,
+      "comparecimento": 1854323,
+      "abstencao": 389853,
+      "brancos": 55771,
+      "nulos": 72280,
+      "situacao": "Eleição Concluída (2º Turno Oficial TRE-DF)"
     },
     "zonas": [
       {
         "zona": 1,
         "nome": "Asa Sul / Plano Piloto",
         "secoes": 281,
-        "eleitorado": 76197,
+        "eleitorado": 76185,
         "ras": [
           "RA I",
           "RA XVI"
@@ -1282,11 +1285,12 @@
             "cor": "#0083ca",
             "votos1t": 22626,
             "pct1t": 39.19,
-            "votos2t": 26491,
-            "pct2t": 46.7,
-            "deltaVotos": 3865,
-            "deltaPctVotos": 17.08,
-            "aumentou": true
+            "votos2t": 29280,
+            "pct2t": 49.93,
+            "deltaVotos": 6654,
+            "deltaPctVotos": 29.41,
+            "aumentou": true,
+            "eleito": false
           },
           {
             "numero": "13",
@@ -1295,23 +1299,24 @@
             "cor": "#ee2d35",
             "votos1t": 24654,
             "pct1t": 42.7,
-            "votos2t": 30234,
-            "pct2t": 53.3,
-            "deltaVotos": 5580,
-            "deltaPctVotos": 22.63,
-            "aumentou": true
+            "votos2t": 29357,
+            "pct2t": 50.07,
+            "deltaVotos": 4703,
+            "deltaPctVotos": 19.08,
+            "aumentou": true,
+            "eleito": true
           }
         ],
         "vencedor1t": "Leandro Grass",
         "vencedor2t": "Leandro Grass",
         "totalValidos1t": 57737,
-        "totalValidos2t": 56725
+        "totalValidos2t": 58637
       },
       {
         "zona": 2,
         "nome": "Paranoá / Itapoã",
         "secoes": 337,
-        "eleitorado": 119276,
+        "eleitorado": 119274,
         "ras": [
           "RA VII",
           "RA XXVIII"
@@ -1324,11 +1329,12 @@
             "cor": "#0083ca",
             "votos1t": 39501,
             "pct1t": 46.12,
-            "votos2t": 47944,
-            "pct2t": 57.06,
-            "deltaVotos": 8443,
-            "deltaPctVotos": 21.37,
-            "aumentou": true
+            "votos2t": 48395,
+            "pct2t": 53.61,
+            "deltaVotos": 8894,
+            "deltaPctVotos": 22.52,
+            "aumentou": true,
+            "eleito": true
           },
           {
             "numero": "13",
@@ -1337,23 +1343,24 @@
             "cor": "#ee2d35",
             "votos1t": 30674,
             "pct1t": 35.81,
-            "votos2t": 36084,
-            "pct2t": 42.94,
-            "deltaVotos": 5410,
-            "deltaPctVotos": 17.64,
-            "aumentou": true
+            "votos2t": 41883,
+            "pct2t": 46.39,
+            "deltaVotos": 11209,
+            "deltaPctVotos": 36.54,
+            "aumentou": true,
+            "eleito": false
           }
         ],
         "vencedor1t": "Celina Leão",
         "vencedor2t": "Celina Leão",
         "totalValidos1t": 85649,
-        "totalValidos2t": 84028
+        "totalValidos2t": 90278
       },
       {
         "zona": 3,
         "nome": "Taguatinga Norte",
         "secoes": 235,
-        "eleitorado": 69677,
+        "eleitorado": 69674,
         "ras": [
           "RA III"
         ],
@@ -1365,11 +1372,12 @@
             "cor": "#0083ca",
             "votos1t": 27366,
             "pct1t": 52.57,
-            "votos2t": 31638,
-            "pct2t": 61.75,
-            "deltaVotos": 4272,
-            "deltaPctVotos": 15.61,
-            "aumentou": true
+            "votos2t": 32582,
+            "pct2t": 59.8,
+            "deltaVotos": 5216,
+            "deltaPctVotos": 19.06,
+            "aumentou": true,
+            "eleito": true
           },
           {
             "numero": "13",
@@ -1378,23 +1386,24 @@
             "cor": "#ee2d35",
             "votos1t": 16864,
             "pct1t": 32.39,
-            "votos2t": 19601,
-            "pct2t": 38.25,
-            "deltaVotos": 2737,
-            "deltaPctVotos": 16.23,
-            "aumentou": true
+            "votos2t": 21899,
+            "pct2t": 40.2,
+            "deltaVotos": 5035,
+            "deltaPctVotos": 29.86,
+            "aumentou": true,
+            "eleito": false
           }
         ],
         "vencedor1t": "Celina Leão",
         "vencedor2t": "Celina Leão",
         "totalValidos1t": 52059,
-        "totalValidos2t": 51239
+        "totalValidos2t": 54481
       },
       {
         "zona": 4,
         "nome": "Santa Maria",
         "secoes": 294,
-        "eleitorado": 101524,
+        "eleitorado": 101549,
         "ras": [
           "RA XIII"
         ],
@@ -1406,11 +1415,12 @@
             "cor": "#0083ca",
             "votos1t": 36860,
             "pct1t": 51.78,
-            "votos2t": 43125,
-            "pct2t": 61.62,
-            "deltaVotos": 6265,
-            "deltaPctVotos": 17,
-            "aumentou": true
+            "votos2t": 43908,
+            "pct2t": 57.79,
+            "deltaVotos": 7048,
+            "deltaPctVotos": 19.12,
+            "aumentou": true,
+            "eleito": true
           },
           {
             "numero": "13",
@@ -1419,23 +1429,24 @@
             "cor": "#ee2d35",
             "votos1t": 22850,
             "pct1t": 32.1,
-            "votos2t": 26864,
-            "pct2t": 38.38,
-            "deltaVotos": 4014,
-            "deltaPctVotos": 17.57,
-            "aumentou": true
+            "votos2t": 32074,
+            "pct2t": 42.21,
+            "deltaVotos": 9224,
+            "deltaPctVotos": 40.37,
+            "aumentou": true,
+            "eleito": false
           }
         ],
         "vencedor1t": "Celina Leão",
         "vencedor2t": "Celina Leão",
         "totalValidos1t": 71192,
-        "totalValidos2t": 69989
+        "totalValidos2t": 75982
       },
       {
         "zona": 5,
         "nome": "Sobradinho I e II / Fercal",
         "secoes": 419,
-        "eleitorado": 132863,
+        "eleitorado": 132895,
         "ras": [
           "RA V",
           "RA XXVI",
@@ -1449,11 +1460,12 @@
             "cor": "#0083ca",
             "votos1t": 49742,
             "pct1t": 50.54,
-            "votos2t": 57548,
-            "pct2t": 59.37,
-            "deltaVotos": 7806,
-            "deltaPctVotos": 15.69,
-            "aumentou": true
+            "votos2t": 58587,
+            "pct2t": 56.87,
+            "deltaVotos": 8845,
+            "deltaPctVotos": 17.78,
+            "aumentou": true,
+            "eleito": true
           },
           {
             "numero": "13",
@@ -1462,23 +1474,24 @@
             "cor": "#ee2d35",
             "votos1t": 34380,
             "pct1t": 34.93,
-            "votos2t": 39382,
-            "pct2t": 40.63,
-            "deltaVotos": 5002,
-            "deltaPctVotos": 14.55,
-            "aumentou": true
+            "votos2t": 44428,
+            "pct2t": 43.13,
+            "deltaVotos": 10048,
+            "deltaPctVotos": 29.23,
+            "aumentou": true,
+            "eleito": false
           }
         ],
         "vencedor1t": "Celina Leão",
         "vencedor2t": "Celina Leão",
         "totalValidos1t": 98429,
-        "totalValidos2t": 96930
+        "totalValidos2t": 103015
       },
       {
         "zona": 6,
         "nome": "Planaltina / Arapoanga",
         "secoes": 425,
-        "eleitorado": 136925,
+        "eleitorado": 136931,
         "ras": [
           "RA VI",
           "RA XXXIV"
@@ -1491,11 +1504,12 @@
             "cor": "#0083ca",
             "votos1t": 50485,
             "pct1t": 51.43,
-            "votos2t": 58090,
-            "pct2t": 60.07,
-            "deltaVotos": 7605,
-            "deltaPctVotos": 15.06,
-            "aumentou": true
+            "votos2t": 57906,
+            "pct2t": 55.49,
+            "deltaVotos": 7421,
+            "deltaPctVotos": 14.7,
+            "aumentou": true,
+            "eleito": true
           },
           {
             "numero": "13",
@@ -1504,23 +1518,24 @@
             "cor": "#ee2d35",
             "votos1t": 33739,
             "pct1t": 34.37,
-            "votos2t": 38612,
-            "pct2t": 39.93,
-            "deltaVotos": 4873,
-            "deltaPctVotos": 14.44,
-            "aumentou": true
+            "votos2t": 46446,
+            "pct2t": 44.51,
+            "deltaVotos": 12707,
+            "deltaPctVotos": 37.66,
+            "aumentou": true,
+            "eleito": false
           }
         ],
         "vencedor1t": "Celina Leão",
         "vencedor2t": "Celina Leão",
         "totalValidos1t": 98162,
-        "totalValidos2t": 96702
+        "totalValidos2t": 104352
       },
       {
         "zona": 8,
         "nome": "Ceilândia Norte",
         "secoes": 454,
-        "eleitorado": 136259,
+        "eleitorado": 136246,
         "ras": [
           "RA IX"
         ],
@@ -1532,11 +1547,12 @@
             "cor": "#0083ca",
             "votos1t": 51711,
             "pct1t": 52.69,
-            "votos2t": 59277,
-            "pct2t": 61.31,
-            "deltaVotos": 7566,
-            "deltaPctVotos": 14.63,
-            "aumentou": true
+            "votos2t": 60265,
+            "pct2t": 58.09,
+            "deltaVotos": 8554,
+            "deltaPctVotos": 16.54,
+            "aumentou": true,
+            "eleito": true
           },
           {
             "numero": "13",
@@ -1545,23 +1561,24 @@
             "cor": "#ee2d35",
             "votos1t": 32565,
             "pct1t": 33.18,
-            "votos2t": 37413,
-            "pct2t": 38.69,
-            "deltaVotos": 4848,
-            "deltaPctVotos": 14.89,
-            "aumentou": true
+            "votos2t": 43471,
+            "pct2t": 41.91,
+            "deltaVotos": 10906,
+            "deltaPctVotos": 33.49,
+            "aumentou": true,
+            "eleito": false
           }
         ],
         "vencedor1t": "Celina Leão",
         "vencedor2t": "Celina Leão",
         "totalValidos1t": 98143,
-        "totalValidos2t": 96690
+        "totalValidos2t": 103736
       },
       {
         "zona": 9,
         "nome": "Guará I e II / Estrutural / SIA",
         "secoes": 443,
-        "eleitorado": 134059,
+        "eleitorado": 134082,
         "ras": [
           "RA X",
           "RA XXV",
@@ -1575,11 +1592,12 @@
             "cor": "#0083ca",
             "votos1t": 47927,
             "pct1t": 47.94,
-            "votos2t": 56510,
-            "pct2t": 57.48,
-            "deltaVotos": 8583,
-            "deltaPctVotos": 17.91,
-            "aumentou": true
+            "votos2t": 57904,
+            "pct2t": 56.04,
+            "deltaVotos": 9977,
+            "deltaPctVotos": 20.82,
+            "aumentou": true,
+            "eleito": true
           },
           {
             "numero": "13",
@@ -1588,23 +1606,24 @@
             "cor": "#ee2d35",
             "votos1t": 36309,
             "pct1t": 36.32,
-            "votos2t": 41809,
-            "pct2t": 42.52,
-            "deltaVotos": 5500,
-            "deltaPctVotos": 15.15,
-            "aumentou": true
+            "votos2t": 45421,
+            "pct2t": 43.96,
+            "deltaVotos": 9112,
+            "deltaPctVotos": 25.1,
+            "aumentou": true,
+            "eleito": false
           }
         ],
         "vencedor1t": "Celina Leão",
         "vencedor2t": "Celina Leão",
         "totalValidos1t": 99968,
-        "totalValidos2t": 98319
+        "totalValidos2t": 103325
       },
       {
         "zona": 10,
         "nome": "Núcleo Bandeirante / Candangolândia / Park Way / Riacho Fundo",
         "secoes": 349,
-        "eleitorado": 123034,
+        "eleitorado": 123038,
         "ras": [
           "RA VIII",
           "RA XIX",
@@ -1619,11 +1638,12 @@
             "cor": "#0083ca",
             "votos1t": 48301,
             "pct1t": 52.87,
-            "votos2t": 56049,
-            "pct2t": 62.37,
-            "deltaVotos": 7748,
-            "deltaPctVotos": 16.04,
-            "aumentou": true
+            "votos2t": 57538,
+            "pct2t": 60.48,
+            "deltaVotos": 9237,
+            "deltaPctVotos": 19.12,
+            "aumentou": true,
+            "eleito": true
           },
           {
             "numero": "13",
@@ -1632,23 +1652,24 @@
             "cor": "#ee2d35",
             "votos1t": 28855,
             "pct1t": 31.58,
-            "votos2t": 33820,
-            "pct2t": 37.63,
-            "deltaVotos": 4965,
-            "deltaPctVotos": 17.21,
-            "aumentou": true
+            "votos2t": 37591,
+            "pct2t": 39.52,
+            "deltaVotos": 8736,
+            "deltaPctVotos": 30.28,
+            "aumentou": true,
+            "eleito": false
           }
         ],
         "vencedor1t": "Celina Leão",
         "vencedor2t": "Celina Leão",
         "totalValidos1t": 91357,
-        "totalValidos2t": 89869
+        "totalValidos2t": 95129
       },
       {
         "zona": 11,
         "nome": "Cruzeiro / Sudoeste / Octogonal",
         "secoes": 249,
-        "eleitorado": 75563,
+        "eleitorado": 75569,
         "ras": [
           "RA XI",
           "RA XXII"
@@ -1661,11 +1682,12 @@
             "cor": "#0083ca",
             "votos1t": 25764,
             "pct1t": 43.86,
-            "votos2t": 31306,
-            "pct2t": 54.28,
-            "deltaVotos": 5542,
-            "deltaPctVotos": 21.51,
-            "aumentou": true
+            "votos2t": 32327,
+            "pct2t": 54.24,
+            "deltaVotos": 6563,
+            "deltaPctVotos": 25.47,
+            "aumentou": true,
+            "eleito": true
           },
           {
             "numero": "13",
@@ -1674,23 +1696,24 @@
             "cor": "#ee2d35",
             "votos1t": 22818,
             "pct1t": 38.85,
-            "votos2t": 26369,
-            "pct2t": 45.72,
-            "deltaVotos": 3551,
-            "deltaPctVotos": 15.56,
-            "aumentou": true
+            "votos2t": 27268,
+            "pct2t": 45.76,
+            "deltaVotos": 4450,
+            "deltaPctVotos": 19.5,
+            "aumentou": true,
+            "eleito": false
           }
         ],
         "vencedor1t": "Celina Leão",
         "vencedor2t": "Celina Leão",
         "totalValidos1t": 58739,
-        "totalValidos2t": 57675
+        "totalValidos2t": 59595
       },
       {
         "zona": 13,
         "nome": "Samambaia Norte / Água Quente",
         "secoes": 417,
-        "eleitorado": 140843,
+        "eleitorado": 140862,
         "ras": [
           "RA XII",
           "RA XXXV"
@@ -1703,11 +1726,12 @@
             "cor": "#0083ca",
             "votos1t": 56458,
             "pct1t": 55.4,
-            "votos2t": 64932,
-            "pct2t": 64.75,
-            "deltaVotos": 8474,
-            "deltaPctVotos": 15.01,
-            "aumentou": true
+            "votos2t": 66509,
+            "pct2t": 61.78,
+            "deltaVotos": 10051,
+            "deltaPctVotos": 17.8,
+            "aumentou": true,
+            "eleito": true
           },
           {
             "numero": "13",
@@ -1716,23 +1740,24 @@
             "cor": "#ee2d35",
             "votos1t": 29912,
             "pct1t": 29.35,
-            "votos2t": 35342,
-            "pct2t": 35.25,
-            "deltaVotos": 5430,
-            "deltaPctVotos": 18.15,
-            "aumentou": true
+            "votos2t": 41151,
+            "pct2t": 38.22,
+            "deltaVotos": 11239,
+            "deltaPctVotos": 37.57,
+            "aumentou": true,
+            "eleito": false
           }
         ],
         "vencedor1t": "Celina Leão",
         "vencedor2t": "Celina Leão",
         "totalValidos1t": 101902,
-        "totalValidos2t": 100274
+        "totalValidos2t": 107660
       },
       {
         "zona": 14,
         "nome": "Asa Norte / Lago Norte / Varjão",
         "secoes": 334,
-        "eleitorado": 110413,
+        "eleitorado": 110432,
         "ras": [
           "RA I",
           "RA XVIII",
@@ -1746,11 +1771,12 @@
             "cor": "#0083ca",
             "votos1t": 31376,
             "pct1t": 36.74,
-            "votos2t": 36602,
-            "pct2t": 43.56,
-            "deltaVotos": 5226,
-            "deltaPctVotos": 16.66,
-            "aumentou": true
+            "votos2t": 39774,
+            "pct2t": 45.97,
+            "deltaVotos": 8398,
+            "deltaPctVotos": 26.77,
+            "aumentou": true,
+            "eleito": false
           },
           {
             "numero": "13",
@@ -1759,23 +1785,24 @@
             "cor": "#ee2d35",
             "votos1t": 39885,
             "pct1t": 46.7,
-            "votos2t": 47430,
-            "pct2t": 56.44,
-            "deltaVotos": 7545,
-            "deltaPctVotos": 18.92,
-            "aumentou": true
+            "votos2t": 46757,
+            "pct2t": 54.03,
+            "deltaVotos": 6872,
+            "deltaPctVotos": 17.23,
+            "aumentou": true,
+            "eleito": true
           }
         ],
         "vencedor1t": "Leandro Grass",
         "vencedor2t": "Leandro Grass",
         "totalValidos1t": 85401,
-        "totalValidos2t": 84032
+        "totalValidos2t": 86531
       },
       {
         "zona": 15,
         "nome": "Águas Claras / Taguatinga Sul / Vicente Pires / Arniqueira",
         "secoes": 514,
-        "eleitorado": 168248,
+        "eleitorado": 168279,
         "ras": [
           "RA XX",
           "RA III",
@@ -1790,11 +1817,12 @@
             "cor": "#0083ca",
             "votos1t": 62390,
             "pct1t": 48.24,
-            "votos2t": 73824,
-            "pct2t": 58.06,
-            "deltaVotos": 11434,
-            "deltaPctVotos": 18.33,
-            "aumentou": true
+            "votos2t": 76023,
+            "pct2t": 57.54,
+            "deltaVotos": 13633,
+            "deltaPctVotos": 21.85,
+            "aumentou": true,
+            "eleito": true
           },
           {
             "numero": "13",
@@ -1803,23 +1831,24 @@
             "cor": "#ee2d35",
             "votos1t": 45991,
             "pct1t": 35.56,
-            "votos2t": 53318,
-            "pct2t": 41.94,
-            "deltaVotos": 7327,
-            "deltaPctVotos": 15.93,
-            "aumentou": true
+            "votos2t": 56090,
+            "pct2t": 42.46,
+            "deltaVotos": 10099,
+            "deltaPctVotos": 21.96,
+            "aumentou": true,
+            "eleito": false
           }
         ],
         "vencedor1t": "Celina Leão",
         "vencedor2t": "Celina Leão",
         "totalValidos1t": 129338,
-        "totalValidos2t": 127142
+        "totalValidos2t": 132113
       },
       {
         "zona": 16,
         "nome": "Ceilândia Centro / P Sul / Sol Nascente",
         "secoes": 479,
-        "eleitorado": 153471,
+        "eleitorado": 153474,
         "ras": [
           "RA IX",
           "RA XXXII"
@@ -1832,11 +1861,12 @@
             "cor": "#0083ca",
             "votos1t": 60518,
             "pct1t": 55.15,
-            "votos2t": 69195,
-            "pct2t": 64.03,
-            "deltaVotos": 8677,
-            "deltaPctVotos": 14.34,
-            "aumentou": true
+            "votos2t": 70254,
+            "pct2t": 60.4,
+            "deltaVotos": 9736,
+            "deltaPctVotos": 16.09,
+            "aumentou": true,
+            "eleito": true
           },
           {
             "numero": "13",
@@ -1845,23 +1875,24 @@
             "cor": "#ee2d35",
             "votos1t": 33304,
             "pct1t": 30.35,
-            "votos2t": 38864,
-            "pct2t": 35.97,
-            "deltaVotos": 5560,
-            "deltaPctVotos": 16.69,
-            "aumentou": true
+            "votos2t": 46059,
+            "pct2t": 39.6,
+            "deltaVotos": 12755,
+            "deltaPctVotos": 38.3,
+            "aumentou": true,
+            "eleito": false
           }
         ],
         "vencedor1t": "Celina Leão",
         "vencedor2t": "Celina Leão",
         "totalValidos1t": 109725,
-        "totalValidos2t": 108059
+        "totalValidos2t": 116313
       },
       {
         "zona": 17,
         "nome": "Gama",
         "secoes": 396,
-        "eleitorado": 128113,
+        "eleitorado": 128118,
         "ras": [
           "RA II"
         ],
@@ -1873,11 +1904,12 @@
             "cor": "#0083ca",
             "votos1t": 46363,
             "pct1t": 49.74,
-            "votos2t": 54195,
-            "pct2t": 59.09,
-            "deltaVotos": 7832,
-            "deltaPctVotos": 16.89,
-            "aumentou": true
+            "votos2t": 55907,
+            "pct2t": 56.96,
+            "deltaVotos": 9544,
+            "deltaPctVotos": 20.59,
+            "aumentou": true,
+            "eleito": true
           },
           {
             "numero": "13",
@@ -1886,23 +1918,24 @@
             "cor": "#ee2d35",
             "votos1t": 32499,
             "pct1t": 34.86,
-            "votos2t": 37517,
-            "pct2t": 40.91,
-            "deltaVotos": 5018,
-            "deltaPctVotos": 15.44,
-            "aumentou": true
+            "votos2t": 42241,
+            "pct2t": 43.04,
+            "deltaVotos": 9742,
+            "deltaPctVotos": 29.98,
+            "aumentou": true,
+            "eleito": false
           }
         ],
         "vencedor1t": "Celina Leão",
         "vencedor2t": "Celina Leão",
         "totalValidos1t": 93216,
-        "totalValidos2t": 91712
+        "totalValidos2t": 98148
       },
       {
         "zona": 18,
         "nome": "São Sebastião / Jardim Botânico",
         "secoes": 431,
-        "eleitorado": 134325,
+        "eleitorado": 134320,
         "ras": [
           "RA XIV",
           "RA XXVII"
@@ -1915,11 +1948,12 @@
             "cor": "#0083ca",
             "votos1t": 48818,
             "pct1t": 48.95,
-            "votos2t": 57316,
-            "pct2t": 58.43,
-            "deltaVotos": 8498,
-            "deltaPctVotos": 17.41,
-            "aumentou": true
+            "votos2t": 58503,
+            "pct2t": 56.45,
+            "deltaVotos": 9685,
+            "deltaPctVotos": 19.84,
+            "aumentou": true,
+            "eleito": true
           },
           {
             "numero": "13",
@@ -1928,23 +1962,24 @@
             "cor": "#ee2d35",
             "votos1t": 35332,
             "pct1t": 35.43,
-            "votos2t": 40777,
-            "pct2t": 41.57,
-            "deltaVotos": 5445,
-            "deltaPctVotos": 15.41,
-            "aumentou": true
+            "votos2t": 45126,
+            "pct2t": 43.55,
+            "deltaVotos": 9794,
+            "deltaPctVotos": 27.72,
+            "aumentou": true,
+            "eleito": false
           }
         ],
         "vencedor1t": "Celina Leão",
         "vencedor2t": "Celina Leão",
         "totalValidos1t": 99725,
-        "totalValidos2t": 98093
+        "totalValidos2t": 103629
       },
       {
         "zona": 19,
         "nome": "Taguatinga Centro / Brazlândia",
         "secoes": 347,
-        "eleitorado": 110085,
+        "eleitorado": 110129,
         "ras": [
           "RA III",
           "RA IV"
@@ -1957,11 +1992,12 @@
             "cor": "#0083ca",
             "votos1t": 44637,
             "pct1t": 53.41,
-            "votos2t": 51653,
-            "pct2t": 62.82,
-            "deltaVotos": 7016,
-            "deltaPctVotos": 15.72,
-            "aumentou": true
+            "votos2t": 53444,
+            "pct2t": 61.93,
+            "deltaVotos": 8807,
+            "deltaPctVotos": 19.73,
+            "aumentou": true,
+            "eleito": true
           },
           {
             "numero": "13",
@@ -1970,23 +2006,24 @@
             "cor": "#ee2d35",
             "votos1t": 26076,
             "pct1t": 31.2,
-            "votos2t": 30572,
-            "pct2t": 37.18,
-            "deltaVotos": 4496,
-            "deltaPctVotos": 17.24,
-            "aumentou": true
+            "votos2t": 32856,
+            "pct2t": 38.07,
+            "deltaVotos": 6780,
+            "deltaPctVotos": 26,
+            "aumentou": true,
+            "eleito": false
           }
         ],
         "vencedor1t": "Celina Leão",
         "vencedor2t": "Celina Leão",
         "totalValidos1t": 83573,
-        "totalValidos2t": 82225
+        "totalValidos2t": 86300
       },
       {
         "zona": 20,
         "nome": "Ceilândia Sul",
         "secoes": 231,
-        "eleitorado": 79007,
+        "eleitorado": 79008,
         "ras": [
           "RA IX"
         ],
@@ -1998,11 +2035,12 @@
             "cor": "#0083ca",
             "votos1t": 30525,
             "pct1t": 52.71,
-            "votos2t": 35122,
-            "pct2t": 61.59,
-            "deltaVotos": 4597,
-            "deltaPctVotos": 15.06,
-            "aumentou": true
+            "votos2t": 35850,
+            "pct2t": 58.7,
+            "deltaVotos": 5325,
+            "deltaPctVotos": 17.44,
+            "aumentou": true,
+            "eleito": true
           },
           {
             "numero": "13",
@@ -2011,23 +2049,24 @@
             "cor": "#ee2d35",
             "votos1t": 18957,
             "pct1t": 32.74,
-            "votos2t": 21903,
-            "pct2t": 38.41,
-            "deltaVotos": 2946,
-            "deltaPctVotos": 15.54,
-            "aumentou": true
+            "votos2t": 25225,
+            "pct2t": 41.3,
+            "deltaVotos": 6268,
+            "deltaPctVotos": 33.06,
+            "aumentou": true,
+            "eleito": false
           }
         ],
         "vencedor1t": "Celina Leão",
         "vencedor2t": "Celina Leão",
         "totalValidos1t": 57908,
-        "totalValidos2t": 57025
+        "totalValidos2t": 61075
       },
       {
         "zona": 21,
         "nome": "Recanto das Emas / Riacho Fundo II",
         "secoes": 334,
-        "eleitorado": 114106,
+        "eleitorado": 114111,
         "ras": [
           "RA XV",
           "RA XXI"
@@ -2040,11 +2079,12 @@
             "cor": "#0083ca",
             "votos1t": 44162,
             "pct1t": 54.51,
-            "votos2t": 51029,
-            "pct2t": 64.03,
-            "deltaVotos": 6867,
-            "deltaPctVotos": 15.55,
-            "aumentou": true
+            "votos2t": 52186,
+            "pct2t": 60.7,
+            "deltaVotos": 8024,
+            "deltaPctVotos": 18.17,
+            "aumentou": true,
+            "eleito": true
           },
           {
             "numero": "13",
@@ -2053,17 +2093,18 @@
             "cor": "#ee2d35",
             "votos1t": 24266,
             "pct1t": 29.95,
-            "votos2t": 28666,
-            "pct2t": 35.97,
-            "deltaVotos": 4400,
-            "deltaPctVotos": 18.13,
-            "aumentou": true
+            "votos2t": 33787,
+            "pct2t": 39.3,
+            "deltaVotos": 9521,
+            "deltaPctVotos": 39.24,
+            "aumentou": true,
+            "eleito": false
           }
         ],
         "vencedor1t": "Celina Leão",
         "vencedor2t": "Celina Leão",
         "totalValidos1t": 81014,
-        "totalValidos2t": 79695
+        "totalValidos2t": 85973
       }
     ],
     "regioesAdministrativas": [
@@ -2081,11 +2122,12 @@
             "cor": "#0083ca",
             "votos1t": 142754,
             "pct1t": 53.71,
-            "votos2t": 162921,
-            "pct2t": 62.23,
-            "deltaVotos": 20167,
-            "deltaPctVotos": 14.13,
-            "aumentou": true
+            "votos2t": 170701,
+            "pct2t": 60.81,
+            "deltaVotos": 27947,
+            "deltaPctVotos": 19.58,
+            "aumentou": true,
+            "eleito": true
           },
           {
             "numero": "13",
@@ -2094,17 +2136,18 @@
             "cor": "#ee2d35",
             "votos1t": 84826,
             "pct1t": 31.92,
-            "votos2t": 98882,
-            "pct2t": 37.77,
-            "deltaVotos": 14056,
-            "deltaPctVotos": 16.57,
-            "aumentou": true
+            "votos2t": 110009,
+            "pct2t": 39.19,
+            "deltaVotos": 25183,
+            "deltaPctVotos": 29.69,
+            "aumentou": true,
+            "eleito": false
           }
         ],
         "vencedor1t": "Celina Leão",
         "vencedor2t": "Celina Leão",
         "totalValidos1t": 265776,
-        "totalValidos2t": 261803
+        "totalValidos2t": 280710
       },
       {
         "codigo": "RA II",
@@ -2120,11 +2163,12 @@
             "cor": "#0083ca",
             "votos1t": 46363,
             "pct1t": 49.74,
-            "votos2t": 53942,
-            "pct2t": 58.81,
-            "deltaVotos": 7579,
-            "deltaPctVotos": 16.35,
-            "aumentou": true
+            "votos2t": 55439,
+            "pct2t": 56.81,
+            "deltaVotos": 9076,
+            "deltaPctVotos": 19.58,
+            "aumentou": true,
+            "eleito": true
           },
           {
             "numero": "13",
@@ -2133,17 +2177,18 @@
             "cor": "#ee2d35",
             "votos1t": 32499,
             "pct1t": 34.86,
-            "votos2t": 37781,
-            "pct2t": 41.19,
-            "deltaVotos": 5282,
-            "deltaPctVotos": 16.25,
-            "aumentou": true
+            "votos2t": 42147,
+            "pct2t": 43.19,
+            "deltaVotos": 9648,
+            "deltaPctVotos": 29.69,
+            "aumentou": true,
+            "eleito": false
           }
         ],
         "vencedor1t": "Celina Leão",
         "vencedor2t": "Celina Leão",
         "totalValidos1t": 93216,
-        "totalValidos2t": 91723
+        "totalValidos2t": 97586
       },
       {
         "codigo": "RA XIII",
@@ -2159,11 +2204,12 @@
             "cor": "#0083ca",
             "votos1t": 36860,
             "pct1t": 51.78,
-            "votos2t": 42922,
-            "pct2t": 61.32,
-            "deltaVotos": 6062,
-            "deltaPctVotos": 16.45,
-            "aumentou": true
+            "votos2t": 44076,
+            "pct2t": 59.8,
+            "deltaVotos": 7216,
+            "deltaPctVotos": 19.58,
+            "aumentou": true,
+            "eleito": true
           },
           {
             "numero": "13",
@@ -2172,17 +2218,18 @@
             "cor": "#ee2d35",
             "votos1t": 22850,
             "pct1t": 32.1,
-            "votos2t": 27075,
-            "pct2t": 38.68,
-            "deltaVotos": 4225,
-            "deltaPctVotos": 18.49,
-            "aumentou": true
+            "votos2t": 29634,
+            "pct2t": 40.2,
+            "deltaVotos": 6784,
+            "deltaPctVotos": 29.69,
+            "aumentou": true,
+            "eleito": false
           }
         ],
         "vencedor1t": "Celina Leão",
         "vencedor2t": "Celina Leão",
         "totalValidos1t": 71192,
-        "totalValidos2t": 69997
+        "totalValidos2t": 73710
       },
       {
         "codigo": "RA XII",
@@ -2198,11 +2245,12 @@
             "cor": "#0083ca",
             "votos1t": 56458,
             "pct1t": 55.4,
-            "votos2t": 64659,
-            "pct2t": 64.47,
-            "deltaVotos": 8201,
-            "deltaPctVotos": 14.53,
-            "aumentou": true
+            "votos2t": 67511,
+            "pct2t": 63.51,
+            "deltaVotos": 11053,
+            "deltaPctVotos": 19.58,
+            "aumentou": true,
+            "eleito": true
           },
           {
             "numero": "13",
@@ -2211,17 +2259,18 @@
             "cor": "#ee2d35",
             "votos1t": 29912,
             "pct1t": 29.35,
-            "votos2t": 35628,
-            "pct2t": 35.53,
-            "deltaVotos": 5716,
-            "deltaPctVotos": 19.11,
-            "aumentou": true
+            "votos2t": 38792,
+            "pct2t": 36.49,
+            "deltaVotos": 8880,
+            "deltaPctVotos": 29.69,
+            "aumentou": true,
+            "eleito": false
           }
         ],
         "vencedor1t": "Celina Leão",
         "vencedor2t": "Celina Leão",
         "totalValidos1t": 101902,
-        "totalValidos2t": 100287
+        "totalValidos2t": 106303
       },
       {
         "codigo": "RA I",
@@ -2237,11 +2286,12 @@
             "cor": "#0083ca",
             "votos1t": 44281,
             "pct1t": 37.73,
-            "votos2t": 51380,
-            "pct2t": 44.51,
-            "deltaVotos": 7099,
-            "deltaPctVotos": 16.03,
-            "aumentou": true
+            "votos2t": 52950,
+            "pct2t": 43.55,
+            "deltaVotos": 8669,
+            "deltaPctVotos": 19.58,
+            "aumentou": true,
+            "eleito": false
           },
           {
             "numero": "13",
@@ -2250,17 +2300,18 @@
             "cor": "#ee2d35",
             "votos1t": 52922,
             "pct1t": 45.09,
-            "votos2t": 64054,
-            "pct2t": 55.49,
-            "deltaVotos": 11132,
-            "deltaPctVotos": 21.03,
-            "aumentou": true
+            "votos2t": 68633,
+            "pct2t": 56.45,
+            "deltaVotos": 15711,
+            "deltaPctVotos": 29.69,
+            "aumentou": true,
+            "eleito": true
           }
         ],
         "vencedor1t": "Leandro Grass",
         "vencedor2t": "Leandro Grass",
         "totalValidos1t": 117373,
-        "totalValidos2t": 115434
+        "totalValidos2t": 121583
       },
       {
         "codigo": "RA XVI",
@@ -2276,11 +2327,12 @@
             "cor": "#0083ca",
             "votos1t": 4073,
             "pct1t": 39.19,
-            "votos2t": 4736,
-            "pct2t": 46.37,
-            "deltaVotos": 663,
-            "deltaPctVotos": 16.28,
-            "aumentou": true
+            "votos2t": 4870,
+            "pct2t": 45.83,
+            "deltaVotos": 797,
+            "deltaPctVotos": 19.57,
+            "aumentou": true,
+            "eleito": false
           },
           {
             "numero": "13",
@@ -2289,17 +2341,18 @@
             "cor": "#ee2d35",
             "votos1t": 4438,
             "pct1t": 42.7,
-            "votos2t": 5478,
-            "pct2t": 53.63,
-            "deltaVotos": 1040,
-            "deltaPctVotos": 23.43,
-            "aumentou": true
+            "votos2t": 5756,
+            "pct2t": 54.17,
+            "deltaVotos": 1318,
+            "deltaPctVotos": 29.7,
+            "aumentou": true,
+            "eleito": true
           }
         ],
         "vencedor1t": "Leandro Grass",
         "vencedor2t": "Leandro Grass",
         "totalValidos1t": 10393,
-        "totalValidos2t": 10214
+        "totalValidos2t": 10626
       },
       {
         "codigo": "RA XVIII",
@@ -2315,11 +2368,12 @@
             "cor": "#0083ca",
             "votos1t": 5648,
             "pct1t": 36.74,
-            "votos2t": 6545,
-            "pct2t": 43.26,
-            "deltaVotos": 897,
-            "deltaPctVotos": 15.88,
-            "aumentou": true
+            "votos2t": 6754,
+            "pct2t": 42.04,
+            "deltaVotos": 1106,
+            "deltaPctVotos": 19.58,
+            "aumentou": true,
+            "eleito": false
           },
           {
             "numero": "13",
@@ -2328,17 +2382,18 @@
             "cor": "#ee2d35",
             "votos1t": 7179,
             "pct1t": 46.7,
-            "votos2t": 8585,
-            "pct2t": 56.74,
-            "deltaVotos": 1406,
-            "deltaPctVotos": 19.58,
-            "aumentou": true
+            "votos2t": 9310,
+            "pct2t": 57.96,
+            "deltaVotos": 2131,
+            "deltaPctVotos": 29.68,
+            "aumentou": true,
+            "eleito": true
           }
         ],
         "vencedor1t": "Leandro Grass",
         "vencedor2t": "Leandro Grass",
         "totalValidos1t": 15372,
-        "totalValidos2t": 15130
+        "totalValidos2t": 16064
       },
       {
         "codigo": "RA XIV",
@@ -2354,11 +2409,12 @@
             "cor": "#0083ca",
             "votos1t": 32281,
             "pct1t": 48.95,
-            "votos2t": 37718,
-            "pct2t": 58.14,
-            "deltaVotos": 5437,
-            "deltaPctVotos": 16.84,
-            "aumentou": true
+            "votos2t": 38601,
+            "pct2t": 56.02,
+            "deltaVotos": 6320,
+            "deltaPctVotos": 19.58,
+            "aumentou": true,
+            "eleito": true
           },
           {
             "numero": "13",
@@ -2367,17 +2423,18 @@
             "cor": "#ee2d35",
             "votos1t": 23363,
             "pct1t": 35.43,
-            "votos2t": 27153,
-            "pct2t": 41.86,
-            "deltaVotos": 3790,
-            "deltaPctVotos": 16.22,
-            "aumentou": true
+            "votos2t": 30299,
+            "pct2t": 43.98,
+            "deltaVotos": 6936,
+            "deltaPctVotos": 29.69,
+            "aumentou": true,
+            "eleito": false
           }
         ],
         "vencedor1t": "Celina Leão",
         "vencedor2t": "Celina Leão",
         "totalValidos1t": 65943,
-        "totalValidos2t": 64871
+        "totalValidos2t": 68900
       },
       {
         "codigo": "RA XXVII",
@@ -2393,11 +2450,12 @@
             "cor": "#0083ca",
             "votos1t": 16537,
             "pct1t": 48.95,
-            "votos2t": 19323,
-            "pct2t": 58.14,
-            "deltaVotos": 2786,
-            "deltaPctVotos": 16.85,
-            "aumentou": true
+            "votos2t": 19774,
+            "pct2t": 56.02,
+            "deltaVotos": 3237,
+            "deltaPctVotos": 19.57,
+            "aumentou": true,
+            "eleito": true
           },
           {
             "numero": "13",
@@ -2406,17 +2464,18 @@
             "cor": "#ee2d35",
             "votos1t": 11969,
             "pct1t": 35.43,
-            "votos2t": 13911,
-            "pct2t": 41.86,
-            "deltaVotos": 1942,
-            "deltaPctVotos": 16.23,
-            "aumentou": true
+            "votos2t": 15522,
+            "pct2t": 43.98,
+            "deltaVotos": 3553,
+            "deltaPctVotos": 29.69,
+            "aumentou": true,
+            "eleito": false
           }
         ],
         "vencedor1t": "Celina Leão",
         "vencedor2t": "Celina Leão",
         "totalValidos1t": 33782,
-        "totalValidos2t": 33234
+        "totalValidos2t": 35296
       },
       {
         "codigo": "RA III",
@@ -2432,11 +2491,12 @@
             "cor": "#0083ca",
             "votos1t": 54930,
             "pct1t": 53.09,
-            "votos2t": 63263,
-            "pct2t": 62.13,
-            "deltaVotos": 8333,
-            "deltaPctVotos": 15.17,
-            "aumentou": true
+            "votos2t": 65684,
+            "pct2t": 60.72,
+            "deltaVotos": 10754,
+            "deltaPctVotos": 19.58,
+            "aumentou": true,
+            "eleito": true
           },
           {
             "numero": "13",
@@ -2445,17 +2505,18 @@
             "cor": "#ee2d35",
             "votos1t": 32758,
             "pct1t": 31.66,
-            "votos2t": 38566,
-            "pct2t": 37.87,
-            "deltaVotos": 5808,
-            "deltaPctVotos": 17.73,
-            "aumentou": true
+            "votos2t": 42483,
+            "pct2t": 39.28,
+            "deltaVotos": 9725,
+            "deltaPctVotos": 29.69,
+            "aumentou": true,
+            "eleito": false
           }
         ],
         "vencedor1t": "Celina Leão",
         "vencedor2t": "Celina Leão",
         "totalValidos1t": 103472,
-        "totalValidos2t": 101829
+        "totalValidos2t": 108167
       },
       {
         "codigo": "RA IV",
@@ -2471,11 +2532,12 @@
             "cor": "#0083ca",
             "votos1t": 17752,
             "pct1t": 53.41,
-            "votos2t": 20453,
-            "pct2t": 62.54,
-            "deltaVotos": 2701,
-            "deltaPctVotos": 15.22,
-            "aumentou": true
+            "votos2t": 21227,
+            "pct2t": 61.22,
+            "deltaVotos": 3475,
+            "deltaPctVotos": 19.58,
+            "aumentou": true,
+            "eleito": true
           },
           {
             "numero": "13",
@@ -2484,17 +2546,18 @@
             "cor": "#ee2d35",
             "votos1t": 10370,
             "pct1t": 31.2,
-            "votos2t": 12253,
-            "pct2t": 37.46,
-            "deltaVotos": 1883,
-            "deltaPctVotos": 18.16,
-            "aumentou": true
+            "votos2t": 13449,
+            "pct2t": 38.78,
+            "deltaVotos": 3079,
+            "deltaPctVotos": 29.69,
+            "aumentou": true,
+            "eleito": false
           }
         ],
         "vencedor1t": "Celina Leão",
         "vencedor2t": "Celina Leão",
         "totalValidos1t": 33237,
-        "totalValidos2t": 32706
+        "totalValidos2t": 34676
       },
       {
         "codigo": "RA V",
@@ -2510,11 +2573,12 @@
             "cor": "#0083ca",
             "votos1t": 28017,
             "pct1t": 50.54,
-            "votos2t": 32272,
-            "pct2t": 59.11,
-            "deltaVotos": 4255,
-            "deltaPctVotos": 15.19,
-            "aumentou": true
+            "votos2t": 33502,
+            "pct2t": 57.16,
+            "deltaVotos": 5485,
+            "deltaPctVotos": 19.58,
+            "aumentou": true,
+            "eleito": true
           },
           {
             "numero": "13",
@@ -2523,17 +2587,18 @@
             "cor": "#ee2d35",
             "votos1t": 19364,
             "pct1t": 34.93,
-            "votos2t": 22329,
-            "pct2t": 40.89,
-            "deltaVotos": 2965,
-            "deltaPctVotos": 15.31,
-            "aumentou": true
+            "votos2t": 25113,
+            "pct2t": 42.84,
+            "deltaVotos": 5749,
+            "deltaPctVotos": 29.69,
+            "aumentou": true,
+            "eleito": false
           }
         ],
         "vencedor1t": "Celina Leão",
         "vencedor2t": "Celina Leão",
         "totalValidos1t": 55440,
-        "totalValidos2t": 54601
+        "totalValidos2t": 58615
       },
       {
         "codigo": "RA XXVI",
@@ -2549,11 +2614,12 @@
             "cor": "#0083ca",
             "votos1t": 16858,
             "pct1t": 50.54,
-            "votos2t": 19418,
-            "pct2t": 59.11,
-            "deltaVotos": 2560,
-            "deltaPctVotos": 15.19,
-            "aumentou": true
+            "votos2t": 20158,
+            "pct2t": 57.16,
+            "deltaVotos": 3300,
+            "deltaPctVotos": 19.58,
+            "aumentou": true,
+            "eleito": true
           },
           {
             "numero": "13",
@@ -2562,17 +2628,18 @@
             "cor": "#ee2d35",
             "votos1t": 11651,
             "pct1t": 34.93,
-            "votos2t": 13435,
-            "pct2t": 40.89,
-            "deltaVotos": 1784,
-            "deltaPctVotos": 15.31,
-            "aumentou": true
+            "votos2t": 15110,
+            "pct2t": 42.84,
+            "deltaVotos": 3459,
+            "deltaPctVotos": 29.69,
+            "aumentou": true,
+            "eleito": false
           }
         ],
         "vencedor1t": "Celina Leão",
         "vencedor2t": "Celina Leão",
         "totalValidos1t": 33358,
-        "totalValidos2t": 32853
+        "totalValidos2t": 35268
       },
       {
         "codigo": "RA XXXI",
@@ -2588,11 +2655,12 @@
             "cor": "#0083ca",
             "votos1t": 4867,
             "pct1t": 50.53,
-            "votos2t": 5607,
-            "pct2t": 59.1,
-            "deltaVotos": 740,
-            "deltaPctVotos": 15.2,
-            "aumentou": true
+            "votos2t": 5820,
+            "pct2t": 57.15,
+            "deltaVotos": 953,
+            "deltaPctVotos": 19.58,
+            "aumentou": true,
+            "eleito": true
           },
           {
             "numero": "13",
@@ -2601,17 +2669,18 @@
             "cor": "#ee2d35",
             "votos1t": 3364,
             "pct1t": 34.93,
-            "votos2t": 3880,
-            "pct2t": 40.9,
-            "deltaVotos": 516,
-            "deltaPctVotos": 15.34,
-            "aumentou": true
+            "votos2t": 4363,
+            "pct2t": 42.85,
+            "deltaVotos": 999,
+            "deltaPctVotos": 29.7,
+            "aumentou": true,
+            "eleito": false
           }
         ],
         "vencedor1t": "Celina Leão",
         "vencedor2t": "Celina Leão",
         "totalValidos1t": 9631,
-        "totalValidos2t": 9487
+        "totalValidos2t": 10183
       },
       {
         "codigo": "RA VI",
@@ -2627,11 +2696,12 @@
             "cor": "#0083ca",
             "votos1t": 40982,
             "pct1t": 51.43,
-            "votos2t": 46956,
-            "pct2t": 59.81,
-            "deltaVotos": 5974,
-            "deltaPctVotos": 14.58,
-            "aumentou": true
+            "votos2t": 49005,
+            "pct2t": 57.98,
+            "deltaVotos": 8023,
+            "deltaPctVotos": 19.58,
+            "aumentou": true,
+            "eleito": true
           },
           {
             "numero": "13",
@@ -2640,17 +2710,18 @@
             "cor": "#ee2d35",
             "votos1t": 27388,
             "pct1t": 34.37,
-            "votos2t": 31552,
-            "pct2t": 40.19,
-            "deltaVotos": 4164,
-            "deltaPctVotos": 15.2,
-            "aumentou": true
+            "votos2t": 35519,
+            "pct2t": 42.02,
+            "deltaVotos": 8131,
+            "deltaPctVotos": 29.69,
+            "aumentou": true,
+            "eleito": false
           }
         ],
         "vencedor1t": "Celina Leão",
         "vencedor2t": "Celina Leão",
         "totalValidos1t": 79684,
-        "totalValidos2t": 78508
+        "totalValidos2t": 84524
       },
       {
         "codigo": "RA XXXIV",
@@ -2666,11 +2737,12 @@
             "cor": "#0083ca",
             "votos1t": 9503,
             "pct1t": 51.43,
-            "votos2t": 10888,
-            "pct2t": 59.81,
-            "deltaVotos": 1385,
-            "deltaPctVotos": 14.57,
-            "aumentou": true
+            "votos2t": 11363,
+            "pct2t": 57.98,
+            "deltaVotos": 1860,
+            "deltaPctVotos": 19.57,
+            "aumentou": true,
+            "eleito": true
           },
           {
             "numero": "13",
@@ -2679,17 +2751,18 @@
             "cor": "#ee2d35",
             "votos1t": 6351,
             "pct1t": 34.37,
-            "votos2t": 7317,
-            "pct2t": 40.19,
-            "deltaVotos": 966,
-            "deltaPctVotos": 15.21,
-            "aumentou": true
+            "votos2t": 8236,
+            "pct2t": 42.02,
+            "deltaVotos": 1885,
+            "deltaPctVotos": 29.68,
+            "aumentou": true,
+            "eleito": false
           }
         ],
         "vencedor1t": "Celina Leão",
         "vencedor2t": "Celina Leão",
         "totalValidos1t": 18478,
-        "totalValidos2t": 18205
+        "totalValidos2t": 19599
       },
       {
         "codigo": "RA VII",
@@ -2705,11 +2778,12 @@
             "cor": "#0083ca",
             "votos1t": 22857,
             "pct1t": 46.12,
-            "votos2t": 27585,
-            "pct2t": 56.73,
-            "deltaVotos": 4728,
-            "deltaPctVotos": 20.69,
-            "aumentou": true
+            "votos2t": 27332,
+            "pct2t": 54.28,
+            "deltaVotos": 4475,
+            "deltaPctVotos": 19.58,
+            "aumentou": true,
+            "eleito": true
           },
           {
             "numero": "13",
@@ -2718,17 +2792,18 @@
             "cor": "#ee2d35",
             "votos1t": 17749,
             "pct1t": 35.81,
-            "votos2t": 21044,
-            "pct2t": 43.27,
-            "deltaVotos": 3295,
-            "deltaPctVotos": 18.56,
-            "aumentou": true
+            "votos2t": 23018,
+            "pct2t": 45.72,
+            "deltaVotos": 5269,
+            "deltaPctVotos": 29.69,
+            "aumentou": true,
+            "eleito": false
           }
         ],
         "vencedor1t": "Celina Leão",
         "vencedor2t": "Celina Leão",
         "totalValidos1t": 49560,
-        "totalValidos2t": 48629
+        "totalValidos2t": 50350
       },
       {
         "codigo": "RA XXVIII",
@@ -2744,11 +2819,12 @@
             "cor": "#0083ca",
             "votos1t": 13831,
             "pct1t": 46.12,
-            "votos2t": 16692,
-            "pct2t": 56.73,
-            "deltaVotos": 2861,
-            "deltaPctVotos": 20.69,
-            "aumentou": true
+            "votos2t": 16539,
+            "pct2t": 54.28,
+            "deltaVotos": 2708,
+            "deltaPctVotos": 19.58,
+            "aumentou": true,
+            "eleito": true
           },
           {
             "numero": "13",
@@ -2757,17 +2833,18 @@
             "cor": "#ee2d35",
             "votos1t": 10740,
             "pct1t": 35.81,
-            "votos2t": 12734,
-            "pct2t": 43.27,
-            "deltaVotos": 1994,
-            "deltaPctVotos": 18.57,
-            "aumentou": true
+            "votos2t": 13928,
+            "pct2t": 45.72,
+            "deltaVotos": 3188,
+            "deltaPctVotos": 29.68,
+            "aumentou": true,
+            "eleito": false
           }
         ],
         "vencedor1t": "Celina Leão",
         "vencedor2t": "Celina Leão",
         "totalValidos1t": 29990,
-        "totalValidos2t": 29426
+        "totalValidos2t": 30467
       },
       {
         "codigo": "RA XXIII",
@@ -2783,11 +2860,12 @@
             "cor": "#0083ca",
             "votos1t": 2813,
             "pct1t": 46.11,
-            "votos2t": 3395,
-            "pct2t": 56.73,
-            "deltaVotos": 582,
-            "deltaPctVotos": 20.69,
-            "aumentou": true
+            "votos2t": 3364,
+            "pct2t": 54.29,
+            "deltaVotos": 551,
+            "deltaPctVotos": 19.59,
+            "aumentou": true,
+            "eleito": true
           },
           {
             "numero": "13",
@@ -2796,17 +2874,18 @@
             "cor": "#ee2d35",
             "votos1t": 2184,
             "pct1t": 35.8,
-            "votos2t": 2590,
-            "pct2t": 43.27,
-            "deltaVotos": 406,
-            "deltaPctVotos": 18.59,
-            "aumentou": true
+            "votos2t": 2832,
+            "pct2t": 45.71,
+            "deltaVotos": 648,
+            "deltaPctVotos": 29.67,
+            "aumentou": true,
+            "eleito": false
           }
         ],
         "vencedor1t": "Celina Leão",
         "vencedor2t": "Celina Leão",
         "totalValidos1t": 6100,
-        "totalValidos2t": 5985
+        "totalValidos2t": 6196
       },
       {
         "codigo": "RA X",
@@ -2822,11 +2901,12 @@
             "cor": "#0083ca",
             "votos1t": 40029,
             "pct1t": 47.94,
-            "votos2t": 46967,
-            "pct2t": 57.19,
-            "deltaVotos": 6938,
-            "deltaPctVotos": 17.33,
-            "aumentou": true
+            "votos2t": 47865,
+            "pct2t": 54.89,
+            "deltaVotos": 7836,
+            "deltaPctVotos": 19.58,
+            "aumentou": true,
+            "eleito": true
           },
           {
             "numero": "13",
@@ -2835,17 +2915,18 @@
             "cor": "#ee2d35",
             "votos1t": 30326,
             "pct1t": 36.32,
-            "votos2t": 35162,
-            "pct2t": 42.81,
-            "deltaVotos": 4836,
-            "deltaPctVotos": 15.95,
-            "aumentou": true
+            "votos2t": 39329,
+            "pct2t": 45.11,
+            "deltaVotos": 9003,
+            "deltaPctVotos": 29.69,
+            "aumentou": true,
+            "eleito": false
           }
         ],
         "vencedor1t": "Celina Leão",
         "vencedor2t": "Celina Leão",
         "totalValidos1t": 83495,
-        "totalValidos2t": 82129
+        "totalValidos2t": 87194
       },
       {
         "codigo": "RA XXV",
@@ -2861,11 +2942,12 @@
             "cor": "#0083ca",
             "votos1t": 6599,
             "pct1t": 47.94,
-            "votos2t": 7743,
-            "pct2t": 57.19,
-            "deltaVotos": 1144,
-            "deltaPctVotos": 17.34,
-            "aumentou": true
+            "votos2t": 7891,
+            "pct2t": 54.89,
+            "deltaVotos": 1292,
+            "deltaPctVotos": 19.58,
+            "aumentou": true,
+            "eleito": true
           },
           {
             "numero": "13",
@@ -2874,17 +2956,18 @@
             "cor": "#ee2d35",
             "votos1t": 5000,
             "pct1t": 36.32,
-            "votos2t": 5797,
-            "pct2t": 42.81,
-            "deltaVotos": 797,
-            "deltaPctVotos": 15.94,
-            "aumentou": true
+            "votos2t": 6484,
+            "pct2t": 45.11,
+            "deltaVotos": 1484,
+            "deltaPctVotos": 29.68,
+            "aumentou": true,
+            "eleito": false
           }
         ],
         "vencedor1t": "Celina Leão",
         "vencedor2t": "Celina Leão",
         "totalValidos1t": 13765,
-        "totalValidos2t": 13540
+        "totalValidos2t": 14375
       },
       {
         "codigo": "RA XXIX",
@@ -2900,11 +2983,12 @@
             "cor": "#0083ca",
             "votos1t": 1298,
             "pct1t": 47.93,
-            "votos2t": 1523,
-            "pct2t": 57.17,
-            "deltaVotos": 225,
-            "deltaPctVotos": 17.33,
-            "aumentou": true
+            "votos2t": 1552,
+            "pct2t": 54.88,
+            "deltaVotos": 254,
+            "deltaPctVotos": 19.57,
+            "aumentou": true,
+            "eleito": true
           },
           {
             "numero": "13",
@@ -2913,17 +2997,18 @@
             "cor": "#ee2d35",
             "votos1t": 984,
             "pct1t": 36.34,
-            "votos2t": 1141,
-            "pct2t": 42.83,
-            "deltaVotos": 157,
-            "deltaPctVotos": 15.96,
-            "aumentou": true
+            "votos2t": 1276,
+            "pct2t": 45.12,
+            "deltaVotos": 292,
+            "deltaPctVotos": 29.67,
+            "aumentou": true,
+            "eleito": false
           }
         ],
         "vencedor1t": "Celina Leão",
         "vencedor2t": "Celina Leão",
         "totalValidos1t": 2708,
-        "totalValidos2t": 2664
+        "totalValidos2t": 2828
       },
       {
         "codigo": "RA VIII",
@@ -2939,11 +3024,12 @@
             "cor": "#0083ca",
             "votos1t": 24220,
             "pct1t": 52.87,
-            "votos2t": 27981,
-            "pct2t": 62.08,
-            "deltaVotos": 3761,
-            "deltaPctVotos": 15.53,
-            "aumentou": true
+            "votos2t": 28961,
+            "pct2t": 60.68,
+            "deltaVotos": 4741,
+            "deltaPctVotos": 19.57,
+            "aumentou": true,
+            "eleito": true
           },
           {
             "numero": "13",
@@ -2952,17 +3038,18 @@
             "cor": "#ee2d35",
             "votos1t": 14469,
             "pct1t": 31.59,
-            "votos2t": 17090,
-            "pct2t": 37.92,
-            "deltaVotos": 2621,
-            "deltaPctVotos": 18.11,
-            "aumentou": true
+            "votos2t": 18765,
+            "pct2t": 39.32,
+            "deltaVotos": 4296,
+            "deltaPctVotos": 29.69,
+            "aumentou": true,
+            "eleito": false
           }
         ],
         "vencedor1t": "Celina Leão",
         "vencedor2t": "Celina Leão",
         "totalValidos1t": 45809,
-        "totalValidos2t": 45071
+        "totalValidos2t": 47726
       },
       {
         "codigo": "RA XIX",
@@ -2978,11 +3065,12 @@
             "cor": "#0083ca",
             "votos1t": 11902,
             "pct1t": 52.87,
-            "votos2t": 13749,
-            "pct2t": 62.08,
-            "deltaVotos": 1847,
-            "deltaPctVotos": 15.52,
-            "aumentou": true
+            "votos2t": 14232,
+            "pct2t": 60.68,
+            "deltaVotos": 2330,
+            "deltaPctVotos": 19.58,
+            "aumentou": true,
+            "eleito": true
           },
           {
             "numero": "13",
@@ -2991,17 +3079,18 @@
             "cor": "#ee2d35",
             "votos1t": 7110,
             "pct1t": 31.58,
-            "votos2t": 8398,
-            "pct2t": 37.92,
-            "deltaVotos": 1288,
-            "deltaPctVotos": 18.12,
-            "aumentou": true
+            "votos2t": 9221,
+            "pct2t": 39.32,
+            "deltaVotos": 2111,
+            "deltaPctVotos": 29.69,
+            "aumentou": true,
+            "eleito": false
           }
         ],
         "vencedor1t": "Celina Leão",
         "vencedor2t": "Celina Leão",
         "totalValidos1t": 22512,
-        "totalValidos2t": 22147
+        "totalValidos2t": 23453
       },
       {
         "codigo": "RA XXIV",
@@ -3017,11 +3106,12 @@
             "cor": "#0083ca",
             "votos1t": 12179,
             "pct1t": 52.87,
-            "votos2t": 14070,
-            "pct2t": 62.08,
-            "deltaVotos": 1891,
-            "deltaPctVotos": 15.53,
-            "aumentou": true
+            "votos2t": 14563,
+            "pct2t": 60.68,
+            "deltaVotos": 2384,
+            "deltaPctVotos": 19.57,
+            "aumentou": true,
+            "eleito": true
           },
           {
             "numero": "13",
@@ -3030,17 +3120,18 @@
             "cor": "#ee2d35",
             "votos1t": 7276,
             "pct1t": 31.59,
-            "votos2t": 8594,
-            "pct2t": 37.92,
-            "deltaVotos": 1318,
-            "deltaPctVotos": 18.11,
-            "aumentou": true
+            "votos2t": 9436,
+            "pct2t": 39.32,
+            "deltaVotos": 2160,
+            "deltaPctVotos": 29.69,
+            "aumentou": true,
+            "eleito": false
           }
         ],
         "vencedor1t": "Celina Leão",
         "vencedor2t": "Celina Leão",
         "totalValidos1t": 23036,
-        "totalValidos2t": 22664
+        "totalValidos2t": 23999
       },
       {
         "codigo": "RA XI",
@@ -3056,11 +3147,12 @@
             "cor": "#0083ca",
             "votos1t": 9519,
             "pct1t": 43.86,
-            "votos2t": 11501,
-            "pct2t": 53.96,
-            "deltaVotos": 1982,
-            "deltaPctVotos": 20.82,
-            "aumentou": true
+            "votos2t": 11383,
+            "pct2t": 51.01,
+            "deltaVotos": 1864,
+            "deltaPctVotos": 19.58,
+            "aumentou": true,
+            "eleito": true
           },
           {
             "numero": "13",
@@ -3069,17 +3161,18 @@
             "cor": "#ee2d35",
             "votos1t": 8431,
             "pct1t": 38.85,
-            "votos2t": 9812,
-            "pct2t": 46.04,
-            "deltaVotos": 1381,
-            "deltaPctVotos": 16.38,
-            "aumentou": true
+            "votos2t": 10934,
+            "pct2t": 48.99,
+            "deltaVotos": 2503,
+            "deltaPctVotos": 29.69,
+            "aumentou": true,
+            "eleito": false
           }
         ],
         "vencedor1t": "Celina Leão",
         "vencedor2t": "Celina Leão",
         "totalValidos1t": 21703,
-        "totalValidos2t": 21313
+        "totalValidos2t": 22317
       },
       {
         "codigo": "RA XXII",
@@ -3095,11 +3188,12 @@
             "cor": "#0083ca",
             "votos1t": 16245,
             "pct1t": 43.86,
-            "votos2t": 19626,
-            "pct2t": 53.96,
-            "deltaVotos": 3381,
-            "deltaPctVotos": 20.81,
-            "aumentou": true
+            "votos2t": 19425,
+            "pct2t": 51.01,
+            "deltaVotos": 3180,
+            "deltaPctVotos": 19.58,
+            "aumentou": true,
+            "eleito": true
           },
           {
             "numero": "13",
@@ -3108,17 +3202,18 @@
             "cor": "#ee2d35",
             "votos1t": 14387,
             "pct1t": 38.85,
-            "votos2t": 16743,
-            "pct2t": 46.04,
-            "deltaVotos": 2356,
-            "deltaPctVotos": 16.38,
-            "aumentou": true
+            "votos2t": 18658,
+            "pct2t": 48.99,
+            "deltaVotos": 4271,
+            "deltaPctVotos": 29.69,
+            "aumentou": true,
+            "eleito": false
           }
         ],
         "vencedor1t": "Celina Leão",
         "vencedor2t": "Celina Leão",
         "totalValidos1t": 37036,
-        "totalValidos2t": 36369
+        "totalValidos2t": 38083
       },
       {
         "codigo": "RA XX",
@@ -3134,11 +3229,12 @@
             "cor": "#0083ca",
             "votos1t": 28646,
             "pct1t": 48.24,
-            "votos2t": 33726,
-            "pct2t": 57.77,
-            "deltaVotos": 5080,
-            "deltaPctVotos": 17.73,
-            "aumentou": true
+            "votos2t": 34254,
+            "pct2t": 55.57,
+            "deltaVotos": 5608,
+            "deltaPctVotos": 19.58,
+            "aumentou": true,
+            "eleito": true
           },
           {
             "numero": "13",
@@ -3147,17 +3243,18 @@
             "cor": "#ee2d35",
             "votos1t": 21116,
             "pct1t": 35.56,
-            "votos2t": 24657,
-            "pct2t": 42.23,
-            "deltaVotos": 3541,
-            "deltaPctVotos": 16.77,
-            "aumentou": true
+            "votos2t": 27385,
+            "pct2t": 44.43,
+            "deltaVotos": 6269,
+            "deltaPctVotos": 29.69,
+            "aumentou": true,
+            "eleito": false
           }
         ],
         "vencedor1t": "Celina Leão",
         "vencedor2t": "Celina Leão",
         "totalValidos1t": 59385,
-        "totalValidos2t": 58383
+        "totalValidos2t": 61639
       },
       {
         "codigo": "RA XXX",
@@ -3173,11 +3270,12 @@
             "cor": "#0083ca",
             "votos1t": 22091,
             "pct1t": 48.24,
-            "votos2t": 26009,
-            "pct2t": 57.77,
-            "deltaVotos": 3918,
-            "deltaPctVotos": 17.74,
-            "aumentou": true
+            "votos2t": 26416,
+            "pct2t": 55.57,
+            "deltaVotos": 4325,
+            "deltaPctVotos": 19.58,
+            "aumentou": true,
+            "eleito": true
           },
           {
             "numero": "13",
@@ -3186,17 +3284,18 @@
             "cor": "#ee2d35",
             "votos1t": 16285,
             "pct1t": 35.56,
-            "votos2t": 19016,
-            "pct2t": 42.23,
-            "deltaVotos": 2731,
-            "deltaPctVotos": 16.77,
-            "aumentou": true
+            "votos2t": 21120,
+            "pct2t": 44.43,
+            "deltaVotos": 4835,
+            "deltaPctVotos": 29.69,
+            "aumentou": true,
+            "eleito": false
           }
         ],
         "vencedor1t": "Celina Leão",
         "vencedor2t": "Celina Leão",
         "totalValidos1t": 45797,
-        "totalValidos2t": 45025
+        "totalValidos2t": 47536
       },
       {
         "codigo": "RA XXXIII",
@@ -3212,11 +3311,12 @@
             "cor": "#0083ca",
             "votos1t": 11653,
             "pct1t": 48.24,
-            "votos2t": 13720,
-            "pct2t": 57.77,
-            "deltaVotos": 2067,
-            "deltaPctVotos": 17.74,
-            "aumentou": true
+            "votos2t": 13934,
+            "pct2t": 55.57,
+            "deltaVotos": 2281,
+            "deltaPctVotos": 19.57,
+            "aumentou": true,
+            "eleito": true
           },
           {
             "numero": "13",
@@ -3225,17 +3325,18 @@
             "cor": "#ee2d35",
             "votos1t": 8590,
             "pct1t": 35.56,
-            "votos2t": 10031,
-            "pct2t": 42.23,
-            "deltaVotos": 1441,
-            "deltaPctVotos": 16.78,
-            "aumentou": true
+            "votos2t": 11140,
+            "pct2t": 44.43,
+            "deltaVotos": 2550,
+            "deltaPctVotos": 29.69,
+            "aumentou": true,
+            "eleito": false
           }
         ],
         "vencedor1t": "Celina Leão",
         "vencedor2t": "Celina Leão",
         "totalValidos1t": 24157,
-        "totalValidos2t": 23751
+        "totalValidos2t": 25074
       },
       {
         "codigo": "RA XXXII",
@@ -3251,11 +3352,12 @@
             "cor": "#0083ca",
             "votos1t": 19457,
             "pct1t": 55.15,
-            "votos2t": 22156,
-            "pct2t": 63.77,
-            "deltaVotos": 2699,
-            "deltaPctVotos": 13.87,
-            "aumentou": true
+            "votos2t": 23266,
+            "pct2t": 62.62,
+            "deltaVotos": 3809,
+            "deltaPctVotos": 19.58,
+            "aumentou": true,
+            "eleito": true
           },
           {
             "numero": "13",
@@ -3264,17 +3366,18 @@
             "cor": "#ee2d35",
             "votos1t": 10707,
             "pct1t": 30.35,
-            "votos2t": 12588,
-            "pct2t": 36.23,
-            "deltaVotos": 1881,
-            "deltaPctVotos": 17.57,
-            "aumentou": true
+            "votos2t": 13886,
+            "pct2t": 37.38,
+            "deltaVotos": 3179,
+            "deltaPctVotos": 29.69,
+            "aumentou": true,
+            "eleito": false
           }
         ],
         "vencedor1t": "Celina Leão",
         "vencedor2t": "Celina Leão",
         "totalValidos1t": 35277,
-        "totalValidos2t": 34744
+        "totalValidos2t": 37152
       },
       {
         "codigo": "RA XV",
@@ -3290,11 +3393,12 @@
             "cor": "#0083ca",
             "votos1t": 21552,
             "pct1t": 54.51,
-            "votos2t": 24795,
-            "pct2t": 63.75,
-            "deltaVotos": 3243,
-            "deltaPctVotos": 15.05,
-            "aumentou": true
+            "votos2t": 25771,
+            "pct2t": 62.66,
+            "deltaVotos": 4219,
+            "deltaPctVotos": 19.58,
+            "aumentou": true,
+            "eleito": true
           },
           {
             "numero": "13",
@@ -3303,17 +3407,18 @@
             "cor": "#ee2d35",
             "votos1t": 11842,
             "pct1t": 29.95,
-            "votos2t": 14102,
-            "pct2t": 36.25,
-            "deltaVotos": 2260,
-            "deltaPctVotos": 19.08,
-            "aumentou": true
+            "votos2t": 15358,
+            "pct2t": 37.34,
+            "deltaVotos": 3516,
+            "deltaPctVotos": 29.69,
+            "aumentou": true,
+            "eleito": false
           }
         ],
         "vencedor1t": "Celina Leão",
         "vencedor2t": "Celina Leão",
         "totalValidos1t": 39537,
-        "totalValidos2t": 38897
+        "totalValidos2t": 41129
       },
       {
         "codigo": "RA XVII",
@@ -3329,11 +3434,12 @@
             "cor": "#0083ca",
             "votos1t": 10313,
             "pct1t": 54.51,
-            "votos2t": 11864,
-            "pct2t": 63.74,
-            "deltaVotos": 1551,
-            "deltaPctVotos": 15.04,
-            "aumentou": true
+            "votos2t": 12332,
+            "pct2t": 62.66,
+            "deltaVotos": 2019,
+            "deltaPctVotos": 19.58,
+            "aumentou": true,
+            "eleito": true
           },
           {
             "numero": "13",
@@ -3342,17 +3448,18 @@
             "cor": "#ee2d35",
             "votos1t": 5667,
             "pct1t": 29.95,
-            "votos2t": 6748,
-            "pct2t": 36.26,
-            "deltaVotos": 1081,
-            "deltaPctVotos": 19.08,
-            "aumentou": true
+            "votos2t": 7349,
+            "pct2t": 37.34,
+            "deltaVotos": 1682,
+            "deltaPctVotos": 29.68,
+            "aumentou": true,
+            "eleito": false
           }
         ],
         "vencedor1t": "Celina Leão",
         "vencedor2t": "Celina Leão",
         "totalValidos1t": 18919,
-        "totalValidos2t": 18612
+        "totalValidos2t": 19681
       },
       {
         "codigo": "RA XXI",
@@ -3368,11 +3475,12 @@
             "cor": "#0083ca",
             "votos1t": 8594,
             "pct1t": 54.51,
-            "votos2t": 9888,
-            "pct2t": 63.74,
-            "deltaVotos": 1294,
-            "deltaPctVotos": 15.06,
-            "aumentou": true
+            "votos2t": 10276,
+            "pct2t": 62.66,
+            "deltaVotos": 1682,
+            "deltaPctVotos": 19.57,
+            "aumentou": true,
+            "eleito": true
           },
           {
             "numero": "13",
@@ -3381,17 +3489,18 @@
             "cor": "#ee2d35",
             "votos1t": 4722,
             "pct1t": 29.95,
-            "votos2t": 5624,
-            "pct2t": 36.26,
-            "deltaVotos": 902,
-            "deltaPctVotos": 19.1,
-            "aumentou": true
+            "votos2t": 6124,
+            "pct2t": 37.34,
+            "deltaVotos": 1402,
+            "deltaPctVotos": 29.69,
+            "aumentou": true,
+            "eleito": false
           }
         ],
         "vencedor1t": "Celina Leão",
         "vencedor2t": "Celina Leão",
         "totalValidos1t": 15766,
-        "totalValidos2t": 15512
+        "totalValidos2t": 16400
       },
       {
         "codigo": "RA XXXV",
@@ -3407,11 +3516,12 @@
             "cor": "#0083ca",
             "votos1t": 3702,
             "pct1t": 54.51,
-            "votos2t": 4260,
-            "pct2t": 63.74,
-            "deltaVotos": 558,
-            "deltaPctVotos": 15.07,
-            "aumentou": true
+            "votos2t": 4427,
+            "pct2t": 62.66,
+            "deltaVotos": 725,
+            "deltaPctVotos": 19.58,
+            "aumentou": true,
+            "eleito": true
           },
           {
             "numero": "13",
@@ -3420,17 +3530,18 @@
             "cor": "#ee2d35",
             "votos1t": 2034,
             "pct1t": 29.95,
-            "votos2t": 2423,
-            "pct2t": 36.26,
-            "deltaVotos": 389,
-            "deltaPctVotos": 19.12,
-            "aumentou": true
+            "votos2t": 2638,
+            "pct2t": 37.34,
+            "deltaVotos": 604,
+            "deltaPctVotos": 29.7,
+            "aumentou": true,
+            "eleito": false
           }
         ],
         "vencedor1t": "Celina Leão",
         "vencedor2t": "Celina Leão",
         "totalValidos1t": 6792,
-        "totalValidos2t": 6683
+        "totalValidos2t": 7065
       }
     ]
   },
@@ -3441,30 +3552,30 @@
       "candidatos": [
         {
           "numero": "11",
-          "nome": "Gladson Cameli",
+          "nome": "Mailza Assis",
           "partido": "PP",
           "cor": "#0284c7",
           "votos1t": 218760,
-          "pct1t": 49.34,
-          "votos2t": 242100,
-          "pct2t": 54.2,
-          "deltaVotos": 23340,
-          "deltaPctVotos": 10.67,
+          "pct1t": 49.76,
+          "votos2t": 272635,
+          "pct2t": 66.21,
+          "deltaVotos": 53875,
+          "deltaPctVotos": 24.63,
           "aumentou": true,
           "eleito": true
         },
         {
-          "numero": "13",
-          "nome": "Jorge Viana",
-          "partido": "PT",
-          "cor": "#ef4444",
+          "numero": "10",
+          "nome": "Alan Rick",
+          "partido": "Republicanos",
+          "cor": "#059669",
           "votos1t": 141859,
-          "pct1t": 32,
-          "votos2t": 204500,
-          "pct2t": 45.8,
-          "deltaVotos": 62641,
-          "deltaPctVotos": 44.16,
-          "aumentou": true,
+          "pct1t": 32.27,
+          "votos2t": 139108,
+          "pct2t": 33.79,
+          "deltaVotos": -2751,
+          "deltaPctVotos": -1.94,
+          "aumentou": false,
           "eleito": false
         }
       ]
@@ -3475,29 +3586,29 @@
       "candidatos": [
         {
           "numero": "55",
-          "nome": "Wilson Lima",
-          "partido": "UB",
-          "cor": "#0284c7",
+          "nome": "Omar Aziz",
+          "partido": "PSD",
+          "cor": "#10b981",
           "votos1t": 841846,
-          "pct1t": 42.82,
-          "votos2t": 1038500,
-          "pct2t": 56.6,
-          "deltaVotos": 196654,
-          "deltaPctVotos": 23.36,
+          "pct1t": 40.63,
+          "votos2t": 1273975,
+          "pct2t": 61.42,
+          "deltaVotos": 432129,
+          "deltaPctVotos": 51.33,
           "aumentou": true,
           "eleito": true
         },
         {
           "numero": "22",
-          "nome": "Eduardo Braga",
-          "partido": "MDB",
-          "cor": "#ef4444",
+          "nome": "Professora Maria do Carmo",
+          "partido": "PL",
+          "cor": "#0083ca",
           "votos1t": 507335,
-          "pct1t": 25.8,
-          "votos2t": 795400,
-          "pct2t": 43.4,
-          "deltaVotos": 288065,
-          "deltaPctVotos": 56.78,
+          "pct1t": 24.49,
+          "votos2t": 800328,
+          "pct2t": 38.58,
+          "deltaVotos": 292993,
+          "deltaPctVotos": 57.75,
           "aumentou": true,
           "eleito": false
         }
@@ -3508,30 +3619,30 @@
       "nome": "Espírito Santo",
       "candidatos": [
         {
-          "numero": "40",
-          "nome": "Renato Casagrande",
-          "partido": "PSB",
-          "cor": "#f59e0b",
-          "votos1t": 995361,
-          "pct1t": 46.94,
-          "votos2t": 1184200,
-          "pct2t": 53.8,
-          "deltaVotos": 188839,
-          "deltaPctVotos": 18.97,
+          "numero": "10",
+          "nome": "Lorenzo Pazolini",
+          "partido": "Republicanos",
+          "cor": "#0284c7",
+          "votos1t": 1048633,
+          "pct1t": 49.65,
+          "votos2t": 1151818,
+          "pct2t": 52.17,
+          "deltaVotos": 103185,
+          "deltaPctVotos": 9.84,
           "aumentou": true,
           "eleito": true
         },
         {
-          "numero": "10",
-          "nome": "Manato",
-          "partido": "PL",
-          "cor": "#0284c7",
-          "votos1t": 814633,
-          "pct1t": 38.41,
-          "votos2t": 1016800,
-          "pct2t": 46.2,
-          "deltaVotos": 202167,
-          "deltaPctVotos": 24.82,
+          "numero": "15",
+          "nome": "Ricardo Ferraço",
+          "partido": "MDB",
+          "cor": "#ea580c",
+          "votos1t": 719397,
+          "pct1t": 34.06,
+          "votos2t": 1056119,
+          "pct2t": 47.83,
+          "deltaVotos": 336722,
+          "deltaPctVotos": 46.81,
           "aumentou": true,
           "eleito": false
         }
@@ -3543,29 +3654,29 @@
       "candidatos": [
         {
           "numero": "13",
-          "nome": "Fátima Bezerra",
+          "nome": "Cadu de Lula",
           "partido": "PT",
           "cor": "#ef4444",
-          "votos1t": 733809,
-          "pct1t": 47.32,
-          "votos2t": 894300,
-          "pct2t": 58.1,
-          "deltaVotos": 160491,
-          "deltaPctVotos": 21.87,
+          "votos1t": 718300,
+          "pct1t": 36.16,
+          "votos2t": 1073024,
+          "pct2t": 50.77,
+          "deltaVotos": 354724,
+          "deltaPctVotos": 49.38,
           "aumentou": true,
-          "eleita": true
+          "eleito": true
         },
         {
           "numero": "44",
-          "nome": "Fábio Dantas",
-          "partido": "Solidariedade",
+          "nome": "Allyson",
+          "partido": "União",
           "cor": "#0284c7",
-          "votos1t": 530580,
-          "pct1t": 34.21,
-          "votos2t": 645100,
-          "pct2t": 41.9,
-          "deltaVotos": 114520,
-          "deltaPctVotos": 21.58,
+          "votos1t": 733809,
+          "pct1t": 36.94,
+          "votos2t": 1040399,
+          "pct2t": 49.23,
+          "deltaVotos": 306590,
+          "deltaPctVotos": 41.78,
           "aumentou": true,
           "eleito": false
         }
@@ -3576,30 +3687,30 @@
       "nome": "Tocantins",
       "candidatos": [
         {
-          "numero": "10",
-          "nome": "Wanderlei Barbosa",
-          "partido": "Republicanos",
+          "numero": "45",
+          "nome": "Vicentinho Júnior",
+          "partido": "PSDB",
           "cor": "#0284c7",
-          "votos1t": 386260,
-          "pct1t": 48.11,
-          "votos2t": 452800,
-          "pct2t": 56.4,
-          "deltaVotos": 66540,
-          "deltaPctVotos": 17.23,
+          "votos1t": 372848,
+          "pct1t": 43.94,
+          "votos2t": 562083,
+          "pct2t": 64.52,
+          "deltaVotos": 189235,
+          "deltaPctVotos": 50.75,
           "aumentou": true,
           "eleito": true
         },
         {
-          "numero": "45",
-          "nome": "Ronaldo Dimas",
-          "partido": "PL",
-          "cor": "#0284c7",
-          "votos1t": 372848,
-          "pct1t": 46.44,
-          "votos2t": 350200,
-          "pct2t": 43.6,
-          "deltaVotos": -22648,
-          "deltaPctVotos": -6.07,
+          "numero": "44",
+          "nome": "Professora Dorinha",
+          "partido": "União",
+          "cor": "#f59e0b",
+          "votos1t": 386260,
+          "pct1t": 45.52,
+          "votos2t": 309076,
+          "pct2t": 35.48,
+          "deltaVotos": -77184,
+          "deltaPctVotos": -19.98,
           "aumentou": false,
           "eleito": false
         }

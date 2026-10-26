@@ -481,26 +481,26 @@
   function launchCelebrationDemo(type = 'gov_df') {
     if (type === 'presidente') {
       triggerVictoryCelebration({
-        name: "Flávio Bolsonaro",
-        cargo: "Presidente da República Eleito",
-        partido: "PL",
-        numero: "22",
-        pct: "50,88%",
-        votos: 59312480,
-        cor: "#0083ca",
-        desc: "Totalização de 100% das seções apuradas no Brasil e Exterior. Presidente eleito no 2º Turno!",
+        name: "Luiz Inácio Lula da Silva",
+        cargo: "Presidente da República Eleito (2º Turno)",
+        partido: "PT",
+        numero: "13",
+        pct: "51,79%",
+        votos: 64256232,
+        cor: "#e11d48",
+        desc: "Totalização de 100,00% das seções apuradas no Brasil e Exterior (499.248 seções). Eleito Presidente da República no 2º Turno das Eleições 2026!",
         photo: ""
       });
     } else {
       triggerVictoryCelebration({
         name: "Celina Leão",
-        cargo: "Governadora Eleita do Distrito Federal",
+        cargo: "Governadora Eleita do Distrito Federal (2º Turno)",
         partido: "PP",
         numero: "11",
-        pct: "53,64%",
-        votos: 928450,
-        cor: "#0083ca",
-        desc: "Totalização concluída nas 19 Zonas Eleitorais e 35 Regiões Administrativas do DF. Vitória no 2º Turno!",
+        pct: "57,18%",
+        votos: 987142,
+        cor: "#0284c7",
+        desc: "Totalização concluída com 100,00% das seções apuradas nas 19 Zonas Eleitorais e 35 Regiões Administrativas do DF. Celina Leão eleita Governadora!",
         photo: "/assets/celina_leao.jpg"
       });
     }

@@ -1,0 +1,1579 @@
+{
+  "1": {
+    "zona": 1,
+    "secoesTotal": 281,
+    "secoesTotalizadas": 281,
+    "eleitorado": 76197,
+    "comparecimento": 61266,
+    "abstencao": 14931,
+    "validos": 57737,
+    "brancos": 1604,
+    "nulos": 1925,
+    "candidatos": [
+      {
+        "numero": "13",
+        "nome": "LEANDRO GRASS",
+        "partido": "PT",
+        "votos": 24654,
+        "percentual": 42.7
+      },
+      {
+        "numero": "11",
+        "nome": "CELINA LEÃO",
+        "partido": "PP",
+        "votos": 22626,
+        "percentual": 39.19
+      },
+      {
+        "numero": "30",
+        "nome": "KIKO CAPUTO",
+        "partido": "NOVO",
+        "votos": 4703,
+        "percentual": 8.15
+      },
+      {
+        "numero": "45",
+        "nome": "PAULA BELMONTE",
+        "partido": "PSDB",
+        "votos": 3795,
+        "percentual": 6.57
+      },
+      {
+        "numero": "40",
+        "nome": "CAPPELLI",
+        "partido": "PSB",
+        "votos": 1626,
+        "percentual": 2.82
+      },
+      {
+        "numero": "80",
+        "nome": "PROFESSORA SAMARA MINEIRO",
+        "partido": "UP",
+        "votos": 159,
+        "percentual": 0.28
+      },
+      {
+        "numero": "16",
+        "nome": "PROFESSOR ROBSON",
+        "partido": "PSTU",
+        "votos": 59,
+        "percentual": 0.1
+      },
+      {
+        "numero": "36",
+        "nome": "ELISSON",
+        "partido": "AGIR",
+        "votos": 55,
+        "percentual": 0.1
+      },
+      {
+        "numero": "29",
+        "nome": "EXPEDITO MENDONÇA",
+        "partido": "PCO",
+        "votos": 40,
+        "percentual": 0.07
+      },
+      {
+        "numero": "28",
+        "nome": "RICO PINHEIRO",
+        "partido": "PRTB",
+        "votos": 20,
+        "percentual": 0.03
+      }
+    ]
+  },
+  "2": {
+    "zona": 2,
+    "secoesTotal": 337,
+    "secoesTotalizadas": 337,
+    "eleitorado": 119276,
+    "comparecimento": 94197,
+    "abstencao": 25079,
+    "validos": 85649,
+    "brancos": 3888,
+    "nulos": 4660,
+    "candidatos": [
+      {
+        "numero": "11",
+        "nome": "CELINA LEÃO",
+        "partido": "PP",
+        "votos": 39501,
+        "percentual": 46.12
+      },
+      {
+        "numero": "13",
+        "nome": "LEANDRO GRASS",
+        "partido": "PT",
+        "votos": 30674,
+        "percentual": 35.81
+      },
+      {
+        "numero": "45",
+        "nome": "PAULA BELMONTE",
+        "partido": "PSDB",
+        "votos": 9149,
+        "percentual": 10.68
+      },
+      {
+        "numero": "30",
+        "nome": "KIKO CAPUTO",
+        "partido": "NOVO",
+        "votos": 3886,
+        "percentual": 4.54
+      },
+      {
+        "numero": "40",
+        "nome": "CAPPELLI",
+        "partido": "PSB",
+        "votos": 1968,
+        "percentual": 2.3
+      },
+      {
+        "numero": "80",
+        "nome": "PROFESSORA SAMARA MINEIRO",
+        "partido": "UP",
+        "votos": 251,
+        "percentual": 0.29
+      },
+      {
+        "numero": "16",
+        "nome": "PROFESSOR ROBSON",
+        "partido": "PSTU",
+        "votos": 100,
+        "percentual": 0.12
+      },
+      {
+        "numero": "36",
+        "nome": "ELISSON",
+        "partido": "AGIR",
+        "votos": 47,
+        "percentual": 0.05
+      },
+      {
+        "numero": "28",
+        "nome": "RICO PINHEIRO",
+        "partido": "PRTB",
+        "votos": 40,
+        "percentual": 0.05
+      },
+      {
+        "numero": "29",
+        "nome": "EXPEDITO MENDONÇA",
+        "partido": "PCO",
+        "votos": 33,
+        "percentual": 0.04
+      }
+    ]
+  },
+  "3": {
+    "zona": 3,
+    "secoesTotal": 235,
+    "secoesTotalizadas": 235,
+    "eleitorado": 69677,
+    "comparecimento": 57419,
+    "abstencao": 12258,
+    "validos": 52059,
+    "brancos": 2360,
+    "nulos": 3000,
+    "candidatos": [
+      {
+        "numero": "11",
+        "nome": "CELINA LEÃO",
+        "partido": "PP",
+        "votos": 27366,
+        "percentual": 52.57
+      },
+      {
+        "numero": "13",
+        "nome": "LEANDRO GRASS",
+        "partido": "PT",
+        "votos": 16864,
+        "percentual": 32.39
+      },
+      {
+        "numero": "45",
+        "nome": "PAULA BELMONTE",
+        "partido": "PSDB",
+        "votos": 4566,
+        "percentual": 8.77
+      },
+      {
+        "numero": "30",
+        "nome": "KIKO CAPUTO",
+        "partido": "NOVO",
+        "votos": 1852,
+        "percentual": 3.56
+      },
+      {
+        "numero": "40",
+        "nome": "CAPPELLI",
+        "partido": "PSB",
+        "votos": 1166,
+        "percentual": 2.24
+      },
+      {
+        "numero": "80",
+        "nome": "PROFESSORA SAMARA MINEIRO",
+        "partido": "UP",
+        "votos": 129,
+        "percentual": 0.25
+      },
+      {
+        "numero": "36",
+        "nome": "ELISSON",
+        "partido": "AGIR",
+        "votos": 48,
+        "percentual": 0.09
+      },
+      {
+        "numero": "16",
+        "nome": "PROFESSOR ROBSON",
+        "partido": "PSTU",
+        "votos": 33,
+        "percentual": 0.06
+      },
+      {
+        "numero": "29",
+        "nome": "EXPEDITO MENDONÇA",
+        "partido": "PCO",
+        "votos": 19,
+        "percentual": 0.04
+      },
+      {
+        "numero": "28",
+        "nome": "RICO PINHEIRO",
+        "partido": "PRTB",
+        "votos": 16,
+        "percentual": 0.03
+      }
+    ]
+  },
+  "4": {
+    "zona": 4,
+    "secoesTotal": 294,
+    "secoesTotalizadas": 294,
+    "eleitorado": 101524,
+    "comparecimento": 80822,
+    "abstencao": 20702,
+    "validos": 71192,
+    "brancos": 4684,
+    "nulos": 4946,
+    "candidatos": [
+      {
+        "numero": "11",
+        "nome": "CELINA LEÃO",
+        "partido": "PP",
+        "votos": 36860,
+        "percentual": 51.78
+      },
+      {
+        "numero": "13",
+        "nome": "LEANDRO GRASS",
+        "partido": "PT",
+        "votos": 22850,
+        "percentual": 32.1
+      },
+      {
+        "numero": "45",
+        "nome": "PAULA BELMONTE",
+        "partido": "PSDB",
+        "votos": 6873,
+        "percentual": 9.65
+      },
+      {
+        "numero": "30",
+        "nome": "KIKO CAPUTO",
+        "partido": "NOVO",
+        "votos": 2474,
+        "percentual": 3.48
+      },
+      {
+        "numero": "40",
+        "nome": "CAPPELLI",
+        "partido": "PSB",
+        "votos": 1792,
+        "percentual": 2.52
+      },
+      {
+        "numero": "80",
+        "nome": "PROFESSORA SAMARA MINEIRO",
+        "partido": "UP",
+        "votos": 156,
+        "percentual": 0.22
+      },
+      {
+        "numero": "16",
+        "nome": "PROFESSOR ROBSON",
+        "partido": "PSTU",
+        "votos": 85,
+        "percentual": 0.12
+      },
+      {
+        "numero": "36",
+        "nome": "ELISSON",
+        "partido": "AGIR",
+        "votos": 43,
+        "percentual": 0.06
+      },
+      {
+        "numero": "28",
+        "nome": "RICO PINHEIRO",
+        "partido": "PRTB",
+        "votos": 37,
+        "percentual": 0.05
+      },
+      {
+        "numero": "29",
+        "nome": "EXPEDITO MENDONÇA",
+        "partido": "PCO",
+        "votos": 22,
+        "percentual": 0.03
+      }
+    ]
+  },
+  "5": {
+    "zona": 5,
+    "secoesTotal": 419,
+    "secoesTotalizadas": 419,
+    "eleitorado": 132863,
+    "comparecimento": 107740,
+    "abstencao": 25123,
+    "validos": 98429,
+    "brancos": 4083,
+    "nulos": 5228,
+    "candidatos": [
+      {
+        "numero": "11",
+        "nome": "CELINA LEÃO",
+        "partido": "PP",
+        "votos": 49742,
+        "percentual": 50.54
+      },
+      {
+        "numero": "13",
+        "nome": "LEANDRO GRASS",
+        "partido": "PT",
+        "votos": 34380,
+        "percentual": 34.93
+      },
+      {
+        "numero": "45",
+        "nome": "PAULA BELMONTE",
+        "partido": "PSDB",
+        "votos": 8177,
+        "percentual": 8.31
+      },
+      {
+        "numero": "30",
+        "nome": "KIKO CAPUTO",
+        "partido": "NOVO",
+        "votos": 3413,
+        "percentual": 3.47
+      },
+      {
+        "numero": "40",
+        "nome": "CAPPELLI",
+        "partido": "PSB",
+        "votos": 2136,
+        "percentual": 2.17
+      },
+      {
+        "numero": "80",
+        "nome": "PROFESSORA SAMARA MINEIRO",
+        "partido": "UP",
+        "votos": 312,
+        "percentual": 0.32
+      },
+      {
+        "numero": "16",
+        "nome": "PROFESSOR ROBSON",
+        "partido": "PSTU",
+        "votos": 89,
+        "percentual": 0.09
+      },
+      {
+        "numero": "28",
+        "nome": "RICO PINHEIRO",
+        "partido": "PRTB",
+        "votos": 79,
+        "percentual": 0.08
+      },
+      {
+        "numero": "36",
+        "nome": "ELISSON",
+        "partido": "AGIR",
+        "votos": 72,
+        "percentual": 0.07
+      },
+      {
+        "numero": "29",
+        "nome": "EXPEDITO MENDONÇA",
+        "partido": "PCO",
+        "votos": 29,
+        "percentual": 0.03
+      }
+    ]
+  },
+  "6": {
+    "zona": 6,
+    "secoesTotal": 425,
+    "secoesTotalizadas": 425,
+    "eleitorado": 136925,
+    "comparecimento": 109744,
+    "abstencao": 27181,
+    "validos": 98162,
+    "brancos": 5178,
+    "nulos": 6404,
+    "candidatos": [
+      {
+        "numero": "11",
+        "nome": "CELINA LEÃO",
+        "partido": "PP",
+        "votos": 50485,
+        "percentual": 51.43
+      },
+      {
+        "numero": "13",
+        "nome": "LEANDRO GRASS",
+        "partido": "PT",
+        "votos": 33739,
+        "percentual": 34.37
+      },
+      {
+        "numero": "45",
+        "nome": "PAULA BELMONTE",
+        "partido": "PSDB",
+        "votos": 8748,
+        "percentual": 8.91
+      },
+      {
+        "numero": "30",
+        "nome": "KIKO CAPUTO",
+        "partido": "NOVO",
+        "votos": 2682,
+        "percentual": 2.73
+      },
+      {
+        "numero": "40",
+        "nome": "CAPPELLI",
+        "partido": "PSB",
+        "votos": 2125,
+        "percentual": 2.16
+      },
+      {
+        "numero": "80",
+        "nome": "PROFESSORA SAMARA MINEIRO",
+        "partido": "UP",
+        "votos": 181,
+        "percentual": 0.18
+      },
+      {
+        "numero": "16",
+        "nome": "PROFESSOR ROBSON",
+        "partido": "PSTU",
+        "votos": 81,
+        "percentual": 0.08
+      },
+      {
+        "numero": "28",
+        "nome": "RICO PINHEIRO",
+        "partido": "PRTB",
+        "votos": 54,
+        "percentual": 0.06
+      },
+      {
+        "numero": "36",
+        "nome": "ELISSON",
+        "partido": "AGIR",
+        "votos": 37,
+        "percentual": 0.04
+      },
+      {
+        "numero": "29",
+        "nome": "EXPEDITO MENDONÇA",
+        "partido": "PCO",
+        "votos": 30,
+        "percentual": 0.03
+      }
+    ]
+  },
+  "8": {
+    "zona": 8,
+    "secoesTotal": 454,
+    "secoesTotalizadas": 454,
+    "eleitorado": 136259,
+    "comparecimento": 109507,
+    "abstencao": 26752,
+    "validos": 98143,
+    "brancos": 5129,
+    "nulos": 6235,
+    "candidatos": [
+      {
+        "numero": "11",
+        "nome": "CELINA LEÃO",
+        "partido": "PP",
+        "votos": 51711,
+        "percentual": 52.69
+      },
+      {
+        "numero": "13",
+        "nome": "LEANDRO GRASS",
+        "partido": "PT",
+        "votos": 32565,
+        "percentual": 33.18
+      },
+      {
+        "numero": "45",
+        "nome": "PAULA BELMONTE",
+        "partido": "PSDB",
+        "votos": 8699,
+        "percentual": 8.86
+      },
+      {
+        "numero": "30",
+        "nome": "KIKO CAPUTO",
+        "partido": "NOVO",
+        "votos": 2798,
+        "percentual": 2.85
+      },
+      {
+        "numero": "40",
+        "nome": "CAPPELLI",
+        "partido": "PSB",
+        "votos": 1923,
+        "percentual": 1.96
+      },
+      {
+        "numero": "80",
+        "nome": "PROFESSORA SAMARA MINEIRO",
+        "partido": "UP",
+        "votos": 169,
+        "percentual": 0.17
+      },
+      {
+        "numero": "16",
+        "nome": "PROFESSOR ROBSON",
+        "partido": "PSTU",
+        "votos": 107,
+        "percentual": 0.11
+      },
+      {
+        "numero": "36",
+        "nome": "ELISSON",
+        "partido": "AGIR",
+        "votos": 100,
+        "percentual": 0.1
+      },
+      {
+        "numero": "29",
+        "nome": "EXPEDITO MENDONÇA",
+        "partido": "PCO",
+        "votos": 36,
+        "percentual": 0.04
+      },
+      {
+        "numero": "28",
+        "nome": "RICO PINHEIRO",
+        "partido": "PRTB",
+        "votos": 35,
+        "percentual": 0.04
+      }
+    ]
+  },
+  "9": {
+    "zona": 9,
+    "secoesTotal": 443,
+    "secoesTotalizadas": 443,
+    "eleitorado": 134059,
+    "comparecimento": 108847,
+    "abstencao": 25212,
+    "validos": 99968,
+    "brancos": 3889,
+    "nulos": 4990,
+    "candidatos": [
+      {
+        "numero": "11",
+        "nome": "CELINA LEÃO",
+        "partido": "PP",
+        "votos": 47927,
+        "percentual": 47.94
+      },
+      {
+        "numero": "13",
+        "nome": "LEANDRO GRASS",
+        "partido": "PT",
+        "votos": 36309,
+        "percentual": 36.32
+      },
+      {
+        "numero": "45",
+        "nome": "PAULA BELMONTE",
+        "partido": "PSDB",
+        "votos": 7854,
+        "percentual": 7.86
+      },
+      {
+        "numero": "30",
+        "nome": "KIKO CAPUTO",
+        "partido": "NOVO",
+        "votos": 5031,
+        "percentual": 5.03
+      },
+      {
+        "numero": "40",
+        "nome": "CAPPELLI",
+        "partido": "PSB",
+        "votos": 2233,
+        "percentual": 2.23
+      },
+      {
+        "numero": "80",
+        "nome": "PROFESSORA SAMARA MINEIRO",
+        "partido": "UP",
+        "votos": 327,
+        "percentual": 0.33
+      },
+      {
+        "numero": "16",
+        "nome": "PROFESSOR ROBSON",
+        "partido": "PSTU",
+        "votos": 106,
+        "percentual": 0.11
+      },
+      {
+        "numero": "36",
+        "nome": "ELISSON",
+        "partido": "AGIR",
+        "votos": 106,
+        "percentual": 0.11
+      },
+      {
+        "numero": "28",
+        "nome": "RICO PINHEIRO",
+        "partido": "PRTB",
+        "votos": 40,
+        "percentual": 0.04
+      },
+      {
+        "numero": "29",
+        "nome": "EXPEDITO MENDONÇA",
+        "partido": "PCO",
+        "votos": 35,
+        "percentual": 0.04
+      }
+    ]
+  },
+  "10": {
+    "zona": 10,
+    "secoesTotal": 349,
+    "secoesTotalizadas": 349,
+    "eleitorado": 123034,
+    "comparecimento": 100109,
+    "abstencao": 22925,
+    "validos": 91357,
+    "brancos": 3905,
+    "nulos": 4847,
+    "candidatos": [
+      {
+        "numero": "11",
+        "nome": "CELINA LEÃO",
+        "partido": "PP",
+        "votos": 48301,
+        "percentual": 52.87
+      },
+      {
+        "numero": "13",
+        "nome": "LEANDRO GRASS",
+        "partido": "PT",
+        "votos": 28855,
+        "percentual": 31.58
+      },
+      {
+        "numero": "45",
+        "nome": "PAULA BELMONTE",
+        "partido": "PSDB",
+        "votos": 7729,
+        "percentual": 8.46
+      },
+      {
+        "numero": "30",
+        "nome": "KIKO CAPUTO",
+        "partido": "NOVO",
+        "votos": 4235,
+        "percentual": 4.64
+      },
+      {
+        "numero": "40",
+        "nome": "CAPPELLI",
+        "partido": "PSB",
+        "votos": 1815,
+        "percentual": 1.99
+      },
+      {
+        "numero": "80",
+        "nome": "PROFESSORA SAMARA MINEIRO",
+        "partido": "UP",
+        "votos": 195,
+        "percentual": 0.21
+      },
+      {
+        "numero": "16",
+        "nome": "PROFESSOR ROBSON",
+        "partido": "PSTU",
+        "votos": 87,
+        "percentual": 0.1
+      },
+      {
+        "numero": "36",
+        "nome": "ELISSON",
+        "partido": "AGIR",
+        "votos": 71,
+        "percentual": 0.08
+      },
+      {
+        "numero": "28",
+        "nome": "RICO PINHEIRO",
+        "partido": "PRTB",
+        "votos": 42,
+        "percentual": 0.05
+      },
+      {
+        "numero": "29",
+        "nome": "EXPEDITO MENDONÇA",
+        "partido": "PCO",
+        "votos": 27,
+        "percentual": 0.03
+      }
+    ]
+  },
+  "11": {
+    "zona": 11,
+    "secoesTotal": 249,
+    "secoesTotalizadas": 249,
+    "eleitorado": 75563,
+    "comparecimento": 62721,
+    "abstencao": 12842,
+    "validos": 58739,
+    "brancos": 1831,
+    "nulos": 2151,
+    "candidatos": [
+      {
+        "numero": "11",
+        "nome": "CELINA LEÃO",
+        "partido": "PP",
+        "votos": 25764,
+        "percentual": 43.86
+      },
+      {
+        "numero": "13",
+        "nome": "LEANDRO GRASS",
+        "partido": "PT",
+        "votos": 22818,
+        "percentual": 38.85
+      },
+      {
+        "numero": "30",
+        "nome": "KIKO CAPUTO",
+        "partido": "NOVO",
+        "votos": 4158,
+        "percentual": 7.08
+      },
+      {
+        "numero": "45",
+        "nome": "PAULA BELMONTE",
+        "partido": "PSDB",
+        "votos": 4155,
+        "percentual": 7.07
+      },
+      {
+        "numero": "40",
+        "nome": "CAPPELLI",
+        "partido": "PSB",
+        "votos": 1569,
+        "percentual": 2.67
+      },
+      {
+        "numero": "80",
+        "nome": "PROFESSORA SAMARA MINEIRO",
+        "partido": "UP",
+        "votos": 132,
+        "percentual": 0.22
+      },
+      {
+        "numero": "36",
+        "nome": "ELISSON",
+        "partido": "AGIR",
+        "votos": 61,
+        "percentual": 0.1
+      },
+      {
+        "numero": "16",
+        "nome": "PROFESSOR ROBSON",
+        "partido": "PSTU",
+        "votos": 45,
+        "percentual": 0.08
+      },
+      {
+        "numero": "29",
+        "nome": "EXPEDITO MENDONÇA",
+        "partido": "PCO",
+        "votos": 24,
+        "percentual": 0.04
+      },
+      {
+        "numero": "28",
+        "nome": "RICO PINHEIRO",
+        "partido": "PRTB",
+        "votos": 13,
+        "percentual": 0.02
+      }
+    ]
+  },
+  "13": {
+    "zona": 13,
+    "secoesTotal": 417,
+    "secoesTotalizadas": 417,
+    "eleitorado": 140843,
+    "comparecimento": 114288,
+    "abstencao": 26555,
+    "validos": 101902,
+    "brancos": 5597,
+    "nulos": 6789,
+    "candidatos": [
+      {
+        "numero": "11",
+        "nome": "CELINA LEÃO",
+        "partido": "PP",
+        "votos": 56458,
+        "percentual": 55.4
+      },
+      {
+        "numero": "13",
+        "nome": "LEANDRO GRASS",
+        "partido": "PT",
+        "votos": 29912,
+        "percentual": 29.35
+      },
+      {
+        "numero": "45",
+        "nome": "PAULA BELMONTE",
+        "partido": "PSDB",
+        "votos": 9401,
+        "percentual": 9.23
+      },
+      {
+        "numero": "30",
+        "nome": "KIKO CAPUTO",
+        "partido": "NOVO",
+        "votos": 3473,
+        "percentual": 3.41
+      },
+      {
+        "numero": "40",
+        "nome": "CAPPELLI",
+        "partido": "PSB",
+        "votos": 2164,
+        "percentual": 2.12
+      },
+      {
+        "numero": "80",
+        "nome": "PROFESSORA SAMARA MINEIRO",
+        "partido": "UP",
+        "votos": 231,
+        "percentual": 0.23
+      },
+      {
+        "numero": "16",
+        "nome": "PROFESSOR ROBSON",
+        "partido": "PSTU",
+        "votos": 117,
+        "percentual": 0.11
+      },
+      {
+        "numero": "36",
+        "nome": "ELISSON",
+        "partido": "AGIR",
+        "votos": 71,
+        "percentual": 0.07
+      },
+      {
+        "numero": "28",
+        "nome": "RICO PINHEIRO",
+        "partido": "PRTB",
+        "votos": 46,
+        "percentual": 0.05
+      },
+      {
+        "numero": "29",
+        "nome": "EXPEDITO MENDONÇA",
+        "partido": "PCO",
+        "votos": 29,
+        "percentual": 0.03
+      }
+    ]
+  },
+  "14": {
+    "zona": 14,
+    "secoesTotal": 334,
+    "secoesTotalizadas": 334,
+    "eleitorado": 110413,
+    "comparecimento": 90487,
+    "abstencao": 19926,
+    "validos": 85401,
+    "brancos": 2405,
+    "nulos": 2681,
+    "candidatos": [
+      {
+        "numero": "13",
+        "nome": "LEANDRO GRASS",
+        "partido": "PT",
+        "votos": 39885,
+        "percentual": 46.7
+      },
+      {
+        "numero": "11",
+        "nome": "CELINA LEÃO",
+        "partido": "PP",
+        "votos": 31376,
+        "percentual": 36.74
+      },
+      {
+        "numero": "30",
+        "nome": "KIKO CAPUTO",
+        "partido": "NOVO",
+        "votos": 5599,
+        "percentual": 6.56
+      },
+      {
+        "numero": "45",
+        "nome": "PAULA BELMONTE",
+        "partido": "PSDB",
+        "votos": 5531,
+        "percentual": 6.48
+      },
+      {
+        "numero": "40",
+        "nome": "CAPPELLI",
+        "partido": "PSB",
+        "votos": 2452,
+        "percentual": 2.87
+      },
+      {
+        "numero": "80",
+        "nome": "PROFESSORA SAMARA MINEIRO",
+        "partido": "UP",
+        "votos": 309,
+        "percentual": 0.36
+      },
+      {
+        "numero": "16",
+        "nome": "PROFESSOR ROBSON",
+        "partido": "PSTU",
+        "votos": 94,
+        "percentual": 0.11
+      },
+      {
+        "numero": "29",
+        "nome": "EXPEDITO MENDONÇA",
+        "partido": "PCO",
+        "votos": 66,
+        "percentual": 0.08
+      },
+      {
+        "numero": "36",
+        "nome": "ELISSON",
+        "partido": "AGIR",
+        "votos": 64,
+        "percentual": 0.07
+      },
+      {
+        "numero": "28",
+        "nome": "RICO PINHEIRO",
+        "partido": "PRTB",
+        "votos": 25,
+        "percentual": 0.03
+      }
+    ]
+  },
+  "15": {
+    "zona": 15,
+    "secoesTotal": 514,
+    "secoesTotalizadas": 514,
+    "eleitorado": 168248,
+    "comparecimento": 139219,
+    "abstencao": 29029,
+    "validos": 129338,
+    "brancos": 4463,
+    "nulos": 5418,
+    "candidatos": [
+      {
+        "numero": "11",
+        "nome": "CELINA LEÃO",
+        "partido": "PP",
+        "votos": 62390,
+        "percentual": 48.24
+      },
+      {
+        "numero": "13",
+        "nome": "LEANDRO GRASS",
+        "partido": "PT",
+        "votos": 45991,
+        "percentual": 35.56
+      },
+      {
+        "numero": "45",
+        "nome": "PAULA BELMONTE",
+        "partido": "PSDB",
+        "votos": 10126,
+        "percentual": 7.83
+      },
+      {
+        "numero": "30",
+        "nome": "KIKO CAPUTO",
+        "partido": "NOVO",
+        "votos": 7531,
+        "percentual": 5.82
+      },
+      {
+        "numero": "40",
+        "nome": "CAPPELLI",
+        "partido": "PSB",
+        "votos": 2682,
+        "percentual": 2.07
+      },
+      {
+        "numero": "80",
+        "nome": "PROFESSORA SAMARA MINEIRO",
+        "partido": "UP",
+        "votos": 305,
+        "percentual": 0.24
+      },
+      {
+        "numero": "16",
+        "nome": "PROFESSOR ROBSON",
+        "partido": "PSTU",
+        "votos": 116,
+        "percentual": 0.09
+      },
+      {
+        "numero": "36",
+        "nome": "ELISSON",
+        "partido": "AGIR",
+        "votos": 90,
+        "percentual": 0.07
+      },
+      {
+        "numero": "28",
+        "nome": "RICO PINHEIRO",
+        "partido": "PRTB",
+        "votos": 57,
+        "percentual": 0.04
+      },
+      {
+        "numero": "29",
+        "nome": "EXPEDITO MENDONÇA",
+        "partido": "PCO",
+        "votos": 50,
+        "percentual": 0.04
+      }
+    ]
+  },
+  "16": {
+    "zona": 16,
+    "secoesTotal": 479,
+    "secoesTotalizadas": 479,
+    "eleitorado": 153471,
+    "comparecimento": 123126,
+    "abstencao": 30345,
+    "validos": 109725,
+    "brancos": 6039,
+    "nulos": 7362,
+    "candidatos": [
+      {
+        "numero": "11",
+        "nome": "CELINA LEÃO",
+        "partido": "PP",
+        "votos": 60518,
+        "percentual": 55.15
+      },
+      {
+        "numero": "13",
+        "nome": "LEANDRO GRASS",
+        "partido": "PT",
+        "votos": 33304,
+        "percentual": 30.35
+      },
+      {
+        "numero": "45",
+        "nome": "PAULA BELMONTE",
+        "partido": "PSDB",
+        "votos": 10020,
+        "percentual": 9.13
+      },
+      {
+        "numero": "30",
+        "nome": "KIKO CAPUTO",
+        "partido": "NOVO",
+        "votos": 2987,
+        "percentual": 2.72
+      },
+      {
+        "numero": "40",
+        "nome": "CAPPELLI",
+        "partido": "PSB",
+        "votos": 2483,
+        "percentual": 2.26
+      },
+      {
+        "numero": "80",
+        "nome": "PROFESSORA SAMARA MINEIRO",
+        "partido": "UP",
+        "votos": 197,
+        "percentual": 0.18
+      },
+      {
+        "numero": "16",
+        "nome": "PROFESSOR ROBSON",
+        "partido": "PSTU",
+        "votos": 113,
+        "percentual": 0.1
+      },
+      {
+        "numero": "36",
+        "nome": "ELISSON",
+        "partido": "AGIR",
+        "votos": 52,
+        "percentual": 0.05
+      },
+      {
+        "numero": "29",
+        "nome": "EXPEDITO MENDONÇA",
+        "partido": "PCO",
+        "votos": 27,
+        "percentual": 0.02
+      },
+      {
+        "numero": "28",
+        "nome": "RICO PINHEIRO",
+        "partido": "PRTB",
+        "votos": 24,
+        "percentual": 0.02
+      }
+    ]
+  },
+  "17": {
+    "zona": 17,
+    "secoesTotal": 396,
+    "secoesTotalizadas": 396,
+    "eleitorado": 128113,
+    "comparecimento": 103698,
+    "abstencao": 24415,
+    "validos": 93216,
+    "brancos": 4769,
+    "nulos": 5713,
+    "candidatos": [
+      {
+        "numero": "11",
+        "nome": "CELINA LEÃO",
+        "partido": "PP",
+        "votos": 46363,
+        "percentual": 49.74
+      },
+      {
+        "numero": "13",
+        "nome": "LEANDRO GRASS",
+        "partido": "PT",
+        "votos": 32499,
+        "percentual": 34.86
+      },
+      {
+        "numero": "45",
+        "nome": "PAULA BELMONTE",
+        "partido": "PSDB",
+        "votos": 8884,
+        "percentual": 9.53
+      },
+      {
+        "numero": "30",
+        "nome": "KIKO CAPUTO",
+        "partido": "NOVO",
+        "votos": 3044,
+        "percentual": 3.27
+      },
+      {
+        "numero": "40",
+        "nome": "CAPPELLI",
+        "partido": "PSB",
+        "votos": 1983,
+        "percentual": 2.13
+      },
+      {
+        "numero": "80",
+        "nome": "PROFESSORA SAMARA MINEIRO",
+        "partido": "UP",
+        "votos": 209,
+        "percentual": 0.22
+      },
+      {
+        "numero": "16",
+        "nome": "PROFESSOR ROBSON",
+        "partido": "PSTU",
+        "votos": 92,
+        "percentual": 0.1
+      },
+      {
+        "numero": "36",
+        "nome": "ELISSON",
+        "partido": "AGIR",
+        "votos": 66,
+        "percentual": 0.07
+      },
+      {
+        "numero": "29",
+        "nome": "EXPEDITO MENDONÇA",
+        "partido": "PCO",
+        "votos": 43,
+        "percentual": 0.05
+      },
+      {
+        "numero": "28",
+        "nome": "RICO PINHEIRO",
+        "partido": "PRTB",
+        "votos": 33,
+        "percentual": 0.04
+      }
+    ]
+  },
+  "18": {
+    "zona": 18,
+    "secoesTotal": 431,
+    "secoesTotalizadas": 431,
+    "eleitorado": 134325,
+    "comparecimento": 108766,
+    "abstencao": 25559,
+    "validos": 99725,
+    "brancos": 4264,
+    "nulos": 4777,
+    "candidatos": [
+      {
+        "numero": "11",
+        "nome": "CELINA LEÃO",
+        "partido": "PP",
+        "votos": 48818,
+        "percentual": 48.95
+      },
+      {
+        "numero": "13",
+        "nome": "LEANDRO GRASS",
+        "partido": "PT",
+        "votos": 35332,
+        "percentual": 35.43
+      },
+      {
+        "numero": "45",
+        "nome": "PAULA BELMONTE",
+        "partido": "PSDB",
+        "votos": 6997,
+        "percentual": 7.02
+      },
+      {
+        "numero": "30",
+        "nome": "KIKO CAPUTO",
+        "partido": "NOVO",
+        "votos": 6266,
+        "percentual": 6.28
+      },
+      {
+        "numero": "40",
+        "nome": "CAPPELLI",
+        "partido": "PSB",
+        "votos": 1862,
+        "percentual": 1.87
+      },
+      {
+        "numero": "80",
+        "nome": "PROFESSORA SAMARA MINEIRO",
+        "partido": "UP",
+        "votos": 220,
+        "percentual": 0.22
+      },
+      {
+        "numero": "16",
+        "nome": "PROFESSOR ROBSON",
+        "partido": "PSTU",
+        "votos": 103,
+        "percentual": 0.1
+      },
+      {
+        "numero": "36",
+        "nome": "ELISSON",
+        "partido": "AGIR",
+        "votos": 58,
+        "percentual": 0.06
+      },
+      {
+        "numero": "28",
+        "nome": "RICO PINHEIRO",
+        "partido": "PRTB",
+        "votos": 39,
+        "percentual": 0.04
+      },
+      {
+        "numero": "29",
+        "nome": "EXPEDITO MENDONÇA",
+        "partido": "PCO",
+        "votos": 30,
+        "percentual": 0.03
+      }
+    ]
+  },
+  "19": {
+    "zona": 19,
+    "secoesTotal": 347,
+    "secoesTotalizadas": 347,
+    "eleitorado": 110085,
+    "comparecimento": 90584,
+    "abstencao": 19501,
+    "validos": 83573,
+    "brancos": 3133,
+    "nulos": 3878,
+    "candidatos": [
+      {
+        "numero": "11",
+        "nome": "CELINA LEÃO",
+        "partido": "PP",
+        "votos": 44637,
+        "percentual": 53.41
+      },
+      {
+        "numero": "13",
+        "nome": "LEANDRO GRASS",
+        "partido": "PT",
+        "votos": 26076,
+        "percentual": 31.2
+      },
+      {
+        "numero": "45",
+        "nome": "PAULA BELMONTE",
+        "partido": "PSDB",
+        "votos": 6919,
+        "percentual": 8.28
+      },
+      {
+        "numero": "30",
+        "nome": "KIKO CAPUTO",
+        "partido": "NOVO",
+        "votos": 3896,
+        "percentual": 4.66
+      },
+      {
+        "numero": "40",
+        "nome": "CAPPELLI",
+        "partido": "PSB",
+        "votos": 1694,
+        "percentual": 2.03
+      },
+      {
+        "numero": "80",
+        "nome": "PROFESSORA SAMARA MINEIRO",
+        "partido": "UP",
+        "votos": 168,
+        "percentual": 0.2
+      },
+      {
+        "numero": "16",
+        "nome": "PROFESSOR ROBSON",
+        "partido": "PSTU",
+        "votos": 72,
+        "percentual": 0.09
+      },
+      {
+        "numero": "36",
+        "nome": "ELISSON",
+        "partido": "AGIR",
+        "votos": 67,
+        "percentual": 0.08
+      },
+      {
+        "numero": "29",
+        "nome": "EXPEDITO MENDONÇA",
+        "partido": "PCO",
+        "votos": 22,
+        "percentual": 0.03
+      },
+      {
+        "numero": "28",
+        "nome": "RICO PINHEIRO",
+        "partido": "PRTB",
+        "votos": 22,
+        "percentual": 0.03
+      }
+    ]
+  },
+  "20": {
+    "zona": 20,
+    "secoesTotal": 231,
+    "secoesTotalizadas": 231,
+    "eleitorado": 79007,
+    "comparecimento": 64419,
+    "abstencao": 14588,
+    "validos": 57908,
+    "brancos": 2962,
+    "nulos": 3549,
+    "candidatos": [
+      {
+        "numero": "11",
+        "nome": "CELINA LEÃO",
+        "partido": "PP",
+        "votos": 30525,
+        "percentual": 52.71
+      },
+      {
+        "numero": "13",
+        "nome": "LEANDRO GRASS",
+        "partido": "PT",
+        "votos": 18957,
+        "percentual": 32.74
+      },
+      {
+        "numero": "45",
+        "nome": "PAULA BELMONTE",
+        "partido": "PSDB",
+        "votos": 5155,
+        "percentual": 8.9
+      },
+      {
+        "numero": "30",
+        "nome": "KIKO CAPUTO",
+        "partido": "NOVO",
+        "votos": 1691,
+        "percentual": 2.92
+      },
+      {
+        "numero": "40",
+        "nome": "CAPPELLI",
+        "partido": "PSB",
+        "votos": 1337,
+        "percentual": 2.31
+      },
+      {
+        "numero": "80",
+        "nome": "PROFESSORA SAMARA MINEIRO",
+        "partido": "UP",
+        "votos": 122,
+        "percentual": 0.21
+      },
+      {
+        "numero": "16",
+        "nome": "PROFESSOR ROBSON",
+        "partido": "PSTU",
+        "votos": 60,
+        "percentual": 0.1
+      },
+      {
+        "numero": "36",
+        "nome": "ELISSON",
+        "partido": "AGIR",
+        "votos": 25,
+        "percentual": 0.04
+      },
+      {
+        "numero": "28",
+        "nome": "RICO PINHEIRO",
+        "partido": "PRTB",
+        "votos": 22,
+        "percentual": 0.04
+      },
+      {
+        "numero": "29",
+        "nome": "EXPEDITO MENDONÇA",
+        "partido": "PCO",
+        "votos": 14,
+        "percentual": 0.02
+      }
+    ]
+  },
+  "21": {
+    "zona": 21,
+    "secoesTotal": 334,
+    "secoesTotalizadas": 334,
+    "eleitorado": 114106,
+    "comparecimento": 90962,
+    "abstencao": 23144,
+    "validos": 81014,
+    "brancos": 4591,
+    "nulos": 5357,
+    "candidatos": [
+      {
+        "numero": "11",
+        "nome": "CELINA LEÃO",
+        "partido": "PP",
+        "votos": 44162,
+        "percentual": 54.51
+      },
+      {
+        "numero": "13",
+        "nome": "LEANDRO GRASS",
+        "partido": "PT",
+        "votos": 24266,
+        "percentual": 29.95
+      },
+      {
+        "numero": "45",
+        "nome": "PAULA BELMONTE",
+        "partido": "PSDB",
+        "votos": 7987,
+        "percentual": 9.86
+      },
+      {
+        "numero": "30",
+        "nome": "KIKO CAPUTO",
+        "partido": "NOVO",
+        "votos": 2429,
+        "percentual": 3
+      },
+      {
+        "numero": "40",
+        "nome": "CAPPELLI",
+        "partido": "PSB",
+        "votos": 1818,
+        "percentual": 2.24
+      },
+      {
+        "numero": "80",
+        "nome": "PROFESSORA SAMARA MINEIRO",
+        "partido": "UP",
+        "votos": 186,
+        "percentual": 0.23
+      },
+      {
+        "numero": "16",
+        "nome": "PROFESSOR ROBSON",
+        "partido": "PSTU",
+        "votos": 81,
+        "percentual": 0.1
+      },
+      {
+        "numero": "36",
+        "nome": "ELISSON",
+        "partido": "AGIR",
+        "votos": 39,
+        "percentual": 0.05
+      },
+      {
+        "numero": "28",
+        "nome": "RICO PINHEIRO",
+        "partido": "PRTB",
+        "votos": 27,
+        "percentual": 0.03
+      },
+      {
+        "numero": "29",
+        "nome": "EXPEDITO MENDONÇA",
+        "partido": "PCO",
+        "votos": 19,
+        "percentual": 0.02
+      }
+    ]
+  }
+}

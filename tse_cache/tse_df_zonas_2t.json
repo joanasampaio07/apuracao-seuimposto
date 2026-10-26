@@ -1,0 +1,648 @@
+{
+  "1": {
+    "zona": 1,
+    "secoes": 281,
+    "totalizadas": 281,
+    "eleitorado": 76185,
+    "comparecimento": 62319,
+    "brancos": 1634,
+    "nulos": 2048,
+    "validos": 58637,
+    "gov": {
+      "11": {
+        "nome": "CELINA LEAO HIZIM FERREIRA",
+        "votos": 29280,
+        "pct": "49,93"
+      },
+      "13": {
+        "nome": "LEANDRO ANTÔNIO GRASS PEIXOTO",
+        "votos": 29357,
+        "pct": "50,07"
+      }
+    },
+    "pres": {
+      "13": {
+        "nome": "LUIZ INÁCIO LULA DA SILVA",
+        "votos": 32714,
+        "pct": "52,36"
+      },
+      "22": {
+        "nome": "FLAVIO NANTES BOLSONARO",
+        "votos": 29764,
+        "pct": "47,64"
+      }
+    }
+  },
+  "2": {
+    "zona": 2,
+    "secoes": 337,
+    "totalizadas": 337,
+    "eleitorado": 119274,
+    "comparecimento": 96847,
+    "brancos": 2922,
+    "nulos": 3647,
+    "validos": 90278,
+    "gov": {
+      "11": {
+        "nome": "CELINA LEAO HIZIM FERREIRA",
+        "votos": 48395,
+        "pct": "53,61"
+      },
+      "13": {
+        "nome": "LEANDRO ANTÔNIO GRASS PEIXOTO",
+        "votos": 41883,
+        "pct": "46,39"
+      }
+    },
+    "pres": {
+      "13": {
+        "nome": "LUIZ INÁCIO LULA DA SILVA",
+        "votos": 45830,
+        "pct": "48,73"
+      },
+      "22": {
+        "nome": "FLAVIO NANTES BOLSONARO",
+        "votos": 48227,
+        "pct": "51,27"
+      }
+    }
+  },
+  "3": {
+    "zona": 3,
+    "secoes": 235,
+    "totalizadas": 235,
+    "eleitorado": 69674,
+    "comparecimento": 58417,
+    "brancos": 1633,
+    "nulos": 2303,
+    "validos": 54481,
+    "gov": {
+      "11": {
+        "nome": "CELINA LEAO HIZIM FERREIRA",
+        "votos": 32582,
+        "pct": "59,80"
+      },
+      "13": {
+        "nome": "LEANDRO ANTÔNIO GRASS PEIXOTO",
+        "votos": 21899,
+        "pct": "40,20"
+      }
+    },
+    "pres": {
+      "13": {
+        "nome": "LUIZ INÁCIO LULA DA SILVA",
+        "votos": 24119,
+        "pct": "42,67"
+      },
+      "22": {
+        "nome": "FLAVIO NANTES BOLSONARO",
+        "votos": 32399,
+        "pct": "57,33"
+      }
+    }
+  },
+  "4": {
+    "zona": 4,
+    "secoes": 294,
+    "totalizadas": 294,
+    "eleitorado": 101549,
+    "comparecimento": 82966,
+    "brancos": 3357,
+    "nulos": 3627,
+    "validos": 75982,
+    "gov": {
+      "11": {
+        "nome": "CELINA LEAO HIZIM FERREIRA",
+        "votos": 43908,
+        "pct": "57,79"
+      },
+      "13": {
+        "nome": "LEANDRO ANTÔNIO GRASS PEIXOTO",
+        "votos": 32074,
+        "pct": "42,21"
+      }
+    },
+    "pres": {
+      "13": {
+        "nome": "LUIZ INÁCIO LULA DA SILVA",
+        "votos": 36257,
+        "pct": "45,19"
+      },
+      "22": {
+        "nome": "FLAVIO NANTES BOLSONARO",
+        "votos": 43981,
+        "pct": "54,81"
+      }
+    }
+  },
+  "5": {
+    "zona": 5,
+    "secoes": 419,
+    "totalizadas": 419,
+    "eleitorado": 132895,
+    "comparecimento": 110094,
+    "brancos": 2976,
+    "nulos": 4103,
+    "validos": 103015,
+    "gov": {
+      "11": {
+        "nome": "CELINA LEAO HIZIM FERREIRA",
+        "votos": 58587,
+        "pct": "56,87"
+      },
+      "13": {
+        "nome": "LEANDRO ANTÔNIO GRASS PEIXOTO",
+        "votos": 44428,
+        "pct": "43,13"
+      }
+    },
+    "pres": {
+      "13": {
+        "nome": "LUIZ INÁCIO LULA DA SILVA",
+        "votos": 49319,
+        "pct": "46,09"
+      },
+      "22": {
+        "nome": "FLAVIO NANTES BOLSONARO",
+        "votos": 57696,
+        "pct": "53,91"
+      }
+    }
+  },
+  "6": {
+    "zona": 6,
+    "secoes": 425,
+    "totalizadas": 425,
+    "eleitorado": 136931,
+    "comparecimento": 112568,
+    "brancos": 3667,
+    "nulos": 4549,
+    "validos": 104352,
+    "gov": {
+      "11": {
+        "nome": "CELINA LEAO HIZIM FERREIRA",
+        "votos": 57906,
+        "pct": "55,49"
+      },
+      "13": {
+        "nome": "LEANDRO ANTÔNIO GRASS PEIXOTO",
+        "votos": 46446,
+        "pct": "44,51"
+      }
+    },
+    "pres": {
+      "13": {
+        "nome": "LUIZ INÁCIO LULA DA SILVA",
+        "votos": 50853,
+        "pct": "46,75"
+      },
+      "22": {
+        "nome": "FLAVIO NANTES BOLSONARO",
+        "votos": 57933,
+        "pct": "53,25"
+      }
+    }
+  },
+  "8": {
+    "zona": 8,
+    "secoes": 454,
+    "totalizadas": 454,
+    "eleitorado": 136246,
+    "comparecimento": 111875,
+    "brancos": 3462,
+    "nulos": 4677,
+    "validos": 103736,
+    "gov": {
+      "11": {
+        "nome": "CELINA LEAO HIZIM FERREIRA",
+        "votos": 60265,
+        "pct": "58,09"
+      },
+      "13": {
+        "nome": "LEANDRO ANTÔNIO GRASS PEIXOTO",
+        "votos": 43471,
+        "pct": "41,91"
+      }
+    },
+    "pres": {
+      "13": {
+        "nome": "LUIZ INÁCIO LULA DA SILVA",
+        "votos": 49044,
+        "pct": "45,36"
+      },
+      "22": {
+        "nome": "FLAVIO NANTES BOLSONARO",
+        "votos": 59082,
+        "pct": "54,64"
+      }
+    }
+  },
+  "9": {
+    "zona": 9,
+    "secoes": 443,
+    "totalizadas": 443,
+    "eleitorado": 134082,
+    "comparecimento": 110760,
+    "brancos": 3090,
+    "nulos": 4345,
+    "validos": 103325,
+    "gov": {
+      "11": {
+        "nome": "CELINA LEAO HIZIM FERREIRA",
+        "votos": 57904,
+        "pct": "56,04"
+      },
+      "13": {
+        "nome": "LEANDRO ANTÔNIO GRASS PEIXOTO",
+        "votos": 45421,
+        "pct": "43,96"
+      }
+    },
+    "pres": {
+      "13": {
+        "nome": "LUIZ INÁCIO LULA DA SILVA",
+        "votos": 50380,
+        "pct": "46,64"
+      },
+      "22": {
+        "nome": "FLAVIO NANTES BOLSONARO",
+        "votos": 57641,
+        "pct": "53,36"
+      }
+    }
+  },
+  "10": {
+    "zona": 10,
+    "secoes": 349,
+    "totalizadas": 349,
+    "eleitorado": 123038,
+    "comparecimento": 101968,
+    "brancos": 2889,
+    "nulos": 3950,
+    "validos": 95129,
+    "gov": {
+      "11": {
+        "nome": "CELINA LEAO HIZIM FERREIRA",
+        "votos": 57538,
+        "pct": "60,48"
+      },
+      "13": {
+        "nome": "LEANDRO ANTÔNIO GRASS PEIXOTO",
+        "votos": 37591,
+        "pct": "39,52"
+      }
+    },
+    "pres": {
+      "13": {
+        "nome": "LUIZ INÁCIO LULA DA SILVA",
+        "votos": 42036,
+        "pct": "42,44"
+      },
+      "22": {
+        "nome": "FLAVIO NANTES BOLSONARO",
+        "votos": 57001,
+        "pct": "57,56"
+      }
+    }
+  },
+  "11": {
+    "zona": 11,
+    "secoes": 249,
+    "totalizadas": 249,
+    "eleitorado": 75569,
+    "comparecimento": 63401,
+    "brancos": 1686,
+    "nulos": 2120,
+    "validos": 59595,
+    "gov": {
+      "11": {
+        "nome": "CELINA LEAO HIZIM FERREIRA",
+        "votos": 32327,
+        "pct": "54,24"
+      },
+      "13": {
+        "nome": "LEANDRO ANTÔNIO GRASS PEIXOTO",
+        "votos": 27268,
+        "pct": "45,76"
+      }
+    },
+    "pres": {
+      "13": {
+        "nome": "LUIZ INÁCIO LULA DA SILVA",
+        "votos": 30110,
+        "pct": "48,16"
+      },
+      "22": {
+        "nome": "FLAVIO NANTES BOLSONARO",
+        "votos": 32407,
+        "pct": "51,84"
+      }
+    }
+  },
+  "13": {
+    "zona": 13,
+    "secoes": 417,
+    "totalizadas": 417,
+    "eleitorado": 140862,
+    "comparecimento": 116561,
+    "brancos": 3860,
+    "nulos": 5041,
+    "validos": 107660,
+    "gov": {
+      "11": {
+        "nome": "CELINA LEAO HIZIM FERREIRA",
+        "votos": 66509,
+        "pct": "61,78"
+      },
+      "13": {
+        "nome": "LEANDRO ANTÔNIO GRASS PEIXOTO",
+        "votos": 41151,
+        "pct": "38,22"
+      }
+    },
+    "pres": {
+      "13": {
+        "nome": "LUIZ INÁCIO LULA DA SILVA",
+        "votos": 46547,
+        "pct": "41,41"
+      },
+      "22": {
+        "nome": "FLAVIO NANTES BOLSONARO",
+        "votos": 65870,
+        "pct": "58,59"
+      }
+    }
+  },
+  "14": {
+    "zona": 14,
+    "secoes": 334,
+    "totalizadas": 334,
+    "eleitorado": 110432,
+    "comparecimento": 91766,
+    "brancos": 2271,
+    "nulos": 2964,
+    "validos": 86531,
+    "gov": {
+      "11": {
+        "nome": "CELINA LEAO HIZIM FERREIRA",
+        "votos": 39774,
+        "pct": "45,97"
+      },
+      "13": {
+        "nome": "LEANDRO ANTÔNIO GRASS PEIXOTO",
+        "votos": 46757,
+        "pct": "54,03"
+      }
+    },
+    "pres": {
+      "13": {
+        "nome": "LUIZ INÁCIO LULA DA SILVA",
+        "votos": 52242,
+        "pct": "56,33"
+      },
+      "22": {
+        "nome": "FLAVIO NANTES BOLSONARO",
+        "votos": 40495,
+        "pct": "43,67"
+      }
+    }
+  },
+  "15": {
+    "zona": 15,
+    "secoes": 514,
+    "totalizadas": 514,
+    "eleitorado": 168279,
+    "comparecimento": 140911,
+    "brancos": 3724,
+    "nulos": 5074,
+    "validos": 132113,
+    "gov": {
+      "11": {
+        "nome": "CELINA LEAO HIZIM FERREIRA",
+        "votos": 76023,
+        "pct": "57,54"
+      },
+      "13": {
+        "nome": "LEANDRO ANTÔNIO GRASS PEIXOTO",
+        "votos": 56090,
+        "pct": "42,46"
+      }
+    },
+    "pres": {
+      "13": {
+        "nome": "LUIZ INÁCIO LULA DA SILVA",
+        "votos": 61313,
+        "pct": "44,39"
+      },
+      "22": {
+        "nome": "FLAVIO NANTES BOLSONARO",
+        "votos": 76818,
+        "pct": "55,61"
+      }
+    }
+  },
+  "16": {
+    "zona": 16,
+    "secoes": 479,
+    "totalizadas": 479,
+    "eleitorado": 153474,
+    "comparecimento": 125786,
+    "brancos": 4118,
+    "nulos": 5355,
+    "validos": 116313,
+    "gov": {
+      "11": {
+        "nome": "CELINA LEAO HIZIM FERREIRA",
+        "votos": 70254,
+        "pct": "60,40"
+      },
+      "13": {
+        "nome": "LEANDRO ANTÔNIO GRASS PEIXOTO",
+        "votos": 46059,
+        "pct": "39,60"
+      }
+    },
+    "pres": {
+      "13": {
+        "nome": "LUIZ INÁCIO LULA DA SILVA",
+        "votos": 52858,
+        "pct": "43,65"
+      },
+      "22": {
+        "nome": "FLAVIO NANTES BOLSONARO",
+        "votos": 68226,
+        "pct": "56,35"
+      }
+    }
+  },
+  "17": {
+    "zona": 17,
+    "secoes": 396,
+    "totalizadas": 396,
+    "eleitorado": 128118,
+    "comparecimento": 106086,
+    "brancos": 3507,
+    "nulos": 4431,
+    "validos": 98148,
+    "gov": {
+      "11": {
+        "nome": "CELINA LEAO HIZIM FERREIRA",
+        "votos": 55907,
+        "pct": "56,96"
+      },
+      "13": {
+        "nome": "LEANDRO ANTÔNIO GRASS PEIXOTO",
+        "votos": 42241,
+        "pct": "43,04"
+      }
+    },
+    "pres": {
+      "13": {
+        "nome": "LUIZ INÁCIO LULA DA SILVA",
+        "votos": 46730,
+        "pct": "45,54"
+      },
+      "22": {
+        "nome": "FLAVIO NANTES BOLSONARO",
+        "votos": 55881,
+        "pct": "54,46"
+      }
+    }
+  },
+  "18": {
+    "zona": 18,
+    "secoes": 431,
+    "totalizadas": 431,
+    "eleitorado": 134320,
+    "comparecimento": 110835,
+    "brancos": 3216,
+    "nulos": 3990,
+    "validos": 103629,
+    "gov": {
+      "11": {
+        "nome": "CELINA LEAO HIZIM FERREIRA",
+        "votos": 58503,
+        "pct": "56,45"
+      },
+      "13": {
+        "nome": "LEANDRO ANTÔNIO GRASS PEIXOTO",
+        "votos": 45126,
+        "pct": "43,55"
+      }
+    },
+    "pres": {
+      "13": {
+        "nome": "LUIZ INÁCIO LULA DA SILVA",
+        "votos": 51073,
+        "pct": "47,33"
+      },
+      "22": {
+        "nome": "FLAVIO NANTES BOLSONARO",
+        "votos": 56833,
+        "pct": "52,67"
+      }
+    }
+  },
+  "19": {
+    "zona": 19,
+    "secoes": 347,
+    "totalizadas": 347,
+    "eleitorado": 110129,
+    "comparecimento": 92087,
+    "brancos": 2467,
+    "nulos": 3320,
+    "validos": 86300,
+    "gov": {
+      "11": {
+        "nome": "CELINA LEAO HIZIM FERREIRA",
+        "votos": 53444,
+        "pct": "61,93"
+      },
+      "13": {
+        "nome": "LEANDRO ANTÔNIO GRASS PEIXOTO",
+        "votos": 32856,
+        "pct": "38,07"
+      }
+    },
+    "pres": {
+      "13": {
+        "nome": "LUIZ INÁCIO LULA DA SILVA",
+        "votos": 36298,
+        "pct": "40,55"
+      },
+      "22": {
+        "nome": "FLAVIO NANTES BOLSONARO",
+        "votos": 53220,
+        "pct": "59,45"
+      }
+    }
+  },
+  "20": {
+    "zona": 20,
+    "secoes": 231,
+    "totalizadas": 231,
+    "eleitorado": 79008,
+    "comparecimento": 65825,
+    "brancos": 2034,
+    "nulos": 2716,
+    "validos": 61075,
+    "gov": {
+      "11": {
+        "nome": "CELINA LEAO HIZIM FERREIRA",
+        "votos": 35850,
+        "pct": "58,70"
+      },
+      "13": {
+        "nome": "LEANDRO ANTÔNIO GRASS PEIXOTO",
+        "votos": 25225,
+        "pct": "41,30"
+      }
+    },
+    "pres": {
+      "13": {
+        "nome": "LUIZ INÁCIO LULA DA SILVA",
+        "votos": 28220,
+        "pct": "44,37"
+      },
+      "22": {
+        "nome": "FLAVIO NANTES BOLSONARO",
+        "votos": 35379,
+        "pct": "55,63"
+      }
+    }
+  },
+  "21": {
+    "zona": 21,
+    "secoes": 334,
+    "totalizadas": 334,
+    "eleitorado": 114111,
+    "comparecimento": 93251,
+    "brancos": 3258,
+    "nulos": 4020,
+    "validos": 85973,
+    "gov": {
+      "11": {
+        "nome": "CELINA LEAO HIZIM FERREIRA",
+        "votos": 52186,
+        "pct": "60,70"
+      },
+      "13": {
+        "nome": "LEANDRO ANTÔNIO GRASS PEIXOTO",
+        "votos": 33787,
+        "pct": "39,30"
+      }
+    },
+    "pres": {
+      "13": {
+        "nome": "LUIZ INÁCIO LULA DA SILVA",
+        "votos": 39281,
+        "pct": "43,66"
+      },
+      "22": {
+        "nome": "FLAVIO NANTES BOLSONARO",
+        "votos": 50689,
+        "pct": "56,34"
+      }
+    }
+  }
+}

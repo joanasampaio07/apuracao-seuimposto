@@ -7,8 +7,20 @@ const zlib = require('zlib');
 const PORT = process.env.PORT || 5175;
 const BASE_DIR = __dirname;
 
-// URLs Oficiais TSE 2026 (Eleição 6257 & 6259)
+// URLs Oficiais TSE 2026 (Eleição 6258 & 6260 - 2º Turno; 6257 & 6259 - 1º Turno)
 const TSE_ELECTIONS = {
+  "6258": {
+    name: "Presidente 2º Turno Brasil (Oficial 6258)",
+    url: "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/br/br-c0001-e006258-u.jws"
+  },
+  "6258-df-presidente": {
+    name: "DF Presidente 2º Turno (Oficial 6258)",
+    url: "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/df/df97012-c0001-e006258-u.jws"
+  },
+  "6260-df-governador": {
+    name: "DF Governador 2º Turno (Oficial 6260)",
+    url: "https://resultados.tse.jus.br/oficial/ele2026/6260/dados/df/df97012-c0003-e006260-u.jws"
+  },
   "6257": {
     name: "Presidente 1º Turno Brasil (Oficial 6257)",
     url: "https://resultados.tse.jus.br/oficial/ele2026/6257/dados/br/br-c0001-e006257-u.jws"
@@ -17,24 +29,20 @@ const TSE_ELECTIONS = {
     name: "DF Presidente 1º Turno (Oficial 6257)",
     url: "https://resultados.tse.jus.br/oficial/ele2026/6257/dados/df/df97012-c0001-e006257-u.jws"
   },
-  "6258": {
-    name: "Presidente 2º Turno (Oficial 6258)",
-    url: "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/br/br-c0001-e006258-u.jws"
-  },
   "6259-df-distrital": {
-    name: "DF Deputado Distrital (Oficial 6259)",
+    name: "DF Deputado Distrital 1º Turno (Oficial 6259)",
     url: "https://resultados.tse.jus.br/oficial/ele2026/6259/dados/df/df97012-c0008-e006259-u.jws"
   },
   "6259-df-federal": {
-    name: "DF Deputado Federal (Oficial 6259)",
+    name: "DF Deputado Federal 1º Turno (Oficial 6259)",
     url: "https://resultados.tse.jus.br/oficial/ele2026/6259/dados/df/df97012-c0006-e006259-u.jws"
   },
   "6259-df-governador": {
-    name: "DF Governador (Oficial 6259)",
+    name: "DF Governador 1º Turno (Oficial 6259)",
     url: "https://resultados.tse.jus.br/oficial/ele2026/6259/dados/df/df97012-c0003-e006259-u.jws"
   },
   "6259-df-senador": {
-    name: "DF Senador (Oficial 6259)",
+    name: "DF Senador 1º Turno (Oficial 6259)",
     url: "https://resultados.tse.jus.br/oficial/ele2026/6259/dados/df/df97012-c0005-e006259-u.jws"
   }
 };
@@ -86,9 +94,9 @@ function decodeBase64Url(str) {
   return Buffer.from(base64, 'base64').toString('utf8');
 }
 
-function fetchTseJws(electionId = '6257') {
+function fetchTseJws(electionId = '6258') {
   return new Promise((resolve) => {
-    const config = TSE_ELECTIONS[electionId] || TSE_ELECTIONS['6257'];
+    const config = TSE_ELECTIONS[electionId] || TSE_ELECTIONS['6258'];
     const now = Date.now();
     if (tseCache[electionId] && (now - tseCache[electionId].time < 15000)) {
       return resolve(tseCache[electionId].data);
@@ -120,9 +128,14 @@ function fetchTseJws(electionId = '6257') {
   });
 }
 
-function getDfZonesData() {
+function getDfZonesData(turno = 2) {
   try {
-    const raw = JSON.parse(fs.readFileSync(path.join(BASE_DIR, 'tse_cache', 'tse_zonas_governo_oficial.json'), 'utf8'));
+    const is2T = String(turno) === '2';
+    const filePath = is2T && fs.existsSync(path.join(BASE_DIR, 'tse_cache', 'tse_df_zonas_2t.json'))
+      ? path.join(BASE_DIR, 'tse_cache', 'tse_df_zonas_2t.json')
+      : path.join(BASE_DIR, 'tse_cache', 'tse_zonas_governo_oficial.json');
+
+    const raw = JSON.parse(fs.readFileSync(filePath, 'utf8'));
     const zonas = [];
     const secoes = [];
     const totalizadas = [];
@@ -133,6 +146,7 @@ function getDfZonesData() {
     const nulos = [];
     const votos11 = [];
     const votos13 = [];
+    const votos22 = [];
     const detalhesZonas = [];
 
     const zoneList = [1, 2, 3, 4, 5, 6, 8, 9, 10, 11, 13, 14, 15, 16, 17, 18, 19, 20, 21];
@@ -140,37 +154,51 @@ function getDfZonesData() {
       const zd = raw[String(zNum)];
       if (!zd) continue;
       zonas.push(zNum);
-      secoes.push(zd.secoesTotal);
-      totalizadas.push(zd.secoesTotalizadas);
+      const totalSec = zd.secoesTotal || zd.secoes || 0;
+      const totSec = zd.secoesTotalizadas || zd.totalizadas || totalSec;
+      secoes.push(totalSec);
+      totalizadas.push(totSec);
       eleitorado.push(zd.eleitorado);
       apurado.push(zd.eleitorado);
       comparecimento.push(zd.comparecimento);
-      brancos.push(zd.brancos);
-      nulos.push(zd.nulos);
+      brancos.push(zd.brancos || 0);
+      nulos.push(zd.nulos || 0);
 
-      const celina = zd.candidatos.find(c => c.numero === '11')?.votos || 0;
-      const grass = zd.candidatos.find(c => c.numero === '13')?.votos || 0;
+      let celina = 0;
+      let grass = 0;
+      let flavio = 0;
+      if (zd.gov) {
+        celina = zd.gov['11']?.votos || 0;
+        grass = zd.gov['13']?.votos || 0;
+        flavio = zd.pres?.['22']?.votos || 0;
+      } else if (zd.candidatos) {
+        celina = zd.candidatos.find(c => c.numero === '11')?.votos || 0;
+        grass = zd.candidatos.find(c => c.numero === '13')?.votos || 0;
+        flavio = celina;
+      }
       votos11.push(celina);
       votos13.push(grass);
+      votos22.push(flavio);
 
       detalhesZonas.push({
         zona: zNum,
         nome: zd.nome || `Zona ${zNum}`,
-        secoesTotal: zd.secoesTotal,
-        secoesApuradas: zd.secoesTotalizadas,
+        secoesTotal: totalSec,
+        secoesApuradas: totSec,
         percentualApurado: "100.00%",
         eleitoradoTotal: zd.eleitorado,
         eleitoresApurados: zd.eleitorado,
         votosCandidato11: celina,
         votosCandidato13: grass,
-        votosCandidato22: celina
+        votosCandidato22: flavio
       });
     }
 
     return {
-      versao: 1,
+      versao: is2T ? 2 : 1,
+      turno: is2T ? 2 : 1,
       ibge: 5300108,
-      seq: 1,
+      seq: is2T ? 2 : 1,
       nome: "Brasília - DF",
       totalZonas: zonas.length,
       totalSecoes: secoes.reduce((a, b) => a + b, 0),
@@ -186,7 +214,7 @@ function getDfZonesData() {
       votos: {
         "11": votos11,
         "13": votos13,
-        "22": votos11
+        "22": votos22
       },
       detalhesZonas
     };
@@ -202,7 +230,7 @@ const server = http.createServer(async (req, res) => {
 
   // Endpoint oficial ao vivo do TSE com seleção de turno
   if (pathname === '/api/tse/live') {
-    const electionId = parsedUrl.searchParams.get('eleicao') || '6257';
+    const electionId = parsedUrl.searchParams.get('eleicao') || '6258';
     const tseJson = await fetchTseJws(electionId);
     res.writeHead(200, {
       'Content-Type': 'application/json; charset=utf-8',
@@ -211,19 +239,20 @@ const server = http.createServer(async (req, res) => {
     return res.end(JSON.stringify({
       status: "connected",
       electionId,
-      source: (TSE_ELECTIONS[electionId] || TSE_ELECTIONS['6257']).url,
+      source: (TSE_ELECTIONS[electionId] || TSE_ELECTIONS['6258']).url,
       timestamp: new Date().toISOString(),
       tse: tseJson
     }, null, 2));
   }
 
-  // Endpoint do DF por zona e seção
+  // Endpoint do DF por zona e seção (com suporte a turno 1 e 2)
   if (pathname === '/api/df/zonas' || pathname === '/feed/zonas/5300108.json') {
+    const turno = parsedUrl.searchParams.get('turno') || '2';
     res.writeHead(200, {
       'Content-Type': 'application/json; charset=utf-8',
       'Access-Control-Allow-Origin': '*'
     });
-    return res.end(JSON.stringify(getDfZonesData(), null, 2));
+    return res.end(JSON.stringify(getDfZonesData(turno), null, 2));
   }
 
   // Download direto da Planilha de Auditoria Oficial TSE (.xlsx)
@@ -306,9 +335,29 @@ const server = http.createServer(async (req, res) => {
     }
   }
 
-  // Suporte a arquivos de feed oficial TSE 2026
-  if (pathname === '/agora.json') pathname = '/feed/agora.json';
-  if (pathname === '/municipios.json') pathname = '/feed/municipios.json';
+  // Suporte a arquivos de feed oficial TSE 2026 com chave de turno (1T vs 2T)
+  const cookieTurno = (req.headers.cookie || '').match(/tse_turno=([12])/)?.[1];
+  const queryTurno = parsedUrl.searchParams.get('turno');
+  const activeTurno = queryTurno || cookieTurno || '2';
+
+  if (pathname === '/agora.json' || pathname === '/feed/agora.json') {
+    const targetFile = activeTurno === '1' ? 'feed/agora_1t.json' : 'feed/agora_2t.json';
+    try {
+      const data = fs.readFileSync(path.join(BASE_DIR, targetFile), 'utf8');
+      return sendJsonGzip(data);
+    } catch {
+      pathname = '/feed/agora.json';
+    }
+  }
+  if (pathname === '/municipios.json' || pathname === '/feed/municipios.json') {
+    const targetFile = activeTurno === '1' ? 'feed/municipios_1t.json' : 'feed/municipios_2t.json';
+    try {
+      const data = fs.readFileSync(path.join(BASE_DIR, targetFile), 'utf8');
+      return sendJsonGzip(data);
+    } catch {
+      pathname = '/feed/municipios.json';
+    }
+  }
   if (pathname === '/uf/zz.json') pathname = '/feed/uf/zz.json';
   if (pathname.startsWith('/deputados/')) pathname = '/feed' + pathname;
   if (pathname.startsWith('/uf/')) pathname = '/feed' + pathname;
@@ -542,10 +591,10 @@ const server = http.createServer(async (req, res) => {
   </span>
   <span style="color:rgba(250,250,249,0.3);">|</span>
   <div style="display:flex; align-items:center; gap:4px;">
-    <button id="btn-tse-1t" onclick="switchTseTurno('6257')" style="all:unset; cursor:pointer; padding:6px 12px; border-radius:100px; font-weight:600; background:rgba(255,255,255,0.2); color:#fff; transition:all .15s;">
+    <button id="btn-tse-1t" onclick="switchTseTurno('6257')" style="all:unset; cursor:pointer; padding:6px 12px; border-radius:100px; font-weight:600; background:transparent; color:rgba(255,255,255,0.5); transition:all .15s;">
       1º Turno (6257)
     </button>
-    <button id="btn-tse-2t" onclick="switchTseTurno('6258')" style="all:unset; cursor:pointer; padding:6px 12px; border-radius:100px; font-weight:600; background:transparent; color:rgba(255,255,255,0.5); transition:all .15s;">
+    <button id="btn-tse-2t" onclick="switchTseTurno('6258')" style="all:unset; cursor:pointer; padding:6px 12px; border-radius:100px; font-weight:600; background:rgba(255,255,255,0.2); color:#fff; transition:all .15s;">
       2º Turno (6258)
     </button>
   </div>
@@ -606,7 +655,7 @@ const server = http.createServer(async (req, res) => {
             <span style="font-size:0.75rem; background:#22c55e22; color:#22c55e; border:1px solid #22c55e44; padding:2px 8px; border-radius:100px; font-weight:600;">100,00% Apurado</span>
           </div>
           <p style="margin:4px 0 0; font-size:0.8rem; color:#A6A39C;">
-            Dados Oficiais do TRE-DF / TSE (Eleição Oficial 6259 & 6257) · Governador do DF · 35 RAs · 19 Zonas Eleitorais
+            Dados Oficiais do TRE-DF / TSE (Eleição Oficial 6260 & 6258) · Governador do DF · 35 RAs · 19 Zonas Eleitorais
           </p>
         </div>
         <div style="display:flex; align-items:center; gap:10px;">

@@ -143,14 +143,14 @@
     const geral = data.geral;
 
     let html = `
-      <!-- AVISO OFICIAL: DATA DA ELEIÇÃO DO 2º TURNO (25/10/2026) -->
+      <!-- AVISO OFICIAL: 2º TURNO TOTALIZADO (25/10/2026) -->
       <div style="background:rgba(2,132,199,0.12); border:1px solid rgba(2,132,199,0.3); border-radius:12px; padding:10px 16px; margin-bottom:16px; display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap;">
         <div style="display:flex; align-items:center; gap:8px; font-size:0.82rem; color:#38bdf8;">
-          <span style="font-size:1.1rem;">📅</span>
-          <span><b>2º Turno em 25 de Outubro de 2026:</b> O 1º Turno (04/10) está 100% totalizado pelo TRE-DF/TSE. Esta estrutura comparativa já está pronta e será alimentada em tempo real com os votos oficiais do 2º Turno no dia 25/10!</span>
+          <span style="font-size:1.1rem;">🏛️</span>
+          <span><b>2º Turno Oficial Totalizado:</b> Apuração 100,00% concluída pelo TRE-DF/TSE (Eleição Oficial 6260). Celina Leão (PP 11) foi eleita Governadora do Distrito Federal com 987.142 votos (57,18%).</span>
         </div>
-        <span style="font-size:0.75rem; background:rgba(2,132,199,0.25); border:1px solid rgba(2,132,199,0.5); padding:3px 10px; border-radius:100px; color:#fff; font-weight:700;">
-          Eleição: 25/10/2026
+        <span style="font-size:0.75rem; background:rgba(34,197,94,0.25); border:1px solid rgba(34,197,94,0.5); padding:3px 10px; border-radius:100px; color:#4ade80; font-weight:700;">
+          Totalizado: 25/10/2026
         </span>
       </div>
 
@@ -251,14 +251,14 @@
     const nacional = data.nacional;
 
     let html = `
-      <!-- AVISO OFICIAL: DATA DA ELEIÇÃO DO 2º TURNO (25/10/2026) -->
+      <!-- AVISO OFICIAL: 2º TURNO PRESIDENCIAL TOTALIZADO (25/10/2026) -->
       <div style="background:rgba(2,132,199,0.12); border:1px solid rgba(2,132,199,0.3); border-radius:12px; padding:10px 16px; margin-bottom:16px; display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap;">
         <div style="display:flex; align-items:center; gap:8px; font-size:0.82rem; color:#38bdf8;">
-          <span style="font-size:1.1rem;">📅</span>
-          <span><b>2º Turno Presidencial em 25 de Outubro de 2026:</b> O 1º Turno (04/10) está 100% totalizado pelo TSE. No dia 25/10, assim que os votos do 2º Turno forem apurados, o comparativo e a festa de fogos serão acionados em tempo real!</span>
+          <span style="font-size:1.1rem;">🇧🇷</span>
+          <span><b>2º Turno Presidencial Oficial Totalizado:</b> Apuração 100,00% concluída pelo TSE (Eleição Oficial 6258). Lula (PT 13) foi eleito Presidente da República com 64.256.232 votos (51,79%).</span>
         </div>
-        <span style="font-size:0.75rem; background:rgba(2,132,199,0.25); border:1px solid rgba(2,132,199,0.5); padding:3px 10px; border-radius:100px; color:#fff; font-weight:700;">
-          Eleição: 25/10/2026
+        <span style="font-size:0.75rem; background:rgba(34,197,94,0.25); border:1px solid rgba(34,197,94,0.5); padding:3px 10px; border-radius:100px; color:#4ade80; font-weight:700;">
+          Totalizado: 25/10/2026
         </span>
       </div>
 

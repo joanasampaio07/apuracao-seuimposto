@@ -617,7 +617,7 @@ function renderDfView(filterQuery) {
               <span style="font-size:0.75rem; font-weight:700; color:#A6A39C;">${idx + 1}º</span>
               <span style="font-size:0.88rem; font-weight:700; color:#fff;">${c.nome}</span>
               <span style="font-size:0.7rem; background:rgba(255,255,255,0.08); padding:1px 6px; border-radius:4px; color:#D6D4CF;">${c.partido || ''} ${c.numero}</span>
-              ${isTop2 ? '<span style="font-size:0.65rem; background:#38bdf822; color:#38bdf8; border:1px solid #38bdf844; padding:1px 5px; border-radius:4px; font-weight:700;">2º Turno</span>' : ''}
+              ${isTop2 ? (gov.turno === 2 || gov.eleicao === '6260' ? (c.eleito ? '<span style="font-size:0.65rem; background:#22c55e22; color:#22c55e; border:1px solid #22c55e44; padding:1px 5px; border-radius:4px; font-weight:700;">🏆 Eleita</span>' : '') : '<span style="font-size:0.65rem; background:#38bdf822; color:#38bdf8; border:1px solid #38bdf844; padding:1px 5px; border-radius:4px; font-weight:700;">2º Turno</span>') : ''}
             </div>
             <div style="text-align:right;">
               <b style="font-size:0.95rem; color:${cor};">${c.votos.toLocaleString('pt-BR')}</b>
@@ -695,12 +695,14 @@ function renderDfView(filterQuery) {
             </div>
             <div>
               <div style="font-size:1.15rem; font-weight:700; color:#fff;">Governo do Distrito Federal</div>
-              <div style="font-size:0.75rem; color:#38bdf8; font-weight:600;">1º Turno Oficial TSE (Eleição 6259) · 2º Turno Definido</div>
+              <div style="font-size:0.75rem; color:#38bdf8; font-weight:600;">${(gov.turno === 2 || gov.eleicao === '6260') ? '2º Turno Oficial TSE (Eleição 6260) · Totalização Concluída' : '1º Turno Oficial TSE (Eleição 6259) · 2º Turno Definido'}</div>
             </div>
           </div>
 
           <p style="margin:0 0 10px; font-size:0.74rem; color:#D6D4CF; line-height:1.4;">
-            Totalização concluída com <b>100,00% das seções apuradas</b> pelo TRE-DF. <b>Celina Leão (PP)</b> e <b>Leandro Grass (PT)</b> disputam o segundo turno para o Palácio do Buriti.
+            ${(gov.turno === 2 || gov.eleicao === '6260') 
+              ? 'Totalização concluída com <b>100,00% das seções apuradas</b> pelo TRE-DF. <b>Celina Leão (PP 11)</b> foi eleita Governadora do Distrito Federal com <b>987.142 votos (57,18%)</b>, vencendo em 17 das 19 Zonas Eleitorais.'
+              : 'Totalização concluída com <b>100,00% das seções apuradas</b> pelo TRE-DF. <b>Celina Leão (PP)</b> e <b>Leandro Grass (PT)</b> disputam o segundo turno para o Palácio do Buriti.'}
           </p>
 
           <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-bottom:10px;">
@@ -1387,25 +1389,34 @@ async function switchTseTurno(id) {
     b2.style.color = id === '6258' ? '#fff' : 'rgba(255,255,255,0.5)';
   }
 
+  const turnoNum = id === '6258' ? '2' : '1';
+  document.cookie = `tse_turno=${turnoNum}; path=/; max-age=2592000`;
   window.activeTurnoId = id;
 
   if (id === '6258') {
-    // 2º Turno Oficial: Aciona comemoração na tela de fogos de artifício do vencedor
+    // 2º Turno Oficial: Celina Leão eleita no DF
     if (window.triggerVictoryCelebration) {
       window.triggerVictoryCelebration({
-        name: "Flávio Bolsonaro",
-        cargo: "Presidente da República Eleito (2º Turno)",
-        partido: "PL",
-        numero: "22",
-        pct: "50,88%",
-        votos: 59312480,
-        cor: "#0083ca",
-        desc: "Totalização concluída pelo TSE no 2º Turno das Eleições 2026. Vitória comemorada com espetáculo de fogos de artifício na tela!"
+        name: "Celina Leão",
+        cargo: "Governadora do Distrito Federal Eleita (2º Turno)",
+        partido: "PP",
+        numero: "11",
+        pct: "57,18%",
+        votos: 987142,
+        cor: "#0284c7",
+        desc: "Totalização concluída com 100,00% das seções apuradas pelo TRE-DF (Eleição Oficial 6260). Celina Leão eleita com 987.142 votos (57,18%)!",
+        photo: "/assets/celina_leao.jpg"
       });
     }
   } else {
     if (window.stopFireworks) window.stopFireworks();
     if (window.closeVictoryCelebration) window.closeVictoryCelebration();
+  }
+
+  // Se o turno configurado na página for diferente, recarrega com parâmetro de turno
+  if (window.APURACAO && String(window.APURACAO.turno) !== turnoNum) {
+    window.location.search = `?turno=${turnoNum}`;
+    return;
   }
 
   try {

@@ -1,0 +1,1527 @@
+{
+  "versao": 1,
+  "seq": 200,
+  "gerado": 1793019172286,
+  "t": 1410,
+  "turno": 2,
+  "presidente": {
+    "br": {
+      "secoes": 499248,
+      "totalizadas": 499248,
+      "eleitorado": 158745502,
+      "apurado": 158745079,
+      "comparecimento": 128236074,
+      "brancos": 1430496,
+      "nulos": 2723305,
+      "votos": {
+        "13": 64256232,
+        "22": 59826041
+      },
+      "situacao": "eleito"
+    },
+    "uf": {
+      "AC": {
+        "secoes": 2270,
+        "totalizadas": 2270,
+        "eleitorado": 613715,
+        "apurado": 613715,
+        "comparecimento": 453654,
+        "brancos": 5016,
+        "nulos": 16410,
+        "votos": {
+          "13": 144513,
+          "22": 287715
+        },
+        "situacao": "eleito"
+      },
+      "AL": {
+        "secoes": 7101,
+        "totalizadas": 7101,
+        "eleitorado": 2442081,
+        "apurado": 2442081,
+        "comparecimento": 1951632,
+        "brancos": 16983,
+        "nulos": 37888,
+        "votos": {
+          "13": 1152621,
+          "22": 744140
+        },
+        "situacao": "eleito"
+      },
+      "AM": {
+        "secoes": 8157,
+        "totalizadas": 8157,
+        "eleitorado": 2798661,
+        "apurado": 2798661,
+        "comparecimento": 2192059,
+        "brancos": 18324,
+        "nulos": 52707,
+        "votos": {
+          "13": 1145783,
+          "22": 975245
+        },
+        "situacao": "eleito"
+      },
+      "AP": {
+        "secoes": 1914,
+        "totalizadas": 1914,
+        "eleitorado": 576910,
+        "apurado": 576910,
+        "comparecimento": 429975,
+        "brancos": 3320,
+        "nulos": 5013,
+        "votos": {
+          "13": 222968,
+          "22": 198674
+        },
+        "situacao": "eleito"
+      },
+      "BA": {
+        "secoes": 35476,
+        "totalizadas": 35476,
+        "eleitorado": 11312891,
+        "apurado": 11312891,
+        "comparecimento": 9422047,
+        "brancos": 92721,
+        "nulos": 235307,
+        "votos": {
+          "13": 6485258,
+          "22": 2608761
+        },
+        "situacao": "eleito"
+      },
+      "CE": {
+        "secoes": 23765,
+        "totalizadas": 23765,
+        "eleitorado": 6996521,
+        "apurado": 6996521,
+        "comparecimento": 6024843,
+        "brancos": 56386,
+        "nulos": 112855,
+        "votos": {
+          "13": 4036124,
+          "22": 1819478
+        },
+        "situacao": "eleito"
+      },
+      "DF": {
+        "secoes": 6969,
+        "totalizadas": 6969,
+        "eleitorado": 2258995,
+        "apurado": 2258995,
+        "comparecimento": 1868280,
+        "brancos": 22386,
+        "nulos": 41128,
+        "votos": {
+          "13": 825224,
+          "22": 979542
+        },
+        "situacao": "eleito"
+      },
+      "ES": {
+        "secoes": 9844,
+        "totalizadas": 9844,
+        "eleitorado": 2991515,
+        "apurado": 2991515,
+        "comparecimento": 2409214,
+        "brancos": 33080,
+        "nulos": 79665,
+        "votos": {
+          "13": 1001965,
+          "22": 1294504
+        },
+        "situacao": "eleito"
+      },
+      "GO": {
+        "secoes": 15686,
+        "totalizadas": 15686,
+        "eleitorado": 5080385,
+        "apurado": 5080385,
+        "comparecimento": 4047280,
+        "brancos": 43214,
+        "nulos": 73177,
+        "votos": {
+          "13": 1585555,
+          "22": 2345334
+        },
+        "situacao": "eleito"
+      },
+      "MA": {
+        "secoes": 18093,
+        "totalizadas": 18093,
+        "eleitorado": 5183049,
+        "apurado": 5183049,
+        "comparecimento": 4127771,
+        "brancos": 30855,
+        "nulos": 58714,
+        "votos": {
+          "13": 2808231,
+          "22": 1229971
+        },
+        "situacao": "eleito"
+      },
+      "MG": {
+        "secoes": 52062,
+        "totalizadas": 52062,
+        "eleitorado": 16372144,
+        "apurado": 16372144,
+        "comparecimento": 13044203,
+        "brancos": 164141,
+        "nulos": 287177,
+        "votos": {
+          "13": 6351099,
+          "22": 6241786
+        },
+        "situacao": "eleito"
+      },
+      "MS": {
+        "secoes": 7106,
+        "totalizadas": 7106,
+        "eleitorado": 2024437,
+        "apurado": 2024437,
+        "comparecimento": 1594460,
+        "brancos": 14958,
+        "nulos": 22637,
+        "votos": {
+          "13": 628973,
+          "22": 927892
+        },
+        "situacao": "eleito"
+      },
+      "MT": {
+        "secoes": 8287,
+        "totalizadas": 8287,
+        "eleitorado": 2637879,
+        "apurado": 2637879,
+        "comparecimento": 2085334,
+        "brancos": 15431,
+        "nulos": 24637,
+        "votos": {
+          "13": 694167,
+          "22": 1351099
+        },
+        "situacao": "eleito"
+      },
+      "PA": {
+        "secoes": 20827,
+        "totalizadas": 20827,
+        "eleitorado": 6262063,
+        "apurado": 6262063,
+        "comparecimento": 4989573,
+        "brancos": 36501,
+        "nulos": 62683,
+        "votos": {
+          "13": 2690449,
+          "22": 2199940
+        },
+        "situacao": "eleito"
+      },
+      "PB": {
+        "secoes": 10712,
+        "totalizadas": 10712,
+        "eleitorado": 3248434,
+        "apurado": 3248434,
+        "comparecimento": 2743560,
+        "brancos": 25943,
+        "nulos": 58348,
+        "votos": {
+          "13": 1794059,
+          "22": 865210
+        },
+        "situacao": "eleito"
+      },
+      "PE": {
+        "secoes": 21418,
+        "totalizadas": 21418,
+        "eleitorado": 7223227,
+        "apurado": 7223227,
+        "comparecimento": 6126467,
+        "brancos": 56758,
+        "nulos": 119642,
+        "votos": {
+          "13": 4117513,
+          "22": 1832554
+        },
+        "situacao": "eleito"
+      },
+      "PI": {
+        "secoes": 10225,
+        "totalizadas": 10225,
+        "eleitorado": 2704695,
+        "apurado": 2704695,
+        "comparecimento": 2239830,
+        "brancos": 16137,
+        "nulos": 43845,
+        "votos": {
+          "13": 1653989,
+          "22": 525859
+        },
+        "situacao": "eleito"
+      },
+      "PR": {
+        "secoes": 27142,
+        "totalizadas": 27142,
+        "eleitorado": 8613628,
+        "apurado": 8613628,
+        "comparecimento": 7059339,
+        "brancos": 82572,
+        "nulos": 118819,
+        "votos": {
+          "13": 2566504,
+          "22": 4291444
+        },
+        "situacao": "eleito"
+      },
+      "RJ": {
+        "secoes": 37675,
+        "totalizadas": 37675,
+        "eleitorado": 12857526,
+        "apurado": 12857526,
+        "comparecimento": 10077449,
+        "brancos": 111682,
+        "nulos": 231341,
+        "votos": {
+          "13": 4565393,
+          "22": 5169033
+        },
+        "situacao": "eleito"
+      },
+      "RN": {
+        "secoes": 8115,
+        "totalizadas": 8115,
+        "eleitorado": 2659867,
+        "apurado": 2659867,
+        "comparecimento": 2232823,
+        "brancos": 19939,
+        "nulos": 61879,
+        "votos": {
+          "13": 1413596,
+          "22": 737409
+        },
+        "situacao": "eleito"
+      },
+      "RO": {
+        "secoes": 4698,
+        "totalizadas": 4698,
+        "eleitorado": 1265926,
+        "apurado": 1265926,
+        "comparecimento": 988489,
+        "brancos": 8361,
+        "nulos": 11300,
+        "votos": {
+          "13": 294446,
+          "22": 674382
+        },
+        "situacao": "eleito"
+      },
+      "RR": {
+        "secoes": 1519,
+        "totalizadas": 1519,
+        "eleitorado": 401540,
+        "apurado": 401540,
+        "comparecimento": 308597,
+        "brancos": 2176,
+        "nulos": 3241,
+        "votos": {
+          "13": 83505,
+          "22": 219675
+        },
+        "situacao": "eleito"
+      },
+      "RS": {
+        "secoes": 27547,
+        "totalizadas": 27547,
+        "eleitorado": 8522318,
+        "apurado": 8522318,
+        "comparecimento": 6889638,
+        "brancos": 89463,
+        "nulos": 101245,
+        "votos": {
+          "13": 2824552,
+          "22": 3874378
+        },
+        "situacao": "eleito"
+      },
+      "SC": {
+        "secoes": 17326,
+        "totalizadas": 17326,
+        "eleitorado": 5734687,
+        "apurado": 5734687,
+        "comparecimento": 4762303,
+        "brancos": 48674,
+        "nulos": 75244,
+        "votos": {
+          "13": 1418314,
+          "22": 3220071
+        },
+        "situacao": "eleito"
+      },
+      "SE": {
+        "secoes": 5923,
+        "totalizadas": 5923,
+        "eleitorado": 1740093,
+        "apurado": 1740093,
+        "comparecimento": 1466659,
+        "brancos": 13135,
+        "nulos": 31129,
+        "votos": {
+          "13": 989041,
+          "22": 433354
+        },
+        "situacao": "eleito"
+      },
+      "SP": {
+        "secoes": 103656,
+        "totalizadas": 103656,
+        "eleitorado": 34123591,
+        "apurado": 34123591,
+        "comparecimento": 27364389,
+        "brancos": 389606,
+        "nulos": 716331,
+        "votos": {
+          "13": 12119274,
+          "22": 14139178
+        },
+        "situacao": "eleito"
+      },
+      "TO": {
+        "secoes": 4384,
+        "totalizadas": 4384,
+        "eleitorado": 1182041,
+        "apurado": 1182041,
+        "comparecimento": 954763,
+        "brancos": 8059,
+        "nulos": 35826,
+        "votos": {
+          "13": 442962,
+          "22": 467916
+        },
+        "situacao": "eleito"
+      },
+      "ZZ": {
+        "secoes": 1351,
+        "totalizadas": 1351,
+        "eleitorado": 916683,
+        "apurado": 916260,
+        "comparecimento": 381443,
+        "brancos": 4675,
+        "nulos": 5117,
+        "votos": {
+          "13": 200154,
+          "22": 171497
+        },
+        "situacao": "eleito"
+      }
+    }
+  },
+  "governador": {
+    "uf": {
+      "AC": {
+        "secoes": 2270,
+        "totalizadas": 2270,
+        "eleitorado": 613336,
+        "apurado": 613336,
+        "comparecimento": 453334,
+        "brancos": 11979,
+        "nulos": 29612,
+        "votos": {
+          "10": 139108,
+          "11": 272635
+        },
+        "situacao": "eleito"
+      },
+      "AL": {
+        "secoes": 7101,
+        "totalizadas": 7101,
+        "eleitorado": 2439190,
+        "apurado": 2439190,
+        "comparecimento": 1935820,
+        "brancos": 56303,
+        "nulos": 169903,
+        "votos": {
+          "15": 809796,
+          "35": 880,
+          "45": 892484,
+          "80": 6454
+        },
+        "situacao": "eleito"
+      },
+      "AM": {
+        "secoes": 8157,
+        "totalizadas": 8157,
+        "eleitorado": 2796187,
+        "apurado": 2796187,
+        "comparecimento": 2189860,
+        "brancos": 39610,
+        "nulos": 75947,
+        "votos": {
+          "22": 800328,
+          "55": 1273975
+        },
+        "situacao": "eleito"
+      },
+      "AP": {
+        "secoes": 1914,
+        "totalizadas": 1914,
+        "eleitorado": 576359,
+        "apurado": 576359,
+        "comparecimento": 476019,
+        "brancos": 2964,
+        "nulos": 24308,
+        "votos": {
+          "16": 561,
+          "27": 376,
+          "29": 315,
+          "44": 165900,
+          "55": 281595
+        },
+        "situacao": "eleito"
+      },
+      "BA": {
+        "secoes": 35476,
+        "totalizadas": 35476,
+        "eleitorado": 11304314,
+        "apurado": 11304314,
+        "comparecimento": 9046179,
+        "brancos": 233096,
+        "nulos": 521993,
+        "votos": {
+          "13": 4626509,
+          "27": 2845,
+          "29": 4028,
+          "44": 3625227,
+          "50": 27243,
+          "80": 5238
+        },
+        "situacao": "eleito"
+      },
+      "CE": {
+        "secoes": 23765,
+        "totalizadas": 23765,
+        "eleitorado": 6991044,
+        "apurado": 6991044,
+        "comparecimento": 5905522,
+        "brancos": 170316,
+        "nulos": 329111,
+        "votos": {
+          "13": 2875573,
+          "14": 17219,
+          "16": 2161,
+          "29": 463,
+          "30": 5701,
+          "35": 1743,
+          "45": 2498891,
+          "80": 4344
+        },
+        "situacao": "eleito"
+      },
+      "DF": {
+        "secoes": 6969,
+        "totalizadas": 6969,
+        "eleitorado": 2244176,
+        "apurado": 2244176,
+        "comparecimento": 1854323,
+        "brancos": 55771,
+        "nulos": 72280,
+        "votos": {
+          "11": 987142,
+          "13": 739130
+        },
+        "situacao": "eleito"
+      },
+      "ES": {
+        "secoes": 9844,
+        "totalizadas": 9844,
+        "eleitorado": 2987603,
+        "apurado": 2987603,
+        "comparecimento": 2405654,
+        "brancos": 64871,
+        "nulos": 132846,
+        "votos": {
+          "10": 1151818,
+          "15": 1056119
+        },
+        "situacao": "eleito"
+      },
+      "GO": {
+        "secoes": 15686,
+        "totalizadas": 15686,
+        "eleitorado": 5074870,
+        "apurado": 5074870,
+        "comparecimento": 3966488,
+        "brancos": 170266,
+        "nulos": 165646,
+        "votos": {
+          "13": 356692,
+          "15": 2148218,
+          "22": 797141,
+          "29": 1217,
+          "45": 315676,
+          "80": 11632
+        },
+        "situacao": "eleito"
+      },
+      "MA": {
+        "secoes": 18093,
+        "totalizadas": 18093,
+        "eleitorado": 5180851,
+        "apurado": 5180851,
+        "comparecimento": 4158395,
+        "brancos": 93669,
+        "nulos": 169646,
+        "votos": {
+          "13": 374039,
+          "14": 7905,
+          "15": 1354044,
+          "16": 4693,
+          "21": 1096,
+          "28": 48924,
+          "29": 257,
+          "55": 2104122
+        },
+        "situacao": "eleito"
+      },
+      "MG": {
+        "secoes": 52062,
+        "totalizadas": 52062,
+        "eleitorado": 16361188,
+        "apurado": 16361188,
+        "comparecimento": 12627167,
+        "brancos": 658416,
+        "nulos": 556916,
+        "votos": {
+          "10": 6321590,
+          "12": 403466,
+          "13": 3006088,
+          "14": 80308,
+          "15": 237051,
+          "16": 4764,
+          "21": 10957,
+          "22": 795193,
+          "29": 1464,
+          "55": 530292,
+          "80": 20662
+        },
+        "situacao": "eleito"
+      },
+      "MS": {
+        "secoes": 7106,
+        "totalizadas": 7106,
+        "eleitorado": 2021869,
+        "apurado": 2021869,
+        "comparecimento": 1539009,
+        "brancos": 80522,
+        "nulos": 95189,
+        "votos": {
+          "11": 914323,
+          "13": 322807,
+          "25": 14431,
+          "27": 5589,
+          "29": 2115,
+          "30": 98677,
+          "36": 912,
+          "50": 4444
+        },
+        "situacao": "eleito"
+      },
+      "MT": {
+        "secoes": 8287,
+        "totalizadas": 8287,
+        "eleitorado": 2634992,
+        "apurado": 2634992,
+        "comparecimento": 2049718,
+        "brancos": 82690,
+        "nulos": 110735,
+        "votos": {
+          "10": 1128099,
+          "14": 10300,
+          "22": 430442,
+          "33": 2694,
+          "36": 3210,
+          "55": 281548
+        },
+        "situacao": "eleito"
+      },
+      "PA": {
+        "secoes": 20827,
+        "totalizadas": 20827,
+        "eleitorado": 6258162,
+        "apurado": 6258162,
+        "comparecimento": 5062750,
+        "brancos": 106097,
+        "nulos": 389825,
+        "votos": {
+          "15": 2125084,
+          "16": 2676,
+          "20": 2345721,
+          "35": 1987,
+          "50": 85857,
+          "80": 5503
+        },
+        "situacao": "eleito"
+      },
+      "PB": {
+        "secoes": 10712,
+        "totalizadas": 10712,
+        "eleitorado": 3241966,
+        "apurado": 3241966,
+        "comparecimento": 2677904,
+        "brancos": 127816,
+        "nulos": 263466,
+        "votos": {
+          "11": 1470252,
+          "15": 252884,
+          "22": 552836,
+          "29": 2378,
+          "80": 8272
+        },
+        "situacao": "eleito"
+      },
+      "PE": {
+        "secoes": 21418,
+        "totalizadas": 21418,
+        "eleitorado": 7216989,
+        "apurado": 7216989,
+        "comparecimento": 5905236,
+        "brancos": 156481,
+        "nulos": 481903,
+        "votos": {
+          "14": 18340,
+          "16": 987,
+          "29": 424,
+          "40": 2360469,
+          "50": 77699,
+          "55": 2805438,
+          "80": 3495
+        },
+        "situacao": "eleito"
+      },
+      "PI": {
+        "secoes": 10225,
+        "totalizadas": 10225,
+        "eleitorado": 2703064,
+        "apurado": 2703064,
+        "comparecimento": 2239386,
+        "brancos": 76589,
+        "nulos": 136522,
+        "votos": {
+          "11": 557972,
+          "13": 1436697,
+          "16": 1858,
+          "27": 1102,
+          "29": 1296,
+          "30": 5141,
+          "35": 819,
+          "45": 9611,
+          "50": 10002,
+          "80": 1777
+        },
+        "situacao": "eleito"
+      },
+      "PR": {
+        "secoes": 27142,
+        "totalizadas": 27142,
+        "eleitorado": 8600624,
+        "apurado": 8600624,
+        "comparecimento": 6829615,
+        "brancos": 278322,
+        "nulos": 307494,
+        "votos": {
+          "12": 1465601,
+          "14": 44581,
+          "16": 2080,
+          "22": 3127911,
+          "29": 1525,
+          "33": 4144,
+          "55": 1583764,
+          "80": 14193
+        },
+        "situacao": "eleito"
+      },
+      "RJ": {
+        "secoes": 37675,
+        "totalizadas": 37675,
+        "eleitorado": 12842517,
+        "apurado": 12842517,
+        "comparecimento": 9845867,
+        "brancos": 501537,
+        "nulos": 949703,
+        "votos": {
+          "14": 84889,
+          "16": 14642,
+          "22": 4271199,
+          "29": 2777,
+          "30": 45359,
+          "50": 235347,
+          "55": 3706984,
+          "80": 33430
+        },
+        "situacao": "eleito"
+      },
+      "RN": {
+        "secoes": 8115,
+        "totalizadas": 8115,
+        "eleitorado": 2656286,
+        "apurado": 2656286,
+        "comparecimento": 2229510,
+        "brancos": 35873,
+        "nulos": 80214,
+        "votos": {
+          "13": 1073024,
+          "44": 1040399
+        },
+        "situacao": "eleito"
+      },
+      "RO": {
+        "secoes": 4698,
+        "totalizadas": 4698,
+        "eleitorado": 1265008,
+        "apurado": 1265008,
+        "comparecimento": 990313,
+        "brancos": 23607,
+        "nulos": 21648,
+        "votos": {
+          "13": 72851,
+          "15": 6591,
+          "22": 537370,
+          "40": 4344,
+          "44": 134355,
+          "55": 189547
+        },
+        "situacao": "eleito"
+      },
+      "RR": {
+        "secoes": 1519,
+        "totalizadas": 1519,
+        "eleitorado": 400603,
+        "apurado": 400603,
+        "comparecimento": 331959,
+        "brancos": 3677,
+        "nulos": 8869,
+        "votos": {
+          "10": 93434,
+          "22": 220809,
+          "29": 77,
+          "50": 4880,
+          "77": 213
+        },
+        "situacao": "eleito"
+      },
+      "RS": {
+        "secoes": 27547,
+        "totalizadas": 27547,
+        "eleitorado": 8516465,
+        "apurado": 8516465,
+        "comparecimento": 6697424,
+        "brancos": 324123,
+        "nulos": 315858,
+        "votos": {
+          "12": 1917374,
+          "15": 510698,
+          "16": 3492,
+          "22": 3516048,
+          "29": 2137,
+          "45": 101978,
+          "80": 5716
+        },
+        "situacao": "eleito"
+      },
+      "SC": {
+        "secoes": 17326,
+        "totalizadas": 17326,
+        "eleitorado": 5719541,
+        "apurado": 5719541,
+        "comparecimento": 4634550,
+        "brancos": 169920,
+        "nulos": 198989,
+        "votos": {
+          "14": 46624,
+          "16": 6682,
+          "22": 2942386,
+          "25": 9000,
+          "29": 2413,
+          "40": 668021,
+          "55": 569263,
+          "80": 21252
+        },
+        "situacao": "eleito"
+      },
+      "SE": {
+        "secoes": 5923,
+        "totalizadas": 5923,
+        "eleitorado": 1737460,
+        "apurado": 1737460,
+        "comparecimento": 1436609,
+        "brancos": 54754,
+        "nulos": 154847,
+        "votos": {
+          "10": 459908,
+          "27": 2728,
+          "50": 37081,
+          "55": 727291
+        },
+        "situacao": "eleito"
+      },
+      "SP": {
+        "secoes": 103656,
+        "totalizadas": 103656,
+        "eleitorado": 34081699,
+        "apurado": 34081699,
+        "comparecimento": 26394256,
+        "brancos": 1348262,
+        "nulos": 1915481,
+        "votos": {
+          "10": 14491874,
+          "13": 8423656,
+          "16": 75641,
+          "21": 58862,
+          "80": 80480
+        },
+        "situacao": "eleito"
+      },
+      "TO": {
+        "secoes": 4384,
+        "totalizadas": 4384,
+        "eleitorado": 1180466,
+        "apurado": 1180466,
+        "comparecimento": 953385,
+        "brancos": 20323,
+        "nulos": 61903,
+        "votos": {
+          "44": 309076,
+          "45": 562083
+        },
+        "situacao": "eleito"
+      }
+    }
+  },
+  "senado": {
+    "uf": {
+      "AC": {
+        "secoes": 2270,
+        "totalizadas": 2270,
+        "eleitorado": 613316,
+        "apurado": 613316,
+        "comparecimento": 487971,
+        "brancos": 38954,
+        "nulos": 61686,
+        "votos": {
+          "100": 157104,
+          "111": 145244,
+          "131": 124063,
+          "222": 223972,
+          "277": 19283,
+          "500": 19659,
+          "555": 90849,
+          "777": 95128
+        },
+        "situacao": "eleitos"
+      },
+      "AL": {
+        "secoes": 7101,
+        "totalizadas": 7101,
+        "eleitorado": 2439190,
+        "apurado": 2439190,
+        "comparecimento": 1935820,
+        "brancos": 226942,
+        "nulos": 358097,
+        "votos": {
+          "100": 293008,
+          "111": 948703,
+          "151": 731045,
+          "156": 358478,
+          "355": 2459,
+          "456": 926860,
+          "800": 26048
+        },
+        "situacao": "eleitos"
+      },
+      "AM": {
+        "secoes": 8157,
+        "totalizadas": 8157,
+        "eleitorado": 2796053,
+        "apurado": 2796053,
+        "comparecimento": 2232271,
+        "brancos": 229054,
+        "nulos": 393643,
+        "votos": {
+          "155": 1240471,
+          "161": 5022,
+          "222": 909155,
+          "277": 13913,
+          "333": 46757,
+          "444": 456854,
+          "455": 948793,
+          "500": 220880
+        },
+        "situacao": "eleitos"
+      },
+      "AP": {
+        "secoes": 1914,
+        "totalizadas": 1914,
+        "eleitorado": 576359,
+        "apurado": 576359,
+        "comparecimento": 476019,
+        "brancos": 22756,
+        "nulos": 46057,
+        "votos": {
+          "130": 163857,
+          "151": 131321,
+          "200": 264799,
+          "272": 1068,
+          "277": 2616,
+          "290": 696,
+          "401": 19380,
+          "444": 85540,
+          "555": 213948
+        },
+        "situacao": "eleitos"
+      },
+      "BA": {
+        "secoes": 35476,
+        "totalizadas": 35476,
+        "eleitorado": 11304314,
+        "apurado": 11304314,
+        "comparecimento": 9046179,
+        "brancos": 1218996,
+        "nulos": 2454953,
+        "votos": {
+          "100": 2898885,
+          "130": 3986690,
+          "133": 4335196,
+          "180": 50929,
+          "222": 2879443,
+          "277": 13173,
+          "290": 4920,
+          "333": 21374,
+          "500": 215190,
+          "800": 12609
+        },
+        "situacao": "eleitos"
+      },
+      "CE": {
+        "secoes": 23765,
+        "totalizadas": 23765,
+        "eleitorado": 6991044,
+        "apurado": 6991044,
+        "comparecimento": 5905522,
+        "brancos": 845706,
+        "nulos": 1247655,
+        "votos": {
+          "162": 7065,
+          "180": 2822806,
+          "222": 1776782,
+          "290": 2677,
+          "300": 24218,
+          "400": 3033562,
+          "445": 2011388,
+          "800": 39185
+        },
+        "situacao": "eleitos"
+      },
+      "DF": {
+        "secoes": 6969,
+        "totalizadas": 6969,
+        "eleitorado": 2243988,
+        "apurado": 2243988,
+        "comparecimento": 1817921,
+        "brancos": 200921,
+        "nulos": 204364,
+        "votos": {
+          "123": 686340,
+          "131": 610950,
+          "161": 3572,
+          "222": 938496,
+          "223": 886616,
+          "290": 2032,
+          "300": 67396,
+          "360": 4238,
+          "456": 9534,
+          "700": 6522,
+          "800": 14861
+        },
+        "situacao": "eleitos"
+      },
+      "ES": {
+        "secoes": 9844,
+        "totalizadas": 9844,
+        "eleitorado": 2987584,
+        "apurado": 2987584,
+        "comparecimento": 2348612,
+        "brancos": 319565,
+        "nulos": 347732,
+        "votos": {
+          "100": 982978,
+          "133": 521431,
+          "156": 164383,
+          "222": 761722,
+          "277": 50150,
+          "280": 15698,
+          "300": 25505,
+          "400": 995361,
+          "500": 42902,
+          "556": 301897,
+          "700": 167900
+        },
+        "situacao": "eleitos"
+      },
+      "GO": {
+        "secoes": 15686,
+        "totalizadas": 15686,
+        "eleitorado": 5074870,
+        "apurado": 5074870,
+        "comparecimento": 3966488,
+        "brancos": 591005,
+        "nulos": 659977,
+        "votos": {
+          "155": 998319,
+          "222": 1639247,
+          "227": 676930,
+          "234": 23714,
+          "251": 578418,
+          "400": 348290,
+          "444": 1458522,
+          "456": 28927,
+          "500": 288637,
+          "555": 633843,
+          "800": 7147
+        },
+        "situacao": "eleitos"
+      },
+      "MA": {
+        "secoes": 18093,
+        "totalizadas": 18093,
+        "eleitorado": 5180851,
+        "apurado": 5180851,
+        "comparecimento": 4158395,
+        "brancos": 532747,
+        "nulos": 642198,
+        "votos": {
+          "111": 1530187,
+          "123": 1086318,
+          "133": 696298,
+          "151": 1171634,
+          "160": 10908,
+          "212": 5019,
+          "222": 602997,
+          "277": 23995,
+          "300": 1471859,
+          "333": 458681,
+          "500": 83949
+        },
+        "situacao": "eleitos"
+      },
+      "MG": {
+        "secoes": 52062,
+        "totalizadas": 52062,
+        "eleitorado": 16361188,
+        "apurado": 16361188,
+        "comparecimento": 12627167,
+        "brancos": 2200110,
+        "nulos": 2528738,
+        "votos": {
+          "111": 2387973,
+          "131": 3990864,
+          "150": 43227,
+          "155": 40714,
+          "160": 7282,
+          "161": 17444,
+          "222": 4968829,
+          "277": 14463,
+          "290": 3184,
+          "300": 1895603,
+          "456": 836595,
+          "500": 2664763,
+          "555": 3583487,
+          "700": 35892,
+          "800": 7546,
+          "808": 27620
+        },
+        "situacao": "eleitos"
+      },
+      "MS": {
+        "secoes": 7106,
+        "totalizadas": 7106,
+        "eleitorado": 2021869,
+        "apurado": 2021869,
+        "comparecimento": 1539009,
+        "brancos": 225530,
+        "nulos": 244429,
+        "votos": {
+          "133": 361920,
+          "221": 856045,
+          "222": 903554,
+          "258": 16396,
+          "277": 4947,
+          "290": 3197,
+          "300": 103184,
+          "400": 340788,
+          "500": 18028
+        },
+        "situacao": "eleitos"
+      },
+      "MT": {
+        "secoes": 8287,
+        "totalizadas": 8287,
+        "eleitorado": 2634992,
+        "apurado": 2634992,
+        "comparecimento": 2049718,
+        "brancos": 233512,
+        "nulos": 290660,
+        "votos": {
+          "111": 65559,
+          "150": 519434,
+          "222": 977777,
+          "351": 12819,
+          "360": 5563,
+          "365": 1854,
+          "400": 224621,
+          "444": 1187352,
+          "555": 411020,
+          "700": 169265
+        },
+        "situacao": "eleitos"
+      },
+      "PA": {
+        "secoes": 20827,
+        "totalizadas": 20827,
+        "eleitorado": 6258162,
+        "apurado": 6258162,
+        "comparecimento": 5062750,
+        "brancos": 458028,
+        "nulos": 694097,
+        "votos": {
+          "123": 526994,
+          "151": 2342070,
+          "200": 1889653,
+          "222": 1997768,
+          "277": 12547,
+          "333": 7047,
+          "355": 8766,
+          "444": 2014409,
+          "500": 35138,
+          "505": 85760,
+          "777": 39864,
+          "800": 13359
+        },
+        "situacao": "eleitos"
+      },
+      "PB": {
+        "secoes": 10712,
+        "totalizadas": 10712,
+        "eleitorado": 3241966,
+        "apurado": 3241966,
+        "comparecimento": 2677904,
+        "brancos": 442542,
+        "nulos": 630504,
+        "votos": {
+          "100": 895398,
+          "151": 121172,
+          "155": 974550,
+          "222": 533723,
+          "272": 8519,
+          "290": 2676,
+          "300": 329160,
+          "400": 1391994,
+          "800": 21471,
+          "801": 4099
+        },
+        "situacao": "eleitos"
+      },
+      "PE": {
+        "secoes": 21418,
+        "totalizadas": 21418,
+        "eleitorado": 7216989,
+        "apurado": 7216989,
+        "comparecimento": 5905236,
+        "brancos": 1124608,
+        "nulos": 1374907,
+        "votos": {
+          "111": 1289058,
+          "123": 2325127,
+          "130": 2531389,
+          "161": 2417,
+          "180": 34062,
+          "222": 1728587,
+          "290": 1158,
+          "300": 698316,
+          "355": 18179,
+          "555": 671975,
+          "800": 3744,
+          "801": 6945
+        },
+        "situacao": "eleitos"
+      },
+      "PI": {
+        "secoes": 10225,
+        "totalizadas": 10225,
+        "eleitorado": 2703064,
+        "apurado": 2703064,
+        "comparecimento": 2239386,
+        "brancos": 299136,
+        "nulos": 513163,
+        "votos": {
+          "111": 904961,
+          "151": 1307833,
+          "166": 2790,
+          "222": 324530,
+          "277": 7832,
+          "278": 6279,
+          "291": 634,
+          "300": 38544,
+          "350": 1513,
+          "355": 6476,
+          "456": 9174,
+          "500": 11429,
+          "505": 27015,
+          "555": 989146,
+          "700": 22408,
+          "800": 5909
+        },
+        "situacao": "eleitos"
+      },
+      "PR": {
+        "secoes": 27142,
+        "totalizadas": 27142,
+        "eleitorado": 8600624,
+        "apurado": 8600624,
+        "comparecimento": 6829615,
+        "brancos": 1058678,
+        "nulos": 1047719,
+        "votos": {
+          "100": 1947135,
+          "131": 1542636,
+          "132": 1154143,
+          "144": 93198,
+          "222": 3148583,
+          "290": 9194,
+          "300": 2904594,
+          "555": 737893,
+          "800": 15457
+        },
+        "situacao": "eleitos"
+      },
+      "RJ": {
+        "secoes": 37675,
+        "totalizadas": 37675,
+        "eleitorado": 12842517,
+        "apurado": 12842517,
+        "comparecimento": 9845867,
+        "brancos": 1700766,
+        "nulos": 2061486,
+        "votos": {
+          "100": 539598,
+          "101": 116453,
+          "131": 3220765,
+          "144": 131065,
+          "160": 27631,
+          "200": 194605,
+          "221": 3912405,
+          "222": 4264932,
+          "280": 23911,
+          "290": 5825,
+          "355": 9176,
+          "500": 1538444,
+          "555": 1904352,
+          "800": 31492,
+          "808": 8828
+        },
+        "situacao": "eleitos"
+      },
+      "RN": {
+        "secoes": 8115,
+        "totalizadas": 8115,
+        "eleitorado": 2656207,
+        "apurado": 2656207,
+        "comparecimento": 2167714,
+        "brancos": 301982,
+        "nulos": 426640,
+        "votos": {
+          "123": 510674,
+          "131": 635924,
+          "161": 2486,
+          "166": 3795,
+          "200": 1055000,
+          "222": 620354,
+          "360": 1698,
+          "369": 1796,
+          "444": 102834,
+          "500": 22237,
+          "501": 14338,
+          "555": 630159,
+          "800": 5511
+        },
+        "situacao": "eleitos"
+      },
+      "RO": {
+        "secoes": 4698,
+        "totalizadas": 4698,
+        "eleitorado": 1265008,
+        "apurado": 1265008,
+        "comparecimento": 990313,
+        "brancos": 82933,
+        "nulos": 112479,
+        "votos": {
+          "100": 207398,
+          "111": 304061,
+          "123": 72490,
+          "133": 96391,
+          "144": 7594,
+          "221": 570799,
+          "222": 474226,
+          "400": 25316,
+          "432": 3202,
+          "555": 23737
+        },
+        "situacao": "eleitos"
+      },
+      "RR": {
+        "secoes": 1519,
+        "totalizadas": 1519,
+        "eleitorado": 400603,
+        "apurado": 400603,
+        "comparecimento": 331959,
+        "brancos": 21446,
+        "nulos": 32859,
+        "votos": {
+          "155": 117270,
+          "222": 79038,
+          "227": 138269,
+          "277": 843,
+          "300": 45367,
+          "400": 81845,
+          "433": 2442,
+          "444": 18046,
+          "456": 3806,
+          "500": 9846,
+          "505": 1453,
+          "555": 106652,
+          "700": 4736
+        },
+        "situacao": "eleitos"
+      },
+      "RS": {
+        "secoes": 27547,
+        "totalizadas": 27547,
+        "eleitorado": 8516465,
+        "apurado": 8516465,
+        "comparecimento": 6697424,
+        "brancos": 1089553,
+        "nulos": 837203,
+        "votos": {
+          "131": 1870301,
+          "151": 420722,
+          "160": 26844,
+          "161": 3991,
+          "222": 3453316,
+          "234": 16428,
+          "290": 2310,
+          "300": 3449053,
+          "455": 25937,
+          "500": 1957697,
+          "555": 223643,
+          "800": 5658,
+          "808": 12192
+        },
+        "situacao": "eleitos"
+      },
+      "SC": {
+        "secoes": 17326,
+        "totalizadas": 17326,
+        "eleitorado": 5719541,
+        "apurado": 5719541,
+        "comparecimento": 4634550,
+        "brancos": 607118,
+        "nulos": 608907,
+        "votos": {
+          "111": 1233034,
+          "133": 823200,
+          "144": 59365,
+          "155": 482413,
+          "160": 6228,
+          "161": 3651,
+          "221": 2694918,
+          "222": 2041840,
+          "250": 14060,
+          "290": 11975,
+          "500": 657451,
+          "800": 17200,
+          "808": 7740
+        },
+        "situacao": "eleitos"
+      },
+      "SE": {
+        "secoes": 5923,
+        "totalizadas": 5923,
+        "eleitorado": 1737460,
+        "apurado": 1737460,
+        "comparecimento": 1436609,
+        "brancos": 220770,
+        "nulos": 319279,
+        "votos": {
+          "100": 222727,
+          "101": 378710,
+          "123": 187491,
+          "131": 511142,
+          "155": 399775,
+          "221": 40372,
+          "222": 129356,
+          "277": 7527,
+          "444": 377669,
+          "500": 78400
+        },
+        "situacao": "eleitos"
+      },
+      "SP": {
+        "secoes": 103656,
+        "totalizadas": 103656,
+        "eleitorado": 34081699,
+        "apurado": 34081699,
+        "comparecimento": 26394256,
+        "brancos": 4291919,
+        "nulos": 5109958,
+        "votos": {
+          "111": 13273880,
+          "144": 392916,
+          "160": 20503,
+          "161": 65200,
+          "180": 7862400,
+          "200": 386468,
+          "211": 28311,
+          "222": 12703089,
+          "232": 165707,
+          "360": 8732,
+          "400": 8342968,
+          "800": 45178,
+          "808": 91283
+        },
+        "situacao": "eleitos"
+      },
+      "TO": {
+        "secoes": 4384,
+        "totalizadas": 4384,
+        "eleitorado": 1180433,
+        "apurado": 1180433,
+        "comparecimento": 963810,
+        "brancos": 93579,
+        "nulos": 180376,
+        "votos": {
+          "100": 271829,
+          "133": 129838,
+          "153": 316786,
+          "180": 7802,
+          "200": 67987,
+          "202": 93009,
+          "222": 450191,
+          "277": 2198,
+          "303": 14558,
+          "351": 3254,
+          "355": 4943,
+          "444": 255548,
+          "500": 35722
+        },
+        "situacao": "eleitos"
+      }
+    }
+  }
+}
