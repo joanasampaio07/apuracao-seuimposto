@@ -362,7 +362,15 @@ const server = http.createServer(async (req, res) => {
       pathname = '/feed/municipios.json';
     }
   }
-  if (pathname === '/uf/zz.json') pathname = '/feed/uf/zz.json';
+  if (pathname === '/uf/zz.json' || pathname === '/feed/uf/zz.json') {
+    const targetFile = activeTurno === '1' ? 'feed/uf/zz_1t.json' : 'feed/uf/zz_2t.json';
+    try {
+      const data = fs.readFileSync(path.join(BASE_DIR, targetFile), 'utf8');
+      return sendJsonGzip(data);
+    } catch {
+      pathname = '/feed/uf/zz.json';
+    }
+  }
   if (pathname.startsWith('/deputados/')) pathname = '/feed' + pathname;
   if (pathname.startsWith('/uf/')) pathname = '/feed' + pathname;
 
