@@ -3,7 +3,7 @@ const fs = require('fs');
 const path = require('path');
 
 const injection = `
-// Inicializador dinâmico de 2º Turno para Governadores e Resultados Oficiais de 1º Turno
+// Inicializador dinâmico de 2º Turno para Presidente, Governadores e Resultados Oficiais de 1º Turno
 (function() {
   if (typeof window === 'undefined') return;
   var loc = window.location || {};
@@ -21,6 +21,13 @@ const injection = `
 
   if (is2T && window.CANDIDATOS) {
     window.CANDIDATOS.turno = 2;
+    // No 2º Turno Oficial presidencial concorrem apenas Lula (13) e Flávio Bolsonaro (22)
+    if (Array.isArray(window.CANDIDATOS.presidente)) {
+      window.CANDIDATOS.presidente = window.CANDIDATOS.presidente.filter(function(p) {
+        return p.n === '13' || p.n === '22';
+      });
+    }
+
     window.CANDIDATOS.governador = {
       AC: [
         { n: '11', nome: 'MAILZA ASSIS', exib: 'Mailza Assis', partido: 'PP', partidoN: '11', coligacao: 'AVANÇA ACRE', sq: '10002544107', g: 'F' },
