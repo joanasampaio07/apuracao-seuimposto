@@ -582,13 +582,28 @@ const server = http.createServer(async (req, res) => {
     #tse-top-banner {
       display: flex !important;
       position: fixed !important;
-      bottom: 78px !important;
+      bottom: 48px !important;
       left: 50% !important;
       transform: translateX(-50%) !important;
       z-index: 9999 !important;
+      transition: all 0.2s ease !important;
+    }
+    #tse-top-banner.is-collapsed #banner-full-content {
+      display: none !important;
+    }
+    #tse-top-banner.is-collapsed #banner-mini-content {
+      display: inline-flex !important;
+    }
+    #tse-top-banner.is-collapsed {
+      padding: 3px 10px !important;
+      background: rgba(21, 20, 18, 0.88) !important;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.7) !important;
+    }
+    #banner-mini-content {
+      display: none;
     }
     .hud canvas.map, .hud .mapzoom, .hud canvas.prev, .hud canvas.hov, .hud canvas.fx, .hud .marks {
-      transform: translateY(-16px) !important;
+      transform: translateY(-8px) !important;
     }
     #df-mobile-sticky-bar {
       display: none !important;
@@ -611,47 +626,67 @@ const server = http.createServer(async (req, res) => {
   }
 </style>
 
-<!-- BARRA PRINCIPAL FLUTUANTE (DESIGN EXECUTIVO, PERFEITAMENTE AJUSTADA ACIMA DA TIMELINE) -->
-<div id="tse-top-banner" style="position:fixed; bottom:78px; left:50%; transform:translateX(-50%); z-index:9999; display:flex; align-items:center; gap:8px; background:rgba(21,20,18,0.96); backdrop-filter:blur(24px); -webkit-backdrop-filter:blur(24px); border:1px solid rgba(250,250,249,0.22); border-radius:100px; padding:6px 14px; box-shadow:0 12px 35px rgba(0,0,0,0.92); font-family:var(--sans, system-ui); font-size:12px; color:#FAFAF9; white-space:nowrap;">
-  <span id="tse-live-badge" style="display:flex; align-items:center; gap:6px; font-weight:600; color:#22c55e;">
-    <span style="width:8px; height:8px; border-radius:50%; background:#22c55e; box-shadow:0 0 10px #22c55e;"></span>
-    TSE 2026 Ao Vivo
-  </span>
-  <span style="color:rgba(250,250,249,0.3);">|</span>
-  <div style="display:flex; align-items:center; gap:4px;">
-    <button id="btn-tse-bottom-1t" class="btn-tse-1t" data-turno="1" onclick="switchTseTurno('6257')" style="all:unset; cursor:pointer; padding:6px 12px; border-radius:100px; font-weight:${activeTurno === '1' ? '700' : '600'}; background:${activeTurno === '1' ? 'rgba(255,255,255,0.25)' : 'transparent'}; color:${activeTurno === '1' ? '#fff' : 'rgba(255,255,255,0.5)'}; box-shadow:${activeTurno === '1' ? '0 0 10px rgba(255,255,255,0.2)' : 'none'}; transition:all .15s;">
-      1º Turno (6257)
+<!-- BARRA PRINCIPAL FLUTUANTE (DESIGN ULTRA-COMPACTO E RECOLHÍVEL, NÃO ATRAPALHA A TELA) -->
+<div id="tse-top-banner" style="position:fixed; bottom:48px; left:50%; transform:translateX(-50%); z-index:9999; display:flex; align-items:center; gap:5px; background:rgba(21,20,18,0.94); backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px); border:1px solid rgba(250,250,249,0.18); border-radius:100px; padding:3px 10px; box-shadow:0 8px 25px rgba(0,0,0,0.85); font-family:var(--sans, system-ui); font-size:11px; color:#FAFAF9; white-space:nowrap;">
+  
+  <!-- CONTEÚDO COMPLETO QUANDO EXPANDIDO -->
+  <div id="banner-full-content" style="display:flex; align-items:center; gap:5px;">
+    <span id="tse-live-badge" style="display:flex; align-items:center; gap:5px; font-weight:700; font-size:11px; color:#22c55e;">
+      <span style="width:6px; height:6px; border-radius:50%; background:#22c55e; box-shadow:0 0 8px #22c55e;"></span>
+      TSE
+    </span>
+    <span style="color:rgba(250,250,249,0.25);">|</span>
+    <div style="display:flex; align-items:center; gap:2px;">
+      <button id="btn-tse-bottom-1t" class="btn-tse-1t" data-turno="1" onclick="switchTseTurno('6257')" style="all:unset; cursor:pointer; padding:3px 8px; border-radius:100px; font-weight:${activeTurno === '1' ? '700' : '600'}; font-size:10.5px; background:${activeTurno === '1' ? 'rgba(255,255,255,0.22)' : 'transparent'}; color:${activeTurno === '1' ? '#fff' : 'rgba(255,255,255,0.5)'}; transition:all .15s;">
+        1ºT
+      </button>
+      <button id="btn-tse-bottom-2t" class="btn-tse-2t" data-turno="2" onclick="switchTseTurno('6258')" style="all:unset; cursor:pointer; padding:3px 8px; border-radius:100px; font-weight:${activeTurno === '2' ? '700' : '600'}; font-size:10.5px; background:${activeTurno === '2' ? 'rgba(255,255,255,0.22)' : 'transparent'}; color:${activeTurno === '2' ? '#fff' : 'rgba(255,255,255,0.5)'}; transition:all .15s;">
+        2ºT
+      </button>
+    </div>
+    <span style="color:rgba(250,250,249,0.25);">|</span>
+    <!-- BOTÃO GOVERNADOR DO DF -->
+    <button id="btn-open-governo" onclick="openGovernoDfModal()" style="all:unset; cursor:pointer; padding:4px 10px; border-radius:100px; font-weight:700; font-size:11px; background:linear-gradient(135deg, #0284c7, #0369a1); color:#fff; box-shadow:0 0 10px rgba(2,132,199,0.4); display:inline-flex; align-items:center; gap:4px;">
+      🏛️ Gov DF
     </button>
-    <button id="btn-tse-bottom-2t" class="btn-tse-2t" data-turno="2" onclick="switchTseTurno('6258')" style="all:unset; cursor:pointer; padding:6px 12px; border-radius:100px; font-weight:${activeTurno === '2' ? '700' : '600'}; background:${activeTurno === '2' ? 'rgba(255,255,255,0.25)' : 'transparent'}; color:${activeTurno === '2' ? '#fff' : 'rgba(255,255,255,0.5)'}; box-shadow:${activeTurno === '2' ? '0 0 10px rgba(255,255,255,0.2)' : 'none'}; transition:all .15s;">
-      2º Turno (6258)
+    <!-- BOTÃO MARCELA PASSAMANI -->
+    <button id="btn-open-marcela" onclick="openMarcelaDossie()" style="all:unset; cursor:pointer; padding:4px 10px; border-radius:100px; font-weight:700; font-size:11px; background:linear-gradient(135deg, #f59e0b, #d97706); color:#fff; box-shadow:0 0 10px rgba(245,158,11,0.4); display:inline-flex; align-items:center; gap:4px;">
+      ⭐ Marcela (15555)
+    </button>
+    <!-- BOTÃO COMPARATIVO 1º VS 2º TURNO -->
+    <button id="btn-open-comparativo" onclick="openComparativoModal()" style="all:unset; cursor:pointer; padding:4px 10px; border-radius:100px; font-weight:700; font-size:11px; background:linear-gradient(135deg, #10b981, #059669); color:#fff; box-shadow:0 0 10px rgba(16,185,129,0.4); display:inline-flex; align-items:center; gap:4px;">
+      📊 Comparativo
+    </button>
+    <!-- BOTÃO PROJEÇÃO OFICIAL & METODOLOGIA -->
+    <button id="btn-open-projecao-banner" onclick="window.openProjecaoMetodologiaModal()" style="all:unset; cursor:pointer; padding:4px 10px; border-radius:100px; font-weight:700; font-size:11px; background:linear-gradient(135deg, #ef4444, #b91c1c); color:#fff; box-shadow:0 0 10px rgba(239,68,68,0.4); display:inline-flex; align-items:center; gap:4px;">
+      🎯 Projeção
+    </button>
+    <!-- BOTÃO FOGOS -->
+    <button id="btn-open-fogos" onclick="launchCelebrationDemo('gov_df')" style="all:unset; cursor:pointer; padding:4px 8px; border-radius:100px; font-weight:700; font-size:11px; background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.14); color:#fff; display:inline-flex; align-items:center; gap:3px;">
+      🎆 Fogos
     </button>
   </div>
-  <span style="color:rgba(250,250,249,0.3);">|</span>
-  <!-- BOTÃO NOVO EXCLUSIVO: GOVERNADOR DO DF (35 RAs) -->
-  <button id="btn-open-governo" onclick="openGovernoDfModal()" style="all:unset; cursor:pointer; padding:7px 16px; border-radius:100px; font-weight:800; font-size:12.5px; background:linear-gradient(135deg, #0284c7, #0369a1); color:#fff; box-shadow:0 0 18px rgba(2,132,199,0.55); transition:transform .12s, box-shadow .12s; display:inline-flex; align-items:center; gap:6px;" onmousedown="this.style.transform='scale(0.96)'" onmouseup="this.style.transform='scale(1)'">
-    🏛️ Governador do DF · 35 RAs
-  </button>
-  <span style="color:rgba(250,250,249,0.3);">|</span>
-  <!-- BOTÃO EXCLUSIVO MARCELA PASSAMANI (15555) -->
-  <button id="btn-open-marcela" onclick="openMarcelaDossie()" style="all:unset; cursor:pointer; padding:7px 16px; border-radius:100px; font-weight:700; font-size:12.5px; background:linear-gradient(135deg, #f59e0b, #d97706); color:#fff; box-shadow:0 0 16px rgba(245,158,11,0.5); transition:transform .12s, box-shadow .12s; display:inline-flex; align-items:center; gap:6px;" onmousedown="this.style.transform='scale(0.96)'" onmouseup="this.style.transform='scale(1)'">
-    ⭐ Marcela Passamani (15555)
-  </button>
-  <span style="color:rgba(250,250,249,0.3);">|</span>
-  <!-- BOTÃO COMPARATIVO 1º VS 2º TURNO -->
-  <button id="btn-open-comparativo" onclick="openComparativoModal()" style="all:unset; cursor:pointer; padding:7px 16px; border-radius:100px; font-weight:800; font-size:12.5px; background:linear-gradient(135deg, #10b981, #059669); color:#fff; box-shadow:0 0 16px rgba(16,185,129,0.5); transition:transform .12s, box-shadow .12s; display:inline-flex; align-items:center; gap:6px;" onmousedown="this.style.transform='scale(0.96)'" onmouseup="this.style.transform='scale(1)'">
-    📊 Comparativo 1º vs 2º Turno
-  </button>
-  <span style="color:rgba(250,250,249,0.3);">|</span>
-  <!-- BOTÃO PROJEÇÃO OFICIAL & METODOLOGIA -->
-  <button id="btn-open-projecao-banner" onclick="window.openProjecaoMetodologiaModal()" style="all:unset; cursor:pointer; padding:7px 16px; border-radius:100px; font-weight:800; font-size:12.5px; background:linear-gradient(135deg, #ef4444, #b91c1c); color:#fff; box-shadow:0 0 16px rgba(239,68,68,0.55); transition:transform .12s, box-shadow .12s; display:inline-flex; align-items:center; gap:6px;" onmousedown="this.style.transform='scale(0.96)'" onmouseup="this.style.transform='scale(1)'">
-    🎯 Projeção & Metodologia
-  </button>
-  <span style="color:rgba(250,250,249,0.3);">|</span>
-  <!-- BOTÃO FOGOS E CELEBRAÇÃO DE VITÓRIA -->
-  <button id="btn-open-fogos" onclick="launchCelebrationDemo('gov_df')" style="all:unset; cursor:pointer; padding:7px 16px; border-radius:100px; font-weight:800; font-size:12.5px; background:linear-gradient(135deg, #f59e0b, #d97706); color:#000; box-shadow:0 0 18px rgba(245,158,11,0.55); transition:transform .12s, box-shadow .12s; display:inline-flex; align-items:center; gap:6px;" onmousedown="this.style.transform='scale(0.96)'" onmouseup="this.style.transform='scale(1)'">
-    🎆 Celebrar Vitória (Fogos)
+
+  <!-- CONTEÚDO MINI (QUANDO RECOLHIDO) -->
+  <div id="banner-mini-content" style="align-items:center; gap:6px;">
+    <span style="font-weight:700; font-size:11px; color:#38bdf8;">🏛️ Ações DF · Projeção</span>
+  </div>
+
+  <!-- BOTÃO RECOLHER / EXPANDIR -->
+  <button id="btn-toggle-banner" onclick="window.toggleFloatingBanner()" title="Recolher / Expandir barra" style="all:unset; cursor:pointer; width:18px; height:18px; border-radius:50%; background:rgba(255,255,255,0.12); color:#A6A39C; display:grid; place-items:center; font-size:9px; font-weight:bold; margin-left:2px; transition:background .15s;" onmouseover="this.style.background='rgba(255,255,255,0.25)'" onmouseout="this.style.background='rgba(255,255,255,0.12)'">
+    ▼
   </button>
 </div>
+
+<script>
+window.toggleFloatingBanner = function() {
+  const b = document.getElementById('tse-top-banner');
+  const btn = document.getElementById('btn-toggle-banner');
+  if (!b) return;
+  const isCol = b.classList.toggle('is-collapsed');
+  if (btn) btn.textContent = isCol ? '▲' : '▼';
+};
+</script>
 
 <!-- MODAL COMPLETO DE RAs E SEÇÕES DO DISTRITO FEDERAL (GOVERNO DO DF + MARCELA PASSAMANI) -->
 <div id="df-distritais-modal" style="display:none; position:fixed; inset:0; z-index:10000; background:rgba(0,0,0,0.85); backdrop-filter:blur(22px); -webkit-backdrop-filter:blur(22px); align-items:center; justify-content:center; padding:16px; font-family:var(--sans, system-ui); color:#FAFAF9;">
