@@ -96,8 +96,8 @@ for (let j = 0; j < L; j++) {
 munisData.sort((a, b) => b.plShare - a.plShare);
 
 // 4. Exatamente os 2.905 primeiros são PL (22 - Azul) e os 2.665 seguintes são PT (13 - Vermelho)
-const TARGET_PL = 2905;
-const TARGET_PT = 2665;
+const TARGET_PL = 2694;
+const TARGET_PT = 2876;
 
 const fArr = new Array(L);
 const lArr = new Array(L);

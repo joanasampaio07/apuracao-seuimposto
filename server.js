@@ -657,8 +657,8 @@ const server = http.createServer(async (req, res) => {
     <button id="btn-open-comparativo" onclick="openComparativoModal()" style="all:unset; cursor:pointer; padding:4px 10px; border-radius:100px; font-weight:700; font-size:11px; background:linear-gradient(135deg, #10b981, #059669); color:#fff; box-shadow:0 0 10px rgba(16,185,129,0.4); display:inline-flex; align-items:center; gap:4px;">
       📊 Comparativo
     </button>
-    <!-- BOTÃO PROJEÇÃO OFICIAL & METODOLOGIA -->
-    <button id="btn-open-projecao-banner" onclick="window.openProjecaoMetodologiaModal()" style="all:unset; cursor:pointer; padding:4px 10px; border-radius:100px; font-weight:700; font-size:11px; background:linear-gradient(135deg, #ef4444, #b91c1c); color:#fff; box-shadow:0 0 10px rgba(239,68,68,0.4); display:inline-flex; align-items:center; gap:4px;">
+    <!-- BOTÃO PROJEÇÃO OFICIAL & METODOLOGIA (APENAS 2º TURNO) -->
+    <button id="btn-open-projecao-banner" onclick="window.openProjecaoMetodologiaModal()" style="all:unset; cursor:pointer; padding:4px 10px; border-radius:100px; font-weight:700; font-size:11px; background:linear-gradient(135deg, #ef4444, #b91c1c); color:#fff; box-shadow:0 0 10px rgba(239,68,68,0.4); display:${activeTurno === '2' ? 'inline-flex' : 'none'}; align-items:center; gap:4px;">
       🎯 Projeção
     </button>
     <!-- BOTÃO FOGOS -->
