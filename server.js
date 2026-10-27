@@ -362,15 +362,31 @@ const server = http.createServer(async (req, res) => {
       pathname = '/feed/municipios.json';
     }
   }
-  if (pathname === '/uf/zz.json' || pathname === '/feed/uf/zz.json') {
-    const targetFile = activeTurno === '1' ? 'feed/uf/zz_1t.json' : 'feed/uf/zz_2t.json';
-    try {
-      const data = fs.readFileSync(path.join(BASE_DIR, targetFile), 'utf8');
+  if (pathname === '/projecao.json' || pathname === '/feed/projecao.json') {
+    const targetFile = activeTurno === '1' ? 'feed/projecao_1t.json' : 'feed/projecao_2t.json';
+    const fallbackFile = 'feed/projecao.json';
+    let fileToRead = path.join(BASE_DIR, targetFile);
+    if (!fs.existsSync(fileToRead)) fileToRead = path.join(BASE_DIR, fallbackFile);
+    if (fs.existsSync(fileToRead)) {
+      const data = fs.readFileSync(fileToRead, 'utf8');
       return sendJsonGzip(data);
-    } catch {
-      pathname = '/feed/uf/zz.json';
     }
   }
+
+  // Handler oficial universal para todos os 27 estados do Brasil + Exterior (ZZ)
+  const ufMatch = pathname.match(/^\/(?:feed\/)?uf\/([a-zA-Z]{2})\.json$/);
+  if (ufMatch) {
+    const ufCode = ufMatch[1].toLowerCase();
+    const targetFile = activeTurno === '1' ? `feed/uf/${ufCode}_1t.json` : `feed/uf/${ufCode}_2t.json`;
+    const fallbackFile = `feed/uf/${ufCode}.json`;
+    let fileToRead = path.join(BASE_DIR, targetFile);
+    if (!fs.existsSync(fileToRead)) fileToRead = path.join(BASE_DIR, fallbackFile);
+    if (fs.existsSync(fileToRead)) {
+      const data = fs.readFileSync(fileToRead, 'utf8');
+      return sendJsonGzip(data);
+    }
+  }
+
   if (pathname.startsWith('/deputados/')) pathname = '/feed' + pathname;
   if (pathname.startsWith('/uf/')) pathname = '/feed' + pathname;
 
@@ -624,6 +640,11 @@ const server = http.createServer(async (req, res) => {
   <!-- BOTÃO COMPARATIVO 1º VS 2º TURNO -->
   <button id="btn-open-comparativo" onclick="openComparativoModal()" style="all:unset; cursor:pointer; padding:7px 16px; border-radius:100px; font-weight:800; font-size:12.5px; background:linear-gradient(135deg, #10b981, #059669); color:#fff; box-shadow:0 0 16px rgba(16,185,129,0.5); transition:transform .12s, box-shadow .12s; display:inline-flex; align-items:center; gap:6px;" onmousedown="this.style.transform='scale(0.96)'" onmouseup="this.style.transform='scale(1)'">
     📊 Comparativo 1º vs 2º Turno
+  </button>
+  <span style="color:rgba(250,250,249,0.3);">|</span>
+  <!-- BOTÃO PROJEÇÃO OFICIAL & METODOLOGIA -->
+  <button id="btn-open-projecao-banner" onclick="window.openProjecaoMetodologiaModal()" style="all:unset; cursor:pointer; padding:7px 16px; border-radius:100px; font-weight:800; font-size:12.5px; background:linear-gradient(135deg, #ef4444, #b91c1c); color:#fff; box-shadow:0 0 16px rgba(239,68,68,0.55); transition:transform .12s, box-shadow .12s; display:inline-flex; align-items:center; gap:6px;" onmousedown="this.style.transform='scale(0.96)'" onmouseup="this.style.transform='scale(1)'">
+    🎯 Projeção & Metodologia
   </button>
   <span style="color:rgba(250,250,249,0.3);">|</span>
   <!-- BOTÃO FOGOS E CELEBRAÇÃO DE VITÓRIA -->
